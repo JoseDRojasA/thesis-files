@@ -1,0 +1,20 @@
+$TTL 86400
+@   IN  SOA     master1.local.cluster. root.local.cluster. (
+        2011071001  ;Serial
+        3600        ;Refresh
+        1800        ;Retry
+        604800      ;Expire
+        86400       ;Minimum TTL
+)
+@       IN  NS          master1.local.cluster.
+@       IN  PTR         node1.local.cluster.
+@       IN  PTR         node2.local.cluster.
+@	IN  PTR		gluster.local.cluster.
+master1       	IN  A   192.168.0.130
+node1    	IN  A   192.168.0.131
+node2          	IN  A   192.168.0.132
+gluster		IN  A	192.168.0.134
+130     IN  PTR         master1.local.cluster.
+131     IN  PTR         node1.local.cluster.
+132     IN  PTR         node2.local.cluster.
+134	IN  PTR		gluster.local.cluster.
