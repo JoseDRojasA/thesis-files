@@ -1,0 +1,46 @@
+stages:
+    - build
+    - publish
+    - deploy
+    
+services:
+  - docker:dind
+   
+build:
+    image: trion/ng-cli-karma
+    stage: build
+    script:
+        - cd smart-campus
+        - npm install
+        - ./node_modules/@angular/cli/bin/ng build --aot --prod
+        - rm -rf node_modules
+        - dt=$(date '+%Y%m%d%H%M%S');
+        - echo -n "$dt" > ../deployment/version
+    artifacts:
+        paths:
+            - smart-campus/
+            - deployment/
+
+publish:
+    image: docker:latest
+    stage: publish
+    script:
+        - version=$(cat deployment/version)
+        - cd smart-campus
+        - docker login -u josedrojasa -p miContrasena123
+        - docker build . -t josedrojasa/thesis-front:"$version"
+        - docker push josedrojasa/thesis-front:"$version"
+
+deploy:
+    image: openshift/origin-cli
+    stage: deploy
+    script:
+        - oc login "https://serveo.net:8444" --token="eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJpb3QtZnJvbnQiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlY3JldC5uYW1lIjoiZ2l0bGFiLWNpLXRva2VuLXBucDU2Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6Imd" --insecure-skip-tls-verify
+        - oc project iot-front
+        - deployment1=$(cat deployment/deployment_1.yaml)
+        - deployment2=$(cat deployment/deployment_2.yaml)
+        - version=$(cat deployment/version)
+        - echo -n "$deployment1" > deployment.yaml
+        - echo "$version" >> deployment.yaml
+        - echo "$deployment2" >> deployment.yaml
+        - oc replace -f deployment.yaml

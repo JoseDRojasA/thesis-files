@@ -1,0 +1,72 @@
+stages:
+    - build
+    - publish
+    - deploy
+
+services:
+  - docker:dind
+
+build:
+    image: maven:3.6.0-jdk-8
+    stage: build
+    script:
+        - cat application.properties.comun.prod >> admin-service/src/main/resources/application.properties.prod
+        - cat application.properties.comun.prod >> data-service/src/main/resources/application.properties.prod
+        - cat application.properties.comun.prod >> jobs-service/src/main/resources/application.properties.prod
+        - cp admin-service/src/main/resources/application.properties.prod admin-service/src/main/resources/application.properties
+        - cp data-service/src/main/resources/application.properties.prod data-service/src/main/resources/application.properties
+        - cp jobs-service/src/main/resources/application.properties.prod jobs-service/src/main/resources/application.properties
+        - mvn install
+        - dt=$(date '+%Y%m%d%H%M%S');
+        - echo -n "$dt" > deployment/version
+    artifacts:
+        paths:
+            - admin-service/
+            - data-service/
+            - jobs-service/
+            - deployment/
+publish:
+    image: docker:latest
+    stage: publish
+    script:
+        - echo "Building docker image"
+        - version=$(cat deployment/version)
+        - cd admin-service/
+        - docker login -u josedrojasa -p miContrasena123
+        - docker build . -t josedrojasa/admin-service:"$version"
+        - docker push josedrojasa/admin-service:"$version"
+        - cd ..
+        - cd data-service/
+        - docker build . -t josedrojasa/data-service:"$version"
+        - docker push josedrojasa/data-service:"$version"
+        - cd ..
+        - cd jobs-service/
+        - docker build . -t josedrojasa/jobs-service:"$version"
+        - docker push josedrojasa/jobs-service:"$version"
+deploy:
+    image: openshift/origin-cli
+    stage: deploy
+    script:
+        - oc login "https://serveo.net:8444" --token="eyJhbGciOiJSUzI1NiIsImtpZCI6IiJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJiYWNrZW5kIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImdpdGxhYi1j" --insecure-skip-tls-verify
+        - oc project backend
+        - deployment1=$(cat deployment/admin-deployment_1.yaml)
+        - deployment2=$(cat deployment/admin-deployment_2.yaml)
+        - version=$(cat deployment/version)
+        - echo -n "$deployment1" > deployment.yaml
+        - echo "$version" >> deployment.yaml
+        - echo "$deployment2" >> deployment.yaml
+        - oc replace -f deployment.yaml
+        - deployment1=$(cat deployment/data-deployment_1.yaml)
+        - deployment2=$(cat deployment/data-deployment_2.yaml)
+        - version=$(cat deployment/version)
+        - echo -n "$deployment1" > deployment.yaml
+        - echo "$version" >> deployment.yaml
+        - echo "$deployment2" >> deployment.yaml
+        - oc replace -f deployment.yaml
+        - deployment1=$(cat deployment/jobs-deployment_1.yaml)
+        - deployment2=$(cat deployment/jobs-deployment_2.yaml)
+        - version=$(cat deployment/version)
+        - echo -n "$deployment1" > deployment.yaml
+        - echo "$version" >> deployment.yaml
+        - echo "$deployment2" >> deployment.yaml
+        - oc replace -f deployment.yaml
