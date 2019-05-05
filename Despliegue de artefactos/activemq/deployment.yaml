@@ -1,0 +1,27 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: activemq
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: activemq
+        version: v1
+    spec:
+      containers:
+      - name: activemq
+        image: josedrojasa/activemq:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8161
+        - containerPort: 61616
+        - containerPort: 61614
+        volumeMounts:
+        - mountPath: /apache-activemq-5.15.6/data
+          name: activemq-persistent
+      volumes:
+        - name: activemq-persistent
+          persistentVolumeClaim:
+            claimName: pvc-activemq

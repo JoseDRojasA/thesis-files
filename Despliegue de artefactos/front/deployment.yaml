@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: front
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: front
+        version: v1
+    spec:
+      containers:
+      - name: front
+        image: josedrojasa/thesis-front:20190319010920
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8081

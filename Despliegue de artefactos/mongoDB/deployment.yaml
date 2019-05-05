@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mongo-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mongo-server
+        version: v1
+    spec:
+      containers:
+      - name: mongo-server
+        image: centos/mongodb-32-centos7
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MONGODB_DATABASE
+          value: iot
+        - name: MONGODB_ADMIN_PASSWORD
+          value: admin
+        - name: MONGODB_USER
+          value: iot
+        - name: MONGODB_PASSWORD
+          value: iot
+        ports:
+        - containerPort: 27017
+          name: mongo
+        volumeMounts:
+        - mountPath: /var/lib/mongodb/data
+          name: persistent
+      volumes:
+        - name: persistent
+          persistentVolumeClaim:
+            claimName: pvc-mongo

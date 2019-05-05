@@ -1,0 +1,35 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: mysql-server
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: mysql-server
+        version: v1
+    spec:
+      containers:
+      - name: mysql-server
+        image: centos/mysql-57-centos7
+        imagePullPolicy: IfNotPresent
+        env:
+        - name: MYSQL_DATABASE
+          value: iot
+        - name: MYSQL_ROOT_PASSWORD
+          value: root
+        - name: MYSQL_USER
+          value: iot
+        - name: MYSQL_PASSWORD
+          value: iot
+        ports:
+        - containerPort: 3306
+          name: mysql
+        volumeMounts:
+        - mountPath: /var/lib/mysql/data
+          name: persistent
+      volumes:
+        - name: persistent
+          persistentVolumeClaim:
+            claimName: pvc-mysql-istio

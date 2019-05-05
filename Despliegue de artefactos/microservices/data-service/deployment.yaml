@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: data-microservice
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: data-microservice
+        version: v1
+    spec:
+      containers:
+      - name: data-microservice
+        image: josedrojasa/data-service:20190317031638
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8091
