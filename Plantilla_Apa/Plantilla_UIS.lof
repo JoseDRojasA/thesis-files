@@ -1,0 +1,57 @@
+\babel@toc {spanish}{}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {1}{\ignorespaces Sistema de control con realimentaci\'on unitaria\relax }}{19}{figure.caption.9}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Respuesta escal\'on sistema compensado con inestabilidad}}{27}{figure.caption.10}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Conjunto estabilizante en el plano ($\alpha $, $\beta $) para $k = 34.93$\relax }}{29}{figure.caption.11}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Conjunto estabilizante en el plano ($M_p$, $t_s$) para $k = 34.93$\relax }}{30}{figure.caption.12}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Respuesta din\'amica y controlador en $\mathcal {S}$ del plano ($M_p$, $t_s$)}}{31}{figure.caption.13}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {$M_p = 53.38; \tmspace +\medmuskip {.2222em} t_s = 3.60$}}}{31}{figure.caption.13}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {$M_p = 70.76; \tmspace +\medmuskip {.2222em} t_s = 4.59$}}}{31}{figure.caption.13}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {$M_p = 84.76; \tmspace +\medmuskip {.2222em} t_s = 6.85$}}}{31}{figure.caption.13}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Nivel superior de detalle para desarrollo de interfaz}}{33}{figure.caption.14}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Primer nivel de detalle para desarrollo de interfaz}}{34}{figure.caption.15}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Subproceso de \emph {C\'alculo de $\mathcal {S}$}}}{35}{figure.caption.16}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces Subproceso de \emph {C\'alculo respuesta escal\'on a partir de $\left (\alpha ,\beta \right )$}}}{36}{figure.caption.17}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Subproceso de \emph {Elecci\'on de punto admisible en $\left (M_p, t_s \right )$}}}{36}{figure.caption.18}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Subproceso de \emph {Conversi\'on $\left (M_p^*, t_s^* \right )$ a $\left (\alpha ,\beta \right )$}}}{37}{figure.caption.19}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Presentaci\'on final para interfaz desarrollada\relax }}{38}{figure.caption.20}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {13}{\ignorespaces Veh\IeC {\'\i }culo a\'ereo no tripulado tipo \emph {dron} cuadrotor\relax }}{40}{figure.caption.21}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Diagrama de cuerpo libre del \emph {dron} cuadrotor}}{42}{figure.caption.22}% 
+\contentsline {figure}{\numberline {15}{\ignorespaces Simulaci\'on equilibrio perturbado}}{62}{figure.caption.25}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{62}{figure.caption.25}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{62}{figure.caption.25}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{62}{figure.caption.25}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{62}{figure.caption.25}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{62}{figure.caption.25}% 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{62}{figure.caption.25}% 
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{62}{figure.caption.25}% 
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {}}}{62}{figure.caption.25}% 
+\contentsline {figure}{\numberline {16}{\ignorespaces Simulaci\'on equilibrio perturbado con fricci\'on}}{63}{figure.caption.26}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{63}{figure.caption.26}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{63}{figure.caption.26}% 
+\contentsline {subfigure}{\numberline {(c)}{\ignorespaces {}}}{63}{figure.caption.26}% 
+\contentsline {subfigure}{\numberline {(d)}{\ignorespaces {}}}{63}{figure.caption.26}% 
+\contentsline {subfigure}{\numberline {(e)}{\ignorespaces {}}}{63}{figure.caption.26}% 
+\contentsline {subfigure}{\numberline {(f)}{\ignorespaces {}}}{63}{figure.caption.26}% 
+\contentsline {subfigure}{\numberline {(g)}{\ignorespaces {}}}{63}{figure.caption.26}% 
+\contentsline {subfigure}{\numberline {(h)}{\ignorespaces {}}}{63}{figure.caption.26}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {17}{\ignorespaces Controlador PID en forma de realizaci\'on paralela\relax }}{66}{figure.caption.27}% 
+\contentsline {figure}{\numberline {18}{\ignorespaces Respuesta escal\'on en forma de \emph {s} del m\'etodo en lazo abierto\relax }}{69}{figure.caption.28}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Respuesta escal\'on del sistema compensado\relax }}{71}{figure.caption.31}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces Conjunto estabilizante en el plano ($k_P$, $k_I$)\relax }}{72}{figure.caption.32}% 
+\contentsline {figure}{\numberline {21}{\ignorespaces Intersecci\'on en el plano $\left ( k_P, k_I \right )$ para linea recta y elipse}}{78}{figure.caption.33}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{78}{figure.caption.33}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{78}{figure.caption.33}% 
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {22}{\ignorespaces Representaci\'on en $\left (k_P, k_I \right )$ para m\'argenes de estabilidad}}{84}{figure.caption.34}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{84}{figure.caption.34}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{84}{figure.caption.34}% 
+\contentsline {figure}{\numberline {23}{\ignorespaces Distancia a la inestabilidad}}{85}{figure.caption.35}% 
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{85}{figure.caption.35}% 
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{85}{figure.caption.35}% 
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsfinish 

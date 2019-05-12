@@ -1,0 +1,40 @@
+\BOOKMARK [0][-]{chapter*.8}{Introducci\363n}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Objetivos}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Conjunto estabilizante para sistemas LTI}{}% 3
+\BOOKMARK [1][-]{section.2.1}{Estabilidad para un sistema LTI}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.2}{Conjunto estabilizante}{chapter.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.1}{Incidencia de S en la estabilidad de un lazo de control}{section.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.2.2}{Escenarios din\341micos viables en S para el sistema compensado}{section.2.2}% 7
+\BOOKMARK [1][-]{section.2.3}{Dise\361o gr\341fico de controladores a partir del c\341lculo de S}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.3.1}{Descripci\363n general de requerimientos}{section.2.3}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.1.1}{Nivel superior de detalle}{subsection.2.3.1}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.1.2}{Partici\363n de primer nivel}{subsection.2.3.1}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.1.3}{Particiones de segundo nivel}{subsection.2.3.1}% 12
+\BOOKMARK [2][-]{subsection.2.3.2}{Selecci\363n de herramienta para implementaci\363n}{section.2.3}% 13
+\BOOKMARK [2][-]{subsection.2.3.3}{Descripci\363n de interfaz dise\361ada}{section.2.3}% 14
+\BOOKMARK [0][-]{chapter.3}{Modelado matem\341tico del dron}{}% 15
+\BOOKMARK [1][-]{section.3.1}{Veh\355culos a\351reos no tripulados}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.1.1}{Mecanismo de vuelo}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.2}{Control del sistema}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.3}{Sens\363rica}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.4}{Aplicaciones}{section.3.1}% 20
+\BOOKMARK [1][-]{section.3.2}{Coordenadas en el espacio de movimiento}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.3}{Ecuaciones del movimiento}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.3.1}{Movimiento de traslaci\363n}{section.3.3}% 23
+\BOOKMARK [2][-]{subsection.3.3.2}{Movimiento de rotaci\363n}{section.3.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.3}{Simplificaciones del modelo}{section.3.3}% 25
+\BOOKMARK [1][-]{section.3.4}{An\341lisis del comportamiento en lazo abierto}{chapter.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Controladores PI y su conjunto estabilizante}{}% 27
+\BOOKMARK [1][-]{section.4.1}{Controladores PID}{chapter.4}% 28
+\BOOKMARK [2][-]{subsection.4.1.1}{Reglas de sintonizaci\363n}{section.4.1}% 29
+\BOOKMARK [1][-]{section.4.2}{An\341lisis de estabilidad para un controlador PI}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Sintonizaci\363n PI por Ziegler \046 Nichols}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Conjunto estabilizante para sistema ante control PI}{section.4.2}% 32
+\BOOKMARK [1][-]{section.4.3}{Fragilidad de controladores PI}{chapter.4}% 33
+\BOOKMARK [2][-]{subsection.4.3.1}{Geometr\355a para m\341rgenes de estabilidad en un controlador PI}{section.4.3}% 34
+\BOOKMARK [2][-]{subsection.4.3.2}{Definici\363n de m\351trica para calcular distancia a inestabilidad}{section.4.3}% 35
+\BOOKMARK [0][-]{chapter.5}{Recomendaciones}{}% 36
+\BOOKMARK [0][-]{chapter.6}{Trabajo futuro}{}% 37
+\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 38
+\BOOKMARK [0][-]{chapter.7}{Referencias Bibliogr\341ficas}{}% 39
+\BOOKMARK [0][-]{chapter*.37}{Ap\351ndices}{}% 40

@@ -1,0 +1,381 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+%                                Capítulo 2
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\chapter{Conjunto estabilizante para sistemas LTI}
+% ------------------------------------------------------------------------
+\noindent En el presente capítulo se formula el conjunto de ecuaciones que delimitan la región de estabilidad (\emph{conjunto estabilizante}) para una planta de segundo orden, compensada con un controlador de tres parámetros ($k$, $\alpha$, $\beta$). Este estudio se realiza haciendo uso del \emph{Criterio de estabilidad de Routh-Hurwitz}. La región de estabilidad del sistema se formula asumiendo $k$ de valor conocido en el plano ($\alpha$, $\beta$) de parámetros del controlador, mediante deducciones analíticas y simulaciones numéricas en MATLAB.
+% ------------------------------------------------------------------------
+
+\section{Estabilidad para un sistema LTI}\label{estabsect}
+% ------------------------------------------------------------------------
+\noindent Considere el sistema de control con realimentación unitaria ilustrado en la Fig. \ref{sistem2ord}. Para este sistema $R(s)$ representa la señal de entrada, $E(s)$ la señal de error, $Y(s)$ la señal de salida, $P(s)$ la función de transferencia de la planta y $C(s)$ la función de transferencia para un controlador de estructura fija y 3 parámetros, dado por:
+% ------------------------------------------------------------------------
+\begin{equation}
+C(s)=\frac{k(s+\alpha)}{\left(s+\beta\right)}.\label{controlador}
+\end{equation}\
+
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/control_sistem}
+\caption{Sistema de control con realimentación unitaria}\label{sistem2ord}
+\end{figure}
+
+% ------------------------------------------------------------------------
+Para efectos de ilustración, se asumirá una planta genérica de segundo orden con un polo en el origen, a partir de:
+% ------------------------------------------------------------------------
+\begin{equation}
+P(s)=\frac{1}{s(s+2)}=\frac{N(s)}{D(s)},\label{planta}
+\end{equation}\
+% ------------------------------------------------------------------------
+definiendo a su vez el siguiente polinomio característico:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+\nonumber \delta(s) & = & N(s)[k(s+\alpha)]+D(s)(s+\beta) \\
+\nonumber           & = & k(s+\alpha)+s(s+\alpha)(s+\beta)\\
+                    & = & s^{3}+(2+\beta)s^{2}+(2\beta+k)s+k\alpha,\label{eqcaract}
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+cuyas raíces establecen la estabilidad del sistema.\\
+
+Como es bien sabido, el \emph{Criterio de estabilidad de Routh-Hurwitz} \citep{ogata2010} permite determinar las condiciones para la estabilidad absoluta de un sistema dinámico, mediante un método tabulado que define la posición de las raíces en el plano, para un polinomio que representa el denominador de la función de transferencia del sistema.\\
+
+Así entonces, se aplica dicho criterio a partir de los siguientes pasos:
+% ------------------------------------------------------------------------
+\begin{itemize}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+\item[1.] \emph{Se escribe el polinomio característico en la forma $\delta(s) = 0$ y se verifican las condiciones para que todos sus coeficientes sean diferentes de cero y del mismo signo}. De esta manera, asumiendo una convención positiva, los coeficientes de \eqref{eqcaract} serán mayores a cero si se cumplen las siguientes condiciones:
+$$
+\left(2+\beta\right)>0; \quad \left(2\beta+k\right)>0; \quad k\alpha>0,
+$$
+a partir de lo cual, asumiendo que $k > 0$ es un parámetro constante conocido, las condiciones para estabilidad recaen sobre los parámetros restantes $\left\{\alpha, \beta \right\}$, siendo:
+\begin{equation}\label{primera}
+\beta > -2; \quad \beta > -\frac{k}{2}; \quad \alpha > 0.
+\end{equation}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+\item[2.] \emph{Se construye el arreglo de Routh y se analizan los elementos en la primera columna}. \emph{La condición necesaria y suficiente para que todas las raíces de \eqref{eqcaract} se encuentren en el semiplano izquierdo del plano ``$s$'', es que no existan cambios de signo en la primera columna del arreglo} \citep{ogata2010}. A partir de ello se tiene:
+% ------------------------------------------------------------------------
+\begin{center}
+	\begin{tabular}{ l | c  c  }
+		$s^{3}$ 	& 1                        & $\left(2\beta+k\right)$  \\
+		$s^{2}$ 	& $\left(2+\beta\right)$   & $k\alpha$                \\
+		$s^{1}$ 	& $M$                      & $ 0$                     \\
+		$s^{0}$ 	& $k\alpha$                &                          \\
+	\end{tabular}
+\end{center}
+% ------------------------------------------------------------------------
+siendo
+% ------------------------------------------------------------------------
+\begin{eqnarray*}
+M & = & \frac{\left(2\beta+k\right)\left(2+\beta\right)-k\alpha}{\left(2+\beta\right)},
+\end{eqnarray*}
+% ------------------------------------------------------------------------
+
+de lo cual, $M>0$ implica
+$$
+(2\beta+k)(2+\beta)-k\alpha>0,
+$$
+puesto que $\left(2+\beta\right)>0$ y así entonces:
+$$
+2\beta^{2}+\left(4+k\right)\beta+2k-k\alpha>0.
+$$
+Despejando $\alpha$ en la expresión anterior se obtiene:
+% ------------------------------------------------------------------------
+\begin{equation}
+\alpha < \frac{2}{k}\left(\left(\beta+\frac{\left( k+4\right)}{4}\right)^{2} - \frac{\left(k-4\right)^2}{16}\right),\label{lim_alpha}
+\end{equation}
+
+tomando en cuenta que:
+\begin{eqnarray*}
+\frac{2\beta^{2}+\left(4+k\right)\beta+2k}{k} & = & \frac{2}{k}\left(\beta^{2}+\frac{\left(k+4\right) }{2}\beta+k\right)\\
+& = & \frac{2}{k}\left(\beta^{2}+\frac{\left(k+4\right)}{2}\beta+\frac{\left(k+4\right)^2}{16}-\frac{\left(k+4\right)^2}{16}+k\right)\\
+& = & \frac{2}{k}\left(\left(\beta+\frac{\left( k+4\right)}{4}\right)^{2} + \frac{16k -\left(k^2+8k+16\right)}{16}\right)\\
+& = & \frac{2}{k}\left(\left(\beta+\frac{\left( k+4\right)}{4}\right)^{2} - \frac{\left(k^2-8k+16\right)}{16}\right)\\
+& = & \frac{2}{k}\left(\left(\beta+\frac{\left( k+4\right)}{4}\right)^{2} - \frac{\left(k-4\right)^2}{16}\right). \label{stabsetlim}
+\end{eqnarray*}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+\item[3.] \emph{A partir de las restricciones obtenidas sobre los términos de la primera columna del arreglo de Routh, se determina el rango de valores que asegura para cada parámetro la estabilidad absoluta del sistema}. Por tanto, para $k > 4$ la condición que prevalece sobre el parámetro $\beta$ será:
+    \begin{equation}
+    \beta > -2.\label{stabset1}
+    \end{equation}
+    Asimismo se tiene:
+    \begin{equation}
+    0 < \alpha < \frac{2}{k}\left(\left(\beta+\frac{\left( k+4\right)}{4}\right)^{2} - \frac{\left(k-4\right)^2}{16}\right).\label{stabset2}
+    \end{equation}
+% ------------------------------------------------------------------------
+\end{itemize}\
+
+% ------------------------------------------------------------------------
+\section{Conjunto estabilizante}\label{conjestabsect}
+% ------------------------------------------------------------------------
+\noindent Dada una estructura de controlador fija $C(s)$ para una planta $P(s)$, el conjunto estabilizante $\mathcal{S}$ se define como todos los posibles controladores $C(s)$ que brindan una solución estable para el sistema realimentado mostrado en la Fig. \ref{sistem2ord}.\\
+
+En este punto es importante resaltar que en la mayoría de métodos clásicos para el diseño de controladores, el cálculo de los parámetros del controlador se realiza sin incluir restricciones explícitas de estabilidad. En general, un diseño viene acompañado por pruebas de verificación no sólo para las condiciones de operación del sistema controlado sino también para su estabilidad, constituyendo procedimientos iterativos muchas veces del tipo ensayo y error.\\
+
+En otras palabras, los métodos de diseño se formulan para cumplir con condiciones de desempeño sobre un sistema controlado estable, pero no toman en cuenta que aún cuando matemáticamente el controlador pueda satisfacer el problema, existe un conjunto restringido de parámetros de control que aseguran la estabilidad del sistema.\\
+
+El conjunto establizante $\mathcal{S}$ es fácil de definir. Por ejemplo, para la combinación de planta y controlador dada por las ecuaciones \eqref{controlador}-\eqref{planta} en la Sección \ref{estabsect}, dicho conjunto puede escribirse como:
+\begin{equation}
+\mathcal{S} = \left\{\left(k, \alpha,\beta\right): \: \text{\eqref{stabset1} y \eqref{stabset2} se satisfagan simultáneamente} \right\}.\label{stabseteq}
+\end{equation}
+
+El conjunto estabilizante $\mathcal{S}$ es dificil de calcular. Para sistemas de bajo orden, el \emph{criterio de estabilidad de Routh-Hurwirtz} puede ser empleado según ilustrado en la Sección \ref{estabsect}. Sin embargo, para un orden elevado la cantidad de expresiones no lineales que se requiere combinar para determinar los rangos de parámetros estables justifican la utilización de métodos computacionales refinados. El \emph{método de la signatura} propuesto por Keel y Bhattacharyya es una opción viable para estos casos \citep{keel2008}.
+
+% ------------------------------------------------------------------------
+\subsection{Incidencia de $\mathcal{S}$ en la estabilidad de un lazo de control}\label{lazoestable}
+% ------------------------------------------------------------------------
+\noindent Para verificar la importancia del conjunto estabilizante, considere el problema de diseño de un compensador $C(s)$ de la forma \eqref{controlador} para el sistema $P(s)$ definido en \eqref{planta}, de manera tal que el sistema compensado y realimentado como en la Fig. \ref{sistem2ord} exhiba una respuesta escalón con las siguientes características dinámicas:
+% ------------------------------------------------------------------------
+\begin{equation}
+M_p \approx 0\%; \quad t_s|_{2\%} \approx 0.5 \: [s].\label{spec}
+\end{equation}\
+% ------------------------------------------------------------------------
+
+Inicialmente, se deben traducir las especificaciones de respuesta temporal dadas en \eqref{spec} al dominio de la frecuencia. A partir de ello, los polos deseados para el sistema compensado corresponden con:
+% ------------------------------------------------------------------------
+\begin{equation}
+s = -8.231 \pm 0j \label{polo}.
+\end{equation}\
+% ------------------------------------------------------------------------
+
+Ahora bien, evaluando este valor para ``$s$'' en $P(s)$, se verifica una deficiencia angular de:
+% ------------------------------------------------------------------------
+\begin{equation}
+\angle C(s) = 180°,
+\end{equation}
+% ------------------------------------------------------------------------
+que a su vez corresponde con la contribución de fase que debe aportar el compensador en el polo deseado. A partir de ello, la localización para el polo y el cero del compensador se realiza empleando el siguiente análisis:
+% ------------------------------------------------------------------------
+\begin{itemize}
+\item[-] Para obtener $180°$ de fase en el compensador, el cociente resultante debe ser un número real negativo teniendo en cuenta el caracter real del polo deseado;
+\item[-] Posteriormente se selecciona una distribución en el eje real negativo para la localización del polo deseado y el polo y el cero del compensador, que conserve una simetría dada por un factor:
+    $$
+    \gamma = \frac{s}{5} \approx \frac{5}{3},
+    $$
+    en modo tal que:
+    $$
+    \alpha = \gamma s \approx 13.21, \quad \beta = \frac{s}{\gamma} \approx 4.84;
+    $$
+\item [-] Por último se determina la ganancia $k$ del compensador, como aquel valor que satisface
+la condición de magnitud para el lugar geométrico de las raíces:
+% ------------------------------------------------------------------------
+\begin{equation}
+\left| \frac{k(s+13.21)}{s(s+2)(s+4.84)} \right|_{s=-8.231 \pm 0j}  =  1,
+\end{equation}\
+% ------------------------------------------------------------------------
+a partir de lo cual $k \approx 34.93$.
+% ------------------------------------------------------------------------
+\end{itemize}\
+
+% ------------------------------------------------------------------------
+Una vez diseñado el compensador, se procede a verificar el desempeño del sistema controlado
+empleando herramientas de simulación. Es así como la Fig. \ref{examp_inestable} muestra
+la respuesta temporal ante un estímulo de tipo escalón unitario, calculada empleando el \emph{Control System Toolbox} de MATLAB\circledR~en el sistema compensado y realimentado,
+siendo sin embargo de naturaleza inestable. A partir de lo anterior, surge la pregunta: ¿Por qué un diseño que se realiza empleando apropiadamente las herramientas matemáticas, conduce a un sistema inestable?\\
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/step_inestab}
+\caption[Respuesta escalón sistema compensado con inestabilidad]{Respuesta escalón de sistema compensado manifestando inestabilidad}\label{examp_inestable}
+\end{figure}
+
+% ------------------------------------------------------------------------
+La respuesta para este interrogante se explica fácilmente a partir de \eqref{stabseteq}, justificando que los requerimientos dados en \eqref{spec} no son viables para la estructura del compensador seleccionada, según se detalla a continuación.
+
+% ------------------------------------------------------------------------
+\subsection{Escenarios dinámicos viables en $\mathcal{S}$ para el sistema compensado}
+% ------------------------------------------------------------------------
+\noindent El conjunto estabilizante $\mathcal{S}$ definido en \eqref{stabseteq} depende de las inecuaciones \eqref{stabset1} y \eqref{stabset2}, establecidas a su vez para $k > 0$.\\
+
+De los resultados presentados para el cálculo del compensador se observa que $k = 34.93$ satisface la última premisa. Por tanto, el controlador será estable si tanto $\alpha$ como $\beta$ satisfacen para este valor de $k$, las desigualdades que relacionan los elementos en la primera columna del arreglo de Routh.\\
+
+Así entonces, reemplazando \eqref{primera}-\eqref{lim_alpha} para $k = 34.93$ en \eqref{stabset1} y \eqref{stabset2}, se obtiene:
+% ------------------------------------------------------------------------
+\begin{eqnarray*}
+    \beta &=& 4.84\\
+          &>& -2;\\
+    \alpha &=& 13.21\\
+           &>& 0\\
+           & \nless& \frac{2}{34.93}\left(\left(4.84+\frac{\left( 34.93+4\right)}{4}\right)^{2} - \frac{\left(34.93-4\right)^2}{16}\right)\\
+           & \nless& 8.73,
+\end{eqnarray*}
+% ------------------------------------------------------------------------
+de donde la última desigualdad muestra la razón por la cual el controlador calculado representa un sistema realimentado inestable.\\
+
+De hecho, es posible graficar el plano de parámetros ($\alpha$, $\beta$) que representa los controladores con estructura \eqref{controlador} que para $k = 34.93$
+garantizan la estabilidad del sistema controlado y realimentado. Dicha gráfica se presenta en la Fig. \ref{conjestab1}, siendo el interior de la región gris
+el conjunto estabilizante $\mathcal{S}$, mientras el triángulo indica el controlador calculado en la Sección \ref{lazoestable} evidenciando su condición de
+realización inestable para el sistema.\\
+% ------------------------------------------------------------------------
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/stab_set1}
+\caption{Conjunto estabilizante en el plano ($\alpha$, $\beta$) para $k = 34.93$}\label{conjestab1}
+\end{figure}
+% ------------------------------------------------------------------------
+
+Más interesante aún es transformar dicho conjunto estabilizante en términos de parámetros del controlador hacia un espacio de especificaciones de desempeño. Por ejemplo, observe en la Fig. \ref{Mp-ts} el plano ($M_p$, $t_s$) equivalente para el conjunto estabilizante mostrado en la Fig. \ref{conjestab1}.\\
+
+De este diagrama se observa la manera en la cual los parámetros de desempeño requeridos para el diseño presentado en la Sección \ref{lazoestable}, no forman parte de los escenarios dinámicos viables en el conjunto estabilizante para el sistema compensado. Visualmente se observa una discontinuidad del conjunto $\mathcal{S}$ al ser mapeado desde el plano ($\alpha$, $\beta$) hacia el plano ($M_p$, $t_s$). Un análisis detallado del efecto anterior involucra \emph{topología matemática}, superando los alcances del presente trabajo de grado.\\
+
+% ------------------------------------------------------------------------
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figs/Mp_ts}
+\caption{Conjunto estabilizante en el plano ($M_p$, $t_s$) para $k = 34.93$}\label{Mp-ts}
+\end{figure}
+% ------------------------------------------------------------------------
+
+Por tanto, dada la dificultad matemática que implica un mapeo analítico entre el conjunto estabilizante $\mathcal{S}$ y los parámetros de una respuesta escalón, el plano presentado en la Fig. \ref{Mp-ts} fue generado empleando simulación de fuerza bruta (es decir, punto a punto) a partir de las funciones del \emph{Control Systems Toolbox} de MATLAB\circledR.\\
+
+De esta manera es posible realizar una selección visual para los parámetros del controlador (\emph{método gráfico de diseño}) a partir de una elección de las especificaciones de desempeño requeridas en la respuesta escalón, al interior del conjunto admisible dado en la Fig. \ref{Mp-ts}\\
+
+La Fig. \ref{respuestas} ilustra la selección para varios escenarios dinámicos al interior de la región de estabilidad, con su correspondiente mapeo al plano de parámetros del controlador.\\
+% ------------------------------------------------------------------------
+\begin{figure}
+\centering
+	\subfigure[$M_p = 53.38; \: t_s = 3.60$]{\includegraphics[width=0.45\textwidth]{Figs/step_E1}\includegraphics[width=0.45\textwidth]{Figs/stab_set_E1}}
+	\subfigure[$M_p = 70.76; \: t_s = 4.59$]{\includegraphics[width=0.45\textwidth]{Figs/step_E2}\includegraphics[width=0.45\textwidth]{Figs/stab_set_E2}}
+	\subfigure[$M_p = 84.76; \: t_s = 6.85$]{\includegraphics[width=0.45\textwidth]{Figs/step_E3}\includegraphics[width=0.45\textwidth]{Figs/stab_set_E3}}
+\caption[Respuesta dinámica y controlador en $\mathcal{S}$ del plano ($M_p$, $t_s$)]{Respuesta dinámica y controlador correspondiente para diferentes especificaciones al interior de $\mathcal{S}$ en el plano ($M_p$, $t_s$)}\label{respuestas}
+\end{figure}
+
+% ------------------------------------------------------------------------
+A partir de lo anterior, pueden emplearse herramientas computacionales para realizar, de manera gráfica, el cálculo de un compensador de estructura predeterminada para una planta conocida y con base en el conjunto de especificaciones de desempeño admisible proporcionadas por el conjunto estabilizante, según se detalla en la siguiente sección.
+
+% ------------------------------------------------------------------------
+\section{Diseño gráfico de controladores a partir del cálculo de $\mathcal{S}$}\label{interfazsect}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+\noindent Tomando en cuenta la alta capacidad de cálculo y portabilidad de las herramientas computacionales actuales, resulta simple aceptar que las dificultades analíticas en la determinación de parámetros de control puedan ser reducidas ostensiblemente a partir de paquetes como MATLAB, que integra funciones optimizadas para aproximar con muy alta precisión los valores de variables importantes en un sistema de control realimentado, ante simulación para diversos escenarios de operación.\\
+
+Tomando en cuenta lo anterior, se construyó una interfaz para realizar el diseño de controladores simples (i.e. compensadores en adelanto o en atraso), a partir de un enfoque gráfico basado en el cálculo del conjunto estabilizante para sistemas \emph{SISO LTI}. El diseño de la interfaz se presenta a continuación empleando como base la descripción propuesta por Roa y Ayala en \citep{roa_ayala2016} para este tipo de desarrollos.
+
+% ------------------------------------------------------------------------
+\subsection{Descripción general de requerimientos}
+% ------------------------------------------------------------------------
+\noindent Se requiere construir una interfaz de software que permita diseñar un controlador de estructura simple pre-establecida, a partir de información del conjunto admisible de parámetros de respuesta dinámica, calculados con base en el conjunto estabilizante $\mathcal{S}$ para un sistema realimentado de manera negativa y unitaria. La interfaz deberá permitir modificar la ganancia $k$ de baja frecuencia del controlador, así como los rangos de variación del parámetro $\beta$ y la resolución de puntos para el conjunto estabilizante calculado, permitiendo visualizar dicho conjunto en el plano $\left(\alpha,\beta\right)$, su mapeo correspondiente hacia el plano de parámetros de respuesta $\left(M_p, t_s \right)$ y la respuesta escalón del sistema realimentado para un punto arbitrario dentro de $\mathcal{S}$.
+
+% ------------------------------------------------------------------------
+\subsubsection{Nivel superior de detalle}
+% ------------------------------------------------------------------------
+\noindent Posterior a la descripción (en palabras) de los requerimientos del sistema (interfaz), se procede a  crear un diagrama general de entradas y salidas a manera de nivel superior de detalle. Dicha representación se muestra en la Fig. \ref{Nsuperior}.
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figs/Nivel_superior}
+\caption[Nivel superior de detalle para desarrollo de interfaz]{Representación de nivel superior de detalle para desarrollo de interfaz}\label{Nsuperior}
+\end{figure}
+% ------------------------------------------------------------------------
+
+\subsubsection{Partición de primer nivel}
+% ------------------------------------------------------------------------
+\noindent Una primera partición se logra con la incorporación del bloque que realiza el cálculo del conjunto estabilizante $\mathcal{S}$, mediante evaluación de las expresiones \eqref{stabset1}, \eqref{stabset2} y \eqref{stabseteq}.\\
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=1.0\textwidth]{figs/Primer_nivel}
+\caption[Primer nivel de detalle para desarrollo de interfaz]{Representación de primer nivel de partición para desarrollo de interfaz}\label{Nprimer}
+\end{figure}\
+% ------------------------------------------------------------------------
+
+Asimismo, los resultados en esta etapa son la información de entrada a un nuevo bloque encargado de construir la representación gráfica del conjunto estabilizante en el espacio de parámetros $\left(M_p, t_s \right)$. Lo anterior se realiza en una secuencia de dos pasos: \emph{1)} se calculan las respuestas escalón $y(t)$ para el sistema realimentado con cada uno de los parámetros de controlador dados por $\mathcal{S}$ y \emph{2)} se determina el valor correspondiente en el plano $\left(M_p, t_s \right)$ para cada caso.\\
+
+Con esta información, el usuario puede proceder a seleccionar un punto admisible $\left(M_p^*, t_s^* \right)$, que posteriormente es representado en su versión equivalente de parámetros del controlador deseado $\left(\alpha^*,\beta^* \right)$. Finalmente, se calcula para este punto la respuesta escalón $y^*(t)$ para el sistema realimentado.\\
+
+De esta manera, el primer nivel de partición se configura con la unión de los anteriores subprocesos, tal y como se ilustra en la Fig. \ref{Nprimer}.
+
+% ------------------------------------------------------------------------
+\subsubsection{Particiones de segundo nivel}
+% ------------------------------------------------------------------------
+\noindent A su vez, cada uno de los subprocesos descritos en el ítem anterior, se descompone en etapas constitutivas fundamentales según se describe a continuación:
+% ------------------------------------------------------------------------
+\begin{itemize}
+% ------------------------------------------------------------------------
+\item[-] \emph{Cálculo de $\mathcal{S}$}: para determinar el conjunto estabilizante se debe establecer para un $k$ dado y un intervalo de variación conocido para $\beta$, el rango de $M$ valores para la variable $\alpha$ que satisface las restricciones impuestas por las ecuaciones \eqref{stabset1}, \eqref{stabset2} y \eqref{stabseteq}. El esquema para estas subrutinas se muestra en la Fig. \ref{Nsegundo1};
+\item[-] \emph{Cálculo respuesta escalón a partir de $\left(\alpha,\beta\right)$}: una vez calculado $\mathcal{S}$, es posible evaluar cada punto $\left(\alpha,\beta\right)$ en la estructura de control realimentado mostrada en la Fig. \ref{sistem2ord}. De esta manera puede calcularse, a través de comandos del \emph{Control System Toolbox} de MATLAB, la respuesta escalón para el sistema. El esquema para estas subrutinas se muestra en la Fig. \ref{Nsegundo2};
+\item[-] \emph{Elección de punto admisible en $\left(M_p, t_s \right)$}: a través de selección gráfica el usuario seleccionará un punto de interés $\left(\bar{M_p}, \bar{t_s} \right)$. Posteriormente, se deberá verificar si dicho punto pertenece al conjunto de parámetros admisibles $\left(M_p, t_s \right)$. En caso afirmativo, el punto se denominará $\left(M_p^*, t_s^* \right)$. El esquema para estas subrutinas se muestra en la Fig. \ref{Nsegundo3};
+\item[-] \emph{Conversión punto $\left(M_p^*, t_s^* \right)$ a punto $\left(\alpha,\beta\right)$ dentro de $\mathcal{S}$}: tomando en cuenta que los planos $\left(M_p, t_s \right)$ y $\left(\alpha,\beta\right)$ poseen las mismas dimensiones y son una relación uno a uno, la posición del punto $\left(M_p^*, t_s^* \right)$ equivale al conjunto de parámetros $\left(\alpha^*,\beta^* \right)$ del controlador que lo produce. El esquema para estas subrutinas se muestra en la Fig. \ref{Nsegundo4}.
+% ------------------------------------------------------------------------
+\end{itemize}
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figs/Segundo_Nivel_Sub_1}
+\caption[Subproceso de \emph{Cálculo de $\mathcal{S}$}]{Representación de segundo nivel de partición para subproceso de \emph{Cálculo de $\mathcal{S}$}}\label{Nsegundo1}
+\end{figure}
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figs/Segundo_Nivel_Sub_2}
+\caption[Subproceso de \emph{Cálculo respuesta escalón a partir de $\left(\alpha,\beta\right)$}]{Representación de segundo nivel de partición para subproceso de \emph{Cálculo respuesta escalón a partir de $\left(\alpha,\beta\right)$}}\label{Nsegundo2}
+\end{figure}
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figs/Segundo_Nivel_Sub_3}
+\caption[Subproceso de \emph{Elección de punto admisible en $\left(M_p, t_s \right)$}]{Representación de segundo nivel de partición para subproceso de \emph{Elección de punto admisible en $\left(M_p, t_s \right)$}}\label{Nsegundo3}
+\end{figure}
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figs/Segundo_Nivel_Sub_4}
+\caption[Subproceso de \emph{Conversión $\left(M_p^*, t_s^* \right)$ a $\left(\alpha,\beta\right)$}]{Representación de segundo nivel de partición para subproceso de \emph{Conversión punto $\left(M_p^*, t_s^* \right)$ a punto $\left(\alpha,\beta\right)$ dentro de $\mathcal{S}$}}\label{Nsegundo4}
+\end{figure}
+% ------------------------------------------------------------------------
+
+El esquema definitivo para las etapas que constituyen la interfaz, implica la combinación de los esquemas presentados en las Figs. \ref{Nprimer} y \ref{Nsegundo1}-\ref{Nsegundo4}.
+
+% ------------------------------------------------------------------------
+\subsection{Selección de herramienta para implementación}
+% ------------------------------------------------------------------------
+\noindent A partir del diagrama obtenido en la Fig. \ref{Nprimer}, es claro que el corazón de la interfaz a ser diseñada es la rutina que calcula los parámetros de respuesta escalón en el sistema compensado para cada punto de prueba. Como ya mencionado, estas tareas facilitan su ejecución empleando los comando del \emph{Control System Toolbox} de MATLAB. Por tanto, se considera a dicha herramienta como la primera opción para desarrollar la interfaz de software requerida.\\
+
+Mas aún, MATLAB posee además de la consola de comandos y el entorno de programación gráfico SIMULINK, un entorno para el desarrollo de interfaces de usuario denominado GUIDE (Graphical User Interface Development Environment).\\
+
+Tomando en cuenta lo anterior, se selecciona MATLAB \emph{vR2017a} para construir la interfaz de usuario que satisface los requerimientos de diseño ilustrados en los diagramas de nivel de partición previamente presentados.
+
+% ------------------------------------------------------------------------
+\subsection{Descripción de interfaz diseñada}
+% ------------------------------------------------------------------------
+\begin{figure}
+\centering
+\includegraphics[width=1.0\textwidth]{figs/interfaz}
+\caption{Presentación final para interfaz desarrollada}\label{interfaz}
+\end{figure}
+% ------------------------------------------------------------------------
+
+\noindent Procediendo con el diseño, se realiza codificación en MATLAB para la combinación de los diagramas de bloques de las Figs. \ref{Nprimer}-\ref{Nsegundo4}, asumiendo las siguientes \emph{variables de entrada}:
+% ------------------------------------------------------------------------
+\begin{itemize}
+    \item Parámetros de simulación: [$\beta_{min}$, $\beta_{max}$, $M$, $N$];
+    \item Parámetros del sistema: [$k$, $P(s)$, estructura para $C(s)$];
+    \item Parámetros de análisis: [$\bar{M_p}$, $\bar{t_s}$],
+\end{itemize}
+% ------------------------------------------------------------------------
+y \emph{de salida}:
+% ------------------------------------------------------------------------
+\begin{itemize}
+	\item Representación de $\mathcal{S}$ en $\left(\alpha,\beta\right)$: [$\mathcal{S} = \left(\alpha,\beta\right)$];
+    \item Representación de $\mathcal{S}$ en $\left(M_p,t_s\right)$: [$\mathcal{S} = \left(M_p,t_s\right)$];
+    \item Controlador admisible seleccionado: [$\left(\alpha^*,\beta^* \right)$];
+    \item Respuesta temporal controlador seleccionado: [$y^*(t)$].
+\end{itemize}\
+% ------------------------------------------------------------------------
+
+Todo lo anterior fue adecuado como se presenta en la Fig. \ref{interfaz}, ilustrando la presentación final de la interfaz desarrollada.
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------ 

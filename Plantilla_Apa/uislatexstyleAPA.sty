@@ -1,0 +1,302 @@
+% ------------------------------------------------------------------------
+%
+% ------------------      uislatexstyleAPA.sty       ---------------------
+%
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% Librería para realización de informes de trabajo de grado en formato APA
+% construida para uso de la Universidad Industrial de Santander.
+%
+% Reservados todos los derechos
+%
+% Bucaramanga, Colombia
+%
+% Febrero 03 de 2019
+%
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+%
+% ------------------------------------------------------------------------
+% Librería requeridas para crear hipervínculos en PDF
+% ------------------------------------------------------------------------
+\usepackage[linktoc=all]{hyperref}
+% ------------------------------------------------------------------------
+% Librería para definir estilo de bibliografía
+% ------------------------------------------------------------------------
+\usepackage{natbib}
+% ------------------------------------------------------------------------
+% Librería que permite modificar el estilo de los títulos de las secciones
+% del documento
+% ------------------------------------------------------------------------
+\usepackage{titlesec}
+% ------------------------------------------------------------------------
+% Librerías que permiten modificar atributos de la tabla de contenido
+% ------------------------------------------------------------------------
+\usepackage{titletoc}
+\usepackage[subfigure]{tocloft}
+% ------------------------------------------------------------------------
+% Librería para reconocimiento de ñ y acentos del español
+% ------------------------------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage[ansinew]{inputenc}
+\usepackage[spanish,es-nodecimaldot]{babel}
+% ------------------------------------------------------------------------
+% Librería para alteración de contador de objetos en capítulos
+% ------------------------------------------------------------------------
+\usepackage{chngcntr}
+% ------------------------------------------------------------------------
+% Librería para eliminar sangría de nota al pie
+% ------------------------------------------------------------------------
+\usepackage[hang,flushmargin]{footmisc}
+% ------------------------------------------------------------------------
+% Librería para nombres en listas y configuración de alineación izquierda
+% y un solo punto antes de la descripción
+% ------------------------------------------------------------------------
+\usepackage[labelsep=period]{caption}
+\captionsetup{justification=raggedright,singlelinecheck=false}
+% ------------------------------------------------------------------------
+% Márgenes de documento
+% ------------------------------------------------------------------------
+\usepackage[top=2.54cm, bottom=2.54cm, left=2.54cm, right=2.54cm]{geometry}
+\topmargin 0pt
+\textheight 21 cm
+% ------------------------------------------------------------------------
+% Definición para cornisa
+% ------------------------------------------------------------------------
+\usepackage{fancyhdr}
+\fancypagestyle{plain}
+{
+\fancyhf{}
+\makeatletter
+\fancyhead[L]{\@title}
+\makeatother
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+}
+\pagestyle{plain}
+\setlength\headsep{50pt}
+\addtolength\topmargin{-55pt}
+% ------------------------------------------------------------------------
+% Selección de tipo de fuente
+% ------------------------------------------------------------------------
+\usepackage{mathptmx} % Times new roman
+% ------------------------------------------------------------------------
+% Selección de interlineado
+% ------------------------------------------------------------------------
+\usepackage{setspace}
+\spacing{2.0}
+% ------------------------------------------------------------------------
+% Configuración para pies de página
+% ------------------------------------------------------------------------
+\usepackage[hang]{footmisc}
+\setlength{\footnotemargin}{1.5em}
+\setlength{\skip\footins}{1\baselineskip}
+\setlength{\footnotesep}{\skip\footins}
+\renewcommand{\hangfootparskip}{0pt}
+\renewcommand{\hangfootparindent}{1.5em}
+% ------------------------------------------------------------------------
+% Elimina indentación o sangría al inicio de un párrafo
+% ------------------------------------------------------------------------
+\setlength\parindent{1.2cm}
+% ------------------------------------------------------------------------
+% Elimina indentación o sangría en listas que definen glosario y resumen
+% ------------------------------------------------------------------------
+\renewenvironment{description}[1][0pt]
+  {\list{}{\labelwidth=0pt \leftmargin=#1
+   \let\makelabel\descriptionlabel}}
+  {\endlist}
+% ------------------------------------------------------------------------
+% Definición de estilo para secciones y subsecciones en el texto
+% ------------------------------------------------------------------------
+\titleformat{\chapter}{\normalfont\normalsize\bfseries\centering}{\thechapter. }{0pt}{}
+\titlespacing{\chapter}{0pt}{0pt}{0pt}
+
+\titleformat{\section}{\normalfont\normalsize\bfseries}{\thesection. }{0pt}{}
+\titlespacing{\section}{0pt}{0pt}{0pt}
+
+\titleformat{\subsection}[runin]{\normalfont\normalsize\bfseries}{\thesubsection. }{0pt}{\addperiod}
+\titlespacing{\subsection}{68pt}{0pt}{10pt}
+
+\titleformat{\subsubsection}[runin]{\normalfont\normalsize\bfseries\itshape}{\thesubsubsection. }{0pt}{\addperiod}
+\titlespacing{\subsubsection}{68pt}{0pt}{10pt}
+
+\titleformat{\subsubsubsection}[runin]{\normalfont\normalsize\itshape}{\thesubsubsubsection. }{0pt}{\addperiod}
+\titlespacing{\subsubsubsection}{68pt}{0pt}{10pt}
+
+\newcommand{\addperiod}[1]{#1.}
+% ------------------------------------------------------------------------
+% Definición niveles de numeración en texto y tabla de contenidos
+% ------------------------------------------------------------------------
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+% ------------------------------------------------------------------------
+% Definición para formato en nombres de tablas
+% ------------------------------------------------------------------------
+\captionsetup[table]{
+  labelsep=newline,
+  justification=justified,
+  singlelinecheck=false,
+  textfont=it,
+}
+% ------------------------------------------------------------------------
+% Definición para formato en nombres de figuras
+% ------------------------------------------------------------------------
+\captionsetup[figure]{
+ labelfont=it
+}
+% ------------------------------------------------------------------------
+% Librería para incluir notas en tablas
+% ------------------------------------------------------------------------
+\usepackage{threeparttable}
+% ------------------------------------------------------------------------
+% Ajuste de distancia vertical en celdas de tablas
+% ------------------------------------------------------------------------
+\renewcommand{\arraystretch}{1.2}
+% ------------------------------------------------------------------------
+% Definición de estilo para contenidos continuos a partir de introducción
+% ------------------------------------------------------------------------
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+% ------------------------------------------------------------------------
+% Definición para capítulo sin número en tabla de contenidos
+% ------------------------------------------------------------------------
+\def\nnchapter#1{
+    \chapter*{#1}
+    \addcontentsline{toc}{chapter}{#1}}
+% ------------------------------------------------------------------------
+% Definición para sección sin número en tabla de contenidos
+% ------------------------------------------------------------------------
+\def\nnsection#1{
+    \section*{#1}
+    \addcontentsline{toc}{section}{#1}}
+% ------------------------------------------------------------------------
+% Definición para subsección sin número en tabla de contenidos
+% ------------------------------------------------------------------------
+\def\nnsubsection#1{
+    \subsection*{#1}
+    \addcontentsline{toc}{subsection}{#1}}
+% ------------------------------------------------------------------------
+% Definición para lista de anexos
+% ------------------------------------------------------------------------
+\newcommand{\listanexoname}{\hfill\normalfont\normalsize\bfseries Lista de Apéndices}
+\newlistof[chapter]{anexo}{loa}{\listanexoname}
+\newcommand{\anexo}[1]{%
+\refstepcounter{anexo}
+% ------------------------------------------------------------------------
+% Si sus anexos son menos de 27 debe descomentar estas líneas
+% ------------------------------------------------------------------------
+\par\noindent\textbf{Apéndice \Alph{anexo}. #1}
+\addcontentsline{loa}{anexo}{\protect\numberline{\Alph{anexo}}#1}\par
+% ------------------------------------------------------------------------
+% Si sus anexos son más de 27 debe descomentar estas líneas
+% ------------------------------------------------------------------------
+%\par\noindent\textbf{Apéndice \arabic{anexo}. #1}
+%\addcontentsline{loa}{anexo}{\protect\numberline{\arabic{anexo}}#1}\par
+% ------------------------------------------------------------------------
+% Si sus anexos van en CD debe descomentar esta línea
+% ------------------------------------------------------------------------
+%\pagenumbering{gobble}
+}
+% ------------------------------------------------------------------------
+% Elimina indentación o sangría en la tabla de contenidos
+% ------------------------------------------------------------------------
+\setlength{\cftsecindent}{0cm}
+\setlength{\cftsubsecindent}{0cm}
+\setlength{\cftsubsubsecindent}{0cm}
+% ------------------------------------------------------------------------
+\setlength{\cftfigindent}{0cm}
+\setlength{\cfttabindent}{0cm}
+\setlength{\cftanexoindent}{0cm}
+% ------------------------------------------------------------------------
+% Elimina rellenado con puntos en la tabla de contenidos
+% ------------------------------------------------------------------------
+\renewcommand{\cftdot}{ }
+% ------------------------------------------------------------------------
+% Si sus anexos van en CD debe comentar esta línea
+% ------------------------------------------------------------------------
+\addtocontents{loa}{~\hfill\textbf{pág.\vspace{0.35 cm}}\par}
+% ------------------------------------------------------------------------
+% Si sus anexos van en CD debe descomentar esta línea
+% ------------------------------------------------------------------------
+%\addtocontents{loa}{\textbf{(Ver apéndices adjuntos en el CD y pueden visualizarlos en la Base de Datos de la Biblioteca UIS)\vspace{0.35 cm}}\par}
+% ------------------------------------------------------------------------
+% Define distancia antes y después del título de la tabla de contenidos
+% ------------------------------------------------------------------------
+\setlength{\cftbeforetoctitleskip}{0pt}
+\setlength{\cftaftertoctitleskip}{20pt}
+\setlength{\cftbeforeloftitleskip}{0pt}
+\setlength{\cftafterloftitleskip}{20pt}
+\setlength{\cftbeforelottitleskip}{0pt}
+\setlength{\cftafterlottitleskip}{20pt}
+\setlength{\cftbeforeloatitleskip}{0pt}
+\setlength{\cftafterloatitleskip}{20pt}
+% ------------------------------------------------------------------------
+% Crea salto de página al final de listas en tabla de contenidos
+% ------------------------------------------------------------------------
+\makeatletter
+\g@addto@macro\@cfttocfinish{\clearpage}
+\makeatother
+% ------------------------------------------------------------------------
+% Convierte en asteriscos numeración de nota al pie en abstract y resumen
+% ------------------------------------------------------------------------
+\newcommand{\astfootnote}[1]{
+\let\oldthefootnote=\thefootnote
+\renewcommand{\thefootnote}{*}
+\footnote{#1}
+\let\thefootnote=\oldthefootnote
+\setcounter{footnote}{0}}
+% ------------------------------------------------------------------------
+\newcommand{\asttfootnote}[1]{
+\let\oldthefootnote=\thefootnote
+\renewcommand{\thefootnote}{**}
+\footnote{#1}
+\let\thefootnote=\oldthefootnote
+\setcounter{footnote}{0}}
+% ------------------------------------------------------------------------
+% Ajusta espacio horizontal de nombre en lista de tablas, figuras y anexos
+% ------------------------------------------------------------------------
+\setlength{\cftfignumwidth}{0.4in}
+\setlength{\cfttabnumwidth}{0.4in}
+\setlength{\cftanexonumwidth}{0.4in}
+% ------------------------------------------------------------------------
+% Agrega la palabra Figura, Tabla y Anexo, respectivamente a la lista de
+% figuras, tablas y anexos
+% ------------------------------------------------------------------------
+\renewcommand{\cftfigfont}{Figura }
+\renewcommand{\cfttabfont}{Tabla }
+\renewcommand{\cftanexofont}{Apéndice }
+% ------------------------------------------------------------------------
+% Ajusta contador para enumeración continua de objetos en el documento
+% ------------------------------------------------------------------------
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{anexo}{chapter}
+\counterwithout{footnote}{chapter}
+\counterwithout{equation}{chapter}
+% ------------------------------------------------------------------------
+% Configura fuente y centra nombre de TOC, LOF, LOT y LOA (lista de anexos)
+% ------------------------------------------------------------------------
+\addto\captionsspanish{
+  \renewcommand{\contentsname}{\hfill\normalfont\normalsize\bfseries Tabla de Contenido}
+  \renewcommand{\listfigurename}{\hfill\normalfont\normalsize\bfseries Lista de Figuras\hfill}
+  \renewcommand{\listtablename}{\hfill\normalfont\normalsize\bfseries Lista de Tablas\hfill}
+  \renewcommand{\cftaftertoctitle}{\hfill}
+  \renewcommand{\cftafterloatitle}{\hfill}
+  }
+% ------------------------------------------------------------------------
+% Ajusta nombre de tablas
+% ------------------------------------------------------------------------
+\renewcommand\spanishtablename{Tabla}
+% ------------------------------------------------------------------------
+% Ajusta nombre sección de bibliografía
+% ------------------------------------------------------------------------
+\renewcommand\spanishbibname{Referencias Bibliográficas}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------

@@ -1,0 +1,392 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+%                                Capítulo 4
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\chapter{Controladores PI y su conjunto estabilizante}
+% ------------------------------------------------------------------------.
+\noindent Como complemento a los desarrollos presentados en el capítulo anterior, se analiza a continuación
+la incidencia de conjuntos estabilizantes en controladores clásicos del tipo proporcional/integral (más conocidos como PI),
+sintonizados empleando las reglas de \emph{Ziegler \& Nichols}. La manera de abordar el problema involucra una revisión general de conceptos, el cálculo de $\mathcal{S}$ para un caso de estudio y la definición de una métrica para valorar la \emph{fragilidad} del controlador diseñado.
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+\section{Controladores PID}
+% ------------------------------------------------------------------------
+\noindent La acción de control proporcional/integral/derivativo (o simplemente PID), constituye la estrategia de control más empleada en automatización de procesos industriales \citep{Astrom1995}.\\
+
+Entre las razones por las cuales se prefiere el uso de controladores PID, se incluye la simplicidad de su estructura que con tan sólo 3 términos permite asegurar rechazo ante perturbaciones, velocidades de respuesta apropiadas y la eliminación de errores en estado estacionario. Lo anterior, facilita el cálculo de parámetros de control al igual que su operación y mantenimiento \citep{Diaz2016} \citep{Diaz2017} \citep{Mendez2008}.\\
+
+Fundamentalmente, la estructura de una acción PID está constituida de una parte \emph{proporcional al error}:
+$$
+u_P = k_{P}e(t),
+$$\
+siendo $e(t)$ el error de medida y $k_P$ la ganancia proporcional; una parte \emph{proporcional a la historia
+del error} (a partir del operador de memoria integral en el tiempo):
+$$
+u_I = k_{I}\int_{0}^{t}{e(t)dt},
+$$
+con ganancia integral $k_I$ y finalmente, una parte \emph{proporcional al cambio reciente del error} (a partir del operador anticipativo derivada temporal):
+$$
+u_D = k_{D}\frac{d}{dt}e(t),
+$$
+con ganancia derivativa $k_D$. La superposición de las tres acciones anteriores permite constituir la siguiente expresión para el esfuerzo de control:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+u_{PID}(t) & = & u_P + u_I + u_D \\
+           & = & k_{P}e(t) + k_I\int_{0}^{t}{e(t)dt} + k_{D}\frac{d}{dt}e(t) \\
+           & = & k_P \left( e(t) + \frac{1}{T_I}\int_{0}^{t}{e(t)dt} + T_D \frac{d}{dt}e(t) \right),
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+siendo $T_I$ el tiempo integral y $T_D$ el tiempo derivativo. El esquema general para la realización de un controlador PID en forma paralela, se presenta en la Fig. \ref{PID_Diag}.\\
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/PID_Diagrama}
+\caption{Controlador PID en forma de realización paralela}\label{PID_Diag}
+\end{figure}
+% ------------------------------------------------------------------------
+
+% ------------------------------------------------------------------------
+\subsection{Reglas de sintonización}
+% ------------------------------------------------------------------------
+\noindent La determinación de los parámetros del controlador ($k_P$, $T_I$ y $T_D$), que satisfagan condiciones deseadas de desempeño para el sistema controlado, se denomina \emph{procedimiento de sintonización}.\\
+
+Existen fundamentalmente dos grandes tipos de métodos de diseño o sintonización de controladores PID: \emph{1)} los \emph{métodos analíticos} basados en el modelo y \emph{2)} los \emph{métodos empíricos} o experimentales basados en datos reales del proceso.\\
+
+Dentro del primer grupo, se encuentran los métodos clásicos en el dominio de la frecuencia como el lugar de las raíces o la respuesta en frecuencia mediante diagramas de \emph{Bode} y de \emph{Nyquist}. Sin embargo, estos métodos requieren el conocimiento de un modelo matemático suficientemente apropiado para la dinámica de la planta.\\
+
+En ocasiones sin embargo este modelo de la planta no se encuentra disponible o simplemente su determinación es inviable, por ejemplo por falta de información de la constitución interna del sistema. Ante esta situación los métodos de control basados en datos (\emph{data-driven control} \citep{Safonov1997}) adquieren particular relevancia.\\
+
+A nivel de técnicas de sintonización de controladores PID basadas en datos se destaca el trabajo clásico desarrollado por \emph{Ziegler \& Nichols} en 1942 \citep{Ziegler1942}, el cuál ha sido la base hasta nuestros días de métodos de sintonización para controladores que operan en aplicaciones industriales de diferente naturaleza.\\
+
+Métodos adicionales de sintonización para controladores PID incluyen: el de \emph{sintonización de relé} \citep{Diaz2017}; el \emph{Cohen-Coon} \citep{Alfaro2002} y otros más modernos involucrando optimización de márgenes de estabilidad a partir de herramientas computacionales \citep{Alzate2016} \citep{Diaz2016} \citep{Fung1998} \citep{Hang1992} \citep{toscano2005}.\\
+
+Para una revisión detallada de métodos de sintonización para controladores PID, se recomienda al lector interesado consultar \citep{Correa2008}.
+
+% ------------------------------------------------------------------------
+\section{Análisis de estabilidad para un controlador PI}\label{estabanalpi}
+% ------------------------------------------------------------------------
+\noindent A pesar que un controlador PID concentra en una misma estructura las acciones de control necesarias para asegurar una forma de onda adecuada en la respuesta del sistema controlado, la acción derivativa se considera nociva en términos de amplificación de ruidos.\\
+
+Por esta razón, el controlador proporcional/integral o simplemente PI es una estructura todavía más simple, que concentra los mayores beneficios de simpleza y utilidad práctica en aplicaciones. La función de transferencia para un controlador PI (o PID con acción derivativa nula) viene dada por:
+% -----------------------------------------------------------------------
+\begin{eqnarray}
+\nonumber C(s) & = & k_P \left( 1 + \frac{1}{T_I s}\right)\\
+               & = & \frac{k_Ps + k_I}{s}.\label{PIconteq}
+\end{eqnarray}\
+
+% ------------------------------------------------------------------------
+\subsection{Sintonización PI por \emph{Ziegler \& Nichols}}
+% -----------------------------------------------------------------------
+\noindent Considere el sistema dado por:
+% ------------------------------------------------------------------------
+\begin{equation}
+P(s)=\frac{N(s)}{D(s)}=\frac{1}{s(s+1)(s+5)},\label{plantaCPI}
+\end{equation}\
+% ------------------------------------------------------------------------
+y proceda a calcular los parámetros de un controlador PI para el mismo empleando las reglas de \emph{Ziegler \& Nichols}.\\
+
+Inicialmente, se recuerda que existen dos posibles métodos \citep{ogata2010}:
+% ------------------------------------------------------------------------
+\begin{itemize}
+% ------------------------------------------------------------------------
+\item[-] \emph{Lazo cerrado:} donde para una acción proporcional pura en el sistema realimentado, se aplican cambios de tipo escalón en la referencia
+buscando identificar el valor de $k_P$ para el cual el sistema oscila con amplitud sostenida. Este valor de ganancia se denomina ganancia crítica $k_{cr}$ y al periodo de oscilación correspondiente periodo crítico $P_{cr}$;
+\item[-] \emph{Lazo abierto:} cuando no existe un valor $k_{cr}$ que produzca oscilaciones sostenidas, se recurre a aplicar un estímulo de tipo escalón al sistema en lazo abierto buscando obtener una respuesta en forma de \emph{s} tal y como la ilustrada en la Fig. \ref{ZNol}, siendo \emph{T} y \emph{L} las cantidades a ser tomadas en cuenta.
+% ------------------------------------------------------------------------
+\end{itemize}
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/ZNol}
+\caption{Respuesta escalón en forma de \emph{s} del método en lazo abierto}\label{ZNol}
+\end{figure}
+% ------------------------------------------------------------------------
+Una vez obtenidos los valores importantes para cada caso, los parámetros del controlador PI (i.e. ganancia proporcional $k_P$ y tiempo integral $T_I$) se determinan con base en las equivalencias presentadas en la Tabla \ref{table_PI}.\\
+
+% ------------------------------------------------------------------------
+\begin{table}[htbp]
+\caption[Cálculo controlador PI métodos de \emph{Ziegler \& Nichols}]{Equivalencias cálculo controlador PI para métodos de \emph{Ziegler \& Nichols}}\label{table_PI}
+	\centering
+    \begin{threeparttable}
+	\begin{tabular}{ c  c  c }
+    \hline
+    Método                       & $k_P$               & $T_I$                  \\ \hline
+    \multicolumn{1}{c}{Lazo abierto}      & $0.45k_{cr}$        & $\frac{1}{1.2}P_{cr}$  \\
+    \multicolumn{1}{c}{Lazo cerrado}      & $0.9 \frac{T}{L}$   & $\frac{L}{0.3}$        \\ \hline
+	\end{tabular}
+% ------------------------------------------------------------------------
+\begin{tablenotes}
+\scriptsize
+\item[ ] \emph{Nota:} Adaptado de \citep{ogata2010}.
+\end{tablenotes}
+% ------------------------------------------------------------------------
+\end{threeparttable}
+\end{table}
+% ------------------------------------------------------------------------
+
+En el caso particular de una configuración realimentada como la presentada en la Fig. \ref{sistem2ord} para la combinación de planta y controlador dada respectivamente por las expresiones \eqref{plantaCPI} y \eqref{PIconteq}, es posible mostrar que el lugar geométrico de las raíces para el sistema realimentado cruza el eje imaginario cuando $k_P = k_{cr} = 30$, con oscilaciones sostenidas de periodo $P_{cr} = 2.81 \: [s]$.\\
+
+De esta manera, el controlador diseñado corresponde con $k_P = 13.50$; $T_I = 2.34$; es decir:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+\nonumber C(s) & = & 13.50 \left( 1 + \frac{1}{2.34 s}\right)\\
+               & = & \frac{13.50s + 5.76}{s}
+               \label{PIconteqval}.
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+
+Los parámetros de respuesta para el sistema compensado empleando dicho controlador, corresponden con:
+$$
+Mp = 104.05 \: [\%]; \quad t_s = 249.54 \: [s],
+$$
+
+según ilustrado en la respuesta escalón de la Fig. \ref{step_PI}.\\
+
+Esta respuesta dinámica a pesar de ser estable, no representa un resultado
+satisfactorio en términos de velocidad de convergencia hacia el valor de estado estacionario, dadas las evidentes oscilaciones del régimen transitorio y el prolongado tiempo de establecimiento. Dicha condición es susceptible de mejora a través de un \emph{ajuste fino}. Nótese sin embargo, que la acción de control es simple (PI) y la planta es de un orden significativo (tercero).\\
+
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/step_PI}
+\caption{Respuesta escalón del sistema compensado}\label{step_PI}	
+\end{figure}
+
+% ------------------------------------------------------------------------
+\subsection{Conjunto estabilizante para sistema ante control PI}\label{conjestabpi}
+% ------------------------------------------------------------------------
+\noindent Empleando un tratamiento similar al utilizado para el análisis del conjunto estabilizante de la \emph{Sección} \ref{estabsect}, es posible deducir que la combinación de planta + controlador definida en \eqref{plantaCPI} y \eqref{PIconteq}, permite delimitar una región de estabilidad en el plano ($k_P$, $k_I$) dada por:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+0 & < & k_{P} < 30; \label{stabsetPI1} \\
+0 & < & k_{I} < \frac{-k_{P}^{2}+30k_{P}}{36},\label{stabsetPI2}
+\end{eqnarray}
+% ------------------------------------------------------------------------
+definiendo a su vez el siguiente conjunto estabilizante:
+\begin{equation}
+\mathcal{S} = \left\{\left(k_P, k_I\right): \: \text{\eqref{stabsetPI1} y \eqref{stabsetPI2} se satisfagan simultáneamente} \right\}.\label{stabsetPIeq}
+\end{equation}
+% ------------------------------------------------------------------------
+La Fig. \ref{Stab_set_PI} ilustra el conjunto estabilizante \eqref{stabsetPIeq}, resaltando en su interior mediante un asterisco el punto correspondiente al controlador diseñado y definido en \eqref{PIconteqval}.\\
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/stab_set_PI}
+\caption{Conjunto estabilizante en el plano ($k_P$, $k_I$)}\label{Stab_set_PI}
+\end{figure}
+% ------------------------------------------------------------------------
+
+Como se observa, el controlador analizado en la Fig.\ref{step_PI} se encuentra cerca de los límites de estabilidad, justificando la alta oscilación de su respuesta dinámica.\\
+
+La siguiente \emph{Sección} realizará un análisis alrededor de la \emph{fragilidad} del controlador PI.
+
+% ------------------------------------------------------------------------
+\section{Fragilidad de controladores PI}
+% ------------------------------------------------------------------------
+\noindent Los métodos de \emph{Ziegler \& Nichols} para la sintonización de controladores PI y PID
+han sido la referencia empleada por ingenieros en diversos campos de aplicación desde su
+aparición en 1942. Sin embargo, como se observó en el ejemplo presentado en la \emph{Sección} anterior, no siempre se logra una respuesta dinámica adecuada a las exigencias
+de una respuesta deseada, aunque la misma sea estable.\\
+
+La forma tradicional de corregir esta situación, es considerar que los parámetros del
+controlador PI o PID obtenidos por el método de \emph{Ziegler \& Nichols} son el valor inicial
+de un proceso iterativo denominado \emph{ajuste fino}, que permitirá eventualmente obtener
+una respuesta mejorada en términos de \emph{nuevos valores sintonizados}.\\
+
+El objetivo de la presente \emph{Sección} no es discutir el proceso de sintonía fina de parámetros en los métodos de Ziegler \& Nichols, sino evaluar la \emph{fragilidad del controlador} diseñado con dicho método, en términos
+de su conjunto estabilizante.\\
+
+En \citep{Bhatt97} Bhattacharyya define la \emph{fragilidad de un controlador} como aquel fenómeno que implica para el mismo márgenes de estabilidad extremadamente pequeños. Otra manera de entender el concepto es a través de la más pequeña perturbación admisible en los parámetros de un controlador tal que el sistema realimentado pierda su estabilidad. La fragilidad es un concepto muy cercano a la robustez, y  por tanto conviene enfatizar en que la primera estudia la manera en que alteraciones leves en los valores de parámetro de un controlador afectan la estabilidad del sistema realimentado, mientras que la segunda realiza el estudio independientemente de donde hayan ocurrido las variaciones paramétricas.
+
+% ------------------------------------------------------------------------
+\subsection{Geometría para márgenes de estabilidad en un controlador PI}\label{margeom}
+% ------------------------------------------------------------------------
+\noindent Una interpretación geométrica del margen de fase para un sistema
+realimentado ante un control PI, se propone en \citep{Alzate2016}. El desarrollo presentado en el presente numeral se basa en el trabajo referenciado
+y sugiere la manera de aplicar el mismo resultado en términos del margen de ganancia del sistema.\\
+
+Para ello, asuma $P(j\omega)$ y $C(j\omega)$ como la respuesta frecuencial de la planta y el controlador PI definidos en \eqref{plantaCPI} y \eqref{PIconteq}, respectivamente. En el sistema realimentado estable que se obtiene a partir de esta combinación \emph{planta + controlador}, los márgenes de ganancia $A_m$ y fase $\theta_m$ se pueden determinar analíticamente a partir de las condiciones de magnitud y fase:
+% ------------------------------------------------------------------------
+\begin{equation}
+ |P(j\omega_g)||C(j\omega_g)| =1, \label{CondMag}
+\end{equation}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+\begin{equation}
+\angle{P(j\omega_{\theta})}+\angle{C(j\omega_{\theta})}={\pi}n; \quad n=\pm 1,3,5... \label{Condpha}
+\end{equation}
+% ------------------------------------------------------------------------
+de manera que:
+% ------------------------------------------------------------------------
+\begin{equation}
+A_m=\frac{1}{|P(j\omega_{\theta})||C(j\omega_{\theta})|}, \label{Am}
+\end{equation}
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+\begin{equation}
+\theta_m=\angle{P(j\omega_{g})}+\angle{C(j\omega_{g})}-\pi, \label{pm}
+\end{equation}
+% ------------------------------------------------------------------------
+siendo $w_g$ y $w_{\theta}$ las frecuencias de cruce de ganancia y fase, respectivamente.\\
+
+Alternativamente, estos margenes de estabilidad pueden obtenerse a partir de una relación geométrica en el plano de parámetros $\left(k_P, k_I\right)$ de un controlador PI, con respecto al conjunto estabilizante $\mathcal{S}$ de la planta bajo esta acción de control.\\
+
+Así entonces, tomando en cuenta que:
+% -----------------------------------------------------------------------
+\begin{eqnarray}
+\nonumber C(j \omega) & = & k_P + \frac{k_I}{j \omega}\\
+                      & = & k_P - \frac{k_I}{\omega}j,
+\end{eqnarray}
+% -----------------------------------------------------------------------
+la fase del controlador PI puede expresarse como:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+\angle{C(j\omega)} & = & \arctan{\left(\frac{-k_I}{{\omega}k_P}\right)} \label{phi_c},
+\end{eqnarray}
+% ------------------------------------------------------------------------
+o equivalentemente:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+-\omega{k_P}\tan\left(\angle{C(j\omega)}\right) & = & k_I. \label{recta}
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+
+Si en la expresión anterior se asume $\omega = \omega_g$, la fase del controlador $\angle{C(j\omega_{g})}$ debe satisfacer un margen de fase $\theta_m$ ante una respuesta frecuencial $P(j \omega)$ conocida para la planta, según definido en \eqref{pm}. Por tanto, ante esta situación la expresión \eqref{recta} define una linea recta en el plano $\left(k_P, k_I\right)$ con pendiente $-\omega{\tan\left(\angle{C(j\omega)}\right)}$, cuyos puntos satisfacen dichas restricciones.\\
+
+Asimismo, a partir de la condición de magnitud del controlador se tiene:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+{|C(j\omega)|}^2 & = & {k_P}^{2}+\frac{{k_I}^{2}}{\omega^{2}}, \label{M_c^2}
+\end{eqnarray}
+% ------------------------------------------------------------------------
+o equivalentemente:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+\frac{{k_P}^{2}}{{|C(j\omega)|}^2}+\frac{{k_I}^{2}}{{|C(j\omega)|}^2{\omega}^2} & = & 1. \label{elipse}
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+
+Bajo la misma suposición de $\omega = \omega_g$, la expresión anterior representará una elipse en el plano $\left(k_P, k_I\right)$, que intersecta a la recta \eqref{recta} según ilustrado en el diagrama de la Fig.~\ref{curvas1}.\\
+
+El punto de intersección, dará la coordenada $\left(k_P, k_I\right)$ del controlador PI que satisface $\theta_m$ y $\omega_g$, representando un método gráfico para el diseño de controladores.\\
+
+Al respecto del método se resaltan los siguientes detalles adicionales:
+\begin{itemize}
+\item[-] La intersección entre la elipse y la linea recta se da para dos puntos del plano. Sin embargo, puede observarse de la Fig.~\ref{curvas1} que sólo uno de ellos tiene sentido práctico por encontrarse al interior del conjunto estabilizante $\mathcal{S}$;
+\item[-] La magnitud para $C\left(j \omega_g\right)$ se deja como un parámetro libre de diseño y de este depende la amplitud (i.e. radio mayor y radio menor) de la elipse en el plano;
+\item[-] El margen de ganancia no se involucra explíticamente en el método sugerido, aunque se entiende que la elección arbitraria para $|C\left(j \omega_g\right)|$ influencia dicho valor. La Sección siguiente abordará con mayor detalle este aspecto;
+\item[-] El procedimiento sugerido puede abordarse explícitamente desde el margen de ganancia, seleccionando $\omega = \omega_\theta$ y forzando de \eqref{Am} a la magnitud del controlador $|C(j\omega_{\theta})|$ a satisfacer un margen de ganancia $A_m$ ante una respuesta frecuencial $P(j \omega)$ conocida para la planta. Ante esta situación, el punto de intersección en el plano $\left( k_P, k_I \right)$ para la elipse y la linea recta representará la coordenada $\left(k_P, k_I\right)$ del controlador PI que satisface $A_m$ y $\omega_\theta$, dejando como parámetro libre a la pendiente de la recta y a través de ella, al margen de fase para el sistema controlado.
+\end{itemize}
+% ------------------------------------------------------------------------
+\begin{figure}
+\centering
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{Figs/curvas1}}
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{Figs/curvas1-2}}
+\caption[Intersección en el plano $\left( k_P, k_I \right)$ para linea recta y elipse]{Intersección en el plano $\left( k_P, k_I \right)$ para linea recta y elipse, dados $\omega = \omega_g$ y $\theta_m$, ilustrando: (a) panorámica general de la intersección y (b) detalle del punto de intersección}\label{curvas1}
+\end{figure}
+% ------------------------------------------------------------------------
+
+\subsection{Definición de métrica para calcular distancia a inestabilidad}\label{metrdef}
+% ------------------------------------------------------------------------
+\noindent Como ya definido al principio de la presente \emph{Sección}, un buen diseño para un controlador debe ir
+más allá de la simple respuesta dinámica del sistema controlado y por tanto, debe además garantizar
+la estabilidad para el lazo de control aún ante leves variaciones en sus
+parámetros.\\
+
+Complementando las ideas de \emph{Bhattacharyya y Keel} en \citep{Bhatt97}, se empleará la visión geométrica
+propuesta por \emph{Morarescu et al} adaptada en el presente documento para
+el caso de lazos PI sin retardo \citep{Mendez2008} \citep{Morarescu2010}.\\
+
+Para ello, se define la distancia euclídea:
+% ------------------------------------------------------------------------
+\begin{equation}
+d = \sqrt{(k_P^*-k_P)^2+(k_I^*-k_{I})^2},\label{d}
+\end{equation}
+% ------------------------------------------------------------------------
+siendo $\left(k_P^*, k_I^* \right)$ las coordenadas para un controlador en el límite del conjunto estabilizante $\mathcal{S}$ y ortogonal a $\left(k_P, k_I \right)$, que define el radio para una circunferencia de puntos que representan un rango o margen de estabilidad.\\
+
+A partir de lo anterior, dado un controlador PI al interior de $\mathcal{S}$ es posible cuantificar su \emph{fragilidad} a través de esta métrica, al menos en un modo relativo; es decir, dados dos controladores estables será más \emph{frágil} aquel para el cual se obtenga el menor $d$.\\
+
+Sin embargo, no es claro el significado de \emph{fragilidad} para un valor $d$ en un contexto absoluto.\\
+
+En cualquier caso, el cálculo para $d$ en \eqref{d} implica conocer las coordenadas del punto $\left(k_P^*, k_I^* \right)$. Dichas coordenadas representan un valor en la frontera de $\mathcal{S}$, que conecta con el punto de análisis $\left(k_P, k_I \right)$ a través de una línea recta y por tanto, en teoría habrá una solución para $\left(k_P^*, k_I^* \right)$ en cada dirección posible de proyección para el vector $\left(k_P^*-k_P, k_I^*-k_I \right)$ en el plano. En \citep{Mendez2008} \citep{Morarescu2010} por ejemplo, los resultados presentados se realizan a partir de una proyección sobre la vertical. Una solución más general implica el mínimo valor para $d$ en un barrido de $360°$ lo cual no es trivial, al menos analíticamente, si se piensa en que la descripción para la frontera de $\mathcal{S}$ corresponde con funciones definidas por tramos (es decir, con transiciones condicionadas).\\
+
+Como alternativa, se presenta en el presente apartado una forma de calcular dicho punto límite a partir del enfoque geométrico discutido en la \emph{Sección} \ref{margeom}. Para ello, considere el problema de cuantificar la fragilidad del controlador PI calculado en \eqref{PIconteqval}.\\
+
+Dicho controlador representa un punto en el conjunto estabilizante $\mathcal{S}$ en \eqref{stabsetPIeq} y a su vez, la intersección entre una línea recta y una elipse dadas respectivamente por \eqref{recta} y \eqref{elipse}, con los siguientes parámetros: $\omega_g = 1.49 \: rad/s$ y $\theta_m = 1.18°$ (el cálculo para dichos parámetros fue realizado empleando la función \emph{allmargins(.)} de MATLAB).\\
+
+En términos prácticos, la regla de diseño indica que un buen margen de fase es alrededor de $60°$ \citep{Hang1992}. Como se observa el margen de fase $\theta_m$ obtenido por \emph{Ziegler \& Nichols} es muy cercano a la inestabilidad y por tanto sugiere \emph{fragilidad}.\\
+
+Para determinar los valores límite $\left(k_P^*, k_I^* \right)$, se mantiene constante la pendiente de la recta \eqref{recta} a la misma frecuencia $\omega=\omega_g = 1.49 \: rad/s$ y se incrementa la amplitud de la elipse \eqref{elipse} a partir del parámetro $|C\left(j \omega_g\right)|$ (ver Fig.\ref{curvas2a}).\\
+
+Ante estas condiciones, el margen de ganancia $A_m$ del sistema puede determinarse mediante el cociente entre las distancias euclídeas correspondientes a los puntos $\left(k_P, k_I \right)$ y $\left(k_P^*, k_I^* \right)$; es decir \citep{Diaz2016}:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+\nonumber A_m & = & \frac{\sqrt{\left(k_P^*\right)^2 + \left(k_I^*\right)^2}}{\sqrt{\left(k_P\right)^2 + \left(k_I\right)^2}}\\
+\nonumber     & = & \frac{\sqrt{\left(k_P^*\right)^2 + \left(-\omega{k_P^*}\tan\left(\angle{C(j\omega)}\right)\right)^2}}{\sqrt{\left(k_P\right)^2 + \left(-\omega{k_P}\tan\left(\angle{C(j\omega)}\right)\right)^2}}\\
+\nonumber     & = & \frac{k_P^*\sqrt{1 + \left(-\omega\tan\left(\angle{C(j\omega)}\right)\right)^2}}{k_P\sqrt{1 + \left(-\omega\tan\left(\angle{C(j\omega)}\right)\right)^2}}\\
+\nonumber     & = & \frac{k_P^*}{k_P}\\
+    & = & \frac{k_I^*}{k_I}.\label{margeng}
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+
+De este resultado se observa que si $\left(k_P, k_I \right)$ se encuentra en la frontera de $\mathcal{S}$ entonces $A_m = 1$; si $\left(k_P, k_I \right)$ se encuentra fuera  de $\mathcal{S}$ entonces $A_m < 1$ y si $\left(k_P, k_I \right)$ se encuentra dentro de $\mathcal{S}$ entonces $A_m > 1$, lo cual coincide con el comportamiento esperado
+según la teoría para dicho margen en términos de la estabilidad del sistema.\\
+
+De esta manera, igualando \eqref{recta} para $k_I$ con la condición de frontera dada por \eqref{stabsetPI2}, se obtiene:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+\nonumber -\omega_g {k_P^*}\tan\left(\angle{C(j\omega_g)}\right) & = & \frac{-\left(k_P^*\right)^{2}+30k_P^*}{36}\\
+\nonumber \left(k_P^*\right)^{2}-30k_P^*-36\omega_g {k_P^*}\tan\left(\angle{C(j\omega_g)}\right) & = & 0\\
+\nonumber \left(k_P^*\right)^{2}-30k_P^*-53.64{k_P^*}\tan\left(-0.2789\right) & = & 0\\
+\nonumber \left(k_P^*\right)^{2}-30k_P^*+15.36{k_P^*} & = & 0\\
+k_P^*\left(k_P^* - 14.64\right) & = & 0,
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+tras reemplazar los valores conocidos para $\omega_g$, $k_P$ y $k_I$. A partir de ello, $k_P^* = 14.64$ corresponde con la solución válida en el conjunto estabilizante $\mathcal{S}$ mostrado previamente en la Fig.\ref{Stab_set_PI}. Dicho valor evaluado en:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+\nonumber k_I^* & = & -\omega_g {k_P^*}\tan\left(\angle{C(j\omega_g)}\right)\\
+                & = & 6.24,
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+permite obtener como coordenada de frontera: $\left(k_P^*, k_I^* \right) = \left(14.64, 6.24 \right)$ y por ende, un margen de ganancia:
+\begin{eqnarray*}
+% ------------------------------------------------------------------------
+A_m & = & \frac{14.64}{13.50}\\
+    & = & \frac{6.24}{5.76}  \\
+    & = & 1.08,
+\end{eqnarray*}\
+% ------------------------------------------------------------------------
+para el controlador \eqref{PIconteqval}, que a su vez representa una distancia (ver Fig.\ref{distancia}):
+% ------------------------------------------------------------------------
+\begin{eqnarray*}
+d & = & \sqrt{(14.64-13.50)^2+(6.24-5.76)^2}\\
+& = & 1.2369.
+\end{eqnarray*}
+% ------------------------------------------------------------------------
+Como se observa, el valor de $d$ por sí solo no es tan diciente como los márgenes de estabilidad $A_m$ y $\theta_m$ obtenidos, ambos de valor muy pequeño.\\
+
+Una formulación similar podría haberse realizado calculando a partir de \eqref{PIconteqval} el valor de $A_m$ y $\omega_\theta$, y con base en ello determinar los valores límite $\left(k_P^*, k_I^* \right)$ tras mantener constante la amplitud de la elipse modificando la pendiente de la recta hasta alcanzar la frontera del conjunto estabilizante $\mathcal{S}$, y a través de ello el margen de fase $\theta_m$ para el sistema (ver Fig.\ref{curvas2b}).\\
+
+Finalmente, se debe mencionar que la interfaz desarrollada en la \emph{Sección} \ref{interfazsect} fue complementada incorporando el cálculo gráfico para controladores PI, junto con una determinación para sus márgenes de estabilidad y para la distancia $d$, como medida de su \emph{fragilidad}.
+% ------------------------------------------------------------------------
+\begin{figure}
+\centering
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{Figs/curvas2-1}\label{curvas2a}}
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{Figs/curvas2-2}\label{curvas2b}}
+\caption[Representación en $\left(k_P, k_I \right)$ para márgenes de estabilidad]{Representación geométrica en el plano $\left(k_P, k_I \right)$ para márgenes de estabilidad: (a) $A_m$ manteniendo fija la recta y variando la elipse; (b) $\theta_m$ manteniendo fija la elipse y variando la recta}\label{curvas2}
+\end{figure}
+% ------------------------------------------------------------------------
+\begin{figure}
+\centering
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{Figs/max_dist_2}}
+	\subfigure[]{\includegraphics[width=0.5\textwidth]{Figs/max_dist}}
+\caption[Distancia a la inestabilidad]{Distancia a la inestabilidad ilustrando: (a) panorámica general de la métrica y (b) detalle de la métrica}\label{distancia}
+\end{figure}
+% ------------------------------------------------------------------------

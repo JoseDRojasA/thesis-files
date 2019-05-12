@@ -1,0 +1,674 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+%                                Capítulo 3
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\chapter{Modelado matemático del dron}
+% ------------------------------------------------------------------------
+\noindent En el presente Capítulo se formula el conjunto de ecuaciones
+diferenciales que describen el comportamiento dinámico del \emph{dron}; es decir,
+su modelo matemático. Partiendo de principios físicos y trigonométricos
+fundamentales, se estudia el movimiento de la partícula en el espacio a
+partir de simulación numérica de modelos efectuada en MATLAB. Esta
+información del comportamiento temporal del sistema, será base para el diseño
+de estrategias de control abordadas en Capitulos posteriores.
+% ------------------------------------------------------------------------
+
+\section{Vehículos aéreos no tripulados}
+% ------------------------------------------------------------------------
+\noindent La siguiente descripción general de vehículos aéreos no tripulados (UAV del inglés unmanned aerial vehicles) del tipo cuadrotor, es una adaptación de los contenidos reportados a manera de revisión en \citep{reviewieee}.\\
+
+Los cuadricópteros o cuadrotores (ver Fig. \ref{drone}), son un tipo único de UAV que posee la habilidad de despegue y aterrizaje vertical. Este tipo de vehículo se considera un sistema subactuado, debido a que posee menos entradas que salidas, lo cual lo hace un reto desde el punto de vista del control de su dinámica. Históricamente los UAV fueron concebidos para la industria militar. Sin embargo, actualmente el abaratamiento de costos y desarrollo de materiales han permitido masificar su uso en aplicaciones civiles con popularidad en aumento.
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.5\textwidth]{figs/drone}
+\caption{Vehículo aéreo no tripulado tipo \emph{dron} cuadrotor}\label{drone}
+\end{figure}\
+
+% ------------------------------------------------------------------------
+\subsection{Mecanismo de vuelo}
+% ------------------------------------------------------------------------
+\noindent La mayor diferencia entre un cuadrotor y un helicóptero tradicional está en su modo de propulsión de rotor fijo, en el cual la dirección de navegación en cualquiera de sus ejes puede variar con sólo modificar la propulsión a partir de una cierta combinación de velocidad en sus motores. La distribución de los cuatro motores puede realizarse en forma de $x$ o de $+$, teniendo cada una sus respectivas ventajas.\
+
+% ------------------------------------------------------------------------
+\subsection{Control del sistema}
+% ------------------------------------------------------------------------
+\noindent Con el aumento de posibilidades de uso de vehículos UAV tipo cuadrotor, se han verificado progresos en los algoritmos orientados a una mayor maniobrabilidad y efectividad en aplicaciones cada vez más complejas. En la literatura técnica se reportan técnicas de control aplicadas en cuadrotores que van desde control PID elemental hasta controladores basados en redes neuronales. Asimismo, ha sido interesante la comparación realizada entre el comportamiento de especies de la naturaleza y este tipo de vehículo, en la búsqueda por sincronizar operación colaborativa explotando su versatilidad y velocidad de respuesta.\
+
+% ------------------------------------------------------------------------
+\subsection{Sensórica}
+% ------------------------------------------------------------------------
+\noindent A nivel de tecnología, desarrollos en materiales y miniaturización electrónica han permitido dotar cuadrotores con dispositivos como sistemas microelectromecánicos (MEMs), unidades de medida inercial (IMUs) y sistemas de posicionamiento geoestacionario (GPS). Algunas aplicaciones también adicionan sistemas de visión y localización basada en radiofrecuencia. A pesar de ello, la precisión en las trayectorias del dispositivo y la estabilidad ante condiciones adversas de operación (principalmente de tipo climático) aún imponen restricciones en la operación del sistema.\
+
+% ------------------------------------------------------------------------
+\subsection{Aplicaciones}
+% ------------------------------------------------------------------------
+\noindent Una aeronave tripulada está limitada por las habilidades y la fatiga del piloto. Desde ese punto de vista, la automatización de un cuadrotor permite emplearlos en aplicaciones donde sea latente el riesgo o se perjudique la integridad humana. Piense por ejemplo en una expedición al cráter de un volcán o el sobrevuelo de un área contaminada por radioactividad. El potencial para este tipo de aplicaciones depende del entendimiento de la operación del sistema a través de la formulación de modelos matemáticos adecuados, tal y como se describe a continuación.\\
+% ------------------------------------------------------------------------
+
+\section{Coordenadas en el espacio de movimiento}\label{modelodron}
+% ------------------------------------------------------------------------
+\noindent Formular las ecuaciones que describen el modelo dinámico del \emph{dron}
+implica definir sus coordenadas en el espacio de movimiento. Cuando un objeto
+gira alrededor de un eje, el análisis del movimiento puede simplificarse si se
+considera un cuerpo rígido; es decir, formado por varias partículas puntuales que
+guardan distancias constantes entre si \citep{sears2005fisica}.\\
+
+Por tanto, asumiendo que el \emph{dron} de la Fig. \ref{drone} es un cuerpo rígido,
+su dinámica se describe en el espacio de movimiento a través de tres cantidades
+principales ilustradas en la Fig. \ref{cuerpolibre}, correspondientes con los
+ángulos de: 1) balanceo $\phi$ (roll), 2) cabeceo $\theta$ (pitch) y 3) guiñada
+$\psi$ (yaw). Estos ángulos se miden en un sistema de referencia fijo con respecto
+a la tierra (o inercial), denotado como $O$ y definido con base en los ejes
+coordenados $\left( \vec{x}_O, \vec{y}_O, \vec{z}_O \right)$. A su vez, se
+considera un sistema  variante en el tiempo alineado con el cuerpo del \emph{dron}
+y denotado como $B$ en la Fig. \ref{cuerpolibre}, con centro de masa en el origen
+de sus ejes coordenados $\left(\vec{x}_B, \vec{y}_B, \vec{z}_B \right)$.\\
+% ------------------------------------------------------------------------
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.7\textwidth]{figs/cuerpolibre}
+\caption[Diagrama de cuerpo libre del \emph{dron} cuadrotor]{Diagrama de cuerpo 
+libre del \emph{dron} cuadrotor. Adaptado de \citep{raffo2007modelado}}\label{cuerpolibre}
+\end{figure}
+% ------------------------------------------------------------------------
+
+Para transformar las coordenadas de un punto entre el marco de referencia
+del cuerpo y el marco de referencia inercial, se utiliza la expresión:
+% ------------------------------------------------------------------------
+\begin{equation}\label{ecuacion}
+\begin{bmatrix}
+  x_O \\
+  y_O \\
+  z_O
+\end{bmatrix}
+  =\mathbf{R}
+  \begin{bmatrix}
+    x_B \\
+    y_B \\
+    z_B
+  \end{bmatrix},
+ \end{equation}
+% ------------------------------------------------------------------------
+donde \citep{spong2008robot}:
+% ------------------------------------------------------------------------
+$$
+\mathbf{R} = \begin{bmatrix}
+\cos\psi\cos\theta &\cos\psi\sin\theta\sin\phi-\sin\psi\cos\phi   & \cos\psi\sin\theta\cos\phi+\sin\psi\sin\phi \\
+\sin\psi\cos\theta &\sin\psi\sin\theta\sin\phi +\cos\psi\cos\phi   &\sin\psi\sin\theta\cos\phi-\cos\psi\sin\phi \\
+ -\sin\theta&\cos\theta\sin\phi  &\cos\theta\cos\phi
+\end{bmatrix}.
+$$\
+% ------------------------------------------------------------------------
+
+Asimismo, es posible definir una relación entre el vector de velocidades
+angulares en el marco de referencia del cuerpo:
+% ------------------------------------------------------------------------
+$$
+\mathbf{\nu} = \begin{bmatrix}
+                 p \\
+                 q \\
+                 r
+               \end{bmatrix},
+$$
+% ------------------------------------------------------------------------
+con respecto a la variación temporal de los ángulos en el marco de
+referencia inercial:
+% ------------------------------------------------------------------------
+$$
+\mathbf{\eta} = \begin{bmatrix}
+                  \dot{\phi} \\
+                   \dot{\theta} \\
+                    \dot{\psi}
+                \end{bmatrix},
+$$
+% ------------------------------------------------------------------------
+a partir de la siguiente expresión:
+% ------------------------------------------------------------------------
+\begin{equation}\label{velrela}
+\mathbf{\nu} = \mathbf{W} \mathbf{\eta},
+\end{equation}
+% ------------------------------------------------------------------------
+siendo \citep{spong2008robot}:
+% ------------------------------------------------------------------------
+$$
+\mathbf{W} = \begin{bmatrix}
+1 &0  &-\sin\theta \\
+ 0&\cos\phi  &\sin\phi\cos\theta \\
+ 0&-\sin\phi  &\cos\phi\cos\theta
+\end{bmatrix}.
+$$\
+% ------------------------------------------------------------------------
+
+Las matrices de transformación de coordenadas $\mathbf{R}$ y $\mathbf{W}$
+son ortogonales; es decir, son matrices cuadradas cuya matriz inversa
+coincide con su matriz transpuesta \citep{stanley1993algebra}. Dicha matriz
+transpuesta (o inversa) corresponde por tanto con la transformación inversa
+del sistema de coordenadas. Para el caso particular de la matriz
+$\mathbf{W}$ la inversa se define sólo si  $\theta \neq \left( 2k - 1 \right)\phi/2 \: \forall k \in \mathbb{Z}$ \citep{luukkonen2011modelling}.\\
+
+Finalmente, el movimiento traslacional puede expresarse en términos de las
+velocidades lineales para el marco inercial:
+% ------------------------------------------------------------------------
+$$
+\mathbf{v} = \begin{bmatrix}
+               \dot{x}_O \\
+               \dot{y}_O \\
+               \dot{z}_O
+             \end{bmatrix},
+$$
+% ------------------------------------------------------------------------
+y para el marco de referencia del cuerpo:
+% ------------------------------------------------------------------------
+$$
+\mathbf{V} = \begin{bmatrix}
+               \dot{x}_B \\
+               \dot{y}_B \\
+               \dot{z}_B
+             \end{bmatrix},
+$$
+% ------------------------------------------------------------------------
+relacionadas entre si a través de la expresión \citep{raffo2007modelado}:
+% ------------------------------------------------------------------------
+$$
+\mathbf{v} = \mathbf{R V}.
+$$
+
+% ------------------------------------------------------------------------
+\section{Ecuaciones del movimiento}
+% ------------------------------------------------------------------------
+\noindent A continuación, se determinarán las ecuaciones para la dinámica del
+\emph{dron} empleando la formulación de Newton-Euler \citep{sears2005fisica}.
+
+% ------------------------------------------------------------------------
+\subsection{Movimiento de traslación}
+% ------------------------------------------------------------------------
+\noindent Se considera inicialmente la segunda ley de Newton aplicada al movimiento
+de traslación, con respecto al marco de referencia del cuerpo en el diagrama
+de la Fig. \ref{cuerpolibre}. A partir de ello se obtiene:
+% ------------------------------------------------------------------------
+\begin{equation}\label{segundaleytrasla}
+  \sum F=m\dot{\textbf{V}}+(\nu\times m\textbf{V}),
+\end{equation}
+% ------------------------------------------------------------------------
+siendo $m\dot{\textbf{V}}$ el vector de fuerza debida a la velocidad en la
+dirección del movimiento y $(\nu\times m\textbf{V})$ la fuerza centrífuga
+que afecta cualquier movimiento no inercial.\\
+
+En la mecánica clásica, la fuerza centrífuga es una fuerza ficticia que aparece cuando se describe el movimiento de un cuerpo en un sistema de referencia en rotación, o equivalentemente la fuerza aparente que percibe un observador no inercial que se encuentra en un sistema de referencia rotatorio \citep{sears2005fisica}.\\
+
+La masa total del \emph{dron} se asume concentrada en la cantidad $m$. Por tanto, considerando como fuerzas externas de traslación a los estimulos $\{ f_1, f_2, f_3, f_4 \}$ producidos por los motores (ver Fig. \ref{cuerpolibre}) y el peso del \emph{dron}, es posible escribir:
+% ------------------------------------------------------------------------
+\begin{equation*}
+\mathbf{F} =
+ \begin{bmatrix}
+ 0\\0\\\sum_{i=1}^{4}f_i
+\end{bmatrix}
+-m \mathbf{R}^{-1}
+\begin{bmatrix}
+ 0\\0\\g
+\end{bmatrix},
+\end{equation*}
+% ------------------------------------------------------------------------
+
+siendo $g$ la constante de gravitación universal, cuyo vector de fuerza afecta el eje $z$ en el marco de referencia inercial, o equivalentemente los tres ejes del marco de referencia del cuerpo a través de la matriz de rotación $\mathbf{R}$.\\
+
+Asimismo, la fuerza de estímulo de cada motor se asume proporcional al cuadrado de su velocidad angular $\Omega$ por un factor de amortiguamiento viscoso $b$, permitiendo reescribir la expresión anterior en la forma:
+% ------------------------------------------------------------------------
+\begin{equation*}
+\mathbf{F} =
+ \begin{bmatrix}
+ 0\\0\\\sum_{i=1}^{4}b\Omega_i^2
+\end{bmatrix}
+-m\mathbf{R}^{-1}
+\begin{bmatrix}
+ 0\\0\\g
+\end{bmatrix}.
+\end{equation*}\
+% ------------------------------------------------------------------------
+
+También, es posible definir un vector de fuerzas de perturbación al movimiento de traslación, correspondientes con efectos aerodinámicos debidos a fricción de aire en oposición al desplazamiento. Dichas fuerzas aerodinámicas, se consideran proporcionales a la velocidad de traslación inercial mediante coefficientes constantes, es decir:
+% ------------------------------------------------------------------------
+\begin{eqnarray*}
+\mathbf{F}_d & = & \mathbf{R}^{-1} \begin{bmatrix}
+A_{x} &0  &0 \\
+0 &A_{y}  &0 \\
+0 &0  & A_{z}
+\end{bmatrix}
+\mathbf{v}\\
+             & = & \mathbf{R}^{-1} \begin{bmatrix}
+               A_{x} \dot{x}_O \\
+               A_{y} \dot{y}_O \\
+               A_{z} \dot{z}_O
+             \end{bmatrix}
+\end{eqnarray*}\\
+% ------------------------------------------------------------------------
+
+Todo lo anterior, permite obtener la siguiente expresión para la dinámica de traslación en el marco de referencia del cuerpo:
+% ------------------------------------------------------------------------
+\begin{equation}
+  m\dot{\textbf{V}}+(\nu \times m\textbf{V})=\textbf{F}-\textbf{F}_d,
+  \label{ecuaciontralado}
+\end{equation}
+% ------------------------------------------------------------------------
+
+con correspondiente expresión equivalente en el marco de referencia inercial dada por:
+% ------------------------------------------------------------------------
+\begin{eqnarray}\label{eqtraliner}
+\nonumber  \mathbf{R} m\dot{\textbf{V}} & = & \mathbf{R}\textbf{F}-\mathbf{R}\textbf{F}_d\\
+\nonumber  \dot{\textbf{v}} & = & \frac{1}{m}\left(\mathbf{R}\textbf{F}-\mathbf{R}\textbf{F}_d\right)\\
+\nonumber  \begin{bmatrix}
+               \ddot{x}_O \\
+               \ddot{y}_O \\
+               \ddot{z}_O
+             \end{bmatrix} & = & \frac{1}{m}\mathbf{R}\begin{bmatrix}
+ 0\\0\\\sum_{i=1}^{4}b\Omega_i^2
+\end{bmatrix}-\begin{bmatrix}
+ 0\\0\\g
+\end{bmatrix}-\frac{1}{m}
+\begin{bmatrix}
+               A_{x} \dot{x}_O \\
+               A_{y} \dot{y}_O \\
+               A_{z} \dot{z}_O
+             \end{bmatrix}\\
+\begin{bmatrix}
+               \ddot{x}_O \\
+               \ddot{y}_O \\
+               \ddot{z}_O
+             \end{bmatrix} & = & \frac{U}{m}
+\begin{bmatrix}
+\cos\psi\sin\theta\cos\phi+\sin\psi\sin\phi \\
+\sin\psi\sin\theta\cos\phi-\cos\psi\sin\phi \\ \cos\theta\cos\phi
+\end{bmatrix}
+-\begin{bmatrix}
+ 0\\0\\g
+\end{bmatrix}-\frac{1}{m}
+\begin{bmatrix}
+               A_{x} \dot{x}_O \\
+               A_{y} \dot{y}_O \\
+               A_{z} \dot{z}_O
+             \end{bmatrix},
+\end{eqnarray}
+% ------------------------------------------------------------------------
+
+tras anularse el efecto de la fuerza centrífuga y para
+% ------------------------------------------------------------------------
+$$
+U = \sum_{i=1}^{4}b\Omega_i^2,
+$$
+% ------------------------------------------------------------------------
+definiendo la fuerza de empuje.\\
+
+% ------------------------------------------------------------------------
+\subsection{Movimiento de rotación}
+% ------------------------------------------------------------------------
+\noindent De manera equivalente, la segunda ley de Newton de rotación con respecto al marco de referencia del cuerpo en el diagrama de la Fig. \ref{cuerpolibre} permite obtener:
+% ------------------------------------------------------------------------
+
+\begin{equation}\label{segundaleyrota}
+  \sum \tau=\mathbf{J}\dot{\nu}+(\mathbf{\nu} \times \mathbf{J\nu}),
+\end{equation}
+% ------------------------------------------------------------------------
+
+donde $\mathbf{J}\dot{\mathbf{\nu}}$ y $(\mathbf{\nu} \times \mathbf{J\nu})$ son respectivamente, el vector de torques debidos a la velocidad angular en la dirección del ángulo de movimiento y su fuerza centrífuga correspondiente.\\
+
+Siendo el \emph{dron} un cuerpo rígido, se asume que su momento de inercia se distribuye a través de una estructura simétrica, expresada en términos de una matriz diagonal de contribuciones de momento de inercia en cada eje:
+% ------------------------------------------------------------------------
+
+$$\textbf{J}=\begin{bmatrix}
+I_{xx} &0  &0 \\
+0 &I_{yy}  &0 \\
+ 0&0  &I_{zz}
+\end{bmatrix}.$$\
+% ------------------------------------------------------------------------
+
+Como fuerzas externas de rotación, se consideran los torques $\{\tau_{\phi}, \tau_{\theta}, \tau_{\psi}\}$ generados por la rotación de las hélices de los motores. Por tanto, tomando como referencia la convención empleada en el sentido de giro para las velocidades angulares de la Fig \ref{cuerpolibre}, se hacen válidas las siguientes combinaciones:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+\nonumber  \tau_{\phi}    & = & bl(\Omega_2^2-\Omega_4^2);\\
+           \tau_{\theta}  & = & bl(\Omega_3^2-\Omega_1^2);\label{taus}\\
+\nonumber  \tau_{\psi}    & = & k_{\tau}(\Omega_1^2+\Omega_3^2-\Omega_2^2-\Omega_4^2),
+\end{eqnarray}
+% ------------------------------------------------------------------------
+siendo $l$ la distancia del centro de masa a cada rotor y $k_{\tau}$ un coeficiente ponderando el par de arrastre.\\
+
+A su vez, se considera un par de fuerza inercial $\tau_G$ debido al efecto giroscópico y definido en el modo siguiente:
+% ------------------------------------------------------------------------
+\begin{eqnarray}
+\nonumber \tau_G & = & \mathbf{\nu} \times \begin{bmatrix}
+               0 \\
+               0 \\
+               J_G \Omega
+             \end{bmatrix}\\
+       & = & J_G  \Omega \begin{bmatrix}
+               q  \\
+              -p  \\
+               0
+             \end{bmatrix},\label{gyro}
+\end{eqnarray}
+% ------------------------------------------------------------------------
+siendo $J_G$ el momento de inercia total de los rotores y
+% ------------------------------------------------------------------------
+$$ \Omega = \Omega_1 - \Omega_2 + \Omega_3 - \Omega_4$$
+% ------------------------------------------------------------------------
+la velocidad de precesión. En el Anexo A se realiza una breve reflexión acerca del efecto giroscópico y las fuerzas inerciales, así como un repaso de las operaciones de producto vectorial empleadas para el cálculo presentado en \eqref{gyro}.\\
+
+De esta manera, es posible reescribir \eqref{segundaleyrota} como se muestra a continuación:
+% ------------------------------------------------------------------------
+\begin{eqnarray}\label{eqrotbody}
+\nonumber \begin{bmatrix}
+             \tau_{\phi}\\
+             \tau_{\theta}\\
+             \tau_{\psi}
+\end{bmatrix} - \tau_G & = & \mathbf{J}\dot{\nu}+\left(\begin{bmatrix}
+                 p \\
+                 q \\
+                 r
+               \end{bmatrix} \times \left(\begin{bmatrix}
+I_{xx} &0  &0 \\
+0 &I_{yy}  &0 \\
+ 0&0  &I_{zz}
+\end{bmatrix}\begin{bmatrix}
+                 p \\
+                 q \\
+                 r
+               \end{bmatrix}\right)\right)\\
+\nonumber \begin{bmatrix}
+             \tau_{\phi}\\
+             \tau_{\theta}\\
+             \tau_{\psi}
+\end{bmatrix} - J_G  \Omega \begin{bmatrix}
+               q  \\
+              -p  \\
+               0
+             \end{bmatrix} & = & \mathbf{J}\dot{\nu}+\left(\begin{bmatrix}
+                 p \\
+                 q \\
+                 r
+               \end{bmatrix} \times \begin{bmatrix}
+                I_{xx} p \\
+                I_{yy} q \\
+                I_{zz} r
+               \end{bmatrix}\right)\\
+\nonumber \begin{bmatrix}
+             \tau_{\phi} - q J_G  \Omega \\
+             \tau_{\theta} + p J_G  \Omega \\
+             \tau_{\psi}
+\end{bmatrix} & = & \mathbf{J}\dot{\nu}+\begin{bmatrix}
+                 qr \left(I_{zz} - I_{yy}\right)\\
+                 pr \left(I_{xx} - I_{zz}\right)\\
+                 pq \left(I_{yy} - I_{xx}\right)
+\end{bmatrix}\\
+\nonumber \begin{bmatrix}
+             \tau_{\phi} - q J_G  \Omega \\
+             \tau_{\theta} + p J_G  \Omega \\
+             \tau_{\psi}
+\end{bmatrix} - \begin{bmatrix}
+                 qr \left(I_{zz} - I_{yy}\right)\\
+                 pr \left(I_{xx} - I_{zz}\right)\\
+                 pq \left(I_{yy} - I_{xx}\right)
+\end{bmatrix} & = & \mathbf{J}\dot{\nu}\\
+\nonumber \dot{\nu} & = & \mathbf{J}^{-1} \begin{bmatrix}
+             \tau_{\phi} - q J_G  \Omega + qr \left(I_{yy} - I_{zz}\right)\\
+             \tau_{\theta} + p J_G  \Omega + pr \left(I_{zz} - I_{xx}\right)\\
+             \tau_{\psi} + pq \left(I_{xx} - I_{yy}\right)\end{bmatrix}\\
+\begin{bmatrix}  \dot{p} \\
+                 \dot{q} \\
+                 \dot{r}
+               \end{bmatrix} & = & \begin{bmatrix}
+             \frac{\tau_{\phi} - q J_G  \Omega + qr \left(I_{yy} - I_{zz}\right)}{I_{xx}}\\
+             \frac{\tau_{\theta} + p J_G  \Omega + pr \left(I_{zz} - I_{xx}\right)}{I_{yy}}\\
+             \frac{\tau_{\psi} + pq \left(I_{xx} - I_{yy}\right)}{I_{zz}}\end{bmatrix},
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+representando la dinámica de los ángulos del \emph{dron} con respecto al marco de referencia del cuerpo.\\
+
+En la práctica, se obtienen medidas para esta clase de vehículos empleando
+sensores inerciales (o IMU de su sigla en inglés: \emph{Inertial Measurement Unit}) y por tanto, conviene relacionar
+la expresión \eqref{eqrotbody} con los ángulos (medibles) del sistema de referencia inercial, empleando la relación dada en \eqref{velrela}; es decir:
+% ------------------------------------------------------------------------
+\begin{eqnarray}\label{eqrotiner}
+\nonumber \begin{bmatrix}  \ddot{\phi}   \\
+                 \ddot{\theta} \\
+                 \ddot{\psi}
+                \end{bmatrix} & = & \frac{d}{dt}\left(\mathbf{W}^{-1} \begin{bmatrix} p \\
+                 q \\
+                 r
+               \end{bmatrix}\right)\\
+             & = & \frac{d}{dt} \left(\begin{bmatrix}
+                1 &0  &-\sin\theta \\
+                0 &\cos\phi  &\sin\phi\cos\theta \\
+                0 &-\sin\phi  &\cos\phi\cos\theta
+             \end{bmatrix}^{-1} \begin{bmatrix} p \\
+                 q \\
+                 r
+               \end{bmatrix}\right).
+\end{eqnarray}\
+
+% ------------------------------------------------------------------------
+\subsection{Simplificaciones del modelo}
+% ------------------------------------------------------------------------
+\noindent Las expresiones \eqref{eqtraliner} y \eqref{eqrotiner} resumen la dinámica del sistema. Sin embargo, si se observa con detalle se puede notar que estas expresiones son altamente no lineales. Por tanto, se asume una operación para pequeños valores de los ángulos $\psi$, $\theta$ y $\phi$ cercana al punto de equilibrio (es decir, para los tres ángulos en cero).\\
+
+Bajo estas condiciones:
+$$
+\cos(\psi)=\cos(\theta)=\cos(\phi)\approx 1; \quad \quad \sen(\psi)=\sen(\theta)=\sen(\phi)\approx 0,
+$$
+
+y así, las expresiones dinámicas en el marco de referencia inercial se reducen a lo siguiente:\
+
+% ------------------------------------------------------------------------
+\begin{eqnarray}\label{eqtralinerred}
+\begin{bmatrix}
+               \ddot{x}_O \\
+               \ddot{y}_O \\
+               \ddot{z}_O
+             \end{bmatrix} & = & \frac{U}{m}
+\begin{bmatrix}
+0 \\
+0 \\ 1
+\end{bmatrix}
+-\begin{bmatrix}
+ 0\\0\\g
+\end{bmatrix}-\frac{1}{m}
+\begin{bmatrix}
+               A_{x} \dot{x}_O \\
+               A_{y} \dot{y}_O \\
+               A_{z} \dot{z}_O
+             \end{bmatrix},
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+\begin{eqnarray}\label{eqrotinerred}
+\nonumber \begin{bmatrix}  \ddot{\phi}   \\
+                 \ddot{\theta} \\
+                 \ddot{\psi}
+                \end{bmatrix} & = & \frac{d}{dt} \left(\begin{bmatrix}
+                1 & 0  &0 \\
+                0 & 1  &0 \\
+                0 & 0  &1
+             \end{bmatrix}^{-1} \begin{bmatrix} p \\
+                 q \\
+                 r
+               \end{bmatrix}\right)\\
+             & = & \begin{bmatrix} \dot{p} \\
+                 \dot{q} \\
+                 \dot{r}
+               \end{bmatrix}.
+\end{eqnarray}
+
+% ------------------------------------------------------------------------
+\section{Análisis del comportamiento en lazo abierto}\label{simsistnonlinla}
+% ------------------------------------------------------------------------
+\noindent Para verificar el comportamiento del sistema constituido por las expresiones \eqref{eqtralinerred}-\eqref{eqrotinerred}, se realizó integración numérica en MATLAB$\circledR$ empleando la función \emph{ode45} (ver Anexo B) junto con los valores de parámetro incluidos en la Tabla \ref{parametros}, tomados de \citep{Tayebi2006}.\\
+% ------------------------------------------------------------------------
+\begin{table}[h]
+\caption{Parámetros empleados para simulación del modelo}\label{parametros}
+\centering
+\begin{threeparttable}
+\begin{tabular}{crc}
+\hline
+\multicolumn{1}{c}{Parámetros\tnote{1}} & \multicolumn{1}{c}{Valor} & \multicolumn{1}{c}{Unidades}     \\ \hline
+$g$                              & $9.81$                     & $m/s^2$                       \\
+$m$                              & $0.468$                    & $kg$                          \\
+$l$                              & $0.225$                    & $m$                           \\
+$k_\tau$                         & $2.980\times 10^{-6}$      & $kg \: m^2 / rad^2$           \\
+$b$                              & $1.140\times 10^{-7}$      & $kg \: m / rad^2$             \\
+$J_G$                            & $3.357\times 10^{-5}$      & $kg \: m^2$                   \\
+$I_{xx}$                         & $4.856\times 10^{-3}$      & $kg \: m^2$                   \\
+$I_{yy}$                         & $4.856\times 10^{-3}$      & $kg \: m^2$                   \\
+$I_{zz}$                         & $8.801\times 10^{-3}$      & $kg \: m^2$                   \\
+$A_z$                            & $0.25$                     & $kg/s$                        \\
+\hline
+\end{tabular}
+% Si la tabla posee una fuente distinta a los autores descomente la línea a continuación de este comentario,
+% tomando en cuenta que debe realizar una cita previa fuera del caption para crear la referencia, tal y como
+% lo presenta el ejemplo para la Figura \label{cuerpolibre}
+% \caption*{Fuente: \arabic{footnote}.}
+% ------------------------------------------------------------------------
+\begin{tablenotes}
+\scriptsize
+\item[1] Nota explicativa de la tabla, en caso de requerirlo.
+\end{tablenotes}
+% ------------------------------------------------------------------------
+\end{threeparttable}
+\end{table}
+% ------------------------------------------------------------------------
+
+Los análisis de simulación se realizaron considerando translación únicamente en la coordenada $z_O$; es decir, para $\dot{x}_O = \dot{y}_O = 0$. De esta manera \eqref{eqtralinerred} puede reducirse a lo siguiente:
+% ------------------------------------------------------------------------
+\begin{eqnarray}\label{eqtralinerred2}
+\ddot{z}_O & = & \frac{U}{m}-g-\frac{1}{m}A_{z} \dot{z}_O.
+\end{eqnarray}\
+% ------------------------------------------------------------------------
+
+Por tanto, considerando como vector de estados:
+% ------------------------------------------------------------------------
+\begin{equation}
+y = \left[ {\begin{array}{*{20}c}
+   y_1  \\
+   y_2  \\
+   y_3  \\
+   y_4  \\
+   y_5  \\
+   y_6  \\
+   y_7  \\
+   y_8  \\
+\end{array}} \right] =
+\left[ {\begin{array}{*{20}c}
+   z_O          \\
+   \dot{z}_O    \\
+   \phi         \\
+   \dot{\phi}   \\
+   \theta       \\
+   \dot{\theta} \\
+   \psi         \\
+   \dot{\psi}   \\
+\end{array}} \right],
+\end{equation}\
+% ------------------------------------------------------------------------
+
+la dinámica del sistema puede ser expresada como sigue:
+% ------------------------------------------------------------------------
+\begin{equation}\label{dynsyseq}
+\dot{y} = \left[ {\begin{array}{*{20}c}
+   y_2  \\
+   \frac{U}{m}-g-\frac{1}{m}A_{z} y_2  \\
+   y_4  \\
+   \frac{\tau_{\phi} - y_6 J_G  \Omega + y_6 y_8 \left(I_{yy} - I_{zz}\right)}{I_{xx}}\\
+   y_6  \\
+   \frac{\tau_{\theta} + y_4 J_G  \Omega + y_4 y_8 \left(I_{zz} - I_{xx}\right)}{I_{yy}}\\
+   y_8  \\
+   \frac{\tau_{\psi} + y_4 y_6 \left(I_{xx} - I_{yy}\right)}{I_{zz}}  \\
+\end{array}} \right].
+\end{equation}\\
+
+% ------------------------------------------------------------------------
+Para determinar los valores de equilibrio en las variables del sistema,
+se iguala a cero el lado izquierdo de \eqref{dynsyseq}, obteniendo:
+% ------------------------------------------------------------------------
+\begin{eqnarray}\label{eqy}
+\nonumber \bar{y}_2 & = & 0 \\
+\nonumber \bar{y}_4 & = & 0 \\
+\nonumber \bar{y}_6 & = & 0 \\
+          \bar{y}_8 & = & 0
+\end{eqnarray}
+% ------------------------------------------------------------------------
+
+Asimismo:
+% ------------------------------------------------------------------------
+\begin{eqnarray*}
+0 & = & \frac{\bar{U}}{m}-g-\frac{1}{m}A_{z} \bar{y}_2 \\
+  & = & \frac{\bar{U}}{m}-g \\
+\bar{U} & = & m g,
+\end{eqnarray*}
+% ------------------------------------------------------------------------
+corresponde con el impulso de propulsión nominal para la condición de equilibrio.\\
+
+Un razonamiento similar permite obtener:
+% ------------------------------------------------------------------------
+\begin{eqnarray*}
+0 & = & \frac{\bar{\tau}_{\phi} - \bar{y}_6 J_G  \Omega + \bar{y}_6 \bar{y}_8 \left(I_{yy} - I_{zz}\right)}{I_{xx}} \\
+  & = & \frac{\bar{\tau}_{\phi}}{I_{xx}} \\
+\bar{\tau}_{\phi} & = & 0,
+\end{eqnarray*}
+% ------------------------------------------------------------------------
+\begin{eqnarray*}
+0 & = & \frac{\bar{\tau}_{\theta} + \bar{y}_4 J_G  \Omega + \bar{y}_4 \bar{y}_8 \left(I_{zz} - I_{xx}\right)}{I_{yy}} \\
+  & = & \frac{\bar{\tau}_{\theta}}{I_{xx}} \\
+\bar{\tau}_{\theta} & = & 0,
+\end{eqnarray*}
+% ------------------------------------------------------------------------
+\begin{eqnarray*}
+0 & = & \frac{\bar{\tau}_{\psi} + \bar{y}_4 \bar{y}_6 \left(I_{xx} - I_{yy}\right)}{I_{zz}} \\
+  & = & \frac{\bar{\tau}_{\psi}}{I_{xx}} \\
+\bar{\tau}_{\psi} & = & 0,
+\end{eqnarray*}
+% ------------------------------------------------------------------------
+como los valores de torque aplicado por los motores en las direcciones angulares correspondientes, durante la condición de equilibrio.\\
+
+La Fig. \ref{lanl} muestra resultados de simulación para el sistema de ecuaciones \eqref{dynsyseq} empleando condiciones de equilibrio y despreciando los efectos de la fuerza giroscópica (es decir, para $\tau_G = [\begin{array}{*{20}c}
+   0 & 0 & 0  \\
+\end{array}]^T$).\\
+
+Como se observa en la Fig. \ref{lanl}\subref{zlanl}, la condición inicial para $z$ tomada como $10 \: m$ es desplazada a una posición diferente hasta alcanzar un valor cercano a $12 \: m$, debido a una velocidad $\dot{z}$ no nula. Como se muestra en la Fig. \ref{lanl}\subref{dzlanl} esta velocidad posee un valor inicial de $1 \: m/s$ que se desvanece rápidamente hacia cero en alrededor de $10 \: s$, periodo de coincide con el transitorio en $z$ antes de alcanzar un nuevo valor constante. Con respecto a los ángulos, se observa que tanto posiciones como velocidades angulares se mantienen invariantes desde una condición inicial cero. Todo este comportamiento es consistente con las características esperadas para el sistema, pues se considera como entrada la propulsión nominal $\bar{U}$.\\
+
+Una situación diferente se verifica a partir de $t = 30 \: s$, instante en el cual se aplica un desbalance en la fuerza $f_4$ siendo reducido su valor nominal en un $1 \%$. Como se observa en la Fig. \ref{lanl}\subref{zlanl} esto ocasiona un desplazamiento lineal en la dirección $z$ con velocidad constante negativa (ver Fig. \ref{lanl}\subref{dzlanl}). Dicho desbalance afecta también a los ángulos $\phi$ y $\psi$ (Figs. \ref{lanl}\subref{philanl} y \ref{lanl}\subref{psilanl}) junto con sus respectivas derivadas (Figs. \ref{lanl}\subref{dphilanl} y \ref{lanl}\subref{dpsilanl}) debido a la influencia de $f_4$ en $\tau_\phi$ y $\tau_\psi$ a través de $\Omega_4$, según evidenciado en \eqref{taus}. La influencia sobre $\psi$ es cuadrática (Fig. \ref{lanl}\subref{psilanl}) y por consiguiente el incremento de su velocidad es lineal (Fig. \ref{lanl}\subref{dpsilanl}). En el caso de $\phi$ (Fig. \ref{lanl}\subref{philanl}) el ángulo tiende a establecerse en un cierto valor de manera altamente oscilatoria aunque amortiguada. Existe establecimiento debido a que la velocidad angular $\dot{\phi}$ oscila alrededor de cero (Fig. \ref{lanl}\subref{dphilanl}).\\
+
+La razón por la cual la dinámica de $\phi$ no se comporta igual a la dinámica de $\psi$ se explica por el término de acoplamiento en \eqref{dynsyseq}, que se anula para $\dot{\psi}$ dado que $I_{xx} = I_{yy}$ (ver Tabla \ref{parametros}). Esta dinámica de acoplamiento también causa alteración en el comportamiento del ángulo $\theta$ y su derivada $\dot{\theta}$ según se aprecia en las Figs. \ref{lanl}\subref{thetalanl} y \ref{lanl}\subref{dthetalanl}, respectivamente.\\
+
+De otro lado, la Fig. \ref{lanl2} permite realizar observaciones similares para el caso en que se consideran los efectos de la fuerza giroscópica $\tau_G$, a partir de lo cual se reproduce el escenario para las dinámicas de $z$ y $\psi$. Con respecto al comportamiento de $\phi$ y $\theta$ no es posible realizar conclusiones debido al acople dinámico mencionado.
+% ------------------------------------------------------------------------
+\begin{figure}
+\centering
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/zlanl}\label{zlanl}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/dzlanl}\label{dzlanl}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/philanl}\label{philanl}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/dphilanl}\label{dphilanl}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/thetalanl}\label{thetalanl}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/dthetalanl}\label{dthetalanl}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/psilanl}\label{psilanl}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/dpsilanl}\label{dpsilanl}}
+\caption[Simulación equilibrio perturbado]{Simulación del sistema ante condiciones de equilibrio perturbado: (a) $z(t)$, (b) $\dot{z}(t)$, (c) $\phi(t)$, (d) $\dot{\phi}(t)$, (e) $\theta(t)$, (f) $\dot{\theta}(t)$, (g) $\psi(t)$ y (h) $\dot{\psi}(t)$}\label{lanl}
+\end{figure}
+% ------------------------------------------------------------------------
+\begin{figure}
+\centering
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/zlanl2}\label{zlanl2}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/dzlanl2}\label{dzlanl2}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/philanl2}\label{philanl2}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/dphilanl2}\label{dphilanl2}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/thetalanl2}\label{thetalanl2}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/dthetalanl2}\label{dthetalanl2}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/psilanl2}\label{psilanl2}}
+\subfigure[]{\includegraphics[width=0.34\textwidth]{Figs/dpsilanl2}\label{dpsilanl2}}
+\caption[Simulación equilibrio perturbado con fricción]{Simulación del sistema ante condiciones de equilibrio perturbado con efecto giroscópico: (a) $z(t)$, (b) $\dot{z}(t)$, (c) $\phi(t)$, (d) $\dot{\phi}(t)$, (e) $\theta(t)$, (f) $\dot{\theta}(t)$, (g) $\psi(t)$ y (h) $\dot{\psi}(t)$}\label{lanl2}
+\end{figure}
+%----------------------------------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------------------------------
+%----------------------------------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------------------------------------- 
