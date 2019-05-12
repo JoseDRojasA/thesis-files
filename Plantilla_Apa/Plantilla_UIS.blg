@@ -9,6 +9,10 @@ A level-1 auxiliary file: Secs/T1.aux
 A level-1 auxiliary file: Secs/T2.aux
 The style file: apalike.bst
 Database file #1: xbib.bib
+Warning--to sort, need author or key in AwsArchitectureSample
+Warning--to sort, need author or key in GoogleArchitectureSample
 Warning--to sort, need author or key in BARCELONA2019
+Warning--empty author in GoogleArchitectureSample
+Warning--empty author in AwsArchitectureSample
 Warning--empty author in BARCELONA2019
-(There were 2 warnings)
+(There were 6 warnings)

@@ -1,5 +1,19 @@
 \begin{thebibliography}{}
 
+\bibitem[Goo, 2018]{GoogleArchitectureSample}
+ (2018).
+\newblock Architecture: Complex event processing.
+\newblock {\em Google Cloud Platform}.
+\newblock Recuperado de
+  \url{https://cloud.google.com/solutions/architecture/complex-event-processing}.
+
+\bibitem[Aws, 2018]{AwsArchitectureSample}
+ (2018).
+\newblock Hosting wordpress on aws.
+\newblock {\em Amazon Web Services}.
+\newblock Recuperado de
+  \url{https://github.com/aws-samples/aws-refarch-wordpress}.
+
 \bibitem[BAR, 2018]{BARCELONA2019}
  (2018).
 \newblock Smart city 3.0: pregunte a barcelona por la siguiente generación de
@@ -14,6 +28,13 @@ Alfaro, V.~M. (2002).
   reguladores.
 \newblock {\em Ingenier{\'i}a}, 12(1,2):21--36.
 
+\bibitem[ALTIMORE, 2018]{AzureArchitectureSample}
+ALTIMORE, P. (2018).
+\newblock Azure blockchain workbench architecture.
+\newblock {\em Microsoft Azure}.
+\newblock Recuperado de
+  \url{https://docs.microsoft.com/en-us/azure/blockchain/workbench/architecture}.
+
 \bibitem[Alzate and Oliveira, 2016]{Alzate2016}
 Alzate, R. and Oliveira, V.~A. (2016).
 \newblock Multiobjective design of {PI} controllers with applications.
@@ -24,6 +45,13 @@ Alzate, R. and Oliveira, V.~A. (2016).
 Astrom, K. and Hagglund, T. (1995).
 \newblock {\em {PID} Controllers: Theory, Design, and Tuning}.
 \newblock {ISA: T}he Instrumentation, Systems, and Automation Society.
+
+\bibitem[Balaguera, 2018]{ThesisUis3}
+Balaguera, F. y~López, A. (2018).
+\newblock {\em Implementación de una nueva infraestructura de computación en la
+  nube con modelo de alta disponibilidad basada en Openstack y contenedores
+  para el grupo de investigación GID-CONUSS}.
+\newblock Universidad Industrial de Santander.
 
 \bibitem[Chapra and Canale, 2007]{chapra2003metodos}
 Chapra, S.~C. and Canale, R.~P. (2007).
@@ -78,17 +106,35 @@ Keel, L.~H. and Bhattacharyya, S.~P. (2008).
   controllers.
 \newblock {\em {IEEE} Transactions on Automatic Control}, 53(6):1353–136.
 
+\bibitem[LÓPEZ, 2016]{thesisValencia}
+LÓPEZ, S. (2016).
+\newblock Despliegue y monitorización de un clúster mesos.
+\newblock Master's thesis, Escola Tècnica Superior d?Enginyeria Informàtica
+  Universitat Politècnica de València.
+
 \bibitem[Luukkonen, 2011]{luukkonen2011modelling}
 Luukkonen, T. (2011).
 \newblock Modelling and control of quadcopter.
 \newblock Independent research project in applied mathematics, Aalto
   University, Finland.
 
+\bibitem[Martínez, 2017]{ThesisUis1}
+Martínez, J. y~Vásquez, C. (2017).
+\newblock {\em Administración de prototipo infraestructura de computación en la
+  nube del grupo GID-CONUSS con énfasis en la implementación de nuevos módulos
+  de Openstack}.
+\newblock Universidad Industrial de Santander.
+
 \bibitem[Méndez et~al., 2008]{Mendez2008}
 Méndez, C., Niculescu, S., Morarescu, C., and Gu, K. (2008).
 \newblock On the fragility of {PI} controllers for time-delay {SISO} systems.
 \newblock In {\em Mediterranean Conference on control and automation}, pages
   529--534.
+
+\bibitem[MOILANEN, 2018]{thesisOulun}
+MOILANEN, M. (2018).
+\newblock {\em Deploying an application using Docker and Kubernetes}.
+\newblock Oulu University of Applied Sciences.
 
 \bibitem[Morarescu et~al., 2010]{Morarescu2010}
 Morarescu, I.~C., Niculescu, S.~I., and Gu, K. (2010).
@@ -102,16 +148,15 @@ Ogata, K. (2010).
 \newblock {\em Ingenier{\'i}a de control Moderna}.
 \newblock Pearson Education.
 
-\bibitem[Roa~Cano, 2016]{roa_ayala2016}
-Roa~Cano, Gustavo y Ayala~Ortíz, A.~S. (2016).
-\newblock Control en espacio de estados para un dron tipo cuadrotor.
-\newblock Trabajo de grado (ingeniero electr{\'o}nico), Universidad Industrial
-  de Santander, Bucaramanga - Colombia.
-
 \bibitem[Safonov and Tsao, 1997]{Safonov1997}
 Safonov, M.~G. and Tsao, T.-C. (1997).
 \newblock The unfalsified control concept and learning.
 \newblock {\em {IEEE} Transactions on Automatic Control}, 42(6):843--847.
+
+\bibitem[SCHUCHMANN, 2018]{thesisMath}
+SCHUCHMANN, M. (2018).
+\newblock Designing a cloud architecture for an application with many users.
+\newblock Master's thesis, University of Jyväskylä.
 
 \bibitem[Sears et~al., 2005]{sears2005fisica}
 Sears, F.~W., Ford, A.~L., and Freedman, R.~A. (2005).
@@ -134,6 +179,13 @@ Toscano, R. (2005).
 \newblock A simple robust {PI/PID} controller design via numerical optimization
   approach.
 \newblock {\em Journal of process control}, 15:81--88.
+
+\bibitem[Valbuena, 2017]{ThesisUis2}
+Valbuena, A. (2017).
+\newblock {\em Estudio de una alternativa de integración continua que soporte
+  el desarrollo de una infraestructura ti de servicios de información del
+  transporte publico de pasajeros}.
+\newblock Universidad Industrial de Santander.
 
 \bibitem[Vianna~Raffo, 2007]{raffo2007modelado}
 Vianna~Raffo, G. (2007).
