@@ -1,29 +1,28 @@
 \BOOKMARK [0][-]{chapter*.8}{Introducci\363n}{}% 1
 \BOOKMARK [0][-]{chapter.1}{Objetivos}{}% 2
 \BOOKMARK [0][-]{chapter.2}{Estado del arte}{}% 3
-\BOOKMARK [0][-]{chapter.3}{Modelado matem\341tico del dron}{}% 4
-\BOOKMARK [1][-]{section.3.1}{Veh\355culos a\351reos no tripulados}{chapter.3}% 5
-\BOOKMARK [2][-]{subsection.3.1.1}{Mecanismo de vuelo}{section.3.1}% 6
-\BOOKMARK [2][-]{subsection.3.1.2}{Control del sistema}{section.3.1}% 7
-\BOOKMARK [2][-]{subsection.3.1.3}{Sens\363rica}{section.3.1}% 8
-\BOOKMARK [2][-]{subsection.3.1.4}{Aplicaciones}{section.3.1}% 9
-\BOOKMARK [1][-]{section.3.2}{Coordenadas en el espacio de movimiento}{chapter.3}% 10
-\BOOKMARK [1][-]{section.3.3}{Ecuaciones del movimiento}{chapter.3}% 11
-\BOOKMARK [2][-]{subsection.3.3.1}{Movimiento de traslaci\363n}{section.3.3}% 12
-\BOOKMARK [2][-]{subsection.3.3.2}{Movimiento de rotaci\363n}{section.3.3}% 13
-\BOOKMARK [2][-]{subsection.3.3.3}{Simplificaciones del modelo}{section.3.3}% 14
-\BOOKMARK [1][-]{section.3.4}{An\341lisis del comportamiento en lazo abierto}{chapter.3}% 15
-\BOOKMARK [0][-]{chapter.4}{Controladores PI y su conjunto estabilizante}{}% 16
-\BOOKMARK [1][-]{section.4.1}{Controladores PID}{chapter.4}% 17
-\BOOKMARK [2][-]{subsection.4.1.1}{Reglas de sintonizaci\363n}{section.4.1}% 18
-\BOOKMARK [1][-]{section.4.2}{An\341lisis de estabilidad para un controlador PI}{chapter.4}% 19
-\BOOKMARK [2][-]{subsection.4.2.1}{Sintonizaci\363n PI por Ziegler \046 Nichols}{section.4.2}% 20
-\BOOKMARK [2][-]{subsection.4.2.2}{Conjunto estabilizante para sistema ante control PI}{section.4.2}% 21
-\BOOKMARK [1][-]{section.4.3}{Fragilidad de controladores PI}{chapter.4}% 22
-\BOOKMARK [2][-]{subsection.4.3.1}{Geometr\355a para m\341rgenes de estabilidad en un controlador PI}{section.4.3}% 23
-\BOOKMARK [2][-]{subsection.4.3.2}{Definici\363n de m\351trica para calcular distancia a inestabilidad}{section.4.3}% 24
-\BOOKMARK [0][-]{chapter.5}{Recomendaciones}{}% 25
-\BOOKMARK [0][-]{chapter.6}{Trabajo futuro}{}% 26
-\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 27
-\BOOKMARK [0][-]{chapter.7}{Referencias Bibliogr\341ficas}{}% 28
-\BOOKMARK [0][-]{chapter*.28}{Ap\351ndices}{}% 29
+\BOOKMARK [0][-]{chapter.3}{Marco de referencia}{}% 4
+\BOOKMARK [1][-]{section.3.1}{Computaci\363n en la nube}{chapter.3}% 5
+\BOOKMARK [2][-]{subsection.3.1.1}{Caracter\355sticas esenciales}{section.3.1}% 6
+\BOOKMARK [2][-]{subsection.3.1.2}{Modelos de servicio}{section.3.1}% 7
+\BOOKMARK [2][-]{subsection.3.1.3}{Modelos de despliegue}{section.3.1}% 8
+\BOOKMARK [1][-]{section.3.2}{Alta disponibilidad}{chapter.3}% 9
+\BOOKMARK [2][-]{subsection.3.2.1}{Escalabilidad}{section.3.2}% 10
+\BOOKMARK [1][-]{section.3.3}{Virtualizaci\363n}{chapter.3}% 11
+\BOOKMARK [1][-]{section.3.4}{Contenedores}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.5}{Orquestaci\363n de contenedores}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.6}{Microservicios}{chapter.3}% 14
+\BOOKMARK [0][-]{chapter.4}{Controladores PI y su conjunto estabilizante}{}% 15
+\BOOKMARK [1][-]{section.4.1}{Controladores PID}{chapter.4}% 16
+\BOOKMARK [2][-]{subsection.4.1.1}{Reglas de sintonizaci\363n}{section.4.1}% 17
+\BOOKMARK [1][-]{section.4.2}{An\341lisis de estabilidad para un controlador PI}{chapter.4}% 18
+\BOOKMARK [2][-]{subsection.4.2.1}{Sintonizaci\363n PI por Ziegler \046 Nichols}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.2}{Conjunto estabilizante para sistema ante control PI}{section.4.2}% 20
+\BOOKMARK [1][-]{section.4.3}{Fragilidad de controladores PI}{chapter.4}% 21
+\BOOKMARK [2][-]{subsection.4.3.1}{Geometr\355a para m\341rgenes de estabilidad en un controlador PI}{section.4.3}% 22
+\BOOKMARK [2][-]{subsection.4.3.2}{Definici\363n de m\351trica para calcular distancia a inestabilidad}{section.4.3}% 23
+\BOOKMARK [0][-]{chapter.5}{Recomendaciones}{}% 24
+\BOOKMARK [0][-]{chapter.6}{Trabajo futuro}{}% 25
+\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 26
+\BOOKMARK [0][-]{chapter.7}{Referencias Bibliogr\341ficas}{}% 27
+\BOOKMARK [0][-]{chapter*.30}{Ap\351ndices}{}% 28

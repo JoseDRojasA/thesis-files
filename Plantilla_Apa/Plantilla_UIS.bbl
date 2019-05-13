@@ -7,6 +7,12 @@
 \newblock Recuperado de
   \url{https://cloud.google.com/solutions/architecture/complex-event-processing}.
 
+\bibitem[BBC, 2018]{BBC2018}
+ (2018).
+\newblock ?el mundo se está quedando sin potencia computacional?: ¿ qué es la
+  ley de moore y por qué le preocupa al ceo de microsoft?
+\newblock {\em BBC Mundo}.
+
 \bibitem[Aws, 2018]{AwsArchitectureSample}
  (2018).
 \newblock Hosting wordpress on aws.
@@ -53,6 +59,13 @@ Balaguera, F. y~López, A. (2018).
   para el grupo de investigación GID-CONUSS}.
 \newblock Universidad Industrial de Santander.
 
+\bibitem[Benz, 2013]{BENZ2013}
+Benz, K. y~Bohnert, T. (2013).
+\newblock Dependability modeling framework: A test procedure for high
+  availability in cloud operating systems.
+\newblock {\em Vehicular Technology Conference}.
+\newblock Recuperado de {https://ieeexplore.ieee.org/document/6692157}.
+
 \bibitem[Chapra and Canale, 2007]{chapra2003metodos}
 Chapra, S.~C. and Canale, R.~P. (2007).
 \newblock {\em M{\'e}todos Num{\'e}ricos para Ingenieros}.
@@ -79,21 +92,43 @@ Fung, H.~W., Wang, Q.~G., and Lee, T.~H. (1998).
 \newblock {PI} tuning in terms of gain and phase margin.
 \newblock {\em Autom{\'a}tica}, 34(9):1145--1149.
 
+\bibitem[Gantenbein, 2017]{GANTENBEIN2017}
+Gantenbein, H. y~Neira, B. y. L.~T. (2017).
+\newblock Securing paas deployments.
+\newblock {\em Microsoft Azure Documentation}.
+\newblock Recuperado de
+  \url{https://docs.microsoft.com/en-us/azure/security/security-paas-deployments}.
+
 \bibitem[Grossman, 1993]{stanley1993algebra}
 Grossman, S.~I. (1993).
 \newblock {\em Algebra Lineal con aplicaciones}.
 \newblock McGraw-Hill.
 
-\bibitem[Gupte et~al., 2012]{reviewieee}
-Gupte, S., Mohandas, P., and Conrad, J.~M. (2012).
-\newblock A survey of quadrotor unmanned aerial vehicles.
-\newblock In {\em Southeastcon, 2012 Proceedings of IEEE}, pages 1--6.
+\bibitem[Hat, 2019]{WhatAreMicroservices}
+Hat, R. (2019).
+\newblock Understanding microservices.
+
+\bibitem[Heidi, 2016]{HEIDI2016}
+Heidi, E. (2016).
+\newblock What is high availability.
+\newblock {\em DigitalOcean}.
+\newblock Recuperado de
+  {https://www.digitalocean.com/community/tutorials/what-is-high-availability}.
 
 \bibitem[Ho et~al., 1995]{Hang1992}
 Ho, W., Hang, C., and Cao, L. (1995).
 \newblock Tuning of {PI} controller based on gain and phase margin
   specifications.
 \newblock {\em Automatica}, 31(3):497--502.
+
+\bibitem[Joy, 2015]{JOY2015}
+Joy, A. (2015).
+\newblock Performance comparison between linux containers and virtual machines.
+\newblock {\em ICACEA}.
+
+\bibitem[Kappagantula, 2019]{EdurekaMicroservices}
+Kappagantula, S. (2019).
+\newblock Microservice architecture ? learn, build and deploy microservices.
 
 \bibitem[Keel and Bhattacharyya, 1997]{Bhatt97}
 Keel, L.~H. and Bhattacharyya, S.~P. (1997).
@@ -112,18 +147,20 @@ LÓPEZ, S. (2016).
 \newblock Master's thesis, Escola Tècnica Superior d?Enginyeria Informàtica
   Universitat Politècnica de València.
 
-\bibitem[Luukkonen, 2011]{luukkonen2011modelling}
-Luukkonen, T. (2011).
-\newblock Modelling and control of quadcopter.
-\newblock Independent research project in applied mathematics, Aalto
-  University, Finland.
-
 \bibitem[Martínez, 2017]{ThesisUis1}
 Martínez, J. y~Vásquez, C. (2017).
 \newblock {\em Administración de prototipo infraestructura de computación en la
   nube del grupo GID-CONUSS con énfasis en la implementación de nuevos módulos
   de Openstack}.
 \newblock Universidad Industrial de Santander.
+
+\bibitem[Mell, 2011]{MELL2011}
+Mell, P. y~Grance, T. (2011).
+\newblock The nist definition of cloud computing. recommendations of the
+  national institute of standards and technology.
+\newblock {\em National Institute of Standards and Technology}.
+\newblock Recuperado de
+  \url{https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf}.
 
 \bibitem[Méndez et~al., 2008]{Mendez2008}
 Méndez, C., Niculescu, S., Morarescu, C., and Gu, K. (2008).
@@ -163,17 +200,6 @@ Sears, F.~W., Ford, A.~L., and Freedman, R.~A. (2005).
 \newblock {\em F{\'\i}sica universitaria: con f{\'\i}sica moderna}, volume~2.
 \newblock Pearson Educaci{\'o}n.
 
-\bibitem[Spong and Vidyasagar, 2008]{spong2008robot}
-Spong, M.~W. and Vidyasagar, M. (2008).
-\newblock {\em Robot dynamics and control}.
-\newblock John Wiley \& Sons.
-
-\bibitem[Tayebi and Mcgilvray, 2006]{Tayebi2006}
-Tayebi, A. and Mcgilvray, S. (2006).
-\newblock Attitude stabilization of a vtol quadrotor aircraft.
-\newblock {\em IEEE Transactions on Control Systems Technology},
-  14(3):562--571.
-
 \bibitem[Toscano, 2005]{toscano2005}
 Toscano, R. (2005).
 \newblock A simple robust {PI/PID} controller design via numerical optimization
@@ -187,11 +213,12 @@ Valbuena, A. (2017).
   transporte publico de pasajeros}.
 \newblock Universidad Industrial de Santander.
 
-\bibitem[Vianna~Raffo, 2007]{raffo2007modelado}
-Vianna~Raffo, G. (2007).
-\newblock Modelado y control de un helic{\'o}ptero quadrotor.
-\newblock Tesis de maestría (magister en automática, robótica y telemática),
-  Universidad de Sevilla, España.
+\bibitem[Villanueva, 2015]{VILLANUEVA2015}
+Villanueva, J. (2015).
+\newblock Active-active vs active-passive high availability cluster.
+\newblock {\em Jscape}.
+\newblock Recuperado de
+  {http://www.jscape.com/blog/active-active-vs-active-passive-high-availability-cluster}.
 
 \bibitem[Ziegler and Nichlos, 1942]{Ziegler1942}
 Ziegler, J.~G. and Nichlos, N.~B. (1942).
