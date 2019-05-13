@@ -207,7 +207,7 @@ Cada una de las pruebas busca medir cada una de las diferentes métricas (sección
 	\item{\textbf{Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}} La prueba consiste en apagar un nodo de forma abrupta mientras se están recibiendo 1000 solicitudes y ver como se ven afectados los ambientes. En el caso del ambiente monolítico, se reiniciará el servidor.
 \end{enumerate}
 
-Para generar un dataset para las pruebas, se utilizó Mockaroo\footnote{\href{https://www.mockaroo.com/}{https://www.mockaroo.com/}} (Ver apéndice %\ref{appendix:Dataset generado para pruebas}).
+Para generar un dataset para las pruebas, se utilizó Mockaroo\footnote{\href{https://www.mockaroo.com/}{https://www.mockaroo.com/}} (Ver apéndice \ref{appendix:Dataset generado para pruebas}).
 
 
 \subsection{Definici\'on arquitectura e infraestructura}
@@ -249,9 +249,301 @@ La arquitectura se compone de los siguientes elementos:
 	\end{figure}
 \end{landscape}
 
-
 \section{Prototipado}
 
+\subsection{Configuraci\'on b\'asica cluster}
+El cluster se conformó por 3 maquinas físicas, sin embargo para la configuración mínima de alta disponibilidad se necesitaron 5 servidores, por lo cual la máquina con mas recursos se usó para la virtualización de 3 maquinas con KVM\citep{kvmVirtualization} como podemos ver en la tabla \ref{tabla: Características de máquinas en cluster} y en la figura \ref{Infraestructura hardware del prototipo}.
+
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Características de máquinas en cluster]{ \raggedright Características de máquinas en cluster}
+		\label{tabla: Características de máquinas en cluster}
+		\begin{center}
+			\begin{tabular}{ p{4cm}   p{5cm}  p{2cm}  p{3cm}  }
+				\hline
+				Nombre de dominio & CPU & \# Cores & RAM (GB) \\ \hline
+				dns.local.cluster & Intel core i7 4720H & 1 & 1 \\ 
+				glusterfs.local.cluster & Intel core i7 4720H & 1 & 0.59 \\ 
+				master1.local.cluster & Intel core i7 4720H & 4 & 5.781 \\ 
+				node1.local.cluster & Intel core i5 3230M & 4 & 5.697 \\ 
+				node2.local.cluster & Intel core i3 4005U & 4 & 3.223 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+Para cada uno de las máquinas se configuró la ip de forma estática y una clave RSA, la cual será usada posteriormente para el acceso remoto a los mismos.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/arquitectura_infraestructura.png}
+	\caption{Infraestructura hardware del prototipo.}
+	\label{Infraestructura hardware del prototipo}
+\end{figure}
+\subsection{Configuraci\'on infraestructura cluster}
+\subsubsection{Servidor DNS}
+Se utilizó la máquina dns.local.cluster como servidor DNS usando bind\citep{dnsConfiguration} con la siguiente configuración:
+
+
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Resolución de nombres en cluster]{ \raggedright Resolución de nombres en cluster}
+		\label{tabla: Resolución de nombres en cluster}
+		\begin{center}
+			\begin{tabular}{ p{5cm}   p{5cm}  }
+				\hline
+				Nombre de dominio & IP \\ \hline
+				dns.local.cluster & 192.168.0.133 \\ 
+				glusterfs.local.cluster & 192.168.0.134 \\ 
+				master1.local.cluster & 192.168.0.130 \\ 
+				node1.local.cluster & 192.168.0.131 \\ 
+				node2.local.cluster & 192.168.0.132 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+Adicionalmente se instaló glusterfs para posteriormente distribuir el almacenamiento entre los servidores glusterfs.local.cluster y dns.local.cluster.
+\subsubsection{Servidor Glusterfs}
+Junto con el equipo de desarrollo de la plataforma IoT se definieron los siguientes artefactos a desplegar dentro de la infraestructura.
+\begin{itemize}
+	\item Proxy Reverso
+	\item Servidor Mysql
+	\item Servidor MongoDB
+	\item Servidor ActiveMQ
+	\item Microservicios
+	\item Front
+\end{itemize}
+
+
+
+
+
+Posteriormente se clasificaron los artefactos según la necesidad de persistir información de la siguiente forma:
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Artefactos de la aplicación IoT según su persistencia]{ \raggedright Artefactos de la aplicación IoT según su persistencia}
+		\label{tabla: Artefactos de la aplicación IoT según su persistencia}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Con persistencia & Sin persistencia  \\ \hline
+				Servidor Mysql & Proxy Reverso \\
+				Servidor MongoDB & Front  \\ 
+				Servidor ActiveMQ & Microservicios  \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+
+En nuestra arquitectura se escogió GlusterFS como el sistema de archivos distribuidos, por lo que para cada uno de los artefactos de la arquitectura que requieren persistencia, se configuró un volumen GlusterFS de la siguiente forma:
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Configuración de bricks de volúmenes]{ \raggedright Configuración de bricks GlusterFS}
+		\label{tabla: Configuración de bricks GlusterFS}
+		\begin{center}
+			\begin{tabular}{ p{5cm}   p{3cm}  p{3cm} p{3cm}  }
+				\hline
+				Volumen & Usuario Id & Grupo Id & Permisos \\ \hline
+				activemq & 0 & 0 & 755\\
+				mongo & 184 & 184 & 777 \\ 
+				mysql & 27 & 0 & 777 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+
+Finalmente se crea cada uno de los volúmenes con bricks tanto en el servidor dns.local.cluster como en glusterfs.local.cluster de tal forma que si alguno de los 2 servidores falla, esté el otro servidor para proveer los archivos y así asegurar en ese caso la disponibilidad del sistema.
+
+
+
+\subsubsection{Nodos}
+Openshift Origin provee 2 métodos de instalación: Basado en paquetes RPM y basado en un sistema de contendores\citep{openshiftdocsInstallation}. 
+
+Sin embargo la instalación por sistema de contenedores requiere de acceso al repositorio privado de contenedores de Red Hat, por lo que se decidió usar la instalación basada en paquetes RPM.
+
+La instalación se realizó usando Ansible con el archivo Inventory del anexo \ref{appendix:Archivo Inventory}. En este archivo definimos las diferentes máquinas y su rol dentro de la infraestructura. 
+
+Posteriormente se ejecutaron los siguientes ansible-playbook:
+\begin{enumerate}
+	\item {\textbf{prerequisites.yaml}} Instala y actualiza los paquetes software necesarios para la instalación del cluster.
+	\item {\textbf{deploy\_cluster.yaml}} Instala e inicia el cluster dentro de la infraestructura.
+\end{enumerate}
+
+Luego se modificó el archivo /etc/origin/master/htpasswd, añadiendo el usuario 'admin' con contraseña 'admin'.
+
+Finalmente se ingresa a la plataforma web de administración de Openshift como se ve en la imagen \ref{Plataforma web de administración de Openshift}.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/openshift_console.PNG}
+	\caption{Plataforma web de administración de Openshift.}
+	\label{Plataforma web de administración de Openshift}
+\end{figure}
+
+
+Seguidamente, se crearon 2 proyectos: iot-front y backend. \\
+
+\begin{lstlisting}[language=bash]
+[root@master1 ~]# oc new-project iot-front
+Now using project "iot-front" on server "https://master1.local.cluster:8443".
+[root@master1 ~]# oc new-project backend
+Now using project "backend" on server "https://master1.local.cluster:8443".
+\end{lstlisting}
+
+
+
+Finalmente, se desplegó el archivo gluster-endpoints.yaml del anexo \ref{appendix:Archivos de despliegue: Endpoints glusterfs} en el proyecto backend para registrar los nodos en los cuales se encuentran configurados los bricks de GlusterFS. \\
+\begin{lstlisting}[language=bash]
+[root@master1 ~]# oc project backend
+Now using project "backend" on server "https://master1.local.cluster:8443".
+[root@master1 ~]# oc create -f gluster-endpoints.yaml
+endpoints/glusterfs-cluster created
+\end{lstlisting}
+
+
+\subsection{Despliegue aplicaci\'on}
+
+Durante el proyecto se definió el siguiente proceso para el despliegue de un artefacto dentro de la arquitectura propuesta con el fin de simplificar el proceso de despliegue y facilitar la integración de nuevos componentes a la arquitectura.
+
+Los archivos de configuración\footnote{Dockerfile, pv.yaml, pvc.yaml, deployment.yaml, service.yaml} para cada uno de los artefactos se encuentran en el anexo \ref{appendix:Archivos de despliegue}.
+
+Adicionalmente se realizó un manual de instalación de la arquitectura disponible en el anexo \ref{appendix:Manual de instalación}.
+
+\begin{landscape}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.3\textwidth]{figs/Proceso-de-despliegue-de-un-artefacto-2.png}
+		\caption{Proceso de despliegue de un artefacto dentro de la arquitectura propuesta en BPMN.}
+		\label{Proceso de despliegue de un artefacto dentro de la arquitectura propuesta en BPMN}
+	\end{figure}
+\end{landscape}
+
+\subsection{Automatizaci\'on del proceso de despliegue}
+Para realizar la automatización del proceso de despliegue se realizó usando GitLab CI/CD. En el proyecto se tienen 2 automatizaciones de despliegue, una para el proyecto del front y otro para el proyecto del back. Estos se encuentran en el anexo \ref{appendix:Archivos de configuración de despliegue continuo}.
+
+Se definieron 3 etapas:
+\begin{enumerate}
+	\item {\textbf{Build:}} En esta etapa se compila y ejecutan los casos de prueba del código a desplegar.
+	\item {\textbf{Publish:}} En esta etapa se crea de forma automática los contenedores con el código compilado y se publican en Docker Hub.
+	\item{\textbf{Deploy:}} En esta etapa se actualiza y despliega el archivo de deployment.yaml en el cluster.
+\end{enumerate}
+
+De esta manera, cada vez que los desarrolladores realizan un cambio sobre la rama 'master', automáticamente se ejecutan las 3 etapas para el despliegue de la aplicación en el cluster. En caso de haber un error, Gitlab envía un correo a los miembros del proyecto indicando que hubo un problema durante el despliegue.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\textwidth]{figs/gitlab-error.png}
+	\caption{Mensaje enviado por Gitlab cuando ocurre un error durante el despliegue automático.}
+	\label{Mensaje enviado por Gitlab cuando ocurre un error durante el despliegue automático}
+\end{figure}
+
+\subsection{Implementaci\'on de pruebas}
+Para la implementación de las pruebas se realizó el siguiente plan de pruebas con Jmeter. El plan de pruebas consistió en enviar una solicitud para crear, consultar, modificar y eliminar un usuario. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\textwidth]{figs/Jmeter-test.png}
+	\caption{Plan de pruebas implementado en Jmeter.}
+	\label{Plan de pruebas implementado en Jmeter}
+\end{figure}
+
+La actividad 'Reporte resumen' fue la fuente de los datos presentados en los resultados de la ejecución de las pruebas.
+
 \section{Validaci\'on de prototipo}
+\subsection{Aplicaci\'on pruebas}
+Los resultados de las pruebas se consignaron en las tablas \ref{tabla: Porcentaje de solicitudes fallidas durante un despliegue}, \ref{tabla: Tiempo promedio de respuesta para 1000 solicitudes por minuto}, \ref{tabla: Número máximo de solicitudes por minuto sin solicitudes fallidas.}, \ref{tabla: Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto} y \ref{tabla: Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}.
 
-
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Porcentaje de solicitudes fallidas durante un despliegue]{ \raggedright Porcentaje de solicitudes fallidas durante un despliegue}
+		\label{tabla: Porcentaje de solicitudes fallidas durante un despliegue}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  \%  \\ \hline
+				Monolítico & 4.45  \\ 
+				1 instancia & 10.51  \\ 
+				2 instancias & 2.26  \\ 
+				3 instancias & 2.30 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Tiempo promedio de respuesta para 1000 solicitudes por minuto]{ \raggedright Tiempo promedio de respuesta para 1000 solicitudes por minuto}
+		\label{tabla: Tiempo promedio de respuesta para 1000 solicitudes por minuto}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  Milisegundos  \\ \hline
+				Monolítico & 413 \\ 
+				1 instancia & 455  \\ 
+				2 instancias & 434  \\ 
+				3 instancias & 419 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Número máximo de solicitudes por minuto sin solicitudes fallidas.]{ \raggedright Número máximo de solicitudes por minuto sin solicitudes fallidas.}
+		\label{tabla: Número máximo de solicitudes por minuto sin solicitudes fallidas.}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  Solicitudes por minuto  \\ \hline
+				Monolítico & 2690 \\ 
+				1 instancia & 2616  \\ 
+				2 instancias & 3800  \\ 
+				3 instancias & 4320 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto]{ \raggedright Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto}
+		\label{tabla: Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  \%  \\ \hline
+				Monolítico & 24.26 \\ 
+				1 instancia & 36.28  \\ 
+				2 instancias & 0  \\ 
+				3 instancias & 0 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo]{ \raggedright Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}
+		\label{tabla: Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  Solicitudes fallidas  \\ \hline
+				Monolítico & 172,9 \\ 
+				1 instancia & 157,2  \\ 
+				2 instancias & 77  \\ 
+				3 instancias & 60 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\subsection{An\'alisis resultados}
+\begin{itemize}
+	\item Durante la prueba de la tabla \ref{tabla: Porcentaje de solicitudes fallidas durante un despliegue}, la mayor cantidad de solicitudes fallidas se evidenció en el ambiente de 1 instancia ya que este no es compatible con el despliegue en release de Kubernetes. Los ambientes de 2 y 3 instancias soportaban el trafico entrante con la versión anterior mientras la nueva versión estaba lista.
+	\item El ambiente monolítico tiene el tiempo de respuesta mas óptimo en la prueba de la tabla \ref{tabla: Tiempo promedio de respuesta para 1000 solicitudes por minuto} ya que este ambiente no debe realizar transferencia de datos por medio de la red.
+	\item El número máximo de solicitudes es proporcional a la cantidad de instancias ya que el trafico se distribuye en las mismas.
+	\item Durante la prueba de la tabla \ref{tabla: Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto} se evidenció que un ambiente monolítico tiene un mayor rendimiento que un ambiente 1 instancia ya que el ambiente monolítico debe transferir datos por medio de la red, lo cual impacta significativamente en su rendimiento. 
+	\item Como vemos en la tabla \ref{tabla: Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}, la redundancia de recursos es fundamental para disminuir el impacto de un fallo en la respuesta de las solicitudes.
+	\item A partir de 2 instancias, la carga se distribuye entre los diferentes servidores, lo cual lleva a una mejora significativa en el rendimiento de la arquitectura.
+	\item La mejora de rendimiento entre 1 instancia y 2 instancias es mucho mas significativa que la mejora entre 2 instancias y 3 instancias. Esto se debe a que para el primer caso, hay un cambio en la distribución de carga entre los servidores físicos, mientras que en el segundo caso, no hay un cambio de carga a nivel físico ya que siguen siendo 2 servidores físicos, el cambio se da a nivel software.
+\end{itemize}

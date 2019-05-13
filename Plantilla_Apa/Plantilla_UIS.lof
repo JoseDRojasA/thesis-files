@@ -20,6 +20,11 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {15}{\ignorespaces Infraestructura software propuesta.\relax }}{51}{figure.caption.28}% 
 \contentsline {figure}{\numberline {16}{\ignorespaces Arquitectura propuesta.\relax }}{52}{figure.caption.29}% 
+\contentsline {figure}{\numberline {17}{\ignorespaces Infraestructura hardware del prototipo.\relax }}{54}{figure.caption.31}% 
+\contentsline {figure}{\numberline {18}{\ignorespaces Plataforma web de administraci\'on de Openshift.\relax }}{58}{figure.caption.35}% 
+\contentsline {figure}{\numberline {19}{\ignorespaces Proceso de despliegue de un artefacto dentro de la arquitectura propuesta en BPMN.\relax }}{60}{figure.caption.36}% 
+\contentsline {figure}{\numberline {20}{\ignorespaces Mensaje enviado por Gitlab cuando ocurre un error durante el despliegue autom\'atico.\relax }}{62}{figure.caption.37}% 
+\contentsline {figure}{\numberline {21}{\ignorespaces Plan de pruebas implementado en Jmeter.\relax }}{62}{figure.caption.38}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsfinish 

@@ -71,6 +71,11 @@
 \newblock Recuperado de
   \url{https://docs.gluster.org/en/latest/Quick-Start-Guide/Quickstart/}.
 
+\bibitem[ope, 2019]{openshiftdocsInstallation}
+ (2019).
+\newblock Planning your installation.
+\newblock Recuperado de \url{https://docs.okd.io/3.11/install/index.html}.
+
 \bibitem[Kub, 2019a]{KubenetesObjetos}
  (2019a).
 \newblock Understanding kubernetes objects.
@@ -161,11 +166,23 @@ Keel, L.~H. and Bhattacharyya, S.~P. (2008).
   controllers.
 \newblock {\em {IEEE} Transactions on Automatic Control}, 53(6):1353–136.
 
+\bibitem[Kumarpalani, 2014]{dnsConfiguration}
+Kumarpalani, S. (2014).
+\newblock Setting up dns server on centos 7.
+\newblock Recuperado de
+  \url{https://www.unixmen.com/setting-dns-server-centos-7/}.
+
 \bibitem[LÓPEZ, 2016]{thesisValencia}
 LÓPEZ, S. (2016).
 \newblock Despliegue y monitorización de un clúster mesos.
 \newblock Master's thesis, Escola Tècnica Superior d?Enginyeria Informàtica
   Universitat Politècnica de València.
+
+\bibitem[Machado, 2016]{kvmVirtualization}
+Machado, E. (2016).
+\newblock Instalación y configuración de kvm en centos 7.
+\newblock Recuperado de
+  \url{https://eliasmachado20.wordpress.com/2016/04/04/instalacion-y-configuracion-de-kvm-en-centos-7/}.
 
 \bibitem[Martínez, 2017]{ThesisUis1}
 Martínez, J. y~Vásquez, C. (2017).

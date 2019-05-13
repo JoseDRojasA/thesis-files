@@ -30,8 +30,18 @@
 \BOOKMARK [2][-]{subsection.5.2.3}{Definici\363n pruebas}{section.5.2}% 30
 \BOOKMARK [2][-]{subsection.5.2.4}{Definici\363n arquitectura e infraestructura}{section.5.2}% 31
 \BOOKMARK [1][-]{section.5.3}{Prototipado}{chapter.5}% 32
-\BOOKMARK [1][-]{section.5.4}{Validaci\363n de prototipo}{chapter.5}% 33
-\BOOKMARK [0][-]{chapter.6}{Trabajo futuro}{}% 34
-\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 35
-\BOOKMARK [0][-]{chapter.7}{Referencias Bibliogr\341ficas}{}% 36
-\BOOKMARK [0][-]{chapter*.31}{Ap\351ndices}{}% 37
+\BOOKMARK [2][-]{subsection.5.3.1}{Configuraci\363n b\341sica cluster}{section.5.3}% 33
+\BOOKMARK [2][-]{subsection.5.3.2}{Configuraci\363n infraestructura cluster}{section.5.3}% 34
+\BOOKMARK [3][-]{subsubsection.5.3.2.1}{Servidor DNS}{subsection.5.3.2}% 35
+\BOOKMARK [3][-]{subsubsection.5.3.2.2}{Servidor Glusterfs}{subsection.5.3.2}% 36
+\BOOKMARK [3][-]{subsubsection.5.3.2.3}{Nodos}{subsection.5.3.2}% 37
+\BOOKMARK [2][-]{subsection.5.3.3}{Despliegue aplicaci\363n}{section.5.3}% 38
+\BOOKMARK [2][-]{subsection.5.3.4}{Automatizaci\363n del proceso de despliegue}{section.5.3}% 39
+\BOOKMARK [2][-]{subsection.5.3.5}{Implementaci\363n de pruebas}{section.5.3}% 40
+\BOOKMARK [1][-]{section.5.4}{Validaci\363n de prototipo}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.4.1}{Aplicaci\363n pruebas}{section.5.4}% 42
+\BOOKMARK [2][-]{subsection.5.4.2}{An\341lisis resultados}{section.5.4}% 43
+\BOOKMARK [0][-]{chapter.6}{Trabajo futuro}{}% 44
+\BOOKMARK [0][-]{chapter.7}{Conclusiones}{}% 45
+\BOOKMARK [0][-]{chapter.7}{Referencias Bibliogr\341ficas}{}% 46
+\BOOKMARK [0][-]{chapter*.45}{Ap\351ndices}{}% 47
