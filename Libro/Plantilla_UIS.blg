@@ -1,0 +1,44 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: Plantilla_UIS.aux
+A level-1 auxiliary file: Secs/P0.aux
+A level-1 auxiliary file: Secs/dedicatoria.aux
+A level-1 auxiliary file: Secs/agradecimientos.aux
+A level-1 auxiliary file: Secs/glosario.aux
+A level-1 auxiliary file: Secs/res.aux
+A level-1 auxiliary file: Secs/abs.aux
+The style file: apalike.bst
+Database file #1: xbib.bib
+Warning--entry type for "KubernetesVolumes" isn't style-file defined
+--line 526 of file xbib.bib
+Warning--to sort, need author or key in AwsArchitectureSample
+Warning--to sort, need author or key in GoogleArchitectureSample
+Warning--to sort, need author or key in KubenetesArquitectura
+Warning--to sort, need author or key in OpenshiftArquitectura
+Warning--to sort, need author or key in glusterfs
+Warning--to sort, need author or key in BARCELONA2019
+Warning--to sort, need author or key in BBC2018
+Warning--to sort, need author or key in WhatAreMicroservices
+Warning--to sort, need author or key in RHDocker
+Warning--to sort, need author or key in KubenetesComponentes
+Warning--to sort, need author or key in KubenetesObjetos
+Warning--to sort, need author or key in ansibledocumentation
+Warning--to sort, need author or key in KubernetesVolumes
+Warning--to sort, need author or key in openshiftdocsInstallation
+Warning--empty author in KubenetesArquitectura
+Warning--empty journal in KubenetesArquitectura
+Warning--empty author in KubenetesComponentes
+Warning--empty author in RHDocker
+Warning--empty author in OpenshiftArquitectura
+Warning--empty author in GoogleArchitectureSample
+Warning--empty author in BBC2018
+Warning--empty author in AwsArchitectureSample
+Warning--empty author in BARCELONA2019
+Warning--empty author in ansibledocumentation
+Warning--empty author in glusterfs
+Warning--empty author in openshiftdocsInstallation
+Warning--empty journal in openshiftdocsInstallation
+Warning--empty author in KubenetesObjetos
+Warning--empty author in WhatAreMicroservices
+Warning--empty journal in NGINX2017
+Warning--empty journal in dnsConfiguration
+Warning--empty journal in kvmVirtualization
+(There were 33 warnings)

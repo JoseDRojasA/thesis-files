@@ -1,0 +1,93 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+%                                Capítulo 4
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\chapter{Marco técnico}
+% ------------------------------------------------------------------------.
+\noindent En este capítulo se abordaran las tecnologías usadas durante el proyecto para implementar los conceptos abordados en el Capítulo 3.
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\section{Docker}
+Docker es una tecnología de creación y uso de contenedores Linux, para ello hace uso del kernel de Linux y funciones del mismo como Cgroups y namespaces para aislar procesos y que estos se puedan ejecutar de forma independiente. 
+
+Docker ofrece un modelo de implementación basado en imágenes lo cual permite compartir una aplicación o conjunto de servicios, junto con sus dependencias en varios entornos. Además, Docker automatiza la implementación de la aplicación (o conjuntos combinados de procesos que conforman una aplicación) dentro del entorno del contenedor \citep{RHDocker}.
+
+Del ecosistema Docker, se destacan los siguientes componentes:
+\begin{itemize}
+	\item\textbf{Contenedor:} Ambiente que permite ejecutar aplicaciones de manera aislada en un sistema anfitrión. Son creados a partir de imágenes. Haciendo una analogía con la programación orientada a objetos, son las instancias de las imágenes, es decir, a partir de una imagen pueden crearse n contenedores con el mismo estado.
+	\item\textbf{Imagen:} Template que describe el estado inicial de un contenedor. Una imagen puede ser construida a partir de otra imagen disponible en un registro remoto. Haciendo una analogía con al programación orientada a objetos, una imagen es una clase que puede ser instanciada n veces en forma de contenedor.
+	\item\textbf{Registro:} Es un repositorio de imágenes. Puede ser público o privado, es decir que es posible trabajar con imágenes disponibles en internet. Uno de los registros públicos mas populares es Docker Hub, el cual pertenece a Docker Inc.
+\end{itemize}
+
+\section{Kubernetes}
+
+Es una plataforma open source que automatiza las operaciones de contenedores Linux. Elimina varios procesos en la implementación y escalabilidad de las aplicaciones en contenedores, lo cual nos permite construir y administrar un clúster de contenedores de forma eficiente y sencilla. Los clúster pueden ser construidos en nubes públicas, privadas, comunitarias o híbridas.
+
+
+Un cluster Kubernetes es un conjunto de servidores que ejecutan diferentes servicios como podemos ver en la figura \ref{Arquitectura de un cluster Kubernetes} \citep{KubenetesComponentes}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/arquitectura_kubernetes.png}
+	\caption{Arquitectura de un cluster Kubernetes. Adaptado de \citep{KubenetesArquitectura}}\label{Arquitectura de un cluster Kubernetes}
+\end{figure}
+
+\section{Objetos Kubernetes}
+Los objetos Kubernetes son entidades que persisten dentro del sistema Kubernetes. Kubernetes usa estas entidades para representar el estado del cluster, para ello se definen en archivos en formato YAML o JSON. Específicamente, los objetos Kubernetes describen \citep{KubenetesObjetos}:
+
+\begin{itemize}
+	\item Que aplicaciones se encuentran en ejecución.
+	\item Los recursos disponibles para cada aplicación en ejecución.
+	\item Las políticas del cluster. 
+\end{itemize}
+
+El conjunto de objetos Kubernetes dentro del cluster define el estado deseado del cluster y Kubernetes se encargará de monitorear y gestionar los diferentes nodos con el fin de que el estado del cluster sea igual al estado deseado del mismo. 
+
+\begin{itemize}
+	\item \textbf{Pod:} Conjunto de contenedores. El pod es la unidad mínima en Kubernetes.
+	\item \textbf{Service:} Interfase entre cliente y la aplicación dentro de los pods. Es una pareja ip-puerto estática que se encarga de redirigir las solicitudes entre los diferentes pods disponibles.
+	\item \textbf{Persistent Volumes:} Permite definir un sistema de almacenamiento dentro del cluster.
+	\item \textbf{Persistent Volumes Claims:} Representa una solicitud para obtener recursos de almacenamiento del cluster.
+\end{itemize}
+
+\section{Openshift}
+Openshift es un PaaS ofrecido por Red Hat con una integración nativa con Docker y Kubernetes, añadiendo funcionalidades de las cuales Kubernetes carece como:
+\begin{itemize}
+	\item Integración con herramientas de integración continua como Jenkins.
+	\item Manejo de diferentes proyectos en un mismo cluster.
+	\item Plantillas que facilitan el despliegue de aplicaciones.
+\end{itemize}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/OpenShiftContainerPlatformStack.png}
+	\caption{Arquitectura de Openshift. Adaptado de \citep{OpenshiftArquitectura}}\label{Arquitectura de Openshift}
+\end{figure}
+
+
+\section{Ansible}
+Ansible es una herramienta para automatizar la administración de una infraestructura TI por medio de archivos de configuración llamados Ansible Playbooks en los cuales se describen los diversos pasos a automatizar\citep{ansibledocumentation}.
+
+En la arquitectura de Ansible, se tiene un archivo YAML, llamado Inventory, en el cual se describen los diferentes elementos de la infraestructura TI y variables de configuración. Posteriormente se ejecutan los playbooks usando el Inventory y Ansible indica si el proceso fue ejecutado con exito o hubo algún problema durante alguno de los pasos del playbook.
+
+\section{GlusterFS}
+GlusterFS es un sistema de archivos en red escalable diseñado para tareas de alto uso de datos como almacenamiento cloud \citep{glusterfs}.
+
+\begin{itemize}
+	\item {\textbf{Sistema de archivo en red}} Es un sistema de archivos que distribuye los datos en diferentes nodos.
+	\item {\textbf{Brick}} Es cualquier directorio o partición que es asignado a formar parte de un volumen.
+	\item {\textbf{Volumen}} Es un conjunto lógico de Bricks. Las operaciones se basan en los diferentes tipos de volúmenes creados por el usuario.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figs/glusterfs.png}
+	\caption{Arquitectura de Glusterfs. Adaptado de \citep{glusterfs}}\label{Arquitectura de Glusterfs}
+\end{figure}

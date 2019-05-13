@@ -1,0 +1,22 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+%                             Conclusiones
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\chapter{Recomendaciones}
+
+\begin{itemize}
+	\item Explorar los diferentes plugins que ofrece la comunidad de Openshift Origin.
+	\item Utilizar servidores con las características recomendadas por la documentación de Openshift Origin.
+	\item Hacer uso de discos duros de estado solido con el fin de aumentar el rendimiento en los puntos en que es necesario acceder al disco, por ejemplo, las consultas hechas a la base de datos.
+	\item Hacer uso de bases de datos distribuidas para poder realizar un escalamiento proporcional a la cantidad de pods. Tener en cuenta que el conector usado en el backend puede cambiar.
+	\item Hacer la instalación de los diferentes componentes directamente sobre las maquinas y no recurrir a la virtualización como fue necesario durante la implementación del prototipo.
+	\item Conectar los servidores por 10 Gigabit Ethernet en lugar de Gigabit Ethernet.
+	\item Con el fin de minimizar los riesgos durante un fallo eléctrico, seria de ayuda añadir una UPS a la infraestructura.
+	\item Hacer uso de un sistema de almacenamiento en la nube (AWS, GCP, Azure o DigitalOcean).
+	\item Instalar un registro de Docker privado para guardar las imagenes.
+	\item Implementar End to End testing.
+\end{itemize}

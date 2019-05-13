@@ -1,0 +1,15 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n+nt}{apiVersion}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{v1}
+\PYG{n+nt}{kind}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{Endpoints}
+\PYG{n+nt}{metadata}\PYG{p}{:}
+\PYG{n+nt}{name}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{glusterfs\PYGZhy{}cluster}
+\PYG{n+nt}{subsets}\PYG{p}{:}
+\PYG{p+pIndicator}{\PYGZhy{}} \PYG{n+nt}{addresses}\PYG{p}{:}
+\PYG{p+pIndicator}{\PYGZhy{}} \PYG{n+nt}{ip}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{192.168.0.133}
+\PYG{n+nt}{ports}\PYG{p}{:}
+\PYG{p+pIndicator}{\PYGZhy{}} \PYG{n+nt}{port}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{1}
+\PYG{p+pIndicator}{\PYGZhy{}} \PYG{n+nt}{addresses}\PYG{p}{:}
+\PYG{p+pIndicator}{\PYGZhy{}} \PYG{n+nt}{ip}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{192.168.0.134}
+\PYG{n+nt}{ports}\PYG{p}{:}
+\PYG{p+pIndicator}{\PYGZhy{}} \PYG{n+nt}{port}\PYG{p}{:} \PYG{l+lScalar+lScalarPlain}{1}
+\end{Verbatim}

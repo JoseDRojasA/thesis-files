@@ -1,0 +1,210 @@
+\begin{thebibliography}{}
+
+\bibitem[Kub, 2016a]{KubenetesArquitectura}
+ (2016a).
+\newblock How we architected and run kubernetes on openstack at scale at yahoo!
+  japan.
+\newblock Recuperado de
+  \url{https://kubernetes.io/blog/2016/10/kubernetes-and-openstack-at-yahoo-japan/}.
+
+\bibitem[Kub, 2016b]{KubenetesComponentes}
+ (2016b).
+\newblock Kubernetes components.
+\newblock {\em Kubernetes}.
+\newblock Recuperado de
+  \url{https://kubernetes.io/docs/concepts/overview/components/}.
+
+\bibitem[RHD, 2016]{RHDocker}
+ (2016).
+\newblock What is docker?
+\newblock {\em Red Hat}.
+\newblock Recuperado de
+  \url{https://www.redhat.com/en/topics/containers/what-is-docker}.
+
+\bibitem[Ope, 2017]{OpenshiftArquitectura}
+ (2017).
+\newblock Kubernetes and openshift: Community, standards and certifications.
+\newblock {\em Fernandes, J}.
+\newblock Recuperado de
+  \url{https://blog.openshift.com/kubernetes-and-openshift-community-standards-and-certifications/}.
+
+\bibitem[Goo, 2018]{GoogleArchitectureSample}
+ (2018).
+\newblock Architecture: Complex event processing.
+\newblock {\em Google Cloud Platform}.
+\newblock Recuperado de
+  \url{https://cloud.google.com/solutions/architecture/complex-event-processing}.
+
+\bibitem[BBC, 2018]{BBC2018}
+ (2018).
+\newblock ?el mundo se está quedando sin potencia computacional?: ¿ qué es la
+  ley de moore y por qué le preocupa al ceo de microsoft?
+\newblock {\em BBC Mundo}.
+\newblock Recuperado de \url{http://www.bbc.com/mundo/noticias-42803619}.
+
+\bibitem[Aws, 2018]{AwsArchitectureSample}
+ (2018).
+\newblock Hosting wordpress on aws.
+\newblock {\em Amazon Web Services}.
+\newblock Recuperado de
+  \url{https://github.com/aws-samples/aws-refarch-wordpress}.
+
+\bibitem[BAR, 2018]{BARCELONA2019}
+ (2018).
+\newblock Smart city 3.0: pregunte a barcelona por la siguiente generación de
+  ciudades inteligentes.
+\newblock {\em URBAN HUB}.
+\newblock Recuperado de
+  \url{http://www.urban-hub.com/es/cities/la-ciudad-de-barcelona-gana-en-inteligencia/}.
+
+\bibitem[ans, 2019]{ansibledocumentation}
+ (2019).
+\newblock How ansible works.
+\newblock {\em Ansible}.
+\newblock Recuperado de
+  \url{https://www.ansible.com/overview/how-ansible-works}.
+
+\bibitem[glu, 2019]{glusterfs}
+ (2019).
+\newblock Installing glusterfs - a quick start guide.
+\newblock {\em Gluster Documentation}.
+\newblock Recuperado de
+  \url{https://docs.gluster.org/en/latest/Quick-Start-Guide/Quickstart/}.
+
+\bibitem[ope, 2019]{openshiftdocsInstallation}
+ (2019).
+\newblock Planning your installation.
+\newblock Recuperado de \url{https://docs.okd.io/3.11/install/index.html}.
+
+\bibitem[Kub, 2019a]{KubenetesObjetos}
+ (2019a).
+\newblock Understanding kubernetes objects.
+\newblock {\em Kubernetes}.
+\newblock Recuperado de
+  \url{https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/}.
+
+\bibitem[Wha, 2019]{WhatAreMicroservices}
+ (2019).
+\newblock Understanding microservices.
+\newblock {\em Red Hat}.
+\newblock Recuperado de \url{https://www.redhat.com/en/topics/microservices}.
+
+\bibitem[Kub, 2019b]{KubernetesVolumes}
+ (2019b).
+\newblock Volumes.
+\newblock Recuperado de
+  \url{https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes}.
+
+\bibitem[Altimore, 2018]{AzureArchitectureSample}
+Altimore, P. (2018).
+\newblock Azure blockchain workbench architecture.
+\newblock {\em Microsoft Azure}.
+\newblock Recuperado de
+  \url{https://docs.microsoft.com/en-us/azure/blockchain/workbench/architecture}.
+
+\bibitem[Balaguera, 2018]{ThesisUis3}
+Balaguera, F. y~López, A. (2018).
+\newblock {\em Implementación de una nueva infraestructura de computación en la
+  nube con modelo de alta disponibilidad basada en Openstack y contenedores
+  para el grupo de investigación GID-CONUSS}.
+\newblock Universidad Industrial de Santander.
+
+\bibitem[Benz and Bohnert, 2013]{BENZ2013}
+Benz, K. and Bohnert, T. (2013).
+\newblock Dependability modeling framework: A test procedure for high
+  availability in cloud operating systems.
+\newblock {\em Vehicular Technology Conference}.
+\newblock Recuperado de \url{https://ieeexplore.ieee.org/document/6692157}.
+
+\bibitem[Douglas et~al., 2017]{NGINX2017}
+Douglas, K., Sipiwe, C., and Sinyinda, M. (2017).
+\newblock Web server performance of apache and nginx: A systematic literature
+  review.
+\newblock Recuperado de
+  \url{https://pdfs.semanticscholar.org/3401/39cd741e234a39b0db7bbaa38aee7c5f944c.pdf}.
+
+\bibitem[Gantenbein and Neira, 2017]{GANTENBEIN2017}
+Gantenbein, H. and Neira, B. (2017).
+\newblock Securing paas deployments.
+\newblock {\em Microsoft Azure Documentation}.
+\newblock Recuperado de
+  \url{https://docs.microsoft.com/en-us/azure/security/security-paas-deployments}.
+
+\bibitem[Heidi, 2016]{HEIDI2016}
+Heidi, E. (2016).
+\newblock What is high availability.
+\newblock {\em DigitalOcean}.
+\newblock Recuperado de
+  \url{https://www.digitalocean.com/community/tutorials/what-is-high-availability}.
+
+\bibitem[Joy, 2015]{JOY2015}
+Joy, A. (2015).
+\newblock Performance comparison between linux containers and virtual machines.
+\newblock {\em ICACEA}.
+\newblock Recuperado de \url{https://ieeexplore.ieee.org/document/7164727/}.
+
+\bibitem[Kappagantula, 2019]{EdurekaMicroservices}
+Kappagantula, S. (2019).
+\newblock Microservice architecture ? learn, build and deploy microservices.
+\newblock {\em Edureka}.
+\newblock Recuperado de
+  \url{https://www.edureka.co/blog/microservice-architecture/}.
+
+\bibitem[Kumarpalani, 2014]{dnsConfiguration}
+Kumarpalani, S. (2014).
+\newblock Setting up dns server on centos 7.
+\newblock Recuperado de
+  \url{https://www.unixmen.com/setting-dns-server-centos-7/}.
+
+\bibitem[López, 2016]{thesisValencia}
+López, S. (2016).
+\newblock Despliegue y monitorización de un clúster mesos.
+\newblock Master's thesis, Escola Tècnica Superior d?Enginyeria Informàtica
+  Universitat Politècnica de València.
+
+\bibitem[Machado, 2016]{kvmVirtualization}
+Machado, E. (2016).
+\newblock Instalación y configuración de kvm en centos 7.
+\newblock Recuperado de
+  \url{https://eliasmachado20.wordpress.com/2016/04/04/instalacion-y-configuracion-de-kvm-en-centos-7/}.
+
+\bibitem[Martínez, 2017]{ThesisUis1}
+Martínez, J. y~Vásquez, C. (2017).
+\newblock {\em Administración de prototipo infraestructura de computación en la
+  nube del grupo GID-CONUSS con énfasis en la implementación de nuevos módulos
+  de Openstack}.
+\newblock Universidad Industrial de Santander.
+
+\bibitem[Mell and Grance, 2011]{MELL2011}
+Mell, P. and Grance, T. (2011).
+\newblock The nist definition of cloud computing. recommendations of the
+  national institute of standards and technology.
+\newblock {\em National Institute of Standards and Technology}.
+\newblock Recuperado de
+  \url{https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf}.
+
+\bibitem[Moilanen, 2018]{thesisOulun}
+Moilanen, M. (2018).
+\newblock {\em Deploying an application using Docker and Kubernetes}.
+\newblock Oulu University of Applied Sciences.
+
+\bibitem[Schuchmann, 2018]{thesisMath}
+Schuchmann, M. (2018).
+\newblock Designing a cloud architecture for an application with many users.
+\newblock Master's thesis, University of Jyväskylä.
+
+\bibitem[Valbuena, 2017]{ThesisUis2}
+Valbuena, A. (2017).
+\newblock {\em Estudio de una alternativa de integración continua que soporte
+  el desarrollo de una infraestructura ti de servicios de información del
+  transporte publico de pasajeros}.
+\newblock Universidad Industrial de Santander.
+
+\bibitem[Villanueva, 2015]{VILLANUEVA2015}
+Villanueva, J. (2015).
+\newblock Active-active vs active-passive high availability cluster.
+\newblock {\em Jscape}.
+\newblock Recuperado de
+  \url{http://www.jscape.com/blog/active-active-vs-active-passive-high-availability-cluster}.
+
+\end{thebibliography}

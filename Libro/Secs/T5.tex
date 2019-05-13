@@ -1,0 +1,549 @@
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+%                            Recomendaciones
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+% ------------------------------------------------------------------------
+
+\chapter{Desarrollo del proyecto}
+% ------------------------------------------------------------------------
+\noindent En este Capítulo se presentará como fue desarrollado el proyecto.
+% ------------------------------------------------------------------------ 
+\section{Ambientación tecnológica}
+\subsection{Investigaci\'on fundamentos te\'oricos relacionados con el proyecto (Tecnolog\'ias y est\'andares)}
+Durante esta primera fase se investigó el estado del arte en cloud computing para poder identificar los conceptos comunes en las diferentes arquitecturas cloud enfocadas a IoT. De esta primera fase se encontró la gestión de contenedores como factor común por lo cual la investigación posterior siguió este enfoque. Posteriormente se identificaron las tecnologías mas populares en IoT.
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Tecnologías disponibles en el mercado]{ \raggedright Tecnologías disponibles en el mercado}
+		\label{tabla:Tecnologías disponibles en el mercado}
+		\begin{center}
+			\begin{tabular}{ p{5cm}   p{5cm}  p{5cm}  }
+				\hline
+				Sistema Operativo & Container Runtime & Orquestador de contenedores \\
+				\hline
+				CentOS & Cri-O & Apache Mesos \\
+				CoreOS & Docker & Docker Swarm \\
+				Red Hat Enterprise Linux & Linux VServer & Kontena \\
+				Oracle Linux & LXD & Kubernetes \\
+				Ubuntu Server & Rkt  & Nomad \\
+				Windows Server & Windows Containers & Openstack Magnum x
+				\\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+
+A medida que se desarrolló en proyecto, nuevas tecnologías fueron añadidas al stack pero ya de eso se hablará mas adelante en el documento.
+
+A medida que se desarrolló en proyecto, nuevas tecnologías fueron añadidas al stack pero ya de eso se hablará mas adelante en el documento.
+
+\subsection{Estudio}
+Durante esta etapa se realizó una revisión general sobre cada una de las tecnologías, lo cual sirvió de base para la definir los criterios de selección para realizar un primer filtro sobre las tecnologías a usar en la infraestructura en la siguiente etapa.
+
+\begin{itemize}
+	\item Licencia
+	\item Stacks
+	\item Soporte
+	\item Uso libre en producción
+\end{itemize}
+
+
+
+\subsection{Sondeo}
+Durante esta etapa se aplicaron los diferentes criterios entre cada una de las tecnologías y se consolido está información en las tablas \ref{tabla:Sondeo de selección: Sistema Operativo}, \ref{tabla:Sondeo de selección: Container Runtime} y \ref{tabla:Sondeo de selección: Orquestador de contenedores}.
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Sondeo de selección: Sistema Operativo]{ \raggedright Sondeo de selección: Sistema Operativo}
+		\label{tabla:Sondeo de selección: Sistema Operativo}
+		\begin{center}
+			\begin{tabular}{ p{3cm}   p{3cm}  p{2cm}  p{3cm}  p{4cm}  }
+				\hline
+				S. Operativo & Licencia & Stacks & Soporte & Gratis en producción \\  \hline
+				CentOS & GPL & 1.85K & Comunidad & Si
+				\\ 
+				CoreOS & Apache 2.0 & 164 & Comunidad & Si
+				\\ 
+				RHEL\footnote{Red Hat Enterprise Linux} & GPL\footnote{Solo para efectos de desarrollo, en producción se cobra una tarifa.} & - & Privado & No
+				\\ 
+				Oracle Linux & GPL & - & Privado & Si
+				\\ 
+				Ubuntu Server & GPL & 9.1k & Hibrido\footnote{Posibilidad de adquirir soporte pago pero posee una gran comunidad que lo respalda.} & Si
+				\\ 
+				Windows Server & Múltiple\footnote{Microsoft provee diferentes licencias según los servicios solicitados.} & 3.4k & Privado & No
+				\\ \hline
+			\end{tabular}
+		\end{center}
+		{La cantidad de stacks fueron tomados de: \url{https://stackshare.io/}}
+	\end{minipage}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Sondeo de selección: Container Runtime]{ \raggedright Sondeo de selección: Container Runtime}
+		\label{tabla:Sondeo de selección: Container Runtime}
+		\begin{center}
+			\begin{tabular}{ p{3cm}  p{3cm} p{2cm}  p{4cm}  p{3cm}  }
+				\hline
+				Container Runtime & Licencia & Stacks & Soporte & Uso libre en producción \\ \hline
+				Cri-O & Apache 2.0 & - & Comunidad & Si
+				\\ 
+				Docker & Apache 2.0 & 16.6K & Comunidad/Privado & Si
+				\\ 
+				Linux VServer & GPL & - & Comunidad & Si
+				\\ 
+				LXD & Apache 2.0 & 39 & Comunidad & Si
+				\\ 
+				Rkt & Apache 2.0 & 21 & Comunidad & Si
+				\\
+				Windows Containers & SaaS & - & Privado & No
+				\\ \hline
+			\end{tabular}
+		\end{center}
+		{La cantidad de stacks fueron tomados de:
+			\url{https://stackshare.io/}}
+	\end{minipage}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Sondeo de selección: Orquestador de contenedores]{ \raggedright Sondeo de selección: Orquestador de contenedores}
+		\label{tabla:Sondeo de selección: Orquestador de contenedores}
+		\begin{center}
+			\begin{tabular}{ p{3cm}   p{3cm}  p{2cm}  p{4cm}  p{3cm}  }
+				\hline
+				Orquestador & Licencia & Stacks & Soporte & Gratis en producción \\ \hline
+				Apache Mesos &  Apache 2.0 & 177 & Comunidad & Si 
+				\\ \hline
+				Docker Swarm & Apache 2.0  
+				\footnote{Algunos componentes se encuentran bajo la licencia Apache 2.0 y otros bajo Docker Enterprise 2.0 y 2.1} & 319 & Comunidad/Privado & Si\footnote{Si se desea utilizar Docker Trusted Registry o Universal Control Pane, si es necesario adquirir una licencia.}
+				\\ 
+				Kontena & Apache 2.0 & 7 & Comunidad & Si
+				\\ 
+				Kubernetes & Apache 2.0 & 4.25k & Comunidad & Si 
+				\\ 
+				Nomad & Mozilla 2.0 & 56 & Comunidad/Privado & Si \footnote{HashiCorp ofrece planes pagos con funcionalidades adicionales}
+				\\ 
+				Docker Compose & Apache 2.0 & 3.19k\footnote{Se utilizó la cantidad de stacks de Openstack} & Comunidad/Privado & Si 
+				\\ \hline
+			\end{tabular}
+		\end{center}
+		{La cantidad de stacks fueron tomados de:
+			\url{https://stackshare.io/}}
+	\end{minipage}
+\end{table}
+
+
+\section{Definición de arquitectura de infraestructura cloud}
+
+\subsection{Definici\'on requisitos}
+Se identificaron las características que debe tener una infraestructura, haciendo uso de las características esenciales de un modelo de cloud computing \citep{MELL2011} y los requerimientos que demanda una arquitectura de microservicios.
+\begin{itemize}
+	\item Autoservicio sobre demanda.
+	\item Amplio acceso a la red.
+	\item Agrupación de recursos.
+	\item Elasticidad.
+	\item Servicio medido.
+	\item Políglota.
+	\item Soporte de microservicios
+	\item Monitoreo.
+	\item Soporte para DevOps.
+	\item Seguridad.
+	\item Tolerancia a fallos.
+\end{itemize}
+\subsection{Definici\'on m\'etricas}
+Teniendo en cuenta los requisitos, se comparan las siguientes métricas en un escenario monolítico y en un escenario distribuido variado.
+\begin{itemize}
+	\item Porcentaje de solicitudes fallidas durante un despliegue.
+	\item Tiempo promedio de respuesta para 1000 solicitudes por minuto.
+	\item Número máximo de solicitudes por minuto.
+	\item Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto.
+	\item Porcentaje de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo.
+\end{itemize}
+\subsection{Definici\'on pruebas}
+Para las pruebas, se plantearon los siguientes escenarios:
+\begin{enumerate}
+	\item Monolítico.
+	\item Escenario distribuido con 1 instancia del backend.
+	\item Escenario distribuido con 2 instancias del backend.
+	\item Escenario distribuido con 3 instancias del backend.
+\end{enumerate}
+
+Los siguientes métodos fueron seleccionados para aplicar las pruebas.
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Métodos usados en las pruebas sobre el prototipo]{ \raggedright Métodos usados en las pruebas sobre el prototipo}
+		\label{tabla:Métodos usados en las pruebas sobre el prototipo}
+		\begin{center}
+			\begin{tabular}{| p{5cm}  | p{5cm} | p{5cm} | }
+				\hline
+				Método HTTP & Ruta & Descripción \\ \hline
+				POST & /users/user & Crea un nuevo usuario en la base de datos \\ \hline
+				POST & /users/authentication & Verifica las credenciales de un usuario \\ \hline
+				PUT & /users/user & Actualiza un usuario en la base de datos \\ \hline
+				DELETE & /users/user & Elimina un usuario en la base de datos \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+
+Cada una de las pruebas busca medir cada una de las diferentes métricas (sección 5.2.2) para los 4 escenarios planteados durante 10 minutos.
+
+\begin{enumerate}
+	\item {\textbf{Porcentaje de solicitudes fallidas durante un despliegue}} La prueba consiste en realizar un cambio de versión del backend mientras se están recibiendo solicitudes. 
+	Para el ambiente monolítico, se tendrá un script que detenga una versión y arranque una nueva con el fin de evitar el error humano.
+	Para el ambiente distribuido se hará uso del Continuous Deployment en la arquitectura propuesta.
+	
+	\item {\textbf{Tiempo promedio de respuesta para 1000 solicitudes por minuto}} La prueba consiste en enviar 1000 solicitudes por un minuto a cada uno de los ambientes.
+	
+	\item {\textbf{Número máximo de solicitudes por minuto sin solicitudes fallidas}} La prueba consiste en aplicar pruebas de estrés sobre los diferentes ambientes para encontrar la cantidad de solicitudes por minuto que pueden soportar sin presentar solicitudes fallidas.
+	
+	\item{\textbf{Porcentaje de solicitudes fallidas para 1000 solicitudes por minuto}} La prueba consiste en enviar 1000 solicitudes por minuto y ver que porcentaje falló en cada uno de los ambientes.
+	
+	\item{\textbf{Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}} La prueba consiste en apagar un nodo de forma abrupta mientras se están recibiendo 1000 solicitudes y ver como se ven afectados los ambientes. En el caso del ambiente monolítico, se reiniciará el servidor.
+\end{enumerate}
+
+Para generar un dataset para las pruebas, se utilizó Mockaroo\footnote{\href{https://www.mockaroo.com/}{https://www.mockaroo.com/}} (Ver apéndice \ref{appendix:Dataset generado para pruebas}).
+
+
+\subsection{Definici\'on arquitectura e infraestructura}
+
+La elección de los componentes de la infraestructura fue hecha teniendo en cuenta el impacto de las diferentes tecnologías en el mercado. Como podemos ver en la tabla \ref{tabla:Sondeo de selección: Orquestador de contenedores}, \textbf{Kubernetes} es la opción mas popular, además de tener una licencia que nos permite hacer uso gratuito de la herramienta en producción junto a una de las comunidades mas grandes entre las otras opciones estudiadas.
+
+Profundizando sobre Kubernetes, apareció \textbf{Openshift Origin} \citep{OpenshiftArquitectura}, un proyecto de Red Hat que extiende las funcionalidades de Kubernetes. Se revisó la licencia y las ventajas con respecto a Kubernetes, como la seguridad. Finalmente se decidió usar Openshift Origin como plataforma para administrar Kubernetes dentro de la arquitectura.
+
+\textbf{Docker} se seleccionó como container runtime por la popularidad, comunidad y uso libre en producción.
+
+\textbf{CentOS} se seleccionó como sistema operativo fue por la comunidad, madurez y estabilidad que presenta con respecto a las alternativas.
+
+La arquitectura se compone de los siguientes elementos:
+\begin{itemize}
+	\item \textbf{Reverse proxy: } Es la puerta de entrada al backend. Su función es redirigir las solicitudes entrantes al componente de la capa service correspondiente basado en el endpoint solicitado, de esta forma podemos exponer todos los microservicios como si de un solo se tratase. Se seleccionó  \textbf{Nginx} como proxy reverso por su alto rendimiento y bajo consumo de memoria. \cite{NGINX2017}
+	\item \textbf{Service layer: }En esta capa se encuentra una encuentra una abstracción de los pods que nos provea un dominio fijo. Para la infraestructura se escogió usar los objetos \textbf{Kubernetes Services} los cuales nos proveen un nombre de dominio fijo para el acceso a la capa pod además de proveer balanceo de carga en el caso de los componentes que tienen mas de una instancia.
+	\item \textbf{Deployment layer: } En esta capa se encuentran los archivos de definición de los elementos de la capa pod. Esta capa se encuentra conectada a un repositorio git por medio de una tecnología de CI/CD de tal forma que cuando los desarrolladores suban un cambio a la rama master del repositorio, se realice todo el proceso de compilado, publicación y actualización de los archivos de despliegue correspondientes. Para la infraestructura, se escogió usar los objetos \textbf{kubernetes deployment}. 
+	\item \textbf{Pod layer: } En esta capa se encuentran las instancias efimeras de la arquitectura. Para la arquitectura se escogió usar los objetos \textbf{Kubernetes pods} (Instancias de la capa Openshift deployment) de cada uno de los elementos desplegados. En el caso de los artefactos que poseen mas de una instancia, como es el caso de admin-microservice o data-microservice, Openshift provee la funcionalidad de despliegue canario manteniendo n-1\footnote{n: Número de instancias activas} instancias activas mientras que las nuevas instancias se encuentran listas para recibir solicitudes.
+	\item \textbf{Persistence logic layer: } En esta capa se encuentra la conexión lógica con la persistence physical layer. Para la infraestructura se escogió usar los objetos \textbf{Kubernetes Volume}, los cuales conectan los pods con la persistence physical layer\citep{KubernetesVolumes}. Las bases de datos y los brókers de mensajería son los principales artefactos que usan esta capa.
+	\item \textbf{Persistence physical Layer}
+	En esta capa se encuentra el sistema de archivos para persistir datos en disco. Para el caso de la infraestructura se propone usar \textbf{glusterfs} por que nos permite distribuir de forma redundante los archivos en diferentes nodos, de tal manera que si alguno de los nodos falla, el sistema puede continuar haciendo uso de otro nodo para seguir persistiendo la información.
+	\item \textbf{Code repository} 
+	Sistema de archivos en el cual se alojará el código fuente. Se seleccionó \textbf{git} como code repository por su popularidad y relevancia en el mercado. Por otra parte, \textbf{Gitlab} se escogió como proveedor por la gran cantidad de herramientas que ofrece para la gestión de proyectos software.
+	\item \textbf{CI/CD}
+	Entre las herramientas que ofrece \textbf{gitlab} se encuentra un sistema de CI/CD basado en pipelines. La gran ventaja que tiene con respecto a otras alternativas es su sencillez de integración en arquitecturas cloud.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.3\textwidth]{figs/Infraestructura.png}
+	\caption{Infraestructura software propuesta.}\label{Infraestructura software propuesta}
+\end{figure}
+
+\begin{landscape}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.5\textwidth]{figs/Thesis-Architecture.png}
+		\caption{Arquitectura propuesta.}\label{Arquitectura propuesta}
+	\end{figure}
+\end{landscape}
+
+\section{Prototipado}
+
+\subsection{Configuraci\'on b\'asica cluster}
+El cluster se conformó por 3 maquinas físicas, sin embargo para la configuración mínima de alta disponibilidad se necesitaron 5 servidores, por lo cual la máquina con mas recursos se usó para la virtualización de 3 maquinas con KVM\citep{kvmVirtualization} como podemos ver en la tabla \ref{tabla: Características de máquinas en cluster} y en la figura \ref{Infraestructura hardware del prototipo}.
+
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Características de máquinas en cluster]{ \raggedright Características de máquinas en cluster}
+		\label{tabla: Características de máquinas en cluster}
+		\begin{center}
+			\begin{tabular}{ p{4cm}   p{5cm}  p{2cm}  p{3cm}  }
+				\hline
+				Nombre de dominio & CPU & \# Cores & RAM (GB) \\ \hline
+				dns.local.cluster & Intel core i7 4720H & 1 & 1 \\ 
+				glusterfs.local.cluster & Intel core i7 4720H & 1 & 0.59 \\ 
+				master1.local.cluster & Intel core i7 4720H & 4 & 5.781 \\ 
+				node1.local.cluster & Intel core i5 3230M & 4 & 5.697 \\ 
+				node2.local.cluster & Intel core i3 4005U & 4 & 3.223 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+Para cada uno de las máquinas se configuró la ip de forma estática y una clave RSA, la cual será usada posteriormente para el acceso remoto a los mismos.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/arquitectura_infraestructura.png}
+	\caption{Infraestructura hardware del prototipo.}
+	\label{Infraestructura hardware del prototipo}
+\end{figure}
+\subsection{Configuraci\'on infraestructura cluster}
+\subsubsection{Servidor DNS}
+Se utilizó la máquina dns.local.cluster como servidor DNS usando bind\citep{dnsConfiguration} con la siguiente configuración:
+
+
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Resolución de nombres en cluster]{ \raggedright Resolución de nombres en cluster}
+		\label{tabla: Resolución de nombres en cluster}
+		\begin{center}
+			\begin{tabular}{ p{5cm}   p{5cm}  }
+				\hline
+				Nombre de dominio & IP \\ \hline
+				dns.local.cluster & 192.168.0.133 \\ 
+				glusterfs.local.cluster & 192.168.0.134 \\ 
+				master1.local.cluster & 192.168.0.130 \\ 
+				node1.local.cluster & 192.168.0.131 \\ 
+				node2.local.cluster & 192.168.0.132 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+Adicionalmente se instaló glusterfs para posteriormente distribuir el almacenamiento entre los servidores glusterfs.local.cluster y dns.local.cluster.
+\subsubsection{Servidor Glusterfs}
+Junto con el equipo de desarrollo de la plataforma IoT se definieron los siguientes artefactos a desplegar dentro de la infraestructura.
+\begin{itemize}
+	\item Proxy Reverso
+	\item Servidor Mysql
+	\item Servidor MongoDB
+	\item Servidor ActiveMQ
+	\item Microservicios
+	\item Front
+\end{itemize}
+
+
+
+
+
+Posteriormente se clasificaron los artefactos según la necesidad de persistir información de la siguiente forma:
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Artefactos de la aplicación IoT según su persistencia]{ \raggedright Artefactos de la aplicación IoT según su persistencia}
+		\label{tabla: Artefactos de la aplicación IoT según su persistencia}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Con persistencia & Sin persistencia  \\ \hline
+				Servidor Mysql & Proxy Reverso \\
+				Servidor MongoDB & Front  \\ 
+				Servidor ActiveMQ & Microservicios  \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+
+En nuestra arquitectura se escogió GlusterFS como el sistema de archivos distribuidos, por lo que para cada uno de los artefactos de la arquitectura que requieren persistencia, se configuró un volumen GlusterFS de la siguiente forma:
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Configuración de bricks de volúmenes]{ \raggedright Configuración de bricks GlusterFS}
+		\label{tabla: Configuración de bricks GlusterFS}
+		\begin{center}
+			\begin{tabular}{ p{5cm}   p{3cm}  p{3cm} p{3cm}  }
+				\hline
+				Volumen & Usuario Id & Grupo Id & Permisos \\ \hline
+				activemq & 0 & 0 & 755\\
+				mongo & 184 & 184 & 777 \\ 
+				mysql & 27 & 0 & 777 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+
+Finalmente se crea cada uno de los volúmenes con bricks tanto en el servidor dns.local.cluster como en glusterfs.local.cluster de tal forma que si alguno de los 2 servidores falla, esté el otro servidor para proveer los archivos y así asegurar en ese caso la disponibilidad del sistema.
+
+
+
+\subsubsection{Nodos}
+Openshift Origin provee 2 métodos de instalación: Basado en paquetes RPM y basado en un sistema de contendores\citep{openshiftdocsInstallation}. 
+
+Sin embargo la instalación por sistema de contenedores requiere de acceso al repositorio privado de contenedores de Red Hat, por lo que se decidió usar la instalación basada en paquetes RPM.
+
+La instalación se realizó usando Ansible con el archivo Inventory del anexo \ref{appendix:Archivo Inventory}. En este archivo definimos las diferentes máquinas y su rol dentro de la infraestructura. 
+
+Posteriormente se ejecutaron los siguientes ansible-playbook:
+\begin{enumerate}
+	\item {\textbf{prerequisites.yaml}} Instala y actualiza los paquetes software necesarios para la instalación del cluster.
+	\item {\textbf{deploy\_cluster.yaml}} Instala e inicia el cluster dentro de la infraestructura.
+\end{enumerate}
+
+Luego se modificó el archivo /etc/origin/master/htpasswd, añadiendo el usuario 'admin' con contraseña 'admin'.
+
+Finalmente se ingresa a la plataforma web de administración de Openshift como se ve en la imagen \ref{Plataforma web de administración de Openshift}.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/openshift_console.PNG}
+	\caption{Plataforma web de administración de Openshift.}
+	\label{Plataforma web de administración de Openshift}
+\end{figure}
+
+
+Seguidamente, se crearon 2 proyectos: iot-front y backend. \\
+
+\begin{lstlisting}[language=bash]
+[root@master1 ~]# oc new-project iot-front
+Now using project "iot-front" on server "https://master1.local.cluster:8443".
+[root@master1 ~]# oc new-project backend
+Now using project "backend" on server "https://master1.local.cluster:8443".
+\end{lstlisting}
+
+
+
+Finalmente, se desplegó el archivo gluster-endpoints.yaml del anexo \ref{appendix:Archivos de despliegue: Endpoints glusterfs} en el proyecto backend para registrar los nodos en los cuales se encuentran configurados los bricks de GlusterFS. \\
+\begin{lstlisting}[language=bash]
+[root@master1 ~]# oc project backend
+Now using project "backend" on server "https://master1.local.cluster:8443".
+[root@master1 ~]# oc create -f gluster-endpoints.yaml
+endpoints/glusterfs-cluster created
+\end{lstlisting}
+
+
+\subsection{Despliegue aplicaci\'on}
+
+Durante el proyecto se definió el siguiente proceso para el despliegue de un artefacto dentro de la arquitectura propuesta con el fin de simplificar el proceso de despliegue y facilitar la integración de nuevos componentes a la arquitectura.
+
+Los archivos de configuración\footnote{Dockerfile, pv.yaml, pvc.yaml, deployment.yaml, service.yaml} para cada uno de los artefactos se encuentran en el anexo \ref{appendix:Archivos de despliegue}.
+
+Adicionalmente se realizó un manual de instalación de la arquitectura disponible en el anexo \ref{appendix:Manual de instalación}.
+
+\begin{landscape}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=1.3\textwidth]{figs/Proceso-de-despliegue-de-un-artefacto-2.png}
+		\caption{Proceso de despliegue de un artefacto dentro de la arquitectura propuesta en BPMN.}
+		\label{Proceso de despliegue de un artefacto dentro de la arquitectura propuesta en BPMN}
+	\end{figure}
+\end{landscape}
+
+\subsection{Automatizaci\'on del proceso de despliegue}
+Para realizar la automatización del proceso de despliegue se realizó usando GitLab CI/CD. En el proyecto se tienen 2 automatizaciones de despliegue, una para el proyecto del front y otro para el proyecto del back. Estos se encuentran en el anexo \ref{appendix:Archivos de configuración de despliegue continuo}.
+
+Se definieron 3 etapas:
+\begin{enumerate}
+	\item {\textbf{Build:}} En esta etapa se compila y ejecutan los casos de prueba del código a desplegar.
+	\item {\textbf{Publish:}} En esta etapa se crea de forma automática los contenedores con el código compilado y se publican en Docker Hub.
+	\item{\textbf{Deploy:}} En esta etapa se actualiza y despliega el archivo de deployment.yaml en el cluster.
+\end{enumerate}
+
+De esta manera, cada vez que los desarrolladores realizan un cambio sobre la rama 'master', automáticamente se ejecutan las 3 etapas para el despliegue de la aplicación en el cluster. En caso de haber un error, Gitlab envía un correo a los miembros del proyecto indicando que hubo un problema durante el despliegue.
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\textwidth]{figs/gitlab-error.png}
+	\caption{Mensaje enviado por Gitlab cuando ocurre un error durante el despliegue automático.}
+	\label{Mensaje enviado por Gitlab cuando ocurre un error durante el despliegue automático}
+\end{figure}
+
+\subsection{Implementaci\'on de pruebas}
+Para la implementación de las pruebas se realizó el siguiente plan de pruebas con Jmeter. El plan de pruebas consistió en enviar una solicitud para crear, consultar, modificar y eliminar un usuario. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\textwidth]{figs/Jmeter-test.png}
+	\caption{Plan de pruebas implementado en Jmeter.}
+	\label{Plan de pruebas implementado en Jmeter}
+\end{figure}
+
+La actividad 'Reporte resumen' fue la fuente de los datos presentados en los resultados de la ejecución de las pruebas.
+
+\section{Validaci\'on de prototipo}
+\subsection{Aplicaci\'on pruebas}
+Los resultados de las pruebas se consignaron en las tablas \ref{tabla: Porcentaje de solicitudes fallidas durante un despliegue}, \ref{tabla: Tiempo promedio de respuesta para 1000 solicitudes por minuto}, \ref{tabla: Número máximo de solicitudes por minuto sin solicitudes fallidas.}, \ref{tabla: Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto} y \ref{tabla: Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}.
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Porcentaje de solicitudes fallidas durante un despliegue]{ \raggedright Porcentaje de solicitudes fallidas durante un despliegue}
+		\label{tabla: Porcentaje de solicitudes fallidas durante un despliegue}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  \%  \\ \hline
+				Monolítico & 4.45  \\ 
+				1 instancia & 10.51  \\ 
+				2 instancias & 2.26  \\ 
+				3 instancias & 2.30 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Tiempo promedio de respuesta para 1000 solicitudes por minuto]{ \raggedright Tiempo promedio de respuesta para 1000 solicitudes por minuto}
+		\label{tabla: Tiempo promedio de respuesta para 1000 solicitudes por minuto}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  Milisegundos  \\ \hline
+				Monolítico & 413 \\ 
+				1 instancia & 455  \\ 
+				2 instancias & 434  \\ 
+				3 instancias & 419 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Número máximo de solicitudes por minuto sin solicitudes fallidas.]{ \raggedright Número máximo de solicitudes por minuto sin solicitudes fallidas.}
+		\label{tabla: Número máximo de solicitudes por minuto sin solicitudes fallidas.}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  Solicitudes por minuto  \\ \hline
+				Monolítico & 2690 \\ 
+				1 instancia & 2616  \\ 
+				2 instancias & 3800  \\ 
+				3 instancias & 4320 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto]{ \raggedright Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto}
+		\label{tabla: Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  \%  \\ \hline
+				Monolítico & 24.26 \\ 
+				1 instancia & 36.28  \\ 
+				2 instancias & 0  \\ 
+				3 instancias & 0 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo]{ \raggedright Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}
+		\label{tabla: Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}
+		\begin{center}
+			\begin{tabular}{ p{7cm}   p{7cm}  }
+				\hline
+				Escenario &  Solicitudes fallidas  \\ \hline
+				Monolítico & 172,9 \\ 
+				1 instancia & 157,2  \\ 
+				2 instancias & 77  \\ 
+				3 instancias & 60 \\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+\subsection{An\'alisis resultados}
+\begin{itemize}
+	\item Durante la prueba de la tabla \ref{tabla: Porcentaje de solicitudes fallidas durante un despliegue}, la mayor cantidad de solicitudes fallidas se evidenció en el ambiente de 1 instancia ya que este no es compatible con el despliegue en release de Kubernetes. Los ambientes de 2 y 3 instancias soportaban el trafico entrante con la versión anterior mientras la nueva versión estaba lista.
+	\item El ambiente monolítico tiene el tiempo de respuesta mas óptimo en la prueba de la tabla \ref{tabla: Tiempo promedio de respuesta para 1000 solicitudes por minuto} ya que este ambiente no debe realizar transferencia de datos por medio de la red.
+	\item El número máximo de solicitudes es proporcional a la cantidad de instancias ya que el trafico se distribuye en las mismas.
+	\item Durante la prueba de la tabla \ref{tabla: Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto} se evidenció que un ambiente monolítico tiene un mayor rendimiento que un ambiente 1 instancia ya que el ambiente monolítico debe transferir datos por medio de la red, lo cual impacta significativamente en su rendimiento. 
+	\item Como vemos en la tabla \ref{tabla: Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}, la redundancia de recursos es fundamental para disminuir el impacto de un fallo en la respuesta de las solicitudes.
+	\item A partir de 2 instancias, la carga se distribuye entre los diferentes servidores, lo cual lleva a una mejora significativa en el rendimiento de la arquitectura.
+	\item La mejora de rendimiento entre 1 instancia y 2 instancias es mucho mas significativa que la mejora entre 2 instancias y 3 instancias. Esto se debe a que para el primer caso, hay un cambio en la distribución de carga entre los servidores físicos, mientras que en el segundo caso, no hay un cambio de carga a nivel físico ya que siguen siendo 2 servidores físicos, el cambio se da a nivel software.
+\end{itemize}

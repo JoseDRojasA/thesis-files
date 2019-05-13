@@ -1,0 +1,27 @@
+
+\newpage
+\anexo{Archivo Inventory}\label{appendix:Archivo Inventory}
+\begin{minted}[
+	gobble=4,
+	frame=single,
+	linenos,
+	breaklines
+	]{yaml}
+				[OSEv3:children]
+				masters
+				nodes
+				etcd
+				[OSEv3:vars]
+				ansible_ssh_user=root
+				openshift_deployment_type=origin
+				openshift_master_identity_providers=[{'name': 'htpasswd_auth', 'login': 'true', 'challenge': 'true', 'kind': 'HTPasswdPasswordIdentityProvider'}]
+				openshift_disable_check=memory_availability,disk_availability
+				[masters]
+				master1.local.cluster
+				[etcd]
+				master1.local.cluster
+				[nodes]
+				master1.local.cluster openshift_node_group_name='node-config-master-infra'
+				node1.local.cluster openshift_node_group_name='node-config-compute'
+				node2.local.cluster openshift_node_group_name='node-config-compute'
+\end{minted}

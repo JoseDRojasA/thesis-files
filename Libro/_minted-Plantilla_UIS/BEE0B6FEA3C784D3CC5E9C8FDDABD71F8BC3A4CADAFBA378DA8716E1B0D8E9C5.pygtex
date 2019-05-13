@@ -1,0 +1,19 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p+pIndicator}{[}\PYG{n+nv}{OSEv3}\PYG{p+pIndicator}{:}\PYG{n+nv}{children}\PYG{p+pIndicator}{]}
+\PYG{l+lScalar+lScalarPlain}{masters}
+\PYG{l+lScalar+lScalarPlain}{nodes}
+\PYG{l+lScalar+lScalarPlain}{etcd}
+\PYG{l+lScalar+lScalarPlain}{[OSEv3:vars]}
+\PYG{l+lScalar+lScalarPlain}{ansible\PYGZus{}ssh\PYGZus{}user=root}
+\PYG{l+lScalar+lScalarPlain}{openshift\PYGZus{}deployment\PYGZus{}type=origin}
+\PYG{l+lScalar+lScalarPlain}{openshift\PYGZus{}master\PYGZus{}identity\PYGZus{}providers=[\PYGZob{}\PYGZsq{}name\PYGZsq{}}\PYG{p+pIndicator}{:} \PYG{l+s}{\PYGZsq{}htpasswd\PYGZus{}auth\PYGZsq{}}\PYG{err}{,} \PYG{n+nt}{\PYGZsq{}login\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}true\PYGZsq{}}\PYG{err}{,} \PYG{n+nt}{\PYGZsq{}challenge\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}true\PYGZsq{}}\PYG{err}{,} \PYG{n+nt}{\PYGZsq{}kind\PYGZsq{}}\PYG{p}{:} \PYG{l+s}{\PYGZsq{}HTPasswdPasswordIdentityProvider\PYGZsq{}}\PYG{err}{\PYGZcb{}]}
+\PYG{l+lScalar+lScalarPlain}{openshift\PYGZus{}disable\PYGZus{}check=memory\PYGZus{}availability,disk\PYGZus{}availability}
+\PYG{p+pIndicator}{[}\PYG{n+nv}{masters}\PYG{p+pIndicator}{]}
+\PYG{l+lScalar+lScalarPlain}{master1.local.cluster}
+\PYG{p+pIndicator}{[}\PYG{n+nv}{etcd}\PYG{p+pIndicator}{]}
+\PYG{l+lScalar+lScalarPlain}{master1.local.cluster}
+\PYG{p+pIndicator}{[}\PYG{n+nv}{nodes}\PYG{p+pIndicator}{]}
+\PYG{l+lScalar+lScalarPlain}{master1.local.cluster openshift\PYGZus{}node\PYGZus{}group\PYGZus{}name=\PYGZsq{}node\PYGZhy{}config\PYGZhy{}master\PYGZhy{}infra\PYGZsq{}}
+\PYG{l+lScalar+lScalarPlain}{node1.local.cluster openshift\PYGZus{}node\PYGZus{}group\PYGZus{}name=\PYGZsq{}node\PYGZhy{}config\PYGZhy{}compute\PYGZsq{}}
+\PYG{l+lScalar+lScalarPlain}{node2.local.cluster openshift\PYGZus{}node\PYGZus{}group\PYGZus{}name=\PYGZsq{}node\PYGZhy{}config\PYGZhy{}compute\PYGZsq{}}
+\end{Verbatim}

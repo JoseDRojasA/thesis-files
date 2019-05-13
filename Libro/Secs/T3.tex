@@ -1,0 +1,177 @@
+
+\chapter{Marco de referencia}
+% ------------------------------------------------------------------------
+\noindent En el presente Capítulo se presentan los conceptos básicos que serán abordados en Capítulos posteriores. 
+% ------------------------------------------------------------------------
+
+\section{Computación en la nube}
+Es un modelo para permitir el acceso, de manera extensa, conveniente y bajo demanda, a un grupo compartido de recursos informáticos configurables (Por ejemplo redes, servidores, almacenamiento, aplicaciones y servicios) que pueden provisionarse y lanzarse rápidamente con un mínimo esfuerzo administrativo o la interacción del proveedor de servicios \citep{MELL2011}.
+
+\subsection{Caracter\'isticas esenciales}
+\begin{itemize}
+	\item {\textbf{Autoservicio sobre demanda:}} Los usuarios tienen acceso a recursos en la nube, por ejemplo capacidad de cómputo o almacenamiento, bajo demanda siempre que sean necesarios.
+	\item {\textbf{Amplio acceso a la red:}} Los recursos están disponibles a través de la red y se accede por medio del mecanismo estándar que promueve el uso de la plataforma por un grupo variado de dispositivos cliente (Teléfonos móviles, tablets, laptops y estaciones de trabajo).
+	\item {\textbf{Agrupación de recursos:}} Es una abstracción sobre la manera en la cual se separa la manera en la cual se encuentran los recursos físicamente distribuidos y la asignación de los mismo para los diferentes clientes. Los clientes suelen tener especificar la ubicación de los recursos a un nivel alto de abstracción (por ejemplo, país, estado o datacenter).
+	\item {\textbf{Elasticidad:}} La capacidad de aumentar o disminuir los recursos asignados para poder escalar de la manera mas óptima una aplicación. Esto puede ser manual o automático.
+	\item {\textbf{Servicio medido:}} Los sistemas cloud poseen diferentes herramientas para poder medir el uso que se le da a los recursos asignados. Estas interfaces pueden ser gráficas o por línea de comando.
+\end{itemize}
+
+\subsection{Modelos de servicio}
+
+\begin{itemize}
+	\item {\textbf{Software como servicio:}} El cliente tiene acceso a una o varias aplicaciones que se encuentren ejecutando en la infraestructura cloud. El cliente se encuentra limitado al alcance que le provea la aplicación.
+	\item {\textbf{Plataforma como servicio:}} El cliente puede desplegar aplicaciones en la infraestructura cloud siempre que se usen tecnologías, como lenguajes de programación, librerías, servicios y herramientas, soportadas por el proveedor del servicio.
+	\item {\textbf{infraestructura como servicio:}} El cliente puede desplegar y correr software de forma arbitraria, esto incluye sistema operativo y aplicaciones, por lo cual no se ve limitado a ninguna configuración preliminar a nivel software.
+\end{itemize}
+
+En la figura \ref{Responsabilidades según el modelo de servicio} se puede ver las responsabilidades del cliente y proveedor según el modelo de servicio.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/responsibility-zones.png}
+	\caption{Responsabilidades según el modelo de servicio. Adaptado de \citep{GANTENBEIN2017}}\label{Responsabilidades según el modelo de servicio}
+\end{figure}
+
+
+\subsection{Modelos de despliegue}
+\begin{itemize}
+	\item {\textbf{Nube privada:}} La infraestructura cloud es proveída para el uso exclusivo de una organización. Puede ser propiedad, administrada y operada por la organización, un tercero o una combinación de estos dos.
+	\item {\textbf{Nube comunitaria:}} La infraestructura cloud es proveída por una organización para el uso exclusivo de una comunidad de consumidores que tienen unas necesidades comunes.
+	\item {\textbf{Nube pública:}} La infraestructura cloud es proveída para el uso abierto de un público general. Está es administrada, operada y poseída por una empresa, académicos, una organización del gobierno o una combinación de los anteriores.
+	\item {\textbf{Nube híbrida:}} La infraestructura cloud es una mezcla de dos o más tipos de infraestructura(Privada, comunitaria o pública).
+\end{itemize}
+
+\section{Alta disponibilidad}
+En computación, disponibilidad es la capacidad de un módulo para ejecutar una función cuando se es requerido. La disponibilidad se expresa de la siguiente manera:
+
+\begin{equation}
+Disponibilidad = \dfrac{Tiempo de servicio - Tiempo de inactividad}{Tiempo de servicio} * 100
+\end{equation}
+
+Cuando hablamos de ?Alta disponibilidad?, hacemos referencia a que cumple el máximo estándar: la disponibilidad medida es de 99.999\% \citep{BENZ2013}.
+
+El objetivo de la alta disponibilidad es eliminar los puntos de fallo potencial en la infraestructura. Un punto de fallo potencial es un componente del stack tecnológico que puede producir una interrupción del sistema. Al igual, todo componente que sea necesario para el sistema y no tenga redundancia, también se considera un punto de falla \citep{HEIDI2016}.
+
+Existen 2 tipos de cluster de alta disponibilidad: \citep{VILLANUEVA2015}
+
+\begin{itemize}
+	\item {\textbf{Activo-Activo:}} Se suelen tener al menos 2 nodos, ambos se encuentran corriendo la misma clase de servicios de manera simultánea. El propósito principal de un cluster con alta disponibilidad de tipo activo-activo es lograr un buen balanceo de carga. El balanceo de cargas distribuye las solicitudes sobre todos los nodos con el fin de evitar que un solo nodo se sobrecargue. La configuración más sencilla es presentada en la figura \ref{Modelo de un cluster activo-activo}
+	
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{figs/active_active_high_availability_cluster_load_balancer.png}
+			\caption{Modelo de un cluster activo-activo. Adaptado de \citep{VILLANUEVA2015}}\label{Modelo de un cluster activo-activo}
+		\end{figure}
+		
+		Este modelo tiene un balanceador de carga y 2 servidores http. Los clientes no se conecta directamente a los servidores http, sino que las solicitudes pasan por medio de un balanceador de carga, el cual usa un algoritmo para determinar a qué servidor se direccionan las solicitudes.
+		
+		Este modelo se recomienda para aplicaciones que van a tener una cantidad masiva de conexiones durante un tiempo prolongado.
+		
+		\item {\textbf{Activo-Pasivo:}} Al igual que la configuración activo-activo, la configuración activo-pasivo requiere al menos de 2 nodos. Se conoce como activo-pasivo por que no todos los nodos empiezan activos. 
+		
+		El nodo pasivo es un respaldo cuya función es recibir las solicitudes de los clientes tan pronto como el nodo activo se desconecte o quede inhabilitado para poder responder a las solicitudes de los usuarios. En la figura \ref{Modelo de un cluster activo-pasivo} se presenta este modelo.
+		
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\textwidth]{figs/active_passive_high_availability_cluster.png}
+			\caption{Modelo de un cluster activo-pasivo. Adaptado de \citep{VILLANUEVA2015}}\label{Modelo de un cluster activo-pasivo}
+		\end{figure}
+			
+		Está configuración se recomienda cuando no se va a tener que lidiar con una cantidad masiva de solicitudes durante un tiempo prolongado pero existen escenarios en los cuales la cantidad de peticiones puede aumentar de manera considerable.
+\end{itemize}
+		
+\subsection{Escalabilidad}
+Escalabilidad es la capacidad que tiene una solución para poder adaptarse al crecimiento en la demanda.
+
+Imaginemos que tenemos una aplicación corriendo en un servidor con ciertas características, de repente la cantidad de usuarios de nuestra aplicación aumenta por lo cual se hace necesario escalar nuestra infraestructura con el fin de poder seguir brindando el mejor servicio. Existen 2 maneras de escalar:
+
+\begin{itemize}
+	\item {\textbf{Escalabilidad vertical:}} Era la forma de escalar convencional hace unos años y es básicamente aumentar las capacidades del equipo de computo o en su defecto, comprar uno nuevo con más capacidad. Es la forma más sencilla de escalar ya que ya que la arquitectura de la infraestructura no cambia.
+	\item {\textbf{Escalabilidad horizontal:}} Consiste en distribuir la carga en un conjunto de equipos de cómputo, de tal manera que si necesitamos soportar una mayor carga, en lugar de cambiar todo el hardware por uno de mayor capacidad, lo que usualmente es muy costoso, simplemente añadimos un nuevo equipo al conjunto lo cual implica una redistribución de la carga y aumenta la cantidad que el conjunto puede llegar a soportar. 
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{figs/escalabilidad.png}
+	\caption{Escalabilidad vertical en contraste con escalabilidad horizontal.}\label{Escalabilidad vertical en contraste con escalabilidad horizontal}
+\end{figure}
+
+La escalabilidad vertical tiene un problema: La ley de Moore, la cual dicta: ?Cada dos años, aunque en principio dijo que sería cada 18 meses, se duplica el número de transistores. Según la sia, aunque es físicamente posible que los fabricantes de microprocesadores lleguen a crear algunos chips más de lo estipulado por Moore, no sería práctico a nivel financiero, debido a los altos costos que implica.
+
+"Y, siendo optimistas, la fecha límite ?de acuerdo con el presidente y CEO de la sia John Neuffer? sería, como mucho, 2030? \citep{BBC2018}. En otras palabras, va a llegar un punto en el cual, aunque tengamos dinero ilimitado para poder comprar el equipo de computo mas poderoso en el mercado, va llegar un punto donde el equipo que pueda satisfacer nuestra demanda no exista, lo cual convierte la escalabilidad vertical en una solución inviable para aplicaciones que visionan un crecimiento masivo.
+
+Por otra parte, la escalabilidad horizontal, a pesar de ser más compleja compleja en términos de arquitectura, puede escalar sin estar limitada por la ley de Moore además que, al tener la carga distribuida en varios nodos, podemos proveer un servicio de alta disponibilidad y los costos para escalar
+
+\section{Virtualizaci\'on}
+La virtualización es una capa intermedia a nivel de sistema operativo que provee una abstracción de los recursos del sistema. Es tal el papel de la virtualización dentro del cloud computing que grandes compañías, como Amazon, Google y Microsoft, basan sus servicios cloud en la virtualización.
+
+Las máquinas virtuales son impulsadas por los hipervisores. El hipervisor es un software que provee un entorno aislado para cada máquina virtual y es responsable de correr diferentes kernels a nivel del sistema operativo anfitrión.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/virtualizacion.png}
+	\caption{Arquitectura tradicional en contraste con arquitectura con máquinas virtuales.}\label{Arquitectura tradicional en contraste con arquitectura con máquinas virtuales}
+\end{figure}
+
+Como podemos ver en la figura \ref{Arquitectura tradicional en contraste con arquitectura con máquinas virtuales}, en la arquitectura tradicional hay un acceso más directo al hardware pero posee las siguientes falencias:
+
+\begin{itemize}
+	\item Solo se pueden ejecutar aplicaciones de un sistema operativo.
+	\item Las aplicaciones no se corren en un ambiente aislado por lo que un fallo en el sistema afecta directamente a todas las aplicaciones.
+	\item No hay portabilidad en las aplicaciones.
+\end{itemize}
+
+Las máquinas virtuales resuelven los problemas anteriormente mencionados usando el hipervisor, el cual nos permite crear máquinas virtuales con diferentes sistemas operativos corriendo al tiempo por lo que podemos tener corriendo, en una misma máquina, aplicaciones para Linux y para Windows al tiempo, adicionalmente cada aplicación puede estar corriendo en ambientes aislados por lo que un fallo en una aplicación no va a afectar a las demás aplicaciones. Sin embargo, las máquinas virtuales tienen los siguientes problemas:
+
+\begin{itemize}
+	\item Los recursos necesarios es significativamente mayor al enfoque tradicional debido a que se deben correr los servicios de cada sistema operativo adicional por cada máquina virtual.
+	\item El rendimiento de las aplicaciones dentro de las máquinas virtuales se ve afectado.
+	\item Los tiempos de encendido y apagado de las máquinas virtuales pueden llegar a ser del orden de minutos.
+\end{itemize}
+
+Para solucionar estos problemas aparecen los contenedores.
+
+\section{Contenedores}
+
+Las aplicaciones software suelen desplegarse como un conjunto de librerías y archivos de configuración en un entorno, por ejemplo, un servidor. Estas se despliegan en un sistema operativo con un conjunto de servicios corriendo, como puede ser un servidor de base de datos o un servidor http, sin embargo estos servicios pueden ser desplegados en cualquier ambiente que pueda proveer los mismos servicios, ya sea una máquina virtual o una máquina física. 
+
+Sin embargo, esta metodología tiene un problema relacionado con la actualización o parches ya que estos pueden, por problemas de compatibilidad, dejar una aplicación fuera de servicio. Otro escenario es el cual tenemos 2 aplicaciones en un mismo sistema operativo anfitrión las cuales comparten librerías, luego para solucionar un problema con la aplicación 1, surge la necesidad de actualizar una de las librerías, en cuyo caso se corre el riesgo de afectar el funcionamiento de la aplicación 2. Para poder evitar cualquier inconveniente durante el despliegue, las compañías de software suelen hacer pruebas antes de realizar el despliegue en el sistema de producción, sin embargo, según la complejidad de la aplicación, estas pruebas pueden llegar a ser una tarea tediosa.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/contenedores.png}
+	\caption{Máquinas virtuales vs contenedores. Adaptado de \citep{JOY2015}}\label{Máquinas virtuales vs contenedores}
+\end{figure}
+
+Como alternativa, aparecen los contenedores los cuales son un ambiente aislado dentro de un sistema operativo. Los contenedores toman ciertos beneficios de las máquinas virtuales, como la seguridad, el almacenamiento y el aislamiento de red, mientras que consumen muchos menos recursos que las máquinas virtuales. Adicionalmente, los contenedores nos proveen un rendimiento y escalabilidad mayor a las máquinas virtuales como se muestra en la figura \ref{Solicitudes procesadas en 600 segundos}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/solicitudes.png}
+	\caption{Solicitudes procesadas en 600 segundos. Adaptado de \citep{JOY2015}}\label{Solicitudes procesadas en 600 segundos}
+\end{figure}
+
+Los contenedores poseen las siguientes ventajas:
+
+\begin{itemize}
+	\item Poco impacto sobre los recursos
+	\item Ambiente aislado
+	\item Despliegue rápido
+	\item Portabilidad
+\end{itemize}
+
+\section{Orquestaci\'on de contenedores}
+
+Supongamos que tenemos una aplicación desplegada usando contenedores y por alguna razón, ya sea un ataque por denegación de servicios o un simple error en el código de la aplicación, el contenedor que la contiene falla. En un sistema de disponibilidad alta debemos asegurar de alguna manera que la aplicación siempre va a estar disponible, por lo tanto debemos implementar una arquitectura que nos permita tolerar fallos, es aquí donde aparece el siguiente concepto: ?Orquestación de contenedores?. 
+
+La orquestación de contenedores nos permite desplegar un nuevo contenedor en caso de que otro falle con el fin de mantener la consistencia dentro del cluster, gestionar la manera en que los diferentes contenedores interactúan entre sí. Existen varias tecnologías que implementan una arquitectura para orquestar contenedores: Kubernetes, Docker Swarm o Fleet.
+
+\section{Microservicios}
+Los microservicios son una arquitectura y un enfoque sobre la escritura de software en el que las aplicaciones se dividen en componentes más pequeños e independientes entre sí. A diferencia de un enfoque tradicional y monolítico sobre las aplicaciones, en el que todo se crea en una única pieza, los microservicios están separados y funcionan conjuntamente para llevar a cabo las mismas tareas como podemos ver en la figura \ref{Arquitectura monolítica vs arquitectura de microservicios}. Cada uno de estos componentes, o procesos, son los microservicios. Este enfoque sobre el desarrollo de software valora la granularidad por ser liviana y la capacidad de compartir un proceso similar en varias aplicaciones. \citep{WhatAreMicroservices}
+
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/monolithic-vs-microservices.png}
+	\caption{Arquitectura monolítica vs arquitectura de microservicios. Adaptado de \citep{EdurekaMicroservices}}\label{Arquitectura monolítica vs arquitectura de microservicios}
+\end{figure}
