@@ -1,10 +1,10 @@
 \babel@toc {spanish}{}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\addvspace {10\p@ }
 \contentsline {figure}{\numberline {1}{\ignorespaces Arquitectura sugerida por AWS para una aplicaci\'on en WordPress. Adaptado de \citep {AwsArchitectureSample}\relax }}{20}{figure.caption.9}% 
-\contentsline {figure}{\numberline {2}{\ignorespaces Arquitecturas sugeridas por Azure para una estaci\'on de Blockchain. Adaptado de \citep {AzureArchitectureSample}\relax }}{21}{figure.caption.10}% 
-\contentsline {figure}{\numberline {3}{\ignorespaces Arquitecturas sugeridas por GCP para una aplicaci\'on basada en eventos. Adaptado de \citep {GoogleArchitectureSample}\relax }}{22}{figure.caption.11}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Arquitecturas sugeridas por Azure para una estaci\'on de Blockchain. Adaptado de \citep {AzureArchitectureSample}\relax }}{20}{figure.caption.10}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Arquitecturas sugeridas por GCP para una aplicaci\'on basada en eventos. Adaptado de \citep {GoogleArchitectureSample}\relax }}{21}{figure.caption.11}% 
+\addvspace {10\p@ }
 \contentsline {figure}{\numberline {4}{\ignorespaces Responsabilidades seg\'un el modelo de servicio. Adaptado de \citep {GANTENBEIN2017}\relax }}{23}{figure.caption.12}% 
 \contentsline {figure}{\numberline {5}{\ignorespaces Modelo de un cluster activo-activo. Adaptado de \citep {VILLANUEVA2015}\relax }}{25}{figure.caption.13}% 
 \contentsline {figure}{\numberline {6}{\ignorespaces Modelo de un cluster activo-pasivo. Adaptado de \citep {VILLANUEVA2015}\relax }}{26}{figure.caption.14}% 
