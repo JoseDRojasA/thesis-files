@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.27)  12 MAY 2019 23:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.27)  12 MAY 2019 23:23
 entering extended mode
 **./Plantilla_UIS.tex
 (Plantilla_UIS.tex
@@ -500,6 +500,9 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
 \c@LT@chunks=\count132
 \LT@p@ftn=\toks26
 )
+("D:\App\MiKTeX 2.9\tex/latex/graphics\lscape.sty"
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
 ("D:\App\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count133
@@ -519,27 +522,27 @@ LaTeX Info: Redefining \% on input line 25.
 (Secs/agradecimientos.aux) (Secs/glosario.aux) (Secs/res.aux) (Secs/abs.aux))
 \openout1 = `Plantilla_UIS.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
-LaTeX Font Info:    ... okay on input line 35.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 35.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 36.
+LaTeX Font Info:    ... okay on input line 36.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 36.
 
 ("D:\App\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
 \AtBeginShipoutBox=\box37
-Package hyperref Info: Link coloring OFF on input line 35.
+Package hyperref Info: Link coloring OFF on input line 36.
 
 ("D:\App\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -549,16 +552,16 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count134
 )
-LaTeX Info: Redefining \ref on input line 35.
-LaTeX Info: Redefining \pageref on input line 35.
-LaTeX Info: Redefining \nameref on input line 35.
+LaTeX Info: Redefining \ref on input line 36.
+LaTeX Info: Redefining \pageref on input line 36.
+LaTeX Info: Redefining \nameref on input line 36.
 
 (Plantilla_UIS.out) (Plantilla_UIS.out)
 \@outlinefile=\write3
 \openout3 = `Plantilla_UIS.out'.
 
-LaTeX Info: Redefining \. on input line 35.
-LaTeX Info: Redefining \% on input line 35.
+LaTeX Info: Redefining \. on input line 36.
+LaTeX Info: Redefining \% on input line 36.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: longtable package is loaded.
@@ -657,7 +660,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/nota-eps-converted-to.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/nota-eps-converted-to.pdf, id=128, 798.985pt x 589.20125pt>
+<figs/nota-eps-converted-to.pdf, id=156, 798.985pt x 589.20125pt>
 File: figs/nota-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/nota-eps-converted-to.pdf>
 Package pdftex.def Info: figs/nota-eps-converted-to.pdf  used on input line 34.
@@ -677,7 +680,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/autoriza-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/autoriza-eps-converted-to.pdf, id=129, 432.61626pt x 589.20125pt>
+<figs/autoriza-eps-converted-to.pdf, id=157, 432.61626pt x 589.20125pt>
 File: figs/autoriza-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/autoriza-eps-converted-to.pdf>
 Package pdftex.def Info: figs/autoriza-eps-converted-to.pdf  used on input line
@@ -711,7 +714,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--13
 
 ])
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 53.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 54.
  (Plantilla_UIS.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -751,40 +754,40 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
  [6
 
-])
+] [7])
 \tf@toc=\write4
 \openout4 = `Plantilla_UIS.toc'.
 
- [7] (Plantilla_UIS.lof
+ [8]
+(Plantilla_UIS.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-)
+ [9
+
+])
 \tf@lof=\write5
 \openout5 = `Plantilla_UIS.lof'.
 
-
-[8
-
-] (Plantilla_UIS.lot
+ [10] (Plantilla_UIS.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lot=\write6
 \openout6 = `Plantilla_UIS.lot'.
 
- [9
+ [11
 
 ] (Plantilla_UIS.loa)
 \tf@loa=\write7
 \openout7 = `Plantilla_UIS.loa'.
 
- [10
+
+[12
 
 ]
 \openout2 = `Secs/glosario.aux'.
 
- (Secs/glosario.tex)
-[11
+ (Secs/glosario.tex) [13
 
 
 ]
@@ -804,7 +807,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-) [12
+) [14
 
 
 ]
@@ -815,7 +818,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-) [13
+) [15
 
 
 ] (Secs/T0.tex
@@ -833,7 +836,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-[14
+[16
 
 ]) (Secs/T1.tex
 Cap\'{\i }tulo 1.
@@ -849,7 +852,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-[15]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
@@ -864,7 +867,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-[16]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
@@ -879,7 +882,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-<figs/AWS_Arquitecturas.jpeg, id=402, 5156.26375pt x 3411.74625pt>
+<figs/AWS_Arquitecturas.jpeg, id=461, 5156.26375pt x 3411.74625pt>
 File: figs/AWS_Arquitecturas.jpeg Graphic file (type jpg)
 <use figs/AWS_Arquitecturas.jpeg>
 Package pdftex.def Info: figs/AWS_Arquitecturas.jpeg  used on input line 33.
@@ -887,7 +890,7 @@ Package pdftex.def Info: figs/AWS_Arquitecturas.jpeg  used on input line 33.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs/AZURE_architecture.png, id=405, 1178.15157pt x 657.95813pt>
+<figs/AZURE_architecture.png, id=464, 1178.15157pt x 657.95813pt>
 File: figs/AZURE_architecture.png Graphic file (type png)
 <use figs/AZURE_architecture.png>
 Package pdftex.def Info: figs/AZURE_architecture.png  used on input line 39.
@@ -895,7 +898,7 @@ Package pdftex.def Info: figs/AZURE_architecture.png  used on input line 39.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs/GCP_architecture.png, id=408, 1148.29pt x 684.5575pt>
+<figs/GCP_architecture.png, id=467, 1148.29pt x 684.5575pt>
 File: figs/GCP_architecture.png Graphic file (type png)
 <use figs/GCP_architecture.png>
 Package pdftex.def Info: figs/GCP_architecture.png  used on input line 45.
@@ -905,15 +908,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (Secs/T3.tex
 Cap\'{\i }tulo 3.
-[17] [18 <./figs/AWS_Arquitecturas.jpeg>] [19 <./figs/AZURE_architecture.png>]
-<figs/responsibility-zones.png, id=431, 421.1986pt x 219.06844pt>
+[19] [20 <./figs/AWS_Arquitecturas.jpeg>] [21 <./figs/AZURE_architecture.png>]
+<figs/responsibility-zones.png, id=490, 421.1986pt x 219.06844pt>
 File: figs/responsibility-zones.png Graphic file (type png)
 <use figs/responsibility-zones.png>
 Package pdftex.def Info: figs/responsibility-zones.png  used on input line 31.
 (pdftex.def)             Requested size: 469.75539pt x 244.32875pt.
 
-[20 <./figs/GCP_architecture.png>] [21 <./figs/responsibility-zones.png>]
-<figs/active_active_high_availability_cluster_load_balancer.png, id=451, 631.35
+[22 <./figs/GCP_architecture.png>] [23 <./figs/responsibility-zones.png>]
+<figs/active_active_high_availability_cluster_load_balancer.png, id=510, 631.35
 875pt x 279.0425pt>
 File: figs/active_active_high_availability_cluster_load_balancer.png Graphic fi
 le (type png)
@@ -922,8 +925,8 @@ Package pdftex.def Info: figs/active_active_high_availability_cluster_load_bala
 ncer.png  used on input line 62.
 (pdftex.def)             Requested size: 469.75539pt x 207.62079pt.
 
-[22]
-<figs/active_passive_high_availability_cluster.png, id=464, 593.21625pt x 262.9
+[24]
+<figs/active_passive_high_availability_cluster.png, id=523, 593.21625pt x 262.9
 825pt>
 File: figs/active_passive_high_availability_cluster.png Graphic file (type png)
 
@@ -931,55 +934,55 @@ File: figs/active_passive_high_availability_cluster.png Graphic file (type png)
 Package pdftex.def Info: figs/active_passive_high_availability_cluster.png  use
 d on input line 76.
 (pdftex.def)             Requested size: 469.75539pt x 208.25949pt.
- [23 <./figs/active_active_high_availability_cluster_load_balancer.png>]
-[24 <./figs/active_passive_high_availability_cluster.png>]
-<figs/escalabilidad.png, id=477, 900.36375pt x 713.66624pt>
+ [25 <./figs/active_active_high_availability_cluster_load_balancer.png>]
+[26 <./figs/active_passive_high_availability_cluster.png>]
+<figs/escalabilidad.png, id=537, 900.36375pt x 713.66624pt>
 File: figs/escalabilidad.png Graphic file (type png)
 <use figs/escalabilidad.png>
 Package pdftex.def Info: figs/escalabilidad.png  used on input line 94.
 (pdftex.def)             Requested size: 375.80574pt x 297.87564pt.
- [25 <./figs/escalabilidad.png>] [26]
-<figs/virtualizacion.png, id=490, 1001.7425pt x 454.69875pt>
+ [27 <./figs/escalabilidad.png>] [28]
+<figs/virtualizacion.png, id=549, 1001.7425pt x 454.69875pt>
 File: figs/virtualizacion.png Graphic file (type png)
 <use figs/virtualizacion.png>
 Package pdftex.def Info: figs/virtualizacion.png  used on input line 111.
 (pdftex.def)             Requested size: 469.75539pt x 213.2297pt.
- [27 <./figs/virtualizacion.png>] [28]
-<figs/contenedores.png, id=500, 945.5325pt x 552.0625pt>
+ [29 <./figs/virtualizacion.png>] [30]
+<figs/contenedores.png, id=559, 945.5325pt x 552.0625pt>
 File: figs/contenedores.png Graphic file (type png)
 <use figs/contenedores.png>
 Package pdftex.def Info: figs/contenedores.png  used on input line 141.
 (pdftex.def)             Requested size: 469.75539pt x 274.27841pt.
-<figs/solicitudes.png, id=504, 764.8575pt x 533.995pt>
+<figs/solicitudes.png, id=563, 764.8575pt x 533.995pt>
 File: figs/solicitudes.png Graphic file (type png)
 <use figs/solicitudes.png>
 Package pdftex.def Info: figs/solicitudes.png  used on input line 150.
 (pdftex.def)             Requested size: 469.75539pt x 327.96906pt.
- [29 <./figs/contenedores.png>] [30 <./figs/solicitudes.png>]
-<figs/monolithic-vs-microservices.png, id=518, 1816.7875pt x 842.14626pt>
+ [31 <./figs/contenedores.png>] [32 <./figs/solicitudes.png>]
+<figs/monolithic-vs-microservices.png, id=578, 1816.7875pt x 842.14626pt>
 File: figs/monolithic-vs-microservices.png Graphic file (type png)
 <use figs/monolithic-vs-microservices.png>
 Package pdftex.def Info: figs/monolithic-vs-microservices.png  used on input li
 ne 175.
 (pdftex.def)             Requested size: 469.75539pt x 217.74495pt.
-) (Secs/T4.tex [31]
+) (Secs/T4.tex [33]
 Cap\'{\i }tulo 4.
-[32 <./figs/monolithic-vs-microservices.png>]
-<figs/arquitectura_kubernetes.png, id=538, 602.25pt x 451.6875pt>
+[34 <./figs/monolithic-vs-microservices.png>]
+<figs/arquitectura_kubernetes.png, id=597, 602.25pt x 451.6875pt>
 File: figs/arquitectura_kubernetes.png Graphic file (type png)
 <use figs/arquitectura_kubernetes.png>
 Package pdftex.def Info: figs/arquitectura_kubernetes.png  used on input line 3
 7.
 (pdftex.def)             Requested size: 469.75539pt x 352.32861pt.
- [33] [34 <./figs/arquitectura_kubernetes.png>]
-<figs/OpenShiftContainerPlatformStack.png, id=554, 887.315pt x 572.1375pt>
+ [35] [36 <./figs/arquitectura_kubernetes.png>]
+<figs/OpenShiftContainerPlatformStack.png, id=613, 887.315pt x 572.1375pt>
 File: figs/OpenShiftContainerPlatformStack.png Graphic file (type png)
 <use figs/OpenShiftContainerPlatformStack.png>
 Package pdftex.def Info: figs/OpenShiftContainerPlatformStack.png  used on inpu
 t line 70.
 (pdftex.def)             Requested size: 469.75539pt x 302.89095pt.
- [35] [36 <./figs/OpenShiftContainerPlatformStack.png>]
-<figs/glusterfs.png, id=571, 662.475pt x 331.2375pt>
+ [37] [38 <./figs/OpenShiftContainerPlatformStack.png>]
+<figs/glusterfs.png, id=631, 662.475pt x 331.2375pt>
 File: figs/glusterfs.png Graphic file (type png)
 <use figs/glusterfs.png>
 Package pdftex.def Info: figs/glusterfs.png  used on input line 91.
@@ -987,7 +990,7 @@ Package pdftex.def Info: figs/glusterfs.png  used on input line 91.
 )
 (Secs/T5.tex
 Cap\'{\i }tulo 5.
-[37 <./figs/glusterfs.png>] [38]
+[39 <./figs/glusterfs.png>] [40]
 Overfull \hbox (17.03592pt too wide) in paragraph at lines 61--77
  [] 
  []
@@ -995,7 +998,7 @@ Overfull \hbox (17.03592pt too wide) in paragraph at lines 61--77
 LaTeX Font Info:    Try loading font information for T1+cmtt on input line 78.
 ("D:\App\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [39]
+) [41]
 Underfull \hbox (badness 1418) in paragraph at lines 90--90
 []\T1/ptm/m/n/12 Container Run-ti-
  []
@@ -1005,88 +1008,144 @@ Overfull \hbox (17.03592pt too wide) in paragraph at lines 88--104
  [] 
  []
 
-[40]
+[42]
 Overfull \hbox (17.03592pt too wide) in paragraph at lines 116--133
  [] 
  []
 
-[41]) (Secs/T6.tex
+[43] [44] [45]
+Underfull \hbox (badness 1087) in paragraph at lines 186--186
+[]\T1/ptm/m/n/12 Verifica las cre-den-cia-les de
+ []
+
+[46] [47] [48] [49] [50]
+<figs/Infraestructura.png, id=733, 161.60374pt x 161.60374pt>
+File: figs/Infraestructura.png Graphic file (type png)
+<use figs/Infraestructura.png>
+Package pdftex.def Info: figs/Infraestructura.png  used on input line 240.
+(pdftex.def)             Requested size: 140.92804pt x 140.9344pt.
+ [51 <./figs/Infraestructura.png>]
+<figs/Thesis-Architecture.png, id=739, 1366.10374pt x 658.46pt>
+File: figs/Thesis-Architecture.png Graphic file (type png)
+<use figs/Thesis-Architecture.png>
+Package pdftex.def Info: figs/Thesis-Architecture.png  used on input line 247.
+(pdftex.def)             Requested size: 704.63307pt x 339.63817pt.
+
+Overfull \hbox (107.1252pt too wide) in paragraph at lines 247--248
+ [][] 
+ []
+
+[52
+
+ <./figs/Thesis-Architecture.png>]) (Secs/T6.tex
 Cap\'{\i }tulo 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
  []
 
-[42]) (Secs/T7.tex
+) (Secs/T7.tex
 Cap\'{\i }tulo 7.
 
-LaTeX Warning: Reference `estabanalpi' on page 43 undefined on input line 15.
+LaTeX Warning: Reference `estabanalpi' on page 53 undefined on input line 15.
 
 
-LaTeX Warning: Reference `metrdef' on page 43 undefined on input line 15.
+LaTeX Warning: Reference `metrdef' on page 53 undefined on input line 15.
 
 
-LaTeX Warning: Reference `conjestabsect' on page 43 undefined on input line 15.
-
-
-
-LaTeX Warning: Reference `estabanalpi' on page 43 undefined on input line 15.
-
-
-LaTeX Warning: Reference `conjestabsect' on page 43 undefined on input line 16.
+LaTeX Warning: Reference `conjestabsect' on page 53 undefined on input line 15.
 
 
 
-LaTeX Warning: Reference `conjestabpi' on page 43 undefined on input line 16.
+LaTeX Warning: Reference `estabanalpi' on page 53 undefined on input line 15.
 
-[43]
+[53
 
-LaTeX Warning: Reference `interfazsect' on page 44 undefined on input line 17.
+]
 
-) (Secs/T8.tex) [44] (Plantilla_UIS.bbl
-Underfull \hbox (badness 1331) in paragraph at lines 44--50
+LaTeX Warning: Reference `conjestabsect' on page 54 undefined on input line 16.
+
+
+
+LaTeX Warning: Reference `conjestabpi' on page 54 undefined on input line 16.
+
+
+LaTeX Warning: Reference `interfazsect' on page 54 undefined on input line 17.
+
+) (Secs/T8.tex) [54] (Plantilla_UIS.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+[]\T1/ptm/m/n/12 (2016a).  How we ar-chi-tec-ted and run ku-ber-ne-tes on opens
+-tack at sca-le at
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--9
+\T1/ptm/m/n/12 yahoo! ja-pan.  Re-cu-pe-ra-do de []$\T1/cmtt/m/n/12 https : / /
+ kubernetes . io / blog / 2016 / 10 /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--30
+[]\T1/ptm/m/n/12 (2017).  Ku-ber-ne-tes and opens-hift: Com-mu-nity, stan-dards
+ and cer-ti-fi-ca-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--30
+\T1/ptm/m/n/12 tions.  \T1/ptm/m/it/12 Fer-nan-des, J\T1/ptm/m/n/12 .  Re-cu-pe
+-ra-do de []$\T1/cmtt/m/n/12 https : / / blog . openshift . com /
+ []
+
+
+Underfull \hbox (badness 1331) in paragraph at lines 53--59
 \T1/ptm/m/n/12 te-li-gen-tes.  \T1/ptm/m/it/12 UR-BAN HUB\T1/ptm/m/n/12 .  Re-c
 u-pe-ra-do de []$\T1/cmtt/m/n/12 http : / / www . urban-[]hub . com / es / citi
 es /
  []
 
-[45]
-Underfull \hbox (badness 2401) in paragraph at lines 72--77
+[55]
+Underfull \hbox (badness 2401) in paragraph at lines 94--99
 []\T1/ptm/m/n/12 ALTIMORE, P. (2018).  Azu-re block-chain work-bench ar-chi-tec
 -tu-re.  \T1/ptm/m/it/12 Mi-cro-soft Azu-re\T1/ptm/m/n/12 .
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 72--77
+Underfull \hbox (badness 4132) in paragraph at lines 94--99
 \T1/ptm/m/n/12 Re-cu-pe-ra-do de []$\T1/cmtt/m/n/12 https : / / docs . microsof
 t . com / en-[]us / azure / blockchain / workbench /
  []
 
-
-Underfull \hbox (badness 1112) in paragraph at lines 98--103
+[56]
+Underfull \hbox (badness 1112) in paragraph at lines 127--132
 []\T1/ptm/m/n/12 Gantenbein, H. y Nei-ra, B. (2017).  Se-cu-ring paas de-ploy-m
 ents.  \T1/ptm/m/it/12 Mi-cro-soft Azu-re Do-
  []
 
-
-Underfull \hbox (badness 7012) in paragraph at lines 110--115
-[]\T1/ptm/m/n/12 Heidi, E. (2016).  What is high avai-la-bi-lity.  \T1/ptm/m/it
-/12 Di-gi-ta-lO-cean\T1/ptm/m/n/12 .  Re-cu-pe-ra-do de
- []
-
-[46]
-Underfull \hbox (badness 1210) in paragraph at lines 146--152
+[57]
+Underfull \hbox (badness 1210) in paragraph at lines 178--184
 \T1/ptm/m/n/12 of the na-tio-nal ins-ti-tu-te of stan-dards and tech-no-logy.  
 \T1/ptm/m/it/12 Na-tio-nal Ins-ti-tu-te of Stan-dards
  []
 
 
-Underfull \hbox (badness 1721) in paragraph at lines 146--152
+Underfull \hbox (badness 1721) in paragraph at lines 178--184
 \T1/ptm/m/it/12 and Tech-no-logy\T1/ptm/m/n/12 .  Re-cu-pe-ra-do de []$\T1/cmtt
 /m/n/12 https : / / nvlpubs . nist . gov / nistpubs / Legacy / SP /
  []
 
-[47]) (Secs/anexoA.tex [48]
+[58]
+Underfull \hbox (badness 10000) in paragraph at lines 208--213
+[]\T1/ptm/m/n/12 Villanueva, J. (2015).  Active-active vs active-passive high a
+vai-la-bi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 208--213
+\T1/ptm/m/n/12 lity clus-ter.  \T1/ptm/m/it/12 Js-ca-pe\T1/ptm/m/n/12 .  Re-cu-
+pe-ra-do de []$\T1/cmtt/m/n/12 http : / / www . jscape . com / blog /
+ []
+
+) (Secs/anexoA.tex [59]
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
@@ -1096,7 +1155,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--14
 
  []
 
-[49]
+[60]
 Package epstopdf Info: Source file: <Figs/prodvect.eps>
 (epstopdf)                    date: 2016-09-27 19:56:20
 (epstopdf)                    size: 13093 bytes
@@ -1111,7 +1170,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figs/prodvect-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/prodvect-eps-converted-to.pdf, id=681, 354.32375pt x 270.00874pt>
+<Figs/prodvect-eps-converted-to.pdf, id=835, 354.32375pt x 270.00874pt>
 File: Figs/prodvect-eps-converted-to.pdf Graphic file (type pdf)
 <use Figs/prodvect-eps-converted-to.pdf>
 Package pdftex.def Info: Figs/prodvect-eps-converted-to.pdf  used on input line
@@ -1131,7 +1190,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figs/rigid-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/rigid-eps-converted-to.pdf, id=683, 217.81375pt x 157.58875pt>
+<Figs/rigid-eps-converted-to.pdf, id=837, 217.81375pt x 157.58875pt>
 File: Figs/rigid-eps-converted-to.pdf Graphic file (type pdf)
 <use Figs/rigid-eps-converted-to.pdf>
 Package pdftex.def Info: Figs/rigid-eps-converted-to.pdf  used on input line 83
@@ -1140,7 +1199,7 @@ Package pdftex.def Info: Figs/rigid-eps-converted-to.pdf  used on input line 83
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[50 <./Figs/prodvect-eps-converted-to.pdf>]
+[61 <./Figs/prodvect-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figs/rotacion.eps>
 (epstopdf)                    date: 2016-09-27 21:40:30
 (epstopdf)                    size: 27928 bytes
@@ -1155,7 +1214,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figs/rotacion-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/rotacion-eps-converted-to.pdf, id=696, 207.77625pt x 213.79875pt>
+<Figs/rotacion-eps-converted-to.pdf, id=851, 207.77625pt x 213.79875pt>
 File: Figs/rotacion-eps-converted-to.pdf Graphic file (type pdf)
 <use Figs/rotacion-eps-converted-to.pdf>
 Package pdftex.def Info: Figs/rotacion-eps-converted-to.pdf  used on input line
@@ -1164,12 +1223,12 @@ Package pdftex.def Info: Figs/rotacion-eps-converted-to.pdf  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[51 <./Figs/rigid-eps-converted-to.pdf>]
+[62 <./Figs/rigid-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 125--128
 
  []
 
-[52 <./Figs/rotacion-eps-converted-to.pdf>]
+[63 <./Figs/rotacion-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 146--149
 
  []
@@ -1179,17 +1238,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
  []
 
-[53]
+[64]
 Underfull \hbox (badness 10000) in paragraph at lines 169--172
 
  []
 
-[54]
+[65]
 Underfull \hbox (badness 10000) in paragraph at lines 186--189
 
  []
 
-) (Secs/anexoB.tex [55] [56]
+) (Secs/anexoB.tex [66] [67]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `T1/ptm/b/it' tried instead on input line 10.
 
@@ -1207,7 +1266,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--29
 
  []
 
-[57]
+[68]
 Underfull \hbox (badness 10000) in paragraph at lines 60--64
 
  []
@@ -1226,13 +1285,13 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figs/flujodiag-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/flujodiag-eps-converted-to.pdf, id=755, 909.3975pt x 1144.275pt>
+<Figs/flujodiag-eps-converted-to.pdf, id=910, 909.3975pt x 1144.275pt>
 File: Figs/flujodiag-eps-converted-to.pdf Graphic file (type pdf)
 <use Figs/flujodiag-eps-converted-to.pdf>
 Package pdftex.def Info: Figs/flujodiag-eps-converted-to.pdf  used on input lin
 e 67.
 (pdftex.def)             Requested size: 258.36688pt x 325.09161pt.
-[58]
+[69]
 Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
@@ -1242,7 +1301,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-) (Secs/anexoC.tex [59 <./Figs/flujodiag-eps-converted-to.pdf>] [60]
+) (Secs/anexoC.tex [70 <./Figs/flujodiag-eps-converted-to.pdf>] [71]
 Package epstopdf Info: Source file: <figs/primero.eps>
 (epstopdf)                    date: 2016-10-03 23:57:44
 (epstopdf)                    size: 13418 bytes
@@ -1257,7 +1316,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/primero-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/primero-eps-converted-to.pdf, id=775, 1176.395pt x 217.81375pt>
+<figs/primero-eps-converted-to.pdf, id=930, 1176.395pt x 217.81375pt>
 File: figs/primero-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/primero-eps-converted-to.pdf>
 Package pdftex.def Info: figs/primero-eps-converted-to.pdf  used on input line 
@@ -1277,13 +1336,13 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/segunda-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/segunda-eps-converted-to.pdf, id=777, 1238.6275pt x 217.81375pt>
+<figs/segunda-eps-converted-to.pdf, id=932, 1238.6275pt x 217.81375pt>
 File: figs/segunda-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/segunda-eps-converted-to.pdf>
 Package pdftex.def Info: figs/segunda-eps-converted-to.pdf  used on input line 
 37.
 (pdftex.def)             Requested size: 328.82733pt x 57.8234pt.
-[61 <./figs/primero-eps-converted-to.pdf>]
+[72 <./figs/primero-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/tercero.eps>
 (epstopdf)                    date: 2016-10-04 00:08:34
 (epstopdf)                    size: 12537 bytes
@@ -1298,7 +1357,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/tercero-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/tercero-eps-converted-to.pdf, id=790, 1200.485pt x 217.81375pt>
+<figs/tercero-eps-converted-to.pdf, id=944, 1200.485pt x 217.81375pt>
 File: figs/tercero-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/tercero-eps-converted-to.pdf>
 Package pdftex.def Info: figs/tercero-eps-converted-to.pdf  used on input line 
@@ -1318,7 +1377,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/cuarta-eps-converted-to.pdf): PDF inc
 lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/cuarta-eps-converted-to.pdf, id=792, 1479.5275pt x 310.15875pt>
+<figs/cuarta-eps-converted-to.pdf, id=946, 1479.5275pt x 310.15875pt>
 File: figs/cuarta-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/cuarta-eps-converted-to.pdf>
 Package pdftex.def Info: figs/cuarta-eps-converted-to.pdf  used on input line 5
@@ -1338,13 +1397,13 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/quinto-eps-converted-to.pdf): PDF inc
 lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/quinto-eps-converted-to.pdf, id=794, 1653.17625pt x 398.48875pt>
+<figs/quinto-eps-converted-to.pdf, id=948, 1653.17625pt x 398.48875pt>
 File: figs/quinto-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/quinto-eps-converted-to.pdf>
 Package pdftex.def Info: figs/quinto-eps-converted-to.pdf  used on input line 6
 6.
 (pdftex.def)             Requested size: 328.82733pt x 79.25854pt.
-[62 <./figs/segunda-eps-converted-to.pdf> <./figs/tercero-eps-converted-to.pdf>
+[73 <./figs/segunda-eps-converted-to.pdf> <./figs/tercero-eps-converted-to.pdf>
 ]
 Package epstopdf Info: Source file: <figs/sexto.eps>
 (epstopdf)                    date: 2016-10-04 00:26:04
@@ -1360,7 +1419,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/sexto-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/sexto-eps-converted-to.pdf, id=814, 1628.0825pt x 635.37375pt>
+<figs/sexto-eps-converted-to.pdf, id=969, 1628.0825pt x 635.37375pt>
 File: figs/sexto-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/sexto-eps-converted-to.pdf>
 Package pdftex.def Info: figs/sexto-eps-converted-to.pdf  used on input line 75
@@ -1376,7 +1435,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[63 <./figs/cuarta-eps-converted-to.pdf> <./figs/quinto-eps-converted-to.pdf>]
+[74 <./figs/cuarta-eps-converted-to.pdf> <./figs/quinto-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
@@ -1395,46 +1454,52 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/interfaz-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/interfaz-eps-converted-to.pdf, id=834, 935.495pt x 509.905pt>
+<figs/interfaz-eps-converted-to.pdf, id=989, 935.495pt x 509.905pt>
 File: figs/interfaz-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/interfaz-eps-converted-to.pdf>
 Package pdftex.def Info: figs/interfaz-eps-converted-to.pdf  used on input line
  95.
 (pdftex.def)             Requested size: 328.82733pt x 179.2319pt.
-[64 <./figs/sexto-eps-converted-to.pdf>] [65 <./figs/interfaz-eps-converted-to.
+[75 <./figs/sexto-eps-converted-to.pdf>] [76 <./figs/interfaz-eps-converted-to.
 pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
- [66]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+ [77]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
  (Plantilla_UIS.aux (Secs/P0.aux)
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
  (Secs/dedicatoria.aux)
 (Secs/agradecimientos.aux) (Secs/glosario.aux) (Secs/res.aux) (Secs/abs.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
 Package rerunfilecheck Info: File `Plantilla_UIS.out' has not changed.
-(rerunfilecheck)             Checksum: 7513D4545DE19039DADE689348372333;1943.
+(rerunfilecheck)             Checksum: 2039A3E890B4BFF6018D3E6FBDE1058B;2512.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 91.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 89 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11227 strings out of 492945
- 164844 string characters out of 3139908
- 291914 words of memory out of 3000000
- 14608 multiletter control sequences out of 15000+200000
+ 11301 strings out of 492945
+ 166058 string characters out of 3139908
+ 293343 words of memory out of 3000000
+ 14643 multiletter control sequences out of 15000+200000
  62141 words of font info for 102 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 43i,20n,48p,1234b,3734s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.12} has been referenced b
+ 43i,20n,48p,1241b,3751s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.14} has been referenced b
 ut does not exist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not exis
+t, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
 t, replaced by a fixed one
@@ -1479,9 +1544,9 @@ TeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/App/MiKTeX 2.9/fonts
 D:/App/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/App/MiKTeX 2.9/fonts/typ
 e1/urw/times/utmbi8a.pfb><D:/App/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D
 :/App/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on Plantilla_UIS.pdf (66 pages, 4738208 bytes).
+Output written on Plantilla_UIS.pdf (77 pages, 4817783 bytes).
 PDF statistics:
- 976 PDF objects out of 1000 (max. 8388607)
- 192 named destinations out of 1000 (max. 500000)
- 376 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1150 PDF objects out of 1200 (max. 8388607)
+ 226 named destinations out of 1000 (max. 500000)
+ 442 words of extra memory for PDF output out of 10000 (max. 10000000)
 

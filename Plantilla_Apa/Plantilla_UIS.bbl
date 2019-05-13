@@ -4,21 +4,29 @@
  (2016a).
 \newblock How we architected and run kubernetes on openstack at scale at yahoo!
   japan.
+\newblock Recuperado de
+  \url{https://kubernetes.io/blog/2016/10/kubernetes-and-openstack-at-yahoo-japan/}.
 
 \bibitem[Kub, 2016b]{KubenetesComponentes}
  (2016b).
 \newblock Kubernetes components.
 \newblock {\em Kubernetes}.
+\newblock Recuperado de
+  \url{https://kubernetes.io/docs/concepts/overview/components/}.
 
 \bibitem[RHD, 2016]{RHDocker}
  (2016).
 \newblock What is docker?
 \newblock {\em Red Hat}.
+\newblock Recuperado de
+  \url{https://www.redhat.com/en/topics/containers/what-is-docker}.
 
 \bibitem[Ope, 2017]{OpenshiftArquitectura}
  (2017).
 \newblock Kubernetes and openshift: Community, standards and certifications.
 \newblock {\em Fernandes, J}.
+\newblock Recuperado de
+  \url{https://blog.openshift.com/kubernetes-and-openshift-community-standards-and-certifications/}.
 
 \bibitem[Goo, 2018]{GoogleArchitectureSample}
  (2018).
@@ -32,6 +40,7 @@
 \newblock ?el mundo se está quedando sin potencia computacional?: ¿ qué es la
   ley de moore y por qué le preocupa al ceo de microsoft?
 \newblock {\em BBC Mundo}.
+\newblock Recuperado de \url{http://www.bbc.com/mundo/noticias-42803619}.
 
 \bibitem[Aws, 2018]{AwsArchitectureSample}
  (2018).
@@ -52,21 +61,34 @@
  (2019).
 \newblock How ansible works.
 \newblock {\em Ansible}.
+\newblock Recuperado de
+  \url{https://www.ansible.com/overview/how-ansible-works}.
 
 \bibitem[glu, 2019]{glusterfs}
  (2019).
 \newblock Installing glusterfs - a quick start guide.
 \newblock {\em Gluster Documentation}.
+\newblock Recuperado de
+  \url{https://docs.gluster.org/en/latest/Quick-Start-Guide/Quickstart/}.
 
-\bibitem[Kub, 2019]{KubenetesObjetos}
- (2019).
+\bibitem[Kub, 2019a]{KubenetesObjetos}
+ (2019a).
 \newblock Understanding kubernetes objects.
 \newblock {\em Kubernetes}.
+\newblock Recuperado de
+  \url{https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/}.
 
 \bibitem[Wha, 2019]{WhatAreMicroservices}
  (2019).
 \newblock Understanding microservices.
 \newblock {\em Red Hat}.
+\newblock Recuperado de \url{https://www.redhat.com/en/topics/microservices}.
+
+\bibitem[Kub, 2019b]{KubernetesVolumes}
+ (2019b).
+\newblock Volumes.
+\newblock Recuperado de
+  \url{https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes}.
 
 \bibitem[ALTIMORE, 2018]{AzureArchitectureSample}
 ALTIMORE, P. (2018).
@@ -87,12 +109,19 @@ Benz, K. y~Bohnert, T. (2013).
 \newblock Dependability modeling framework: A test procedure for high
   availability in cloud operating systems.
 \newblock {\em Vehicular Technology Conference}.
-\newblock Recuperado de {https://ieeexplore.ieee.org/document/6692157}.
+\newblock Recuperado de \url{https://ieeexplore.ieee.org/document/6692157}.
 
 \bibitem[Chapra and Canale, 2007]{chapra2003metodos}
 Chapra, S.~C. and Canale, R.~P. (2007).
 \newblock {\em M{\'e}todos Num{\'e}ricos para Ingenieros}.
 \newblock Mc-Graw Hill.
+
+\bibitem[DOUGLAS et~al., 2017]{NGINX2017}
+DOUGLAS, K., SIPIWE, C., and Sinyinda, M. (2017).
+\newblock Web server performance of apache and nginx: A systematic literature
+  review.
+\newblock Recuperado de
+  \url{https://pdfs.semanticscholar.org/3401/39cd741e234a39b0db7bbaa38aee7c5f944c.pdf}.
 
 \bibitem[Gantenbein, 2017]{GANTENBEIN2017}
 Gantenbein, H. y~Neira, B. (2017).
@@ -111,17 +140,20 @@ Heidi, E. (2016).
 \newblock What is high availability.
 \newblock {\em DigitalOcean}.
 \newblock Recuperado de
-  {https://www.digitalocean.com/community/tutorials/what-is-high-availability}.
+  \url{https://www.digitalocean.com/community/tutorials/what-is-high-availability}.
 
 \bibitem[Joy, 2015]{JOY2015}
 Joy, A. (2015).
 \newblock Performance comparison between linux containers and virtual machines.
 \newblock {\em ICACEA}.
+\newblock Recuperado de \url{https://ieeexplore.ieee.org/document/7164727/}.
 
 \bibitem[Kappagantula, 2019]{EdurekaMicroservices}
 Kappagantula, S. (2019).
 \newblock Microservice architecture ? learn, build and deploy microservices.
 \newblock {\em Edureka}.
+\newblock Recuperado de
+  \url{https://www.edureka.co/blog/microservice-architecture/}.
 
 \bibitem[Keel and Bhattacharyya, 2008]{keel2008}
 Keel, L.~H. and Bhattacharyya, S.~P. (2008).
@@ -177,6 +209,6 @@ Villanueva, J. (2015).
 \newblock Active-active vs active-passive high availability cluster.
 \newblock {\em Jscape}.
 \newblock Recuperado de
-  {http://www.jscape.com/blog/active-active-vs-active-passive-high-availability-cluster}.
+  \url{http://www.jscape.com/blog/active-active-vs-active-passive-high-availability-cluster}.
 
 \end{thebibliography}

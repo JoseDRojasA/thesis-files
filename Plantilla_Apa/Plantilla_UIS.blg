@@ -7,6 +7,8 @@ A level-1 auxiliary file: Secs/res.aux
 A level-1 auxiliary file: Secs/abs.aux
 The style file: apalike.bst
 Database file #1: xbib.bib
+Warning--entry type for "KubernetesVolumes" isn't style-file defined
+--line 526 of file xbib.bib
 Warning--to sort, need author or key in AwsArchitectureSample
 Warning--to sort, need author or key in GoogleArchitectureSample
 Warning--to sort, need author or key in KubenetesArquitectura
@@ -19,6 +21,7 @@ Warning--to sort, need author or key in RHDocker
 Warning--to sort, need author or key in KubenetesComponentes
 Warning--to sort, need author or key in KubenetesObjetos
 Warning--to sort, need author or key in ansibledocumentation
+Warning--to sort, need author or key in KubernetesVolumes
 Warning--empty author in KubenetesArquitectura
 Warning--empty journal in KubenetesArquitectura
 Warning--empty author in KubenetesComponentes
@@ -32,4 +35,5 @@ Warning--empty author in ansibledocumentation
 Warning--empty author in glusterfs
 Warning--empty author in KubenetesObjetos
 Warning--empty author in WhatAreMicroservices
-(There were 25 warnings)
+Warning--empty journal in NGINX2017
+(There were 28 warnings)
