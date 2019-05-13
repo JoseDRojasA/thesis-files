@@ -95,8 +95,8 @@
 \newblock Recuperado de
   \url{https://kubernetes.io/docs/concepts/storage/volumes/#types-of-volumes}.
 
-\bibitem[ALTIMORE, 2018]{AzureArchitectureSample}
-ALTIMORE, P. (2018).
+\bibitem[Altimore, 2018]{AzureArchitectureSample}
+Altimore, P. (2018).
 \newblock Azure blockchain workbench architecture.
 \newblock {\em Microsoft Azure}.
 \newblock Recuperado de
@@ -109,36 +109,26 @@ Balaguera, F. y~López, A. (2018).
   para el grupo de investigación GID-CONUSS}.
 \newblock Universidad Industrial de Santander.
 
-\bibitem[Benz, 2013]{BENZ2013}
-Benz, K. y~Bohnert, T. (2013).
+\bibitem[Benz and Bohnert, 2013]{BENZ2013}
+Benz, K. and Bohnert, T. (2013).
 \newblock Dependability modeling framework: A test procedure for high
   availability in cloud operating systems.
 \newblock {\em Vehicular Technology Conference}.
 \newblock Recuperado de \url{https://ieeexplore.ieee.org/document/6692157}.
 
-\bibitem[Chapra and Canale, 2007]{chapra2003metodos}
-Chapra, S.~C. and Canale, R.~P. (2007).
-\newblock {\em M{\'e}todos Num{\'e}ricos para Ingenieros}.
-\newblock Mc-Graw Hill.
-
-\bibitem[DOUGLAS et~al., 2017]{NGINX2017}
-DOUGLAS, K., SIPIWE, C., and Sinyinda, M. (2017).
+\bibitem[Douglas et~al., 2017]{NGINX2017}
+Douglas, K., Sipiwe, C., and Sinyinda, M. (2017).
 \newblock Web server performance of apache and nginx: A systematic literature
   review.
 \newblock Recuperado de
   \url{https://pdfs.semanticscholar.org/3401/39cd741e234a39b0db7bbaa38aee7c5f944c.pdf}.
 
-\bibitem[Gantenbein, 2017]{GANTENBEIN2017}
-Gantenbein, H. y~Neira, B. (2017).
+\bibitem[Gantenbein and Neira, 2017]{GANTENBEIN2017}
+Gantenbein, H. and Neira, B. (2017).
 \newblock Securing paas deployments.
 \newblock {\em Microsoft Azure Documentation}.
 \newblock Recuperado de
   \url{https://docs.microsoft.com/en-us/azure/security/security-paas-deployments}.
-
-\bibitem[Grossman, 1993]{stanley1993algebra}
-Grossman, S.~I. (1993).
-\newblock {\em Algebra Lineal con aplicaciones}.
-\newblock McGraw-Hill.
 
 \bibitem[Heidi, 2016]{HEIDI2016}
 Heidi, E. (2016).
@@ -160,20 +150,14 @@ Kappagantula, S. (2019).
 \newblock Recuperado de
   \url{https://www.edureka.co/blog/microservice-architecture/}.
 
-\bibitem[Keel and Bhattacharyya, 2008]{keel2008}
-Keel, L.~H. and Bhattacharyya, S.~P. (2008).
-\newblock Controller synthesis free of analytical models: Three term
-  controllers.
-\newblock {\em {IEEE} Transactions on Automatic Control}, 53(6):1353–136.
-
 \bibitem[Kumarpalani, 2014]{dnsConfiguration}
 Kumarpalani, S. (2014).
 \newblock Setting up dns server on centos 7.
 \newblock Recuperado de
   \url{https://www.unixmen.com/setting-dns-server-centos-7/}.
 
-\bibitem[LÓPEZ, 2016]{thesisValencia}
-LÓPEZ, S. (2016).
+\bibitem[López, 2016]{thesisValencia}
+López, S. (2016).
 \newblock Despliegue y monitorización de un clúster mesos.
 \newblock Master's thesis, Escola Tècnica Superior d?Enginyeria Informàtica
   Universitat Politècnica de València.
@@ -191,28 +175,23 @@ Martínez, J. y~Vásquez, C. (2017).
   de Openstack}.
 \newblock Universidad Industrial de Santander.
 
-\bibitem[Mell, 2011]{MELL2011}
-Mell, P. y~Grance, T. (2011).
+\bibitem[Mell and Grance, 2011]{MELL2011}
+Mell, P. and Grance, T. (2011).
 \newblock The nist definition of cloud computing. recommendations of the
   national institute of standards and technology.
 \newblock {\em National Institute of Standards and Technology}.
 \newblock Recuperado de
   \url{https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf}.
 
-\bibitem[MOILANEN, 2018]{thesisOulun}
-MOILANEN, M. (2018).
+\bibitem[Moilanen, 2018]{thesisOulun}
+Moilanen, M. (2018).
 \newblock {\em Deploying an application using Docker and Kubernetes}.
 \newblock Oulu University of Applied Sciences.
 
-\bibitem[SCHUCHMANN, 2018]{thesisMath}
-SCHUCHMANN, M. (2018).
+\bibitem[Schuchmann, 2018]{thesisMath}
+Schuchmann, M. (2018).
 \newblock Designing a cloud architecture for an application with many users.
 \newblock Master's thesis, University of Jyväskylä.
-
-\bibitem[Sears et~al., 2005]{sears2005fisica}
-Sears, F.~W., Ford, A.~L., and Freedman, R.~A. (2005).
-\newblock {\em F{\'\i}sica universitaria: con f{\'\i}sica moderna}, volume~2.
-\newblock Pearson Educaci{\'o}n.
 
 \bibitem[Valbuena, 2017]{ThesisUis2}
 Valbuena, A. (2017).
