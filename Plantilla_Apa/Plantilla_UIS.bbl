@@ -1,5 +1,25 @@
 \begin{thebibliography}{}
 
+\bibitem[Kub, 2016a]{KubenetesArquitectura}
+ (2016a).
+\newblock How we architected and run kubernetes on openstack at scale at yahoo!
+  japan.
+
+\bibitem[Kub, 2016b]{KubenetesComponentes}
+ (2016b).
+\newblock Kubernetes components.
+\newblock {\em Kubernetes}.
+
+\bibitem[RHD, 2016]{RHDocker}
+ (2016).
+\newblock What is docker?
+\newblock {\em Red Hat}.
+
+\bibitem[Ope, 2017]{OpenshiftArquitectura}
+ (2017).
+\newblock Kubernetes and openshift: Community, standards and certifications.
+\newblock {\em Fernandes, J}.
+
 \bibitem[Goo, 2018]{GoogleArchitectureSample}
  (2018).
 \newblock Architecture: Complex event processing.
@@ -28,11 +48,25 @@
 \newblock Recuperado de
   \url{http://www.urban-hub.com/es/cities/la-ciudad-de-barcelona-gana-en-inteligencia/}.
 
-\bibitem[Alfaro, 2002]{Alfaro2002}
-Alfaro, V.~M. (2002).
-\newblock Métodos de sintonización de controladores {PID} que operan como
-  reguladores.
-\newblock {\em Ingenier{\'i}a}, 12(1,2):21--36.
+\bibitem[ans, 2019]{ansibledocumentation}
+ (2019).
+\newblock How ansible works.
+\newblock {\em Ansible}.
+
+\bibitem[glu, 2019]{glusterfs}
+ (2019).
+\newblock Installing glusterfs - a quick start guide.
+\newblock {\em Gluster Documentation}.
+
+\bibitem[Kub, 2019]{KubenetesObjetos}
+ (2019).
+\newblock Understanding kubernetes objects.
+\newblock {\em Kubernetes}.
+
+\bibitem[Wha, 2019]{WhatAreMicroservices}
+ (2019).
+\newblock Understanding microservices.
+\newblock {\em Red Hat}.
 
 \bibitem[ALTIMORE, 2018]{AzureArchitectureSample}
 ALTIMORE, P. (2018).
@@ -40,17 +74,6 @@ ALTIMORE, P. (2018).
 \newblock {\em Microsoft Azure}.
 \newblock Recuperado de
   \url{https://docs.microsoft.com/en-us/azure/blockchain/workbench/architecture}.
-
-\bibitem[Alzate and Oliveira, 2016]{Alzate2016}
-Alzate, R. and Oliveira, V.~A. (2016).
-\newblock Multiobjective design of {PI} controllers with applications.
-\newblock {\em Control Applications {(CCA)}, {IEEE} Conference on}, pages
-  203--214.
-
-\bibitem[Astrom and Hagglund, 1995]{Astrom1995}
-Astrom, K. and Hagglund, T. (1995).
-\newblock {\em {PID} Controllers: Theory, Design, and Tuning}.
-\newblock {ISA: T}he Instrumentation, Systems, and Automation Society.
 
 \bibitem[Balaguera, 2018]{ThesisUis3}
 Balaguera, F. y~López, A. (2018).
@@ -71,29 +94,8 @@ Chapra, S.~C. and Canale, R.~P. (2007).
 \newblock {\em M{\'e}todos Num{\'e}ricos para Ingenieros}.
 \newblock Mc-Graw Hill.
 
-\bibitem[Correa et~al., 2008]{Correa2008}
-Correa, R., Villamizar, R., and Quiroz, J. (2008).
-\newblock {\em De La Sintonizaci{\'o}n De Controladores}.
-\newblock Divisi{\'o}n de Publicaciones {UIS}.
-
-\bibitem[Díaz, 2017]{Diaz2017}
-Díaz, I. (2017).
-\newblock {\em Modern design of classical controllers}.
-\newblock PhD thesis, Texas {A{\&}M} University, USA.
-
-\bibitem[Díaz and Bhattacharyya, 2016]{Diaz2016}
-Díaz, I. and Bhattacharyya, S.~P. (2016).
-\newblock {PI} controller design in the achievable gain-phase margin plane.
-\newblock In {\em Decision and Control {(CDC)}, 2016 {IEEE} 55th Conference
-  on}, pages 4919--4924.
-
-\bibitem[Fung et~al., 1998]{Fung1998}
-Fung, H.~W., Wang, Q.~G., and Lee, T.~H. (1998).
-\newblock {PI} tuning in terms of gain and phase margin.
-\newblock {\em Autom{\'a}tica}, 34(9):1145--1149.
-
 \bibitem[Gantenbein, 2017]{GANTENBEIN2017}
-Gantenbein, H. y~Neira, B. y. L.~T. (2017).
+Gantenbein, H. y~Neira, B. (2017).
 \newblock Securing paas deployments.
 \newblock {\em Microsoft Azure Documentation}.
 \newblock Recuperado de
@@ -104,22 +106,12 @@ Grossman, S.~I. (1993).
 \newblock {\em Algebra Lineal con aplicaciones}.
 \newblock McGraw-Hill.
 
-\bibitem[Hat, 2019]{WhatAreMicroservices}
-Hat, R. (2019).
-\newblock Understanding microservices.
-
 \bibitem[Heidi, 2016]{HEIDI2016}
 Heidi, E. (2016).
 \newblock What is high availability.
 \newblock {\em DigitalOcean}.
 \newblock Recuperado de
   {https://www.digitalocean.com/community/tutorials/what-is-high-availability}.
-
-\bibitem[Ho et~al., 1995]{Hang1992}
-Ho, W., Hang, C., and Cao, L. (1995).
-\newblock Tuning of {PI} controller based on gain and phase margin
-  specifications.
-\newblock {\em Automatica}, 31(3):497--502.
 
 \bibitem[Joy, 2015]{JOY2015}
 Joy, A. (2015).
@@ -129,11 +121,7 @@ Joy, A. (2015).
 \bibitem[Kappagantula, 2019]{EdurekaMicroservices}
 Kappagantula, S. (2019).
 \newblock Microservice architecture ? learn, build and deploy microservices.
-
-\bibitem[Keel and Bhattacharyya, 1997]{Bhatt97}
-Keel, L.~H. and Bhattacharyya, S.~P. (1997).
-\newblock Robust, fragile or optimal?
-\newblock {\em {IEEE} Transactions on Automatic Control}, 42(8):1098--1105.
+\newblock {\em Edureka}.
 
 \bibitem[Keel and Bhattacharyya, 2008]{keel2008}
 Keel, L.~H. and Bhattacharyya, S.~P. (2008).
@@ -162,33 +150,10 @@ Mell, P. y~Grance, T. (2011).
 \newblock Recuperado de
   \url{https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf}.
 
-\bibitem[Méndez et~al., 2008]{Mendez2008}
-Méndez, C., Niculescu, S., Morarescu, C., and Gu, K. (2008).
-\newblock On the fragility of {PI} controllers for time-delay {SISO} systems.
-\newblock In {\em Mediterranean Conference on control and automation}, pages
-  529--534.
-
 \bibitem[MOILANEN, 2018]{thesisOulun}
 MOILANEN, M. (2018).
 \newblock {\em Deploying an application using Docker and Kubernetes}.
 \newblock Oulu University of Applied Sciences.
-
-\bibitem[Morarescu et~al., 2010]{Morarescu2010}
-Morarescu, I.~C., Niculescu, S.~I., and Gu, K. (2010).
-\newblock The geometry of stability crossing curves of {PI} controllers for
-  {SISO} systems {I/O} delays.
-\newblock {\em Romanian Journal of Pure and Applied Mathematics},
-  55(4):297--313.
-
-\bibitem[Ogata, 2010]{ogata2010}
-Ogata, K. (2010).
-\newblock {\em Ingenier{\'i}a de control Moderna}.
-\newblock Pearson Education.
-
-\bibitem[Safonov and Tsao, 1997]{Safonov1997}
-Safonov, M.~G. and Tsao, T.-C. (1997).
-\newblock The unfalsified control concept and learning.
-\newblock {\em {IEEE} Transactions on Automatic Control}, 42(6):843--847.
 
 \bibitem[SCHUCHMANN, 2018]{thesisMath}
 SCHUCHMANN, M. (2018).
@@ -199,12 +164,6 @@ SCHUCHMANN, M. (2018).
 Sears, F.~W., Ford, A.~L., and Freedman, R.~A. (2005).
 \newblock {\em F{\'\i}sica universitaria: con f{\'\i}sica moderna}, volume~2.
 \newblock Pearson Educaci{\'o}n.
-
-\bibitem[Toscano, 2005]{toscano2005}
-Toscano, R. (2005).
-\newblock A simple robust {PI/PID} controller design via numerical optimization
-  approach.
-\newblock {\em Journal of process control}, 15:81--88.
 
 \bibitem[Valbuena, 2017]{ThesisUis2}
 Valbuena, A. (2017).
@@ -219,10 +178,5 @@ Villanueva, J. (2015).
 \newblock {\em Jscape}.
 \newblock Recuperado de
   {http://www.jscape.com/blog/active-active-vs-active-passive-high-availability-cluster}.
-
-\bibitem[Ziegler and Nichlos, 1942]{Ziegler1942}
-Ziegler, J.~G. and Nichlos, N.~B. (1942).
-\newblock Optimun settings for automatic controllers.
-\newblock {\em Transactions of the {ASME}}, 64:759--768.
 
 \end{thebibliography}

@@ -2,32 +2,22 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1}{\ignorespaces Arquitectura sugerida por AWS para una aplicaci\'on en WordPress. Adaptado de \citep {AwsArchitectureSample}\relax }}{19}{figure.caption.9}% 
-\contentsline {figure}{\numberline {2}{\ignorespaces Arquitecturas sugeridas por Azure para una estaci\'on de Blockchain. Adaptado de \citep {AzureArchitectureSample}\relax }}{20}{figure.caption.10}% 
-\contentsline {figure}{\numberline {3}{\ignorespaces Arquitecturas sugeridas por GCP para una aplicaci\'on basada en eventos. Adaptado de \citep {GoogleArchitectureSample}\relax }}{21}{figure.caption.11}% 
-\contentsline {figure}{\numberline {4}{\ignorespaces Responsabilidades seg\'un el modelo de servicio. Adaptado de \citep {GANTENBEIN2017}\relax }}{22}{figure.caption.12}% 
-\contentsline {figure}{\numberline {5}{\ignorespaces Modelo de un cluster activo-activo. Adaptado de \citep {VILLANUEVA2015}\relax }}{24}{figure.caption.13}% 
-\contentsline {figure}{\numberline {6}{\ignorespaces Modelo de un cluster activo-pasivo. Adaptado de \citep {VILLANUEVA2015}\relax }}{25}{figure.caption.14}% 
-\contentsline {figure}{\numberline {7}{\ignorespaces Escalabilidad vertical en contraste con escalabilidad horizontal.\relax }}{26}{figure.caption.15}% 
-\contentsline {figure}{\numberline {8}{\ignorespaces Arquitectura tradicional en contraste con arquitectura con m\'aquinas virtuales.\relax }}{28}{figure.caption.16}% 
-\contentsline {figure}{\numberline {9}{\ignorespaces M\'aquinas virtuales vs contenedores. Adaptado de \citep {JOY2015}\relax }}{30}{figure.caption.17}% 
-\contentsline {figure}{\numberline {10}{\ignorespaces Solicitudes procesadas en 600 segundos. Adaptado de \citep {JOY2015}\relax }}{31}{figure.caption.18}% 
-\contentsline {figure}{\numberline {11}{\ignorespaces Arquitectura monol\IeC {\'\i }tica vs arquitectura de microservicios. Adaptado de \citep {EdurekaMicroservices}\relax }}{33}{figure.caption.19}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Arquitectura sugerida por AWS para una aplicaci\'on en WordPress. Adaptado de \citep {AwsArchitectureSample}\relax }}{18}{figure.caption.9}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Arquitecturas sugeridas por Azure para una estaci\'on de Blockchain. Adaptado de \citep {AzureArchitectureSample}\relax }}{19}{figure.caption.10}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Arquitecturas sugeridas por GCP para una aplicaci\'on basada en eventos. Adaptado de \citep {GoogleArchitectureSample}\relax }}{20}{figure.caption.11}% 
+\contentsline {figure}{\numberline {4}{\ignorespaces Responsabilidades seg\'un el modelo de servicio. Adaptado de \citep {GANTENBEIN2017}\relax }}{21}{figure.caption.12}% 
+\contentsline {figure}{\numberline {5}{\ignorespaces Modelo de un cluster activo-activo. Adaptado de \citep {VILLANUEVA2015}\relax }}{23}{figure.caption.13}% 
+\contentsline {figure}{\numberline {6}{\ignorespaces Modelo de un cluster activo-pasivo. Adaptado de \citep {VILLANUEVA2015}\relax }}{24}{figure.caption.14}% 
+\contentsline {figure}{\numberline {7}{\ignorespaces Escalabilidad vertical en contraste con escalabilidad horizontal.\relax }}{25}{figure.caption.15}% 
+\contentsline {figure}{\numberline {8}{\ignorespaces Arquitectura tradicional en contraste con arquitectura con m\'aquinas virtuales.\relax }}{27}{figure.caption.16}% 
+\contentsline {figure}{\numberline {9}{\ignorespaces M\'aquinas virtuales vs contenedores. Adaptado de \citep {JOY2015}\relax }}{29}{figure.caption.17}% 
+\contentsline {figure}{\numberline {10}{\ignorespaces Solicitudes procesadas en 600 segundos. Adaptado de \citep {JOY2015}\relax }}{30}{figure.caption.18}% 
+\contentsline {figure}{\numberline {11}{\ignorespaces Arquitectura monol\IeC {\'\i }tica vs arquitectura de microservicios. Adaptado de \citep {EdurekaMicroservices}\relax }}{32}{figure.caption.19}% 
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {12}{\ignorespaces Controlador PID en forma de realizaci\'on paralela\relax }}{35}{figure.caption.20}% 
-\contentsline {figure}{\numberline {13}{\ignorespaces Respuesta escal\'on en forma de \emph {s} del m\'etodo en lazo abierto\relax }}{38}{figure.caption.21}% 
-\contentsline {figure}{\numberline {14}{\ignorespaces Respuesta escal\'on del sistema compensado\relax }}{40}{figure.caption.24}% 
-\contentsline {figure}{\numberline {15}{\ignorespaces Conjunto estabilizante en el plano ($k_P$, $k_I$)\relax }}{41}{figure.caption.25}% 
-\contentsline {figure}{\numberline {16}{\ignorespaces Intersecci\'on en el plano $\left ( k_P, k_I \right )$ para linea recta y elipse}}{47}{figure.caption.26}% 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{47}{figure.caption.26}% 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{47}{figure.caption.26}% 
+\contentsline {figure}{\numberline {12}{\ignorespaces Arquitectura de un cluster Kubernetes. Adaptado de \citep {KubenetesArquitectura}\relax }}{34}{figure.caption.20}% 
+\contentsline {figure}{\numberline {13}{\ignorespaces Arquitectura de Openshift. Adaptado de \citep {OpenshiftArquitectura}\relax }}{36}{figure.caption.21}% 
+\contentsline {figure}{\numberline {14}{\ignorespaces Arquitectura de Glusterfs. Adaptado de \citep {glusterfs}\relax }}{37}{figure.caption.22}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {17}{\ignorespaces Representaci\'on en $\left (k_P, k_I \right )$ para m\'argenes de estabilidad}}{54}{figure.caption.27}% 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{54}{figure.caption.27}% 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{54}{figure.caption.27}% 
-\contentsline {figure}{\numberline {18}{\ignorespaces Distancia a la inestabilidad}}{55}{figure.caption.28}% 
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{55}{figure.caption.28}% 
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{55}{figure.caption.28}% 
 \contentsfinish 

@@ -6,7 +6,45 @@
 % ------------------------------------------------------------------------
 % ------------------------------------------------------------------------
 
-\chapter{Recomendaciones}
+\chapter{Desarrollo del proyecto}
 % ------------------------------------------------------------------------
-\noindent Al momento de ejecutar la interfaz desarrollada es importante que el usuario tenga una noción respecto al rango de valores que desea visualizar, pues esto hace más fino el detalle de los puntos sobre los cuales se calcula el conjunto estabilizante y por ende, la exploración de los valores admisibles para el control en la práctica.
+\noindent En este Capítulo se presentará como fue desarrollado el proyecto.
 % ------------------------------------------------------------------------ 
+\section{Ambientación tecnológica}
+\subsection{Investigaci\'on fundamentos te\'oricos relacionados con el proyecto (Tecnolog\'ias y est\'andares)}
+Durante esta primera fase se investigó el estado del arte en cloud computing para poder identificar los conceptos comunes en las diferentes arquitecturas cloud enfocadas a IoT. De esta primera fase se encontró la gestión de contenedores como factor común por lo cual la investigación posterior siguió este enfoque. Posteriormente se identificaron las tecnologías mas populares en IoT.
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Tecnologías disponibles en el mercado]{ \raggedright Tecnologías disponibles en el mercado}
+		\label{tabla:Tecnologías disponibles en el mercado}
+		\begin{center}
+			\begin{tabular}{ p{5cm}   p{5cm}  p{5cm}  }
+				\hline
+				Sistema Operativo & Container Runtime & Orquestador de contenedores \\
+				\hline
+				CentOS & Cri-O & Apache Mesos \\
+				CoreOS & Docker & Docker Swarm \\
+				Red Hat Enterprise Linux & Linux VServer & Kontena \\
+				Oracle Linux & LXD & Kubernetes \\
+				Ubuntu Server & Rkt  & Nomad \\
+				Windows Server & Windows Containers & Openstack Magnum x
+				\\ \hline
+			\end{tabular}
+		\end{center}
+	\end{minipage}
+\end{table}
+
+A medida que se desarrolló en proyecto, nuevas tecnologías fueron añadidas al stack pero ya de eso se hablará mas adelante en el documento.
+
+A medida que se desarrolló en proyecto, nuevas tecnologías fueron añadidas al stack pero ya de eso se hablará mas adelante en el documento.
+
+\subsection{Estudio}
+Durante esta etapa se realizó una revisión general sobre cada una de las tecnologías, lo cual sirvió de base para la definir los criterios de selección para realizar un primer filtro sobre las tecnologías a usar en la infraestructura en la siguiente etapa.
+
+\begin{itemize}
+	\item Licencia
+	\item Stacks
+	\item Soporte
+	\item Uso libre en producción
+\end{itemize}

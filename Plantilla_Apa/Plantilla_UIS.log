@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.27)  12 MAY 2019 19:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.27)  12 MAY 2019 22:50
 entering extended mode
 **./Plantilla_UIS.tex
 (Plantilla_UIS.tex
@@ -482,13 +482,31 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfig@top=\skip109
 \subfig@bottom=\skip110
 )
+("D:\App\MiKTeX 2.9\tex/latex/tools\longtable.sty"
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)+ FMi change
+\LTleft=\skip111
+\LTright=\skip112
+\LTpre=\skip113
+\LTpost=\skip114
+\LTchunksize=\count128
+\LTcapwidth=\dimen145
+\LT@head=\box31
+\LT@firsthead=\box32
+\LT@foot=\box33
+\LT@lastfoot=\box34
+\LT@cols=\count129
+\LT@rows=\count130
+\c@LT@tables=\count131
+\c@LT@chunks=\count132
+\LT@p@ftn=\toks26
+)
 ("D:\App\MiKTeX 2.9\tex/latex/float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count128
-\float@exts=\toks26
-\float@box=\box31
-\@float@everytoks=\toks27
-\@floatcapt=\box32
+\c@float@type=\count133
+\float@exts=\toks27
+\float@box=\box35
+\@float@everytoks=\toks28
+\@floatcapt=\box36
 )
 
 LaTeX Warning: Unused global option(s):
@@ -501,27 +519,27 @@ LaTeX Info: Redefining \% on input line 25.
 (Secs/agradecimientos.aux) (Secs/glosario.aux) (Secs/res.aux) (Secs/abs.aux))
 \openout1 = `Plantilla_UIS.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 35.
+LaTeX Font Info:    ... okay on input line 35.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 35.
 
 ("D:\App\MiKTeX 2.9\tex/latex/psnfss\t1ptm.fd"
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-\AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring OFF on input line 34.
+\AtBeginShipoutBox=\box37
+Package hyperref Info: Link coloring OFF on input line 35.
 
 ("D:\App\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -529,20 +547,25 @@ Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 ("D:\App\MiKTeX 2.9\tex/generic/oberdiek\gettitlestring.sty"
 Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count129
+\c@section@level=\count134
 )
-LaTeX Info: Redefining \ref on input line 34.
-LaTeX Info: Redefining \pageref on input line 34.
-LaTeX Info: Redefining \nameref on input line 34.
+LaTeX Info: Redefining \ref on input line 35.
+LaTeX Info: Redefining \pageref on input line 35.
+LaTeX Info: Redefining \nameref on input line 35.
 
 (Plantilla_UIS.out) (Plantilla_UIS.out)
 \@outlinefile=\write3
 \openout3 = `Plantilla_UIS.out'.
 
-LaTeX Info: Redefining \. on input line 34.
-LaTeX Info: Redefining \% on input line 34.
+LaTeX Info: Redefining \. on input line 35.
+LaTeX Info: Redefining \% on input line 35.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
+Package caption Info: longtable package is loaded.
+
+("D:\App\MiKTeX 2.9\tex/latex/caption\ltcaption.sty"
+Package: ltcaption 2018/08/26 v1.4-95 longtable captions (AR)
+)
 Package caption Info: subfigure package is loaded.
 Package caption Info: threeparttable package is loaded.
 Package caption Info: End \AtBeginDocument code.
@@ -583,17 +606,17 @@ Package caption Info: End \AtBeginDocument code.
 
 ("D:\App\MiKTeX 2.9\tex/context/base/mkii\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count130
-\scratchdimen=\dimen145
-\scratchbox=\box34
-\nofMPsegments=\count131
-\nofMParguments=\count132
-\everyMPshowfont=\toks28
-\MPscratchCnt=\count133
-\MPscratchDim=\dimen146
-\MPnumerator=\count134
-\makeMPintoPDFobject=\count135
-\everyMPtoPDFconversion=\toks29
+\scratchcounter=\count135
+\scratchdimen=\dimen146
+\scratchbox=\box38
+\nofMPsegments=\count136
+\nofMParguments=\count137
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count138
+\MPscratchDim=\dimen147
+\MPnumerator=\count139
+\makeMPintoPDFobject=\count140
+\everyMPtoPDFconversion=\toks30
 ) ("D:\App\MiKTeX 2.9\tex/latex/oberdiek\epstopdf-base.sty"
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -634,7 +657,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/nota-eps-converted-to.pdf): PDF inclu
 sion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/nota-eps-converted-to.pdf, id=120, 798.985pt x 589.20125pt>
+<figs/nota-eps-converted-to.pdf, id=124, 798.985pt x 589.20125pt>
 File: figs/nota-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/nota-eps-converted-to.pdf>
 Package pdftex.def Info: figs/nota-eps-converted-to.pdf  used on input line 34.
@@ -654,7 +677,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/autoriza-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/autoriza-eps-converted-to.pdf, id=121, 432.61626pt x 589.20125pt>
+<figs/autoriza-eps-converted-to.pdf, id=125, 432.61626pt x 589.20125pt>
 File: figs/autoriza-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/autoriza-eps-converted-to.pdf>
 Package pdftex.def Info: figs/autoriza-eps-converted-to.pdf  used on input line
@@ -688,7 +711,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--13
 
 ])
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 52.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 53.
  (Plantilla_UIS.toc
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
@@ -735,33 +758,33 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
  [7] (Plantilla_UIS.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
-
-[8
-
-])
+)
 \tf@lof=\write5
 \openout5 = `Plantilla_UIS.lof'.
 
- [9] (Plantilla_UIS.lot
+
+[8
+
+] (Plantilla_UIS.lot
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 )
 \tf@lot=\write6
 \openout6 = `Plantilla_UIS.lot'.
 
- [10
+ [9
 
 ] (Plantilla_UIS.loa)
 \tf@loa=\write7
 \openout7 = `Plantilla_UIS.loa'.
 
- [11
+ [10
 
 ]
 \openout2 = `Secs/glosario.aux'.
 
  (Secs/glosario.tex)
-[12
+[11
 
 
 ]
@@ -781,7 +804,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-) [13
+) [12
 
 
 ]
@@ -792,7 +815,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
 
-) [14
+) [13
 
 
 ] (Secs/T0.tex
@@ -810,7 +833,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 18--19
 
  []
 
-[15
+[14
 
 ]) (Secs/T1.tex
 Cap\'{\i }tulo 1.
@@ -826,7 +849,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 13--14
 
  []
 
-[16]
+[15]
 Underfull \hbox (badness 10000) in paragraph at lines 15--16
 
  []
@@ -841,7 +864,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-[17]
+[16]
 Underfull \hbox (badness 10000) in paragraph at lines 21--22
 
  []
@@ -856,7 +879,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
-<figs/AWS_Arquitecturas.jpeg, id=389, 5156.26375pt x 3411.74625pt>
+<figs/AWS_Arquitecturas.jpeg, id=387, 5156.26375pt x 3411.74625pt>
 File: figs/AWS_Arquitecturas.jpeg Graphic file (type jpg)
 <use figs/AWS_Arquitecturas.jpeg>
 Package pdftex.def Info: figs/AWS_Arquitecturas.jpeg  used on input line 33.
@@ -864,7 +887,7 @@ Package pdftex.def Info: figs/AWS_Arquitecturas.jpeg  used on input line 33.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs/AZURE_architecture.png, id=392, 1178.15157pt x 657.95813pt>
+<figs/AZURE_architecture.png, id=390, 1178.15157pt x 657.95813pt>
 File: figs/AZURE_architecture.png Graphic file (type png)
 <use figs/AZURE_architecture.png>
 Package pdftex.def Info: figs/AZURE_architecture.png  used on input line 39.
@@ -872,7 +895,7 @@ Package pdftex.def Info: figs/AZURE_architecture.png  used on input line 39.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<figs/GCP_architecture.png, id=395, 1148.29pt x 684.5575pt>
+<figs/GCP_architecture.png, id=393, 1148.29pt x 684.5575pt>
 File: figs/GCP_architecture.png Graphic file (type png)
 <use figs/GCP_architecture.png>
 Package pdftex.def Info: figs/GCP_architecture.png  used on input line 45.
@@ -882,15 +905,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 ) (Secs/T3.tex
 Cap\'{\i }tulo 3.
-[18] [19 <./figs/AWS_Arquitecturas.jpeg>] [20 <./figs/AZURE_architecture.png>]
-<figs/responsibility-zones.png, id=418, 421.1986pt x 219.06844pt>
+[17] [18 <./figs/AWS_Arquitecturas.jpeg>] [19 <./figs/AZURE_architecture.png>]
+<figs/responsibility-zones.png, id=416, 421.1986pt x 219.06844pt>
 File: figs/responsibility-zones.png Graphic file (type png)
 <use figs/responsibility-zones.png>
 Package pdftex.def Info: figs/responsibility-zones.png  used on input line 31.
 (pdftex.def)             Requested size: 469.75539pt x 244.32875pt.
 
-[21 <./figs/GCP_architecture.png>] [22 <./figs/responsibility-zones.png>]
-<figs/active_active_high_availability_cluster_load_balancer.png, id=438, 631.35
+[20 <./figs/GCP_architecture.png>] [21 <./figs/responsibility-zones.png>]
+<figs/active_active_high_availability_cluster_load_balancer.png, id=436, 631.35
 875pt x 279.0425pt>
 File: figs/active_active_high_availability_cluster_load_balancer.png Graphic fi
 le (type png)
@@ -899,8 +922,8 @@ Package pdftex.def Info: figs/active_active_high_availability_cluster_load_bala
 ncer.png  used on input line 62.
 (pdftex.def)             Requested size: 469.75539pt x 207.62079pt.
 
-[23]
-<figs/active_passive_high_availability_cluster.png, id=450, 593.21625pt x 262.9
+[22]
+<figs/active_passive_high_availability_cluster.png, id=449, 593.21625pt x 262.9
 825pt>
 File: figs/active_passive_high_availability_cluster.png Graphic file (type png)
 
@@ -908,461 +931,63 @@ File: figs/active_passive_high_availability_cluster.png Graphic file (type png)
 Package pdftex.def Info: figs/active_passive_high_availability_cluster.png  use
 d on input line 76.
 (pdftex.def)             Requested size: 469.75539pt x 208.25949pt.
- [24 <./figs/active_active_high_availability_cluster_load_balancer.png>]
-[25 <./figs/active_passive_high_availability_cluster.png>]
-<figs/escalabilidad.png, id=464, 900.36375pt x 713.66624pt>
+ [23 <./figs/active_active_high_availability_cluster_load_balancer.png>]
+[24 <./figs/active_passive_high_availability_cluster.png>]
+<figs/escalabilidad.png, id=462, 900.36375pt x 713.66624pt>
 File: figs/escalabilidad.png Graphic file (type png)
 <use figs/escalabilidad.png>
 Package pdftex.def Info: figs/escalabilidad.png  used on input line 94.
 (pdftex.def)             Requested size: 375.80574pt x 297.87564pt.
- [26 <./figs/escalabilidad.png>] [27]
-<figs/virtualizacion.png, id=476, 1001.7425pt x 454.69875pt>
+ [25 <./figs/escalabilidad.png>] [26]
+<figs/virtualizacion.png, id=475, 1001.7425pt x 454.69875pt>
 File: figs/virtualizacion.png Graphic file (type png)
 <use figs/virtualizacion.png>
 Package pdftex.def Info: figs/virtualizacion.png  used on input line 111.
 (pdftex.def)             Requested size: 469.75539pt x 213.2297pt.
- [28 <./figs/virtualizacion.png>] [29]
-<figs/contenedores.png, id=486, 945.5325pt x 552.0625pt>
+ [27 <./figs/virtualizacion.png>] [28]
+<figs/contenedores.png, id=485, 945.5325pt x 552.0625pt>
 File: figs/contenedores.png Graphic file (type png)
 <use figs/contenedores.png>
 Package pdftex.def Info: figs/contenedores.png  used on input line 141.
 (pdftex.def)             Requested size: 469.75539pt x 274.27841pt.
-<figs/solicitudes.png, id=490, 764.8575pt x 533.995pt>
+<figs/solicitudes.png, id=489, 764.8575pt x 533.995pt>
 File: figs/solicitudes.png Graphic file (type png)
 <use figs/solicitudes.png>
 Package pdftex.def Info: figs/solicitudes.png  used on input line 150.
 (pdftex.def)             Requested size: 469.75539pt x 327.96906pt.
- [30 <./figs/contenedores.png>] [31 <./figs/solicitudes.png>]
-<figs/monolithic-vs-microservices.png, id=505, 1816.7875pt x 842.14626pt>
+ [29 <./figs/contenedores.png>] [30 <./figs/solicitudes.png>]
+<figs/monolithic-vs-microservices.png, id=503, 1816.7875pt x 842.14626pt>
 File: figs/monolithic-vs-microservices.png Graphic file (type png)
 <use figs/monolithic-vs-microservices.png>
 Package pdftex.def Info: figs/monolithic-vs-microservices.png  used on input li
 ne 175.
 (pdftex.def)             Requested size: 469.75539pt x 217.74495pt.
-) (Secs/T4.tex [32]
+) (Secs/T4.tex [31]
 Cap\'{\i }tulo 4.
-
-Underfull \hbox (badness 10000) in paragraph at lines 19--20
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 21--22
-
- []
-
-[33 <./figs/monolithic-vs-microservices.png>] [34]
-Package epstopdf Info: Source file: <figs/PID_Diagrama.eps>
-(epstopdf)                    date: 2018-03-26 15:33:30
-(epstopdf)                    size: 176872 bytes
-(epstopdf)             Output file: <figs/PID_Diagrama-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:33
-(epstopdf)                    size: 7943 bytes
-(epstopdf)             Command: <epstopdf --outfile=figs/PID_Diagrama-eps-conve
-rted-to.pdf figs/PID_Diagrama.eps>
-(epstopdf)             \includegraphics on input line 48.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./figs/PID_Diagrama-eps-converted-to.pdf): P
-DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/PID_Diagrama-eps-converted-to.pdf, id=538, 341.275pt x 174.6525pt>
-File: figs/PID_Diagrama-eps-converted-to.pdf Graphic file (type pdf)
-<use figs/PID_Diagrama-eps-converted-to.pdf>
-Package pdftex.def Info: figs/PID_Diagrama-eps-converted-to.pdf  used on input 
-line 48.
-(pdftex.def)             Requested size: 234.87769pt x 120.20387pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 56--57
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 58--59
-
- []
-
-[35 <./figs/PID_Diagrama-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 60--61
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 62--63
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 64--65
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 66--67
-
- []
-
-[36]
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
-
- []
-
-LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 83.
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--92
-
- []
-
-[37]
-Package epstopdf Info: Source file: <figs/ZNol.eps>
-(epstopdf)                    date: 2018-03-07 09:54:40
-(epstopdf)                    size: 41161 bytes
-(epstopdf)             Output file: <figs/ZNol-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:34
-(epstopdf)                    size: 12497 bytes
-(epstopdf)             Command: <epstopdf --outfile=figs/ZNol-eps-converted-to.
-pdf figs/ZNol.eps>
-(epstopdf)             \includegraphics on input line 105.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./figs/ZNol-eps-converted-to.pdf): PDF inclu
-sion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/ZNol-eps-converted-to.pdf, id=598, 494.84875pt x 342.27875pt>
-File: figs/ZNol-eps-converted-to.pdf Graphic file (type pdf)
-<use figs/ZNol-eps-converted-to.pdf>
-Package pdftex.def Info: figs/ZNol-eps-converted-to.pdf  used on input line 105
-.
-(pdftex.def)             Requested size: 234.87769pt x 162.45874pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 109--110
-
- []
-
-[38 <./figs/ZNol-eps-converted-to.pdf>]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 125.
-
-
-LaTeX Warning: Reference `sistem2ord' on page 39 undefined on input line 132.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 132--133
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 150--152
-
- []
-
-Package epstopdf Info: Source file: <figs/step_PI.eps>
-(epstopdf)                    date: 2018-03-26 15:33:36
-(epstopdf)                    size: 49389 bytes
-(epstopdf)             Output file: <figs/step_PI-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:34
-(epstopdf)                    size: 19420 bytes
-(epstopdf)             Command: <epstopdf --outfile=figs/step_PI-eps-converted-
-to.pdf figs/step_PI.eps>
-(epstopdf)             \includegraphics on input line 156.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./figs/step_PI-eps-converted-to.pdf): PDF in
-clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/step_PI-eps-converted-to.pdf, id=618, 421.575pt x 316.18124pt>
-File: figs/step_PI-eps-converted-to.pdf Graphic file (type pdf)
-<use figs/step_PI-eps-converted-to.pdf>
-Package pdftex.def Info: figs/step_PI-eps-converted-to.pdf  used on input line 
-156.
-(pdftex.def)             Requested size: 234.87769pt x 176.16292pt.
-
-LaTeX Warning: Reference `estabsect' on page 40 undefined on input line 163.
-
-[40 <./figs/step_PI-eps-converted-to.pdf>]
-Package epstopdf Info: Source file: <figs/stab_set_PI.eps>
-(epstopdf)                    date: 2018-03-26 15:33:32
-(epstopdf)                    size: 694891 bytes
-(epstopdf)             Output file: <figs/stab_set_PI-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:35
-(epstopdf)                    size: 87385 bytes
-(epstopdf)             Command: <epstopdf --outfile=figs/stab_set_PI-eps-conver
-ted-to.pdf figs/stab_set_PI.eps>
-(epstopdf)             \includegraphics on input line 179.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./figs/stab_set_PI-eps-converted-to.pdf): PD
-F inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/stab_set_PI-eps-converted-to.pdf, id=641, 421.575pt x 316.18124pt>
-File: figs/stab_set_PI-eps-converted-to.pdf Graphic file (type pdf)
-<use figs/stab_set_PI-eps-converted-to.pdf>
-Package pdftex.def Info: figs/stab_set_PI-eps-converted-to.pdf  used on input l
-ine 179.
-(pdftex.def)             Requested size: 234.87769pt x 176.16292pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 184--185
-
- []
-
-[41 <./figs/stab_set_PI-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 191--195
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 196--200
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 201--203
-
- []
-
-[42]
-Underfull \hbox (badness 10000) in paragraph at lines 209--212
-
- []
-
-[43]
-Underfull \hbox (badness 10000) in paragraph at lines 233--236
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 237--238
-
- []
-
-[44]
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 274--275
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 276--277
-
- []
-
-[45]
-Package epstopdf Info: Source file: <Figs/curvas1.eps>
-(epstopdf)                    date: 2018-04-25 11:06:00
-(epstopdf)                    size: 819909 bytes
-(epstopdf)             Output file: <Figs/curvas1-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:37
-(epstopdf)                    size: 114598 bytes
-(epstopdf)             Command: <epstopdf --outfile=Figs/curvas1-eps-converted-
-to.pdf Figs/curvas1.eps>
-(epstopdf)             \includegraphics on input line 288.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figs/curvas1-eps-converted-to.pdf): PDF in
-clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/curvas1-eps-converted-to.pdf, id=695, 421.575pt x 316.18124pt>
-File: Figs/curvas1-eps-converted-to.pdf Graphic file (type pdf)
-<use Figs/curvas1-eps-converted-to.pdf>
-Package pdftex.def Info: Figs/curvas1-eps-converted-to.pdf  used on input line 
-288.
-(pdftex.def)             Requested size: 234.87769pt x 176.16292pt.
-Package epstopdf Info: Source file: <Figs/curvas1-2.eps>
-(epstopdf)                    date: 2018-04-25 11:05:50
-(epstopdf)                    size: 724163 bytes
-(epstopdf)             Output file: <Figs/curvas1-2-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:38
-(epstopdf)                    size: 98857 bytes
-(epstopdf)             Command: <epstopdf --outfile=Figs/curvas1-2-eps-converte
-d-to.pdf Figs/curvas1-2.eps>
-(epstopdf)             \includegraphics on input line 289.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figs/curvas1-2-eps-converted-to.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/curvas1-2-eps-converted-to.pdf, id=696, 421.575pt x 316.18124pt>
-File: Figs/curvas1-2-eps-converted-to.pdf Graphic file (type pdf)
-<use Figs/curvas1-2-eps-converted-to.pdf>
-Package pdftex.def Info: Figs/curvas1-2-eps-converted-to.pdf  used on input lin
-e 289.
-(pdftex.def)             Requested size: 234.87769pt x 176.16292pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 296--300
-
- []
-
-[46] [47 <./Figs/curvas1-eps-converted-to.pdf> <./Figs/curvas1-2-eps-converted-
-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 301--304
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 309--312
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 313--314
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 315--316
-
- []
-
-[48]
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 317.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 317--318
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 319--320
-
- []
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 321.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
-
- []
-
-[49]
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 323.
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 325--326
-
- []
-
-[50]
-Underfull \hbox (badness 10000) in paragraph at lines 338--340
-
- []
-
-[51]
-Underfull \hbox (badness 10000) in paragraph at lines 371--374
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 375--376
-
- []
-
-
-LaTeX Warning: Reference `interfazsect' on page 52 undefined on input line 377.
-
-
-Package epstopdf Info: Source file: <Figs/curvas2-1.eps>
-(epstopdf)                    date: 2018-04-25 11:05:42
-(epstopdf)                    size: 724904 bytes
-(epstopdf)             Output file: <Figs/curvas2-1-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:40
-(epstopdf)                    size: 99109 bytes
-(epstopdf)             Command: <epstopdf --outfile=Figs/curvas2-1-eps-converte
-d-to.pdf Figs/curvas2-1.eps>
-(epstopdf)             \includegraphics on input line 381.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figs/curvas2-1-eps-converted-to.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/curvas2-1-eps-converted-to.pdf, id=771, 421.575pt x 316.18124pt>
-File: Figs/curvas2-1-eps-converted-to.pdf Graphic file (type pdf)
-<use Figs/curvas2-1-eps-converted-to.pdf>
-Package pdftex.def Info: Figs/curvas2-1-eps-converted-to.pdf  used on input lin
-e 381.
-(pdftex.def)             Requested size: 234.87769pt x 176.16292pt.
-Package epstopdf Info: Source file: <Figs/curvas2-2.eps>
-(epstopdf)                    date: 2018-04-25 11:05:32
-(epstopdf)                    size: 751037 bytes
-(epstopdf)             Output file: <Figs/curvas2-2-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:41
-(epstopdf)                    size: 108459 bytes
-(epstopdf)             Command: <epstopdf --outfile=Figs/curvas2-2-eps-converte
-d-to.pdf Figs/curvas2-2.eps>
-(epstopdf)             \includegraphics on input line 382.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figs/curvas2-2-eps-converted-to.pdf): PDF 
-inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/curvas2-2-eps-converted-to.pdf, id=772, 421.575pt x 316.18124pt>
-File: Figs/curvas2-2-eps-converted-to.pdf Graphic file (type pdf)
-<use Figs/curvas2-2-eps-converted-to.pdf>
-Package pdftex.def Info: Figs/curvas2-2-eps-converted-to.pdf  used on input lin
-e 382.
-(pdftex.def)             Requested size: 234.87769pt x 176.16292pt.
-Package epstopdf Info: Source file: <Figs/max_dist_2.eps>
-(epstopdf)                    date: 2018-04-25 11:04:52
-(epstopdf)                    size: 748049 bytes
-(epstopdf)             Output file: <Figs/max_dist_2-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:42
-(epstopdf)                    size: 107577 bytes
-(epstopdf)             Command: <epstopdf --outfile=Figs/max_dist_2-eps-convert
-ed-to.pdf Figs/max_dist_2.eps>
-(epstopdf)             \includegraphics on input line 388.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figs/max_dist_2-eps-converted-to.pdf): PDF
- inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/max_dist_2-eps-converted-to.pdf, id=773, 421.575pt x 316.18124pt>
-File: Figs/max_dist_2-eps-converted-to.pdf Graphic file (type pdf)
-<use Figs/max_dist_2-eps-converted-to.pdf>
-Package pdftex.def Info: Figs/max_dist_2-eps-converted-to.pdf  used on input li
-ne 388.
-(pdftex.def)             Requested size: 234.87769pt x 176.16292pt.
-Package epstopdf Info: Source file: <Figs/max_dist.eps>
-(epstopdf)                    date: 2018-04-25 11:05:06
-(epstopdf)                    size: 164497 bytes
-(epstopdf)             Output file: <Figs/max_dist-eps-converted-to.pdf>
-(epstopdf)                    date: 2019-05-12 11:19:43
-(epstopdf)                    size: 34280 bytes
-(epstopdf)             Command: <epstopdf --outfile=Figs/max_dist-eps-converted
--to.pdf Figs/max_dist.eps>
-(epstopdf)             \includegraphics on input line 389.
-Package epstopdf Info: Output file is already uptodate.
-
-
-pdfTeX warning: pdflatex.exe (file ./Figs/max_dist-eps-converted-to.pdf): PDF i
-nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/max_dist-eps-converted-to.pdf, id=774, 421.575pt x 316.18124pt>
-File: Figs/max_dist-eps-converted-to.pdf Graphic file (type pdf)
-<use Figs/max_dist-eps-converted-to.pdf>
-Package pdftex.def Info: Figs/max_dist-eps-converted-to.pdf  used on input line
- 389.
-(pdftex.def)             Requested size: 234.87769pt x 176.16292pt.
-) (Secs/T5.tex [52]
+[32 <./figs/monolithic-vs-microservices.png>]
+<figs/arquitectura_kubernetes.png, id=523, 602.25pt x 451.6875pt>
+File: figs/arquitectura_kubernetes.png Graphic file (type png)
+<use figs/arquitectura_kubernetes.png>
+Package pdftex.def Info: figs/arquitectura_kubernetes.png  used on input line 3
+7.
+(pdftex.def)             Requested size: 469.75539pt x 352.32861pt.
+ [33] [34 <./figs/arquitectura_kubernetes.png>]
+<figs/OpenShiftContainerPlatformStack.png, id=539, 887.315pt x 572.1375pt>
+File: figs/OpenShiftContainerPlatformStack.png Graphic file (type png)
+<use figs/OpenShiftContainerPlatformStack.png>
+Package pdftex.def Info: figs/OpenShiftContainerPlatformStack.png  used on inpu
+t line 70.
+(pdftex.def)             Requested size: 469.75539pt x 302.89095pt.
+ [35] [36 <./figs/OpenShiftContainerPlatformStack.png>]
+<figs/glusterfs.png, id=556, 662.475pt x 331.2375pt>
+File: figs/glusterfs.png Graphic file (type png)
+<use figs/glusterfs.png>
+Package pdftex.def Info: figs/glusterfs.png  used on input line 91.
+(pdftex.def)             Requested size: 352.31653pt x 176.15648pt.
+)
+(Secs/T5.tex
 Cap\'{\i }tulo 5.
-) (Secs/T6.tex
+[37 <./figs/glusterfs.png>] [38]) (Secs/T6.tex
 Cap\'{\i }tulo 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 11--12
@@ -1372,62 +997,79 @@ Underfull \hbox (badness 10000) in paragraph at lines 11--12
 ) (Secs/T7.tex
 Cap\'{\i }tulo 7.
 
-LaTeX Warning: Reference `conjestabsect' on page 53 undefined on input line 15.
+LaTeX Warning: Reference `estabanalpi' on page 39 undefined on input line 15.
 
 
-[53] [54 <./Figs/curvas2-1-eps-converted-to.pdf> <./Figs/curvas2-2-eps-converte
-d-to.pdf>] [55 <./Figs/max_dist_2-eps-converted-to.pdf> <./Figs/max_dist-eps-co
-nverted-to.pdf>]
-
-LaTeX Warning: Reference `conjestabsect' on page 56 undefined on input line 16.
+LaTeX Warning: Reference `metrdef' on page 39 undefined on input line 15.
 
 
+LaTeX Warning: Reference `conjestabsect' on page 39 undefined on input line 15.
 
-LaTeX Warning: Reference `interfazsect' on page 56 undefined on input line 17.
 
-[56]) (Secs/T8.tex) [57] (Plantilla_UIS.bbl
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 8.
+
+LaTeX Warning: Reference `estabanalpi' on page 39 undefined on input line 15.
+
+[39]
+
+LaTeX Warning: Reference `conjestabsect' on page 40 undefined on input line 16.
+
+
+
+LaTeX Warning: Reference `conjestabpi' on page 40 undefined on input line 16.
+
+[40]
+
+LaTeX Warning: Reference `interfazsect' on page 41 undefined on input line 17.
+
+) (Secs/T8.tex) [41] (Plantilla_UIS.bbl
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 28.
 
 ("D:\App\MiKTeX 2.9\tex/latex/base\t1cmtt.fd"
 File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Underfull \hbox (badness 1331) in paragraph at lines 24--30
+Underfull \hbox (badness 1331) in paragraph at lines 44--50
 \T1/ptm/m/n/12 te-li-gen-tes.  \T1/ptm/m/it/12 UR-BAN HUB\T1/ptm/m/n/12 .  Re-c
 u-pe-ra-do de []$\T1/cmtt/m/n/12 http : / / www . urban-[]hub . com / es / citi
 es /
  []
 
-
-Underfull \hbox (badness 2401) in paragraph at lines 38--43
+[42]
+Underfull \hbox (badness 2401) in paragraph at lines 72--77
 []\T1/ptm/m/n/12 ALTIMORE, P. (2018).  Azu-re block-chain work-bench ar-chi-tec
 -tu-re.  \T1/ptm/m/it/12 Mi-cro-soft Azu-re\T1/ptm/m/n/12 .
  []
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 38--43
+Underfull \hbox (badness 4132) in paragraph at lines 72--77
 \T1/ptm/m/n/12 Re-cu-pe-ra-do de []$\T1/cmtt/m/n/12 https : / / docs . microsof
 t . com / en-[]us / azure / blockchain / workbench /
  []
 
-[58] [59]
-Underfull \hbox (badness 7012) in paragraph at lines 112--117
+
+Underfull \hbox (badness 1112) in paragraph at lines 98--103
+[]\T1/ptm/m/n/12 Gantenbein, H. y Nei-ra, B. (2017).  Se-cu-ring paas de-ploy-m
+ents.  \T1/ptm/m/it/12 Mi-cro-soft Azu-re Do-
+ []
+
+
+Underfull \hbox (badness 7012) in paragraph at lines 110--115
 []\T1/ptm/m/n/12 Heidi, E. (2016).  What is high avai-la-bi-lity.  \T1/ptm/m/it
 /12 Di-gi-ta-lO-cean\T1/ptm/m/n/12 .  Re-cu-pe-ra-do de
  []
 
-[60]
-Underfull \hbox (badness 1210) in paragraph at lines 158--164
+[43]
+Underfull \hbox (badness 1210) in paragraph at lines 146--152
 \T1/ptm/m/n/12 of the na-tio-nal ins-ti-tu-te of stan-dards and tech-no-logy.  
 \T1/ptm/m/it/12 Na-tio-nal Ins-ti-tu-te of Stan-dards
  []
 
 
-Underfull \hbox (badness 1721) in paragraph at lines 158--164
+Underfull \hbox (badness 1721) in paragraph at lines 146--152
 \T1/ptm/m/it/12 and Tech-no-logy\T1/ptm/m/n/12 .  Re-cu-pe-ra-do de []$\T1/cmtt
 /m/n/12 https : / / nvlpubs . nist . gov / nistpubs / Legacy / SP /
  []
 
-[61]) (Secs/anexoA.tex [62]
+[44]) (Secs/anexoA.tex [45]
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
 
  []
@@ -1437,7 +1079,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 10--14
 
  []
 
-[63]
+[46]
 Package epstopdf Info: Source file: <Figs/prodvect.eps>
 (epstopdf)                    date: 2016-09-27 19:56:20
 (epstopdf)                    size: 13093 bytes
@@ -1452,7 +1094,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figs/prodvect-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/prodvect-eps-converted-to.pdf, id=879, 354.32375pt x 270.00874pt>
+<Figs/prodvect-eps-converted-to.pdf, id=631, 354.32375pt x 270.00874pt>
 File: Figs/prodvect-eps-converted-to.pdf Graphic file (type pdf)
 <use Figs/prodvect-eps-converted-to.pdf>
 Package pdftex.def Info: Figs/prodvect-eps-converted-to.pdf  used on input line
@@ -1472,7 +1114,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figs/rigid-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/rigid-eps-converted-to.pdf, id=881, 217.81375pt x 157.58875pt>
+<Figs/rigid-eps-converted-to.pdf, id=633, 217.81375pt x 157.58875pt>
 File: Figs/rigid-eps-converted-to.pdf Graphic file (type pdf)
 <use Figs/rigid-eps-converted-to.pdf>
 Package pdftex.def Info: Figs/rigid-eps-converted-to.pdf  used on input line 83
@@ -1481,7 +1123,7 @@ Package pdftex.def Info: Figs/rigid-eps-converted-to.pdf  used on input line 83
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[64 <./Figs/prodvect-eps-converted-to.pdf>]
+[47 <./Figs/prodvect-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <Figs/rotacion.eps>
 (epstopdf)                    date: 2016-09-27 21:40:30
 (epstopdf)                    size: 27928 bytes
@@ -1496,7 +1138,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figs/rotacion-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/rotacion-eps-converted-to.pdf, id=894, 207.77625pt x 213.79875pt>
+<Figs/rotacion-eps-converted-to.pdf, id=646, 207.77625pt x 213.79875pt>
 File: Figs/rotacion-eps-converted-to.pdf Graphic file (type pdf)
 <use Figs/rotacion-eps-converted-to.pdf>
 Package pdftex.def Info: Figs/rotacion-eps-converted-to.pdf  used on input line
@@ -1505,12 +1147,12 @@ Package pdftex.def Info: Figs/rotacion-eps-converted-to.pdf  used on input line
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[65 <./Figs/rigid-eps-converted-to.pdf>]
+[48 <./Figs/rigid-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 125--128
 
  []
 
-[66 <./Figs/rotacion-eps-converted-to.pdf>]
+[49 <./Figs/rotacion-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 146--149
 
  []
@@ -1520,17 +1162,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 154--157
 
  []
 
-[67]
+[50]
 Underfull \hbox (badness 10000) in paragraph at lines 169--172
 
  []
 
-[68]
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 186--189
 
  []
 
-) (Secs/anexoB.tex [69] [70]
+) (Secs/anexoB.tex [52] [53]
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 10.
+
 Underfull \hbox (badness 10000) in paragraph at lines 16--19
 
  []
@@ -1545,7 +1190,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--29
 
  []
 
-[71]
+[54]
 Underfull \hbox (badness 10000) in paragraph at lines 60--64
 
  []
@@ -1564,13 +1209,13 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./Figs/flujodiag-eps-converted-to.pdf): PDF 
 inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<Figs/flujodiag-eps-converted-to.pdf, id=951, 909.3975pt x 1144.275pt>
+<Figs/flujodiag-eps-converted-to.pdf, id=705, 909.3975pt x 1144.275pt>
 File: Figs/flujodiag-eps-converted-to.pdf Graphic file (type pdf)
 <use Figs/flujodiag-eps-converted-to.pdf>
 Package pdftex.def Info: Figs/flujodiag-eps-converted-to.pdf  used on input lin
 e 67.
 (pdftex.def)             Requested size: 258.36688pt x 325.09161pt.
-[72]
+[55]
 Underfull \hbox (badness 10000) in paragraph at lines 72--73
 
  []
@@ -1580,7 +1225,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-) (Secs/anexoC.tex [73 <./Figs/flujodiag-eps-converted-to.pdf>] [74]
+) (Secs/anexoC.tex [56 <./Figs/flujodiag-eps-converted-to.pdf>] [57]
 Package epstopdf Info: Source file: <figs/primero.eps>
 (epstopdf)                    date: 2016-10-03 23:57:44
 (epstopdf)                    size: 13418 bytes
@@ -1595,7 +1240,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/primero-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/primero-eps-converted-to.pdf, id=972, 1176.395pt x 217.81375pt>
+<figs/primero-eps-converted-to.pdf, id=726, 1176.395pt x 217.81375pt>
 File: figs/primero-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/primero-eps-converted-to.pdf>
 Package pdftex.def Info: figs/primero-eps-converted-to.pdf  used on input line 
@@ -1615,13 +1260,13 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/segunda-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/segunda-eps-converted-to.pdf, id=974, 1238.6275pt x 217.81375pt>
+<figs/segunda-eps-converted-to.pdf, id=728, 1238.6275pt x 217.81375pt>
 File: figs/segunda-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/segunda-eps-converted-to.pdf>
 Package pdftex.def Info: figs/segunda-eps-converted-to.pdf  used on input line 
 37.
 (pdftex.def)             Requested size: 328.82733pt x 57.8234pt.
-[75 <./figs/primero-eps-converted-to.pdf>]
+[58 <./figs/primero-eps-converted-to.pdf>]
 Package epstopdf Info: Source file: <figs/tercero.eps>
 (epstopdf)                    date: 2016-10-04 00:08:34
 (epstopdf)                    size: 12537 bytes
@@ -1636,7 +1281,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/tercero-eps-converted-to.pdf): PDF in
 clusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/tercero-eps-converted-to.pdf, id=986, 1200.485pt x 217.81375pt>
+<figs/tercero-eps-converted-to.pdf, id=740, 1200.485pt x 217.81375pt>
 File: figs/tercero-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/tercero-eps-converted-to.pdf>
 Package pdftex.def Info: figs/tercero-eps-converted-to.pdf  used on input line 
@@ -1656,7 +1301,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/cuarta-eps-converted-to.pdf): PDF inc
 lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/cuarta-eps-converted-to.pdf, id=988, 1479.5275pt x 310.15875pt>
+<figs/cuarta-eps-converted-to.pdf, id=742, 1479.5275pt x 310.15875pt>
 File: figs/cuarta-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/cuarta-eps-converted-to.pdf>
 Package pdftex.def Info: figs/cuarta-eps-converted-to.pdf  used on input line 5
@@ -1676,13 +1321,13 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/quinto-eps-converted-to.pdf): PDF inc
 lusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/quinto-eps-converted-to.pdf, id=990, 1653.17625pt x 398.48875pt>
+<figs/quinto-eps-converted-to.pdf, id=744, 1653.17625pt x 398.48875pt>
 File: figs/quinto-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/quinto-eps-converted-to.pdf>
 Package pdftex.def Info: figs/quinto-eps-converted-to.pdf  used on input line 6
 6.
 (pdftex.def)             Requested size: 328.82733pt x 79.25854pt.
-[76 <./figs/segunda-eps-converted-to.pdf> <./figs/tercero-eps-converted-to.pdf>
+[59 <./figs/segunda-eps-converted-to.pdf> <./figs/tercero-eps-converted-to.pdf>
 ]
 Package epstopdf Info: Source file: <figs/sexto.eps>
 (epstopdf)                    date: 2016-10-04 00:26:04
@@ -1698,7 +1343,7 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/sexto-eps-converted-to.pdf): PDF incl
 usion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/sexto-eps-converted-to.pdf, id=1010, 1628.0825pt x 635.37375pt>
+<figs/sexto-eps-converted-to.pdf, id=764, 1628.0825pt x 635.37375pt>
 File: figs/sexto-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/sexto-eps-converted-to.pdf>
 Package pdftex.def Info: figs/sexto-eps-converted-to.pdf  used on input line 75
@@ -1714,7 +1359,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 84--85
 
  []
 
-[77 <./figs/cuarta-eps-converted-to.pdf> <./figs/quinto-eps-converted-to.pdf>]
+[60 <./figs/cuarta-eps-converted-to.pdf> <./figs/quinto-eps-converted-to.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 86--87
 
  []
@@ -1733,44 +1378,44 @@ Package epstopdf Info: Output file is already uptodate.
 
 pdfTeX warning: pdflatex.exe (file ./figs/interfaz-eps-converted-to.pdf): PDF i
 nclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<figs/interfaz-eps-converted-to.pdf, id=1030, 935.495pt x 509.905pt>
+<figs/interfaz-eps-converted-to.pdf, id=784, 935.495pt x 509.905pt>
 File: figs/interfaz-eps-converted-to.pdf Graphic file (type pdf)
 <use figs/interfaz-eps-converted-to.pdf>
 Package pdftex.def Info: figs/interfaz-eps-converted-to.pdf  used on input line
  95.
 (pdftex.def)             Requested size: 328.82733pt x 179.2319pt.
-[78 <./figs/sexto-eps-converted-to.pdf>] [79 <./figs/interfaz-eps-converted-to.
+[61 <./figs/sexto-eps-converted-to.pdf>] [62 <./figs/interfaz-eps-converted-to.
 pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 89.
- [80]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 89.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 90.
+ [63]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 90.
  (Plantilla_UIS.aux (Secs/P0.aux)
 LaTeX Info: Redefining \. on input line 25.
 LaTeX Info: Redefining \% on input line 25.
  (Secs/dedicatoria.aux)
 (Secs/agradecimientos.aux) (Secs/glosario.aux) (Secs/res.aux) (Secs/abs.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 89.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 89.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 90.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 90.
 Package rerunfilecheck Info: File `Plantilla_UIS.out' has not changed.
-(rerunfilecheck)             Checksum: 24F7AA5EE6034A5C94FF583FE8E2A3BC;2024.
+(rerunfilecheck)             Checksum: D2BCD31779F52A7DAAF9C554898BAFF3;1882.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 89.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 90.
  )
 (\end occurred inside a group at level 1)
 
 ### semi simple group (level 1) entered at line 89 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11262 strings out of 492945
- 165919 string characters out of 3139908
- 290566 words of memory out of 3000000
- 14601 multiletter control sequences out of 15000+200000
- 73165 words of font info for 123 fonts, out of 3000000 for 9000
+ 11206 strings out of 492945
+ 164480 string characters out of 3139908
+ 290697 words of memory out of 3000000
+ 14603 multiletter control sequences out of 15000+200000
+ 59293 words of font info for 100 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
- 43i,11n,48p,1241b,3610s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 43i,11n,48p,1241b,3695s stack positions out of 5000i,500n,10000p,200000b,50000s
 pdfTeX warning (dest): name{Hfootnote.4} has been referenced bu
 t does not exist, replaced by a fixed one
 
@@ -1783,21 +1428,19 @@ pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
- <C:\Users\jose.rojas\AppData\Local\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi6
-00\ectt1200.pk>{D:/App/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<D:/App/MiKTeX 2.
+{D:/App/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc} <C:\Users\jose.rojas\AppData\Lo
+cal\MiKTeX\2.9\fonts/pk/ljfour/jknappen/ec/dpi600\ectt1200.pk><D:/App/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmex10.pfb><D:/App/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmmi10.pfb><D:/App/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
 10.pfb><D:/App/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><D:/App/MiK
-TeX 2.9/fonts/type1/public/amsfonts/symbols/msam10.pfb><D:/App/MiKTeX 2.9/fonts
-/type1/public/amsfonts/symbols/msbm10.pfb><D:/App/MiKTeX 2.9/fonts/type1/public
-/rsfs/rsfs10.pfb><D:/App/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><D:/App/MiK
-TeX 2.9/fonts/type1/urw/symbol/usyr.pfb><D:/App/MiKTeX 2.9/fonts/type1/urw/time
-s/utmb8a.pfb><D:/App/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/App/MiKTe
-X 2.9/fonts/type1/urw/times/utmr8a.pfb><D:/App/MiKTeX 2.9/fonts/type1/urw/times
-/utmri8a.pfb>
-Output written on Plantilla_UIS.pdf (80 pages, 5300067 bytes).
+TeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><D:/App/MiKTeX 2.9/fonts
+/type1/urw/symbol/usyr.pfb><D:/App/MiKTeX 2.9/fonts/type1/urw/symbol/usyr.pfb><
+D:/App/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><D:/App/MiKTeX 2.9/fonts/typ
+e1/urw/times/utmbi8a.pfb><D:/App/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><D
+:/App/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on Plantilla_UIS.pdf (63 pages, 4728397 bytes).
 PDF statistics:
- 1190 PDF objects out of 1200 (max. 8388607)
- 231 named destinations out of 1000 (max. 500000)
- 395 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 924 PDF objects out of 1000 (max. 8388607)
+ 177 named destinations out of 1000 (max. 500000)
+ 368 words of extra memory for PDF output out of 10000 (max. 10000000)
 
