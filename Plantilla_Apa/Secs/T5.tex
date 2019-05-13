@@ -48,3 +48,96 @@ Durante esta etapa se realizó una revisión general sobre cada una de las tecnolo
 	\item Soporte
 	\item Uso libre en producción
 \end{itemize}
+
+
+
+\subsection{Sondeo}
+Durante esta etapa se aplicaron los diferentes criterios entre cada una de las tecnologías y se consolido está información en las tablas \ref{tabla:Sondeo de selección: Sistema Operativo}, \ref{tabla:Sondeo de selección: Container Runtime} y \ref{tabla:Sondeo de selección: Orquestador de contenedores}.
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Sondeo de selección: Sistema Operativo]{ \raggedright Sondeo de selección: Sistema Operativo}
+		\label{tabla:Sondeo de selección: Sistema Operativo}
+		\begin{center}
+			\begin{tabular}{ p{3cm}   p{3cm}  p{2cm}  p{3cm}  p{4cm}  }
+				\hline
+				S. Operativo & Licencia & Stacks & Soporte & Gratis en producción \\  \hline
+				CentOS & GPL & 1.85K & Comunidad & Si
+				\\ 
+				CoreOS & Apache 2.0 & 164 & Comunidad & Si
+				\\ 
+				RHEL\footnote{Red Hat Enterprise Linux} & GPL\footnote{Solo para efectos de desarrollo, en producción se cobra una tarifa.} & - & Privado & No
+				\\ 
+				Oracle Linux & GPL & - & Privado & Si
+				\\ 
+				Ubuntu Server & GPL & 9.1k & Hibrido\footnote{Posibilidad de adquirir soporte pago pero posee una gran comunidad que lo respalda.} & Si
+				\\ 
+				Windows Server & Múltiple\footnote{Microsoft provee diferentes licencias según los servicios solicitados.} & 3.4k & Privado & No
+				\\ \hline
+			\end{tabular}
+		\end{center}
+		{La cantidad de stacks fueron tomados de: \url{https://stackshare.io/}}
+	\end{minipage}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Sondeo de selección: Container Runtime]{ \raggedright Sondeo de selección: Container Runtime}
+		\label{tabla:Sondeo de selección: Container Runtime}
+		\begin{center}
+			\begin{tabular}{ p{3cm}  p{3cm} p{2cm}  p{4cm}  p{3cm}  }
+				\hline
+				Container Runtime & Licencia & Stacks & Soporte & Uso libre en producción \\ \hline
+				Cri-O & Apache 2.0 & - & Comunidad & Si
+				\\ 
+				Docker & Apache 2.0 & 16.6K & Comunidad/Privado & Si
+				\\ 
+				Linux VServer & GPL & - & Comunidad & Si
+				\\ 
+				LXD & Apache 2.0 & 39 & Comunidad & Si
+				\\ 
+				Rkt & Apache 2.0 & 21 & Comunidad & Si
+				\\
+				Windows Containers & SaaS & - & Privado & No
+				\\ \hline
+			\end{tabular}
+		\end{center}
+		{La cantidad de stacks fueron tomados de:
+			\url{https://stackshare.io/}}
+	\end{minipage}
+\end{table}
+
+
+\begin{table}[H]
+	\begin{minipage}{1\textwidth}
+		\caption[Sondeo de selección: Orquestador de contenedores]{ \raggedright Sondeo de selección: Orquestador de contenedores}
+		\label{tabla:Sondeo de selección: Orquestador de contenedores}
+		\begin{center}
+			\begin{tabular}{ p{3cm}   p{3cm}  p{2cm}  p{4cm}  p{3cm}  }
+				\hline
+				Orquestador & Licencia & Stacks & Soporte & Gratis en producción \\ \hline
+				Apache Mesos &  Apache 2.0 & 177 & Comunidad & Si 
+				\\ \hline
+				Docker Swarm & Apache 2.0  
+				\footnote{Algunos componentes se encuentran bajo la licencia Apache 2.0 y otros bajo Docker Enterprise 2.0 y 2.1} & 319 & Comunidad/Privado & Si\footnote{Si se desea utilizar Docker Trusted Registry o Universal Control Pane, si es necesario adquirir una licencia.}
+				\\ 
+				Kontena & Apache 2.0 & 7 & Comunidad & Si
+				\\ 
+				Kubernetes & Apache 2.0 & 4.25k & Comunidad & Si 
+				\\ 
+				Nomad & Mozilla 2.0 & 56 & Comunidad/Privado & Si \footnote{HashiCorp ofrece planes pagos con funcionalidades adicionales}
+				\\ 
+				Docker Compose & Apache 2.0 & 3.19k\footnote{Se utilizó la cantidad de stacks de Openstack} & Comunidad/Privado & Si 
+				\\ \hline
+			\end{tabular}
+		\end{center}
+		{La cantidad de stacks fueron tomados de:
+			\url{https://stackshare.io/}}
+	\end{minipage}
+\end{table}
+
+
+
+
+
+
