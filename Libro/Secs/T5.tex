@@ -52,7 +52,7 @@ Durante esta etapa se realizó una revisión general sobre cada una de las tecnolo
 
 
 \subsection{Sondeo}
-Durante esta etapa se aplicaron los diferentes criterios entre cada una de las tecnologías y se consolido está información en las tablas \ref{tabla:Sondeo de selección: Sistema Operativo}, \ref{tabla:Sondeo de selección: Container Runtime} y \ref{tabla:Sondeo de selección: Orquestador de contenedores}.
+Durante esta etapa se aplicaron los diferentes criterios entre cada una de las tecnologías y se consolidó está información en las tablas \ref{tabla:Sondeo de selección: Sistema Operativo}, \ref{tabla:Sondeo de selección: Container Runtime} y \ref{tabla:Sondeo de selección: Orquestador de contenedores}.
 \begin{table}[H]
 	\begin{minipage}{1\textwidth}
 		\caption[Sondeo de selección: Sistema Operativo]{ \raggedright Sondeo de selección: Sistema Operativo}
@@ -87,7 +87,7 @@ Durante esta etapa se aplicaron los diferentes criterios entre cada una de las t
 		\begin{center}
 			\begin{tabular}{ p{3cm}  p{3cm} p{2cm}  p{4cm}  p{3cm}  }
 				\hline
-				Container Runtime & Licencia & Stacks & Soporte & Uso libre en producción \\ \hline
+				Container Runtime & Licencia & Stacks & Soporte & Gratis en producción \\ \hline
 				Cri-O & Apache 2.0 & - & Comunidad & Si
 				\\ 
 				Docker & Apache 2.0 & 16.6K & Comunidad/Privado & Si
@@ -140,36 +140,41 @@ Durante esta etapa se aplicaron los diferentes criterios entre cada una de las t
 \section{Definición de arquitectura de infraestructura cloud}
 
 \subsection{Definici\'on requisitos}
-Se identificaron las características que debe tener una infraestructura, haciendo uso de las características esenciales de un modelo de cloud computing \citep{MELL2011} y los requerimientos que demanda una arquitectura de microservicios.
+Se identificaron las características que debe tener una infraestructura, haciendo uso de las características esenciales de un modelo de cloud computing \citep{CONTROLEG}. 
+
 \begin{itemize}
-	\item Autoservicio sobre demanda.
-	\item Amplio acceso a la red.
-	\item Agrupación de recursos.
-	\item Elasticidad.
-	\item Servicio medido.
-	\item Políglota.
-	\item Soporte de microservicios
-	\item Monitoreo.
-	\item Soporte para DevOps.
-	\item Seguridad.
-	\item Tolerancia a fallos.
+	\item \textbf{Autoservicio sobre demanda: } Los recursos cloud del proveedor pueden ser asignados a los clientes sin la necesidad de interacción humana. Algunos proveedores proveen interfaces web a sus clientes con el fin de que estos puedan acceder a los recursos directamente.
+	\item \textbf{Amplio acceso a la red: } Los recursos cloud están disponibles por medio de la red y pueden ser accedidos por las plataformas de los diferentes clientes, ya sea por Internet o una LAN\footnote{Red de área local} en el caso de una nube privada.
+	\item \textbf{Agrupación de recursos: } Hace referencia al uso compartido físicos por diferentes clientes. Para efectos del despliegue de la plataforma IoT, es necesario compartir los recursos entre los diferentes artefactos a desplegar dentro de la infraestructura.
+	\item \textbf{Elasticidad: } Una de las grandes ventajas del cloud computing es la capacidad de proveer recursos dinámicamente en la medida en que las aplicaciones, por efectos de la demanda, lo vayan requiriendo. En otras palabras, una aplicación tendrá asignados pocos recursos cuando haya poca demanda pero a medida que esta aumenta, la infraestructura cloud aumenta los recursos asignados con el fin de que la aplicación pueda responder adecuadamente a la demanda. Esta propiedad es imprescindible en un entorno IoT. 
+	\item \textbf{Servicio medido: } Es fundamental poder medir los recursos usados por una aplicación con el fin de identificar posibles puntos de cuello botella dentro de la plataforma IoT.
+	\item \textbf{Políglota: } Teniendo en cuenta que la plataforma ha sido diseñada para ser extensible, es importante que la infraestructura permita el despliegue de artefactos independientemente del lenguaje en el cual ha sido desarrollado el nuevo artefacto a integrar.
+	\item \textbf{Soporte de microservicios: } Durante la primera fase del proyecto se definió que el backend seria desarrollado bajo una arquitectura de microservicios, por lo cual es prioridad que la infraestructura permita el despliegue de una solución desarrollada bajo esta arquitectura.
+	\item \textbf{Soporte para DevOps: } El uso de DevOps dentro de un proyecto software permite automatizar aquellas tareas mecánicas con el fin de que los diferentes integrantes del equipo de desarrollo puedan concentrarse en tareas de mayor valor para el proyecto. Adicionalmente, se elimina el factor del error humano durante la fase de despliegue de las nuevas versiones de la plataforma.
+	\item \textbf{Seguridad: } Es un elemento importante en una arquitectura cloud ya que provee confianza a los usuarios con respecto a que la información que fluye por la plataforma es transmitida de forma segura.
+	\item \textbf{Tolerancia a fallos: } Dentro de un entorno IoT es fundamental que la infraestructura sea tolerante a fallos para evitar la perdida de datos enviados por los diferentes dispositivos conectados a la plataforma en caso de un fallo.
 \end{itemize}
-\subsection{Definici\'on m\'etricas}
-Teniendo en cuenta los requisitos, se comparan las siguientes métricas en un escenario monolítico y en un escenario distribuido variado.
+\subsection{Definici\'on de m\'etricas}
+\label{Definicion de metricas}
+
+La alta disponibilidad y elasticidad son las características cruciales en un entorno IoT en el cual tendremos una cantidad masiva de dispositivos conectado enviando datos constantemente. Para poder medir estas características se definieron las siguientes métricas:
+
 \begin{itemize}
-	\item Porcentaje de solicitudes fallidas durante un despliegue.
-	\item Tiempo promedio de respuesta para 1000 solicitudes por minuto.
-	\item Número máximo de solicitudes por minuto.
-	\item Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto.
-	\item Porcentaje de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo.
+	\item \textbf{Cantidad de solicitudes fallidas durante un despliegue en un entorno de 1000 solicitudes por minuto:} Durante el despliegue de una nueva versión de un sistema, este suele quedar fuera de servicio por un tiempo lo que se traduce, en un entorno IoT, en una cantidad determinada de mensajes perdidos. Por esta razón es importante determinar la cantidad aproximada de solicitudes que pueden fallar durante el despliegue. La característica que se evalúa en esta métrica es la alta disponibilidad. 
+	\item \textbf{Tiempo promedio de respuesta para 1000 solicitudes por minuto: } La plataforma IoT permite a otros sistemas conectarse con el fin de obtener los datos que fluyen por la plataforma. Por consiguiente, es importante evaluar el rendimiento de la plataforma en función de su escalabilidad.
+	\item \textbf{Número máximo de solicitudes por minuto: } Teniendo en cuenta que la infraestructura debe soportar una gran cantidad de dispositivos conectados enviando solicitudes masivamente, es importante determinar el número máximo de solicitudes con el fin de aumentar la capacidad de la infraestructura cuando se este llegando a rozar esta cantidad de solicitudes.
+	\item \textbf{Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto: } Permite tener un punto de comparación equitativo entre los diferentes escenarios con la misma cantidad de solicitudes.
+	\item \textbf{Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo: } El fallo de un nodo es un escenario critico en un ambiente IoT por lo cual es importante medir la cantidad de solicitudes que pueden fallar durante este escenario.
 \end{itemize}
-\subsection{Definici\'on pruebas}
+
+
+\subsection{Definici\'on de pruebas}
 Para las pruebas, se plantearon los siguientes escenarios:
 \begin{enumerate}
-	\item Monolítico.
-	\item Escenario distribuido con 1 instancia del backend.
-	\item Escenario distribuido con 2 instancias del backend.
-	\item Escenario distribuido con 3 instancias del backend.
+	\item \textbf{Monolítico:} Es el escenario tradicional en el cual se tienen todos los componentes del sistema instalados en una misma máquina.
+	\item \textbf{Escenario distribuido con 1 instancia del backend:} Dentro de la infraestructura desplegara una instancia del backend.
+	\item \textbf{Escenario distribuido con 2 instancias del backend:} Dentro de la infraestructura desplegaran dos instancia del backend.
+	\item \textbf{Escenario distribuido con 3 instancias del backend:} Dentro de la infraestructura desplegaran tres instancia del backend.
 \end{enumerate}
 
 Los siguientes métodos fueron seleccionados para aplicar las pruebas.
@@ -191,26 +196,27 @@ Los siguientes métodos fueron seleccionados para aplicar las pruebas.
 	\end{minipage}
 \end{table}
 
-Cada una de las pruebas busca medir cada una de las diferentes métricas (sección 5.2.2) para los 4 escenarios planteados durante 10 minutos.
+Cada una de las pruebas busca medir cada una de las diferentes métricas (sección \ref{Definicion de metricas}) para los 4 escenarios planteados durante 10 minutos.
 
 \begin{enumerate}
-	\item {\textbf{Porcentaje de solicitudes fallidas durante un despliegue}} La prueba consiste en realizar un cambio de versión del backend mientras se están recibiendo solicitudes. 
+	\item {\textbf{Cantidad de solicitudes fallidas durante un despliegue en un entorno de 1000 solicitudes por minuto}} La prueba consiste en realizar un cambio de versión del backend mientras se están recibiendo solicitudes y medir la cantidad de solicitudes que fallan durante el proceso de despliegue.
 	Para el ambiente monolítico, se tendrá un script que detenga una versión y arranque una nueva con el fin de evitar el error humano.
 	Para el ambiente distribuido se hará uso del Continuous Deployment en la arquitectura propuesta.
 	
-	\item {\textbf{Tiempo promedio de respuesta para 1000 solicitudes por minuto}} La prueba consiste en enviar 1000 solicitudes por un minuto a cada uno de los ambientes.
+	\item {\textbf{Tiempo promedio de respuesta para 1000 solicitudes por minuto}} La prueba consiste en enviar 1000 solicitudes por un minuto a cada uno de los ambientes y medir el tiempo que tardan las solicitudes en ser procesadas y llegar al cliente.
 	
-	\item {\textbf{Número máximo de solicitudes por minuto sin solicitudes fallidas}} La prueba consiste en aplicar pruebas de estrés sobre los diferentes ambientes para encontrar la cantidad de solicitudes por minuto que pueden soportar sin presentar solicitudes fallidas.
+	\item {\textbf{Número máximo de solicitudes por minuto sin solicitudes fallidas}} La prueba consiste en enviar solicitudes de forma masiva sobre los diferentes ambientes para encontrar la máxima cantidad de solicitudes por minuto que pueden soportar sin presentar solicitudes fallidas.
 	
-	\item{\textbf{Porcentaje de solicitudes fallidas para 1000 solicitudes por minuto}} La prueba consiste en enviar 1000 solicitudes por minuto y ver que porcentaje falló en cada uno de los ambientes.
+	\item{\textbf{Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto}} La prueba consiste en enviar 1000 solicitudes por minuto y medir el porcentaje de solicitudes fallidas en cada uno de los ambientes.
 	
-	\item{\textbf{Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}} La prueba consiste en apagar un nodo de forma abrupta mientras se están recibiendo 1000 solicitudes y ver como se ven afectados los ambientes. En el caso del ambiente monolítico, se reiniciará el servidor.
+	\item{\textbf{Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}} La prueba consiste en apagar un nodo de forma abrupta mientras se están recibiendo 1000 solicitudes y medir la cantidad de solicitudes fallidas mientras el sistema vuelve a recuperarse del fallo. En el caso del ambiente monolítico, se reiniciará el servidor.
 \end{enumerate}
 
 Para generar un dataset para las pruebas, se utilizó Mockaroo\footnote{\href{https://www.mockaroo.com/}{https://www.mockaroo.com/}} (Ver apéndice \ref{appendix:Dataset generado para pruebas}).
 
 
 \subsection{Definici\'on arquitectura e infraestructura}
+\label{Definicion arquitectura e infraestructura}
 
 La elección de los componentes de la infraestructura fue hecha teniendo en cuenta el impacto de las diferentes tecnologías en el mercado. Como podemos ver en la tabla \ref{tabla:Sondeo de selección: Orquestador de contenedores}, \textbf{Kubernetes} es la opción más popular, además de tener una licencia que nos permite hacer uso gratuito de la herramienta en producción junto a una de las comunidades más grandes entre las otras opciones estudiadas.
 
@@ -250,6 +256,7 @@ La arquitectura se compone de los siguientes elementos:
 \end{landscape}
 
 \section{Prototipado}
+\label{Prototipado}
 
 \subsection{Configuraci\'on b\'asica cluster}
 El cluster se conformó por 3 máquinas físicas, sin embargo para la configuración mínima de alta disponibilidad se necesitaron 5 servidores, por lo cual la máquina con más recursos se usó para la virtualización de 3 máquinas con KVM\citep{kvmVirtualization} como podemos ver en la tabla \ref{tabla: Características de máquinas en cluster} y en la figura \ref{Infraestructura hardware del prototipo}.
@@ -311,8 +318,8 @@ Junto con el equipo de desarrollo de la plataforma IoT se definieron los siguien
 	\item Servidor Mysql
 	\item Servidor MongoDB
 	\item Servidor ActiveMQ
-	\item Microservicios
-	\item Front
+	\item Backend
+	\item Frontend
 \end{itemize}
 
 
@@ -329,8 +336,8 @@ Posteriormente se clasificaron los artefactos según la necesidad de persistir in
 				\hline
 				Con persistencia & Sin persistencia  \\ \hline
 				Servidor Mysql & Proxy Reverso \\
-				Servidor MongoDB & Front  \\ 
-				Servidor ActiveMQ & Microservicios  \\ \hline
+				Servidor MongoDB & Frontend  \\ 
+				Servidor ActiveMQ & Backend\\ \hline
 			\end{tabular}
 		\end{center}
 	\end{minipage}
@@ -359,7 +366,7 @@ Finalmente se crea cada uno de los volúmenes con bricks tanto en el servidor dns
 
 
 \subsubsection{Nodos}
-Openshift Origin provee 2 métodos de instalación: Basado en paquetes RPM y basado en un sistema de contendores\citep{openshiftdocsInstallation}. 
+Openshift Origin provee 2 métodos de instalación: Basado en paquetes RPM y basado en un sistema de contenedores\citep{openshiftdocsInstallation}. 
 
 Sin embargo la instalación por sistema de contenedores requiere de acceso al repositorio privado de contenedores de Red Hat, por lo que se decidió usar la instalación basada en paquetes RPM.
 
@@ -422,7 +429,7 @@ Adicionalmente se realizó un manual de instalación de la arquitectura disponible
 \end{landscape}
 
 \subsection{Automatizaci\'on del proceso de despliegue}
-Para realizar la automatización del proceso de despliegue se realizó usando GitLab CI/CD. En el proyecto se tienen 2 automatizaciones de despliegue, una para el proyecto del front y otro para el proyecto del back. Estos se encuentran en el anexo \ref{appendix:Archivos de configuracion de despliegue continuo}.
+Para realizar la automatización del proceso de despliegue se realizó usando GitLab CI/CD. En el proyecto se tienen 2 automatizaciones de despliegue, una para el proyecto del frontend y otro para el proyecto del backend. Estos se encuentran en el anexo \ref{appendix:Archivos de configuracion de despliegue continuo}.
 
 Se definieron 3 etapas:
 \begin{enumerate}
@@ -455,20 +462,20 @@ La actividad 'Reporte resumen' fue la fuente de los datos presentados en los res
 
 \section{Validaci\'on de prototipo}
 \subsection{Aplicaci\'on pruebas}
-Los resultados de las pruebas se consignaron en las tablas \ref{tabla: Porcentaje de solicitudes fallidas durante un despliegue}, \ref{tabla: Tiempo promedio de respuesta para 1000 solicitudes por minuto}, \ref{tabla: Número máximo de solicitudes por minuto sin solicitudes fallidas.}, \ref{tabla: Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto} y \ref{tabla: Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}.
+Los resultados de las pruebas se consignaron en las tablas \ref{tabla: Cantidad de solicitudes fallidas durante un despliegue en un entorno de 1000 solicitudes por minuto}, \ref{tabla: Tiempo promedio de respuesta para 1000 solicitudes por minuto}, \ref{tabla: Número máximo de solicitudes por minuto sin solicitudes fallidas.}, \ref{tabla: Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto} y \ref{tabla: Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}.
 
 \begin{table}[H]
 	\begin{minipage}{1\textwidth}
-		\caption[Porcentaje de solicitudes fallidas durante un despliegue]{ \raggedright Porcentaje de solicitudes fallidas durante un despliegue}
-		\label{tabla: Porcentaje de solicitudes fallidas durante un despliegue}
+		\caption[Cantidad de solicitudes fallidas durante un despliegue en un entorno de 1000 solicitudes por minuto]{ \raggedright Cantidad de solicitudes fallidas durante un despliegue en un entorno de 1000 solicitudes por minuto}
+		\label{tabla: Cantidad de solicitudes fallidas durante un despliegue en un entorno de 1000 solicitudes por minuto}
 		\begin{center}
 			\begin{tabular}{ p{7cm}   p{7cm}  }
 				\hline
-				Escenario &  \%  \\ \hline
-				Monolítico & 4.45  \\ 
-				1 instancia & 10.51  \\ 
-				2 instancias & 2.26  \\ 
-				3 instancias & 2.30 \\ \hline
+				Escenario &  Solicitudes  \\ \hline
+				Monolítico & 316  \\ 
+				1 instancia & 1051  \\ 
+				2 instancias & 326  \\ 
+				3 instancias & 320 \\ \hline
 			\end{tabular}
 		\end{center}
 	\end{minipage}
@@ -529,8 +536,8 @@ Los resultados de las pruebas se consignaron en las tablas \ref{tabla: Porcentaj
 			\begin{tabular}{ p{7cm}   p{7cm}  }
 				\hline
 				Escenario &  Solicitudes fallidas  \\ \hline
-				Monolítico & 172,9 \\ 
-				1 instancia & 157,2  \\ 
+				Monolítico & 173 \\ 
+				1 instancia & 157  \\ 
 				2 instancias & 77  \\ 
 				3 instancias & 60 \\ \hline
 			\end{tabular}
@@ -539,7 +546,7 @@ Los resultados de las pruebas se consignaron en las tablas \ref{tabla: Porcentaj
 \end{table}
 \subsection{An\'alisis resultados}
 \begin{itemize}
-	\item Durante la prueba de la tabla \ref{tabla: Porcentaje de solicitudes fallidas durante un despliegue}, la mayor cantidad de solicitudes fallidas se evidenció en el ambiente de 1 instancia ya que este no es compatible con el despliegue en release de Kubernetes. Los ambientes de 2 y 3 instancias soportaban el tráfico entrante con la versión anterior mientras la nueva versión estaba lista.
+	\item Durante la prueba de la tabla \ref{tabla: Cantidad de solicitudes fallidas durante un despliegue en un entorno de 1000 solicitudes por minuto}, la mayor cantidad de solicitudes fallidas se evidenció en el ambiente de 1 instancia ya que este no es compatible con el despliegue en release de Kubernetes. Los ambientes de 2 y 3 instancias soportaban el tráfico entrante con la versión anterior mientras la nueva versión estaba lista.
 	\item El ambiente monolítico tiene el tiempo de respuesta más óptimo en la prueba de la tabla \ref{tabla: Tiempo promedio de respuesta para 1000 solicitudes por minuto} ya que este ambiente no debe realizar transferencia de datos por medio de la red.
 	\item El número máximo de solicitudes es proporcional a la cantidad de instancias ya que el tráfico se distribuye en las mismas.
 	\item Durante la prueba de la tabla \ref{tabla: Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto} se evidenció que un ambiente monolítico tiene un mayor rendimiento que un ambiente 1 instancia ya que el ambiente monolítico debe transferir datos por medio de la red, lo cual impacta significativamente en su rendimiento. 
@@ -547,3 +554,27 @@ Los resultados de las pruebas se consignaron en las tablas \ref{tabla: Porcentaj
 	\item A partir de 2 instancias, la carga se distribuye entre los diferentes servidores, lo cual lleva a una mejora significativa en el rendimiento de la arquitectura.
 	\item La mejora de rendimiento entre 1 instancia y 2 instancias es mucho más significativa que la mejora entre 2 instancias y 3 instancias. Esto se debe a que para el primer caso, hay un cambio en la distribución de carga entre los servidores físicos, mientras que en el segundo caso, no hay un cambio de carga a nivel físico ya que siguen siendo 2 servidores físicos, el cambio se da a nivel software.
 \end{itemize}
+\section{Caso de uso}
+
+En esta sección se realizó el despliegue de la plataforma IoT enfocada a Smart Campus, implementado un prototipo para demostrar que todos los componentes se integran correctamente. Para lograr esto, fue necesaria la participación de los autores de los proyectos de grado mencionados en los capítulos anteriores. 
+
+En el escenario planteado un usuario desea activar una red de bombillos ubicados en dos laboratorios de ingeniería eléctrica cuando el voltaje de un generador eléctrico pase un umbral de seguridad para alertar al personal presente en dichos espacios. Además, el usuario desea monitorear la temperatura generada en uno de los laboratorios con el objetivo de proteger de temperaturas extremas los dispositivos allí presentes.
+
+Para simular el escenario anterior se hizo uso de dos dispositivos tipo gateway, tres actuadores (LEDs), un sensor de temperatura y un potenciómetro; a su vez, se crearon 4 procesos y 1 aplicación externa en la que se muestran los datos capturados en el caso de uso.
+
+La arquitectura planteada para el caso de uso se encuentra en la figura \ref{Caso de uso}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/use_case.jpg}
+	\caption{Caso de uso.}
+	\label{Caso de uso}
+\end{figure}
+
+Para el caso de uso se desplegaron las últimas versiones del backend y frontend dentro del prototipo usado en la sección \ref{Prototipado}. 
+
+En la infraestructura se desplegaron 2 instancias del frontend y 3 instancias del backend. Durante la prueba se monitorio el uso de recursos en los servidores. Durante una fase de la prueba se apago uno de los nodos y el sistema continuó funcionando con normalidad, se pudo evidenciar como el sistema levanta instancias en el nodo restante con el fin de mantener consiste la cantidad de instancias presentes en la infraestructura lo cual permitió ver la alta disponibilidad que provee la infraestructura a la plataforma IoT.
+
+% Luego de haber validado la arquitectura de forma unitaria, se diseño un caso de uso junto a los otros proyectos de grado relacionados al presente proyecto en el cual se integraban los diferentes componentes\footnote{Gateway\citep{gatewayIoT}, front\citep{frontIoT} y backend\citep{backendIoT}}
+
+

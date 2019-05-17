@@ -52,7 +52,7 @@ Cuando hablamos de ?Alta disponibilidad?, hacemos referencia a que cumple el máx
 
 El objetivo de la alta disponibilidad es eliminar los puntos de fallo potencial en la infraestructura. Un punto de fallo potencial es un componente del stack tecnológico que puede producir una interrupción del sistema. Al igual, todo componente que sea necesario para el sistema y no tenga redundancia, también se considera un punto de falla \citep{HEIDI2016}.
 
-Existen 2 tipos de cluster de alta disponibilidad: \citep{VILLANUEVA2015}
+Existen 2 tipos de cluster de alta disponibilidad \citep{VILLANUEVA2015}: 
 
 \begin{itemize}
 	\item {\textbf{Activo-Activo:}} Se suelen tener al menos 2 nodos, ambos se encuentran corriendo la misma clase de servicios de manera simultánea. El propósito principal de un cluster con alta disponibilidad de tipo activo-activo es lograr un buen balanceo de carga. El balanceo de cargas distribuye las solicitudes sobre todos los nodos con el fin de evitar que un solo nodo se sobrecargue. La configuración más sencilla es presentada en la figura \ref{Modelo de un cluster activo-activo}
@@ -81,7 +81,7 @@ Existen 2 tipos de cluster de alta disponibilidad: \citep{VILLANUEVA2015}
 \end{itemize}
 		
 \subsection{Escalabilidad}
-Escalabilidad es la capacidad que tiene una solución para poder adaptarse al crecimiento en la demanda.
+Escalabilidad es la capacidad que tiene una solución para poder adaptarse al crecimiento en la demanda \citep{SCALING2013}.
 
 Imaginemos que tenemos una aplicación corriendo en un servidor con ciertas características, de repente la cantidad de usuarios de nuestra aplicación aumenta por lo cual se hace necesario escalar nuestra infraestructura con el fin de poder seguir brindando el mejor servicio. Existen 2 maneras de escalar:
 
@@ -91,25 +91,25 @@ Imaginemos que tenemos una aplicación corriendo en un servidor con ciertas carac
 \end{itemize}
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{figs/escalabilidad.png}
-	\caption{Escalabilidad vertical en contraste con escalabilidad horizontal.}\label{Escalabilidad vertical en contraste con escalabilidad horizontal}
+	\includegraphics[width=0.8\textwidth]{figs/Storage-Scaleout-Scalein.png}
+	\caption{Escalabilidad vertical en contraste con escalabilidad horizontal. Adaptado de \citep{scalingGraph}}\label{Escalabilidad vertical en contraste con escalabilidad horizontal}
 \end{figure}
 
-La escalabilidad vertical tiene un problema: La ley de Moore, la cual dicta: ?Cada dos años, aunque en principio dijo que sería cada 18 meses, se duplica el número de transistores. Según la SIA\footnote{Asociación de la Industria de Semiconductores}, aunque es físicamente posible que los fabricantes de microprocesadores lleguen a crear algunos chips más de lo estipulado por Moore, no sería práctico a nivel financiero, debido a los altos costos que implica.
+La escalabilidad vertical tiene un problema: La ley de Moore, la cual dicta: Cada dos años, aunque en principio dijo que sería cada 18 meses, se duplica el número de transistores \citep{MOORELAW}. Según la SIA\footnote{Asociación de la Industria de Semiconductores}, aunque es físicamente posible que los fabricantes de microprocesadores lleguen a crear algunos chips más de lo estipulado por Moore, no sería práctico a nivel financiero, debido a los altos costos que implica \citep{SIA2015}.
 
 "Y, siendo optimistas, la fecha límite, de acuerdo con el presidente y CEO de la SIA John Neuffer sería, como mucho, 2030 \citep{BBC2018}. En otras palabras, va a llegar un punto en el cual, aunque tengamos dinero ilimitado para poder comprar el equipo de computo más poderoso en el mercado, va llegar un punto donde el equipo que pueda satisfacer nuestra demanda no exista, lo cual convierte la escalabilidad vertical en una solución inviable para aplicaciones que visionan un crecimiento masivo.
 
 Por otra parte, la escalabilidad horizontal, a pesar de ser más compleja compleja en términos de arquitectura, puede escalar sin estar limitada por la ley de Moore además que, al tener la carga distribuida en varios nodos, podemos proveer un servicio de alta disponibilidad y los costos para escalar
 
 \section{Virtualizaci\'on}
-La virtualización es una capa intermedia a nivel de sistema operativo que provee una abstracción de los recursos del sistema. Es tal el papel de la virtualización dentro del cloud computing que grandes compañías, como Amazon, Google y Microsoft, basan sus servicios cloud en la virtualización.
+La virtualización es una capa intermedia a nivel de sistema operativo que provee una abstracción de los recursos del sistema. Es tal el papel de la virtualización dentro del cloud computing que grandes compañías, como Amazon, Google y Microsoft, basan sus servicios cloud en la virtualización \citep{JOY2015}.
 
 Las máquinas virtuales son impulsadas por los hipervisores. El hipervisor es un software que provee un entorno aislado para cada máquina virtual y es responsable de correr diferentes kernels a nivel del sistema operativo anfitrión.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{figs/virtualizacion.png}
-	\caption{Arquitectura tradicional en contraste con arquitectura con máquinas virtuales.}\label{Arquitectura tradicional en contraste con arquitectura con máquinas virtuales}
+	\includegraphics[width=0.7\textwidth]{figs/hipervisor-vmware-jmgvirtualconsulting.jpg}
+	\caption{Arquitectura tradicional en contraste con arquitectura con máquinas virtuales. Adaptado de \citep{JMGVIRTUAL}}\label{Arquitectura tradicional en contraste con arquitectura con máquinas virtuales}
 \end{figure}
 
 Como podemos ver en la figura \ref{Arquitectura tradicional en contraste con arquitectura con máquinas virtuales}, en la arquitectura tradicional hay un acceso más directo al hardware pero posee las siguientes falencias:
@@ -142,7 +142,7 @@ Sin embargo, esta metodología tiene un problema relacionado con la actualización
 	\caption{Máquinas virtuales vs contenedores. Adaptado de \citep{JOY2015}}\label{Máquinas virtuales vs contenedores}
 \end{figure}
 
-Como alternativa, aparecen los contenedores los cuales son un ambiente aislado dentro de un sistema operativo. Los contenedores toman ciertos beneficios de las máquinas virtuales, como la seguridad, el almacenamiento y el aislamiento de red, mientras que consumen muchos menos recursos que las máquinas virtuales. Adicionalmente, los contenedores nos proveen un rendimiento y escalabilidad mayor a las máquinas virtuales como se muestra en la figura \ref{Solicitudes procesadas en 600 segundos}
+Como alternativa, aparecen los contenedores los cuales son un ambiente aislado dentro de un sistema operativo. Los contenedores toman ciertos beneficios de las máquinas virtuales, como la seguridad, el almacenamiento y el aislamiento de red, mientras que consumen muchos menos recursos que las máquinas virtuales \citep{JOY2015}. Adicionalmente, los contenedores nos proveen un rendimiento y escalabilidad mayor a las máquinas virtuales como se muestra en la figura \ref{Solicitudes procesadas en 600 segundos}
 
 
 \begin{figure}[H]
@@ -162,9 +162,9 @@ Los contenedores poseen las siguientes ventajas:
 
 \section{Orquestaci\'on de contenedores}
 
-Supongamos que tenemos una aplicación desplegada usando contenedores y por alguna razón, ya sea un ataque por denegación de servicios o un simple error en el código de la aplicación, el contenedor que la contiene falla. En un sistema de disponibilidad alta debemos asegurar de alguna manera que la aplicación siempre va a estar disponible, por lo tanto debemos implementar una arquitectura que nos permita tolerar fallos, es aquí donde aparece el siguiente concepto: ?Orquestación de contenedores?. 
+Supongamos que tenemos una aplicación desplegada usando contenedores y por alguna razón, ya sea un ataque por denegación de servicios o un simple error en el código de la aplicación, el contenedor que la contiene falla. En un sistema de disponibilidad alta debemos asegurar de alguna manera que la aplicación siempre va a estar disponible, por lo tanto debemos implementar una arquitectura que nos permita tolerar fallos, es aquí donde aparece el siguiente concepto: Orquestación de contenedores. 
 
-La orquestación de contenedores nos permite desplegar un nuevo contenedor en caso de que otro falle con el fin de mantener la consistencia dentro del cluster, gestionar la manera en que los diferentes contenedores interactúan entre sí. Existen varias tecnologías que implementan una arquitectura para orquestar contenedores: Kubernetes, Docker Swarm o Fleet.
+La orquestación de contenedores nos permite gestionar los ciclos de vida de los contenedores, especialmente en ambientes de gran tamaño y de naturaleza dinámica \citep{ORCHESTRATION2018}. Existen varias tecnologías que implementan una arquitectura para orquestar contenedores: Kubernetes, Docker Swarm o Fleet.
 
 \section{Microservicios}
 Los microservicios son una arquitectura y un enfoque sobre la escritura de software en el que las aplicaciones se dividen en componentes más pequeños e independientes entre sí. A diferencia de un enfoque tradicional y monolítico sobre las aplicaciones, en el que todo se crea en una única pieza, los microservicios están separados y funcionan conjuntamente para llevar a cabo las mismas tareas como podemos ver en la figura \ref{Arquitectura monolítica vs arquitectura de microservicios}. Cada uno de estos componentes, o procesos, son los microservicios. Este enfoque sobre el desarrollo de software valora la granularidad por ser liviana y la capacidad de compartir un proceso similar en varias aplicaciones. \citep{WhatAreMicroservices}

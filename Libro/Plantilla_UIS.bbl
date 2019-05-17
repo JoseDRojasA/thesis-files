@@ -109,6 +109,11 @@ Balaguera, F. y~López, A. (2018).
   para el grupo de investigación GID-CONUSS}.
 \newblock Universidad Industrial de Santander.
 
+\bibitem[Bansode, 2013]{SCALING2013}
+Bansode, R. (2013).
+\newblock What is the difference between horizontal and vertical scaling?
+\newblock {\em esds}.
+
 \bibitem[Benz and Bohnert, 2013]{BENZ2013}
 Benz, K. and Bohnert, T. (2013).
 \newblock Dependability modeling framework: A test procedure for high
@@ -116,12 +121,29 @@ Benz, K. and Bohnert, T. (2013).
 \newblock {\em Vehicular Technology Conference}.
 \newblock Recuperado de \url{https://ieeexplore.ieee.org/document/6692157}.
 
+\bibitem[Cholewa, 2018]{OPENKUBERNETES}
+Cholewa, T. (2018).
+\newblock 10 most important differences between openshift and kubernetes.
+\newblock Recuperado de
+  \url{https://cloudowski.com/articles/10-differences-between-openshift-and-kubernetes/}.
+
+\bibitem[CONSULTING, 2012]{JMGVIRTUAL}
+CONSULTING, J.~V. (2012).
+\newblock ¿cómo elegir hipervisor para mi solución de virtualización?
+\newblock Recuperado de
+  \url{https://www.jmgvirtualconsulting.com/servicios-virtualizacion/como-elegir-hipervisor-para-mi-solucion-de-virtualizacion/}.
+
 \bibitem[Douglas et~al., 2017]{NGINX2017}
 Douglas, K., Sipiwe, C., and Sinyinda, M. (2017).
 \newblock Web server performance of apache and nginx: A systematic literature
   review.
 \newblock Recuperado de
   \url{https://pdfs.semanticscholar.org/3401/39cd741e234a39b0db7bbaa38aee7c5f944c.pdf}.
+
+\bibitem[Eldridge, 2018]{ORCHESTRATION2018}
+Eldridge, I. (2018).
+\newblock What is container orchestration?
+\newblock {\em New Relic}.
 
 \bibitem[Gantenbein and Neira, 2017]{GANTENBEIN2017}
 Gantenbein, H. and Neira, B. (2017).
@@ -175,6 +197,12 @@ Martínez, J. y~Vásquez, C. (2017).
   de Openstack}.
 \newblock Universidad Industrial de Santander.
 
+\bibitem[Mauro, 2012]{scalingGraph}
+Mauro, A. (2012).
+\newblock Consideration about storage architectures.
+\newblock Recuperado de
+  \url{https://vinfrastructure.it/2012/07/consideration-about-storage-architectures/}.
+
 \bibitem[Mell and Grance, 2011]{MELL2011}
 Mell, P. and Grance, T. (2011).
 \newblock The nist definition of cloud computing. recommendations of the
@@ -188,10 +216,21 @@ Moilanen, M. (2018).
 \newblock {\em Deploying an application using Docker and Kubernetes}.
 \newblock Oulu University of Applied Sciences.
 
+\bibitem[Novkovic, 2017]{CONTROLEG}
+Novkovic, G. (2017).
+\newblock Five characteristics of cloud computing.
+\newblock Recuperado de
+  \url{https://www.controleng.com/articles/five-characteristics-of-cloud-computing/}.
+
 \bibitem[Schuchmann, 2018]{thesisMath}
 Schuchmann, M. (2018).
 \newblock Designing a cloud architecture for an application with many users.
 \newblock Master's thesis, University of Jyväskylä.
+
+\bibitem[Thompson and Parthasarathy, 2006]{MOORELAW}
+Thompson, S. and Parthasarathy, S. (2006).
+\newblock Moore's law: the future of si microelectronics.
+\newblock {\em Materials Today}.
 
 \bibitem[Valbuena, 2017]{ThesisUis2}
 Valbuena, A. (2017).
@@ -206,5 +245,12 @@ Villanueva, J. (2015).
 \newblock {\em Jscape}.
 \newblock Recuperado de
   \url{http://www.jscape.com/blog/active-active-vs-active-passive-high-availability-cluster}.
+
+\bibitem[Yinug, 2015]{SIA2015}
+Yinug, F. (2015).
+\newblock What is moore?s law and why is it so great?
+\newblock {\em Semiconductor Industry Association}.
+\newblock Recuperado de
+  \url{https://www.semiconductors.org/what-is-moores-law-and-why-is-it-so-great/}.
 
 \end{thebibliography}

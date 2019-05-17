@@ -38,7 +38,11 @@ Warning--empty author in openshiftdocsInstallation
 Warning--empty journal in openshiftdocsInstallation
 Warning--empty author in KubenetesObjetos
 Warning--empty author in WhatAreMicroservices
+Warning--empty journal in OPENKUBERNETES
+Warning--empty journal in JMGVIRTUAL
 Warning--empty journal in NGINX2017
 Warning--empty journal in dnsConfiguration
 Warning--empty journal in kvmVirtualization
-(There were 33 warnings)
+Warning--empty journal in scalingGraph
+Warning--empty journal in CONTROLEG
+(There were 37 warnings)

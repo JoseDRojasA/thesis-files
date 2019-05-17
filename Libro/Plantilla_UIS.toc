@@ -27,23 +27,24 @@
 \contentsline {subsection}{\numberline {5.1.3}Sondeo}{43}{subsection.5.1.3}% 
 \contentsline {section}{\numberline {5.2}Definici\'on de arquitectura de infraestructura cloud}{46}{section.5.2}% 
 \contentsline {subsection}{\numberline {5.2.1}Definici\'on requisitos}{46}{subsection.5.2.1}% 
-\contentsline {subsection}{\numberline {5.2.2}Definici\'on m\'etricas}{47}{subsection.5.2.2}% 
-\contentsline {subsection}{\numberline {5.2.3}Definici\'on pruebas}{48}{subsection.5.2.3}% 
-\contentsline {subsection}{\numberline {5.2.4}Definici\'on arquitectura e infraestructura}{50}{subsection.5.2.4}% 
-\contentsline {section}{\numberline {5.3}Prototipado}{55}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}Configuraci\'on b\'asica cluster}{55}{subsection.5.3.1}% 
-\contentsline {subsection}{\numberline {5.3.2}Configuraci\'on infraestructura cluster}{56}{subsection.5.3.2}% 
-\contentsline {subsubsection}{\numberline {5.3.2.1}Servidor DNS}{56}{subsubsection.5.3.2.1}% 
-\contentsline {subsubsection}{\numberline {5.3.2.2}Servidor Glusterfs}{57}{subsubsection.5.3.2.2}% 
-\contentsline {subsubsection}{\numberline {5.3.2.3}Nodos}{59}{subsubsection.5.3.2.3}% 
-\contentsline {subsection}{\numberline {5.3.3}Despliegue aplicaci\'on}{61}{subsection.5.3.3}% 
-\contentsline {subsection}{\numberline {5.3.4}Automatizaci\'on del proceso de despliegue}{63}{subsection.5.3.4}% 
-\contentsline {subsection}{\numberline {5.3.5}Implementaci\'on de pruebas}{64}{subsection.5.3.5}% 
-\contentsline {section}{\numberline {5.4}Validaci\'on de prototipo}{65}{section.5.4}% 
-\contentsline {subsection}{\numberline {5.4.1}Aplicaci\'on pruebas}{65}{subsection.5.4.1}% 
-\contentsline {subsection}{\numberline {5.4.2}An\'alisis resultados}{67}{subsection.5.4.2}% 
-\contentsline {chapter}{\numberline {6}Conclusiones}{68}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}Recomendaciones}{69}{chapter.7}% 
-\contentsline {chapter}{Referencias Bibliogr\'aficas}{70}{chapter.7}% 
-\contentsline {chapter}{Ap\'endices}{76}{chapter*.44}% 
+\contentsline {subsection}{\numberline {5.2.2}Definici\'on de m\'etricas}{49}{subsection.5.2.2}% 
+\contentsline {subsection}{\numberline {5.2.3}Definici\'on de pruebas}{50}{subsection.5.2.3}% 
+\contentsline {subsection}{\numberline {5.2.4}Definici\'on arquitectura e infraestructura}{52}{subsection.5.2.4}% 
+\contentsline {section}{\numberline {5.3}Prototipado}{57}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}Configuraci\'on b\'asica cluster}{57}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Configuraci\'on infraestructura cluster}{58}{subsection.5.3.2}% 
+\contentsline {subsubsection}{\numberline {5.3.2.1}Servidor DNS}{58}{subsubsection.5.3.2.1}% 
+\contentsline {subsubsection}{\numberline {5.3.2.2}Servidor Glusterfs}{59}{subsubsection.5.3.2.2}% 
+\contentsline {subsubsection}{\numberline {5.3.2.3}Nodos}{61}{subsubsection.5.3.2.3}% 
+\contentsline {subsection}{\numberline {5.3.3}Despliegue aplicaci\'on}{63}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.4}Automatizaci\'on del proceso de despliegue}{65}{subsection.5.3.4}% 
+\contentsline {subsection}{\numberline {5.3.5}Implementaci\'on de pruebas}{66}{subsection.5.3.5}% 
+\contentsline {section}{\numberline {5.4}Validaci\'on de prototipo}{67}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Aplicaci\'on pruebas}{67}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}An\'alisis resultados}{69}{subsection.5.4.2}% 
+\contentsline {section}{\numberline {5.5}Caso de uso}{71}{section.5.5}% 
+\contentsline {chapter}{\numberline {6}Conclusiones}{73}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Trabajo futuro}{74}{chapter.7}% 
+\contentsline {chapter}{Referencias Bibliogr\'aficas}{74}{chapter.7}% 
+\contentsline {chapter}{Ap\'endices}{81}{chapter*.45}% 
 \contentsfinish 
