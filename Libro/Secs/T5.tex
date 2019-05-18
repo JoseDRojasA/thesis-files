@@ -573,7 +573,9 @@ La arquitectura planteada para el caso de uso se encuentra en la figura \ref{Cas
 
 Para el caso de uso se desplegaron las últimas versiones del backend y frontend dentro del prototipo usado en la sección \ref{Prototipado}. 
 
-En la infraestructura se desplegaron 2 instancias del frontend y 3 instancias del backend. Durante la prueba se monitorio el uso de recursos en los servidores. Durante una fase de la prueba se apago uno de los nodos y el sistema continuó funcionando con normalidad, se pudo evidenciar como el sistema levanta instancias en el nodo restante con el fin de mantener consiste la cantidad de instancias presentes en la infraestructura lo cual permitió ver la alta disponibilidad que provee la infraestructura a la plataforma IoT.
+En la infraestructura se desplegaron 2 instancias del frontend y 3 instancias del backend. Durante la prueba se monitoreo el uso de recursos en los servidores. 
+
+Durante una fase de la prueba se apagó uno de los nodos y el sistema continuó funcionando con normalidad gracias a la alta disponibilidad que provee la infraestructura desplegada a la plataforma IoT. Kubernetes detecta cuando falla el nodo y comienza a levantar instancias en el nodo restante con el fin de mantener consistente la cantidad de instancias activas dentro de la infraestructura.
 
 % Luego de haber validado la arquitectura de forma unitaria, se diseño un caso de uso junto a los otros proyectos de grado relacionados al presente proyecto en el cual se integraban los diferentes componentes\footnote{Gateway\citep{gatewayIoT}, front\citep{frontIoT} y backend\citep{backendIoT}}
 
