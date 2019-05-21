@@ -10,6 +10,24 @@
 % ------------------------------------------------------------------------
 \noindent En este Capítulo se presentará como fue desarrollado el proyecto.
 % ------------------------------------------------------------------------ 
+\section{Contexto del proyecto}
+El objetivo de este proyecto es diseñar una infraestructura para el despliegue de una plataforma IoT en una infraestructura cloud de alta disponibilidad en un entorno distribuido con el fin de proveer un entorno que pueda soportar una gran cantidad de dispositivos conectados enviando datos de forma masiva. Cabe resaltar que el presente proyecto de grado se encuentra en el marco de una macroproyecto que se compone también de otros tres trabajo de grados que se desarrollan paralelamente a este, estos otros tres trabajos son elementos cruciales también en la plataforma:
+\begin{itemize}
+	\item \textbf{Gateway: }En este proyecto de grado se presenta el diseño de un framework de software extensible que permite a dispositivos tipo gateway la comunicación y el almacenamiento de datos producidos y recibidos por sensores y/o actuadores al mismo tiempo que provee la capacidad de conectarse con plataformas IoT enfocadas en Smart Campus. Esto permite que los diferentes casos de uso de IoT sean implementados con mayor rapidez enfocándose en el manejo de los dispositivos finales (sensor y actuador) y delegando al framework lo referente al exterior y funciones generales \citep{gatewayIoT}.
+	\item \textbf{Administración Web: }En este proyecto de grado se presenta el diseño de una aplicación web que permite gestionar una arquitectura Smart Campus mediante la cual los usuarios pueden registrar y gestionar sus casos de uso y los dispositivos asociados a los mismos permitiéndoles de una manera sencilla crear aplicaciones que contribuyan a generar esta transformación digital \citep{frontIoT}.
+	\item \textbf{Backend: }En este trabajo se presenta una solución Backend para una infraestructura IoT, este software se desarrolló con una arquitectura de microservicios de alta disponibilidad elaborada en Java usando el framework Spring Boot, permite la integración de dispositivos y gateways a través de un broker y gracias a su escalabilidad puede manejar grandes volúmenes de datos que se generen a partir de estos, almacenarlos y a través de un API REST ser consultados para el uso que se les quiera dar, además, cuenta con una unidad de persistencia para almacenar la información de los elementos que estén presentes en la infraestructura (dispositivos y gateways) \citep{backendIoT}.
+\end{itemize}
+
+Todos los elementos creados, componen una infraestructura IoT para Smart Campus, con esto se sientan las bases tecnológicas para poder crear aplicaciones IoT que favorezcan a la comunidad, como por ejemplo el riego de las plantas, el control de las puertas de los edificios, smart parking y otros.
+
+
+La arquitectura de la plataforma IoT se encuentra en la figura \ref{plataformaIoTArchitecture}.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/Arquitectura_Smart_Campus.jpg}
+	\caption{Arquitectura de la plataforma IoT.}
+	\label{plataformaIoTArchitecture}
+\end{figure}
 \section{Ambientación tecnológica}
 \subsection{Investigaci\'on fundamentos te\'oricos relacionados con el proyecto (Tecnolog\'ias y est\'andares)}
 Durante esta primera fase se investigó el estado del arte en cloud computing para poder identificar los conceptos comunes en las diferentes arquitecturas cloud enfocadas a IoT. De esta primera fase se encontró la gestión de contenedores como factor común por lo cual la investigación posterior siguió este enfoque. Posteriormente se identificaron las tecnologías más populares en IoT.
@@ -556,11 +574,14 @@ Los resultados de las pruebas se consignaron en las tablas \ref{tabla: Cantidad 
 \end{itemize}
 \section{Caso de uso}
 
-En esta sección se realizó el despliegue de la plataforma IoT enfocada a Smart Campus, implementado un prototipo para demostrar que todos los componentes se integran correctamente. Para lograr esto, fue necesaria la participación de los autores de los proyectos de grado mencionados en los capítulos anteriores. 
+\noindent En esta sección se realizó el despliegue de la plataforma IoT enfocada a Smart Campus, implementado un prototipo para demostrar que todos los componentes se integran correctamente. Para lograr esto, fue necesaria la participación de los autores de los proyectos de grado mencionados en los capítulos anteriores. 
 
-En el escenario planteado un usuario desea activar una red de bombillos ubicados en dos laboratorios de ingeniería eléctrica cuando el voltaje de un generador eléctrico pase un umbral de seguridad para alertar al personal presente en dichos espacios. Además, el usuario desea monitorear la temperatura generada en uno de los laboratorios con el objetivo de proteger de temperaturas extremas los dispositivos allí presentes.
+En el escenario planteado un supervisor desea activar una red de bombillos ubicados en dos laboratorios de ingeniería eléctrica cuando el voltaje de un generador eléctrico pase un umbral de seguridad para alertar al personal presente en dichos espacios. 
 
-Para simular el escenario anterior se hizo uso de dos dispositivos tipo gateway, tres actuadores (LEDs), un sensor de temperatura y un potenciómetro; a su vez, se crearon 4 procesos y 1 aplicación externa en la que se muestran los datos capturados en el caso de uso.
+Además de esto, el usuario desea monitorear la temperatura generada en otro laboratorio en el cual se almacenan algunas sustancias químicas que deben permanecer constantemente sobre una temperatura mínima. Para esto, instala un sensor de temperatura en el laboratorio, y un led en su oficina, el cual deberá encenderse en caso de que la temperatura en el laboratorio descienda bajo un umbral previamente determinado.
+
+Para simular el escenario anterior se hizo uso de dos dispositivos tipo gateway, un minicomputadora con pines análogos, tres actuadores (LEDs), un sensor de temperatura y un potenciómetro; a su vez, se crearon 4 procesos y 1 aplicación externa en la que se muestran los datos capturados en el caso de uso.
+
 
 La arquitectura planteada para el caso de uso se encuentra en la figura \ref{Caso de uso}.
 
@@ -577,6 +598,5 @@ En la infraestructura se desplegaron 2 instancias del frontend y 3 instancias de
 
 Durante una fase de la prueba se apagó uno de los nodos y el sistema continuó funcionando con normalidad gracias a la alta disponibilidad que provee la infraestructura desplegada a la plataforma IoT. Kubernetes detecta cuando falla el nodo y comienza a levantar instancias en el nodo restante con el fin de mantener consistente la cantidad de instancias activas dentro de la infraestructura.
 
-% Luego de haber validado la arquitectura de forma unitaria, se diseño un caso de uso junto a los otros proyectos de grado relacionados al presente proyecto en el cual se integraban los diferentes componentes\footnote{Gateway\citep{gatewayIoT}, front\citep{frontIoT} y backend\citep{backendIoT}}
-
+Durante la ejecución del caso de uso, se grabó un video presente en el apéndice \ref{appendix:Video de caso de uso}.
 
