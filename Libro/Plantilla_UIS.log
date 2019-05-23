@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.27)  20 MAY 2019 20:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.4.27)  22 MAY 2019 21:45
 entering extended mode
 **./Plantilla_UIS.tex
 (Plantilla_UIS.tex
@@ -1181,7 +1181,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
  []
 
 [19]
-<figs/AWS_Arquitecturas.jpeg, id=609, 5156.26375pt x 3411.74625pt>
+<figs/AWS_Arquitecturas.jpeg, id=612, 5156.26375pt x 3411.74625pt>
 File: figs/AWS_Arquitecturas.jpeg Graphic file (type jpg)
 <use figs/AWS_Arquitecturas.jpeg>
 Package pdftex.def Info: figs/AWS_Arquitecturas.jpeg  used on input line 33.
@@ -1189,7 +1189,7 @@ Package pdftex.def Info: figs/AWS_Arquitecturas.jpeg  used on input line 33.
  [20
 
  <./figs/AWS_Arquitecturas.jpeg>]
-<figs/AZURE_architecture.png, id=617, 1178.15157pt x 657.95813pt>
+<figs/AZURE_architecture.png, id=620, 1178.15157pt x 657.95813pt>
 File: figs/AZURE_architecture.png Graphic file (type png)
 <use figs/AZURE_architecture.png>
 Package pdftex.def Info: figs/AZURE_architecture.png  used on input line 40.
@@ -1198,7 +1198,7 @@ Package pdftex.def Info: figs/AZURE_architecture.png  used on input line 40.
 
 
  <./figs/AZURE_architecture.png>]
-<figs/GCP_architecture.png, id=624, 1148.29pt x 684.5575pt>
+<figs/GCP_architecture.png, id=627, 1148.29pt x 684.5575pt>
 File: figs/GCP_architecture.png Graphic file (type png)
 <use figs/GCP_architecture.png>
 Package pdftex.def Info: figs/GCP_architecture.png  used on input line 47.
@@ -1212,13 +1212,13 @@ Cap\'{\i }tulo 3.
 [23
 
 ]
-<figs/responsibility-zones.png, id=641, 421.1986pt x 219.06844pt>
+<figs/responsibility-zones.png, id=644, 421.1986pt x 219.06844pt>
 File: figs/responsibility-zones.png Graphic file (type png)
 <use figs/responsibility-zones.png>
 Package pdftex.def Info: figs/responsibility-zones.png  used on input line 31.
 (pdftex.def)             Requested size: 469.75539pt x 244.32875pt.
  [24] [25 <./figs/responsibility-zones.png>]
-<figs/active_active_high_availability_cluster_load_balancer.png, id=661, 631.35
+<figs/active_active_high_availability_cluster_load_balancer.png, id=664, 631.35
 875pt x 279.0425pt>
 File: figs/active_active_high_availability_cluster_load_balancer.png Graphic fi
 le (type png)
@@ -1227,7 +1227,7 @@ Package pdftex.def Info: figs/active_active_high_availability_cluster_load_bala
 ncer.png  used on input line 62.
 (pdftex.def)             Requested size: 469.75539pt x 207.62079pt.
  [26]
-<figs/active_passive_high_availability_cluster.png, id=674, 593.21625pt x 262.9
+<figs/active_passive_high_availability_cluster.png, id=677, 593.21625pt x 262.9
 825pt>
 File: figs/active_passive_high_availability_cluster.png Graphic file (type png)
 
@@ -1237,14 +1237,14 @@ d on input line 76.
 (pdftex.def)             Requested size: 469.75539pt x 208.25949pt.
  [27 <./figs/active_active_high_availability_cluster_load_balancer.png>] [28 <.
 /figs/active_passive_high_availability_cluster.png>]
-<figs/Storage-Scaleout-Scalein.png, id=690, 863.225pt x 402.50375pt>
+<figs/Storage-Scaleout-Scalein.png, id=693, 863.225pt x 402.50375pt>
 File: figs/Storage-Scaleout-Scalein.png Graphic file (type png)
 <use figs/Storage-Scaleout-Scalein.png>
 Package pdftex.def Info: figs/Storage-Scaleout-Scalein.png  used on input line 
 94.
 (pdftex.def)             Requested size: 375.80574pt x 175.22897pt.
  [29 <./figs/Storage-Scaleout-Scalein.png (PNG copy)>] [30]
-<figs/hipervisor-vmware-jmgvirtualconsulting.jpg, id=717, 474.77374pt x 296.106
+<figs/hipervisor-vmware-jmgvirtualconsulting.jpg, id=720, 474.77374pt x 296.106
 25pt>
 File: figs/hipervisor-vmware-jmgvirtualconsulting.jpg Graphic file (type jpg)
 <use figs/hipervisor-vmware-jmgvirtualconsulting.jpg>
@@ -1252,18 +1252,18 @@ Package pdftex.def Info: figs/hipervisor-vmware-jmgvirtualconsulting.jpg  used
 on input line 111.
 (pdftex.def)             Requested size: 328.82733pt x 205.09065pt.
  [31 <./figs/hipervisor-vmware-jmgvirtualconsulting.jpg>] [32]
-<figs/contenedores.png, id=730, 945.5325pt x 552.0625pt>
+<figs/contenedores.png, id=733, 945.5325pt x 552.0625pt>
 File: figs/contenedores.png Graphic file (type png)
 <use figs/contenedores.png>
 Package pdftex.def Info: figs/contenedores.png  used on input line 141.
 (pdftex.def)             Requested size: 469.75539pt x 274.27841pt.
-<figs/solicitudes.png, id=736, 764.8575pt x 533.995pt>
+<figs/solicitudes.png, id=739, 764.8575pt x 533.995pt>
 File: figs/solicitudes.png Graphic file (type png)
 <use figs/solicitudes.png>
 Package pdftex.def Info: figs/solicitudes.png  used on input line 150.
 (pdftex.def)             Requested size: 469.75539pt x 327.96906pt.
  [33 <./figs/contenedores.png>] [34 <./figs/solicitudes.png>]
-<figs/monolithic-vs-microservices.png, id=752, 1816.7875pt x 842.14626pt>
+<figs/monolithic-vs-microservices.png, id=755, 1816.7875pt x 842.14626pt>
 File: figs/monolithic-vs-microservices.png Graphic file (type png)
 <use figs/monolithic-vs-microservices.png>
 Package pdftex.def Info: figs/monolithic-vs-microservices.png  used on input li
@@ -1272,21 +1272,21 @@ ne 175.
 ) (Secs/T4.tex [35]
 Cap\'{\i }tulo 4.
 [36 <./figs/monolithic-vs-microservices.png>]
-<figs/arquitectura_kubernetes.png, id=772, 602.25pt x 451.6875pt>
+<figs/arquitectura_kubernetes.png, id=775, 602.25pt x 451.6875pt>
 File: figs/arquitectura_kubernetes.png Graphic file (type png)
 <use figs/arquitectura_kubernetes.png>
 Package pdftex.def Info: figs/arquitectura_kubernetes.png  used on input line 3
 7.
 (pdftex.def)             Requested size: 469.75539pt x 352.32861pt.
  [37] [38 <./figs/arquitectura_kubernetes.png>]
-<figs/OpenShiftContainerPlatformStack.png, id=791, 887.315pt x 572.1375pt>
+<figs/OpenShiftContainerPlatformStack.png, id=794, 887.315pt x 572.1375pt>
 File: figs/OpenShiftContainerPlatformStack.png Graphic file (type png)
 <use figs/OpenShiftContainerPlatformStack.png>
 Package pdftex.def Info: figs/OpenShiftContainerPlatformStack.png  used on inpu
 t line 70.
 (pdftex.def)             Requested size: 469.75539pt x 302.89095pt.
  [39] [40 <./figs/OpenShiftContainerPlatformStack.png>]
-<figs/glusterfs.png, id=809, 662.475pt x 331.2375pt>
+<figs/glusterfs.png, id=812, 662.475pt x 331.2375pt>
 File: figs/glusterfs.png Graphic file (type png)
 <use figs/glusterfs.png>
 Package pdftex.def Info: figs/glusterfs.png  used on input line 91.
@@ -1295,7 +1295,7 @@ Package pdftex.def Info: figs/glusterfs.png  used on input line 91.
 (Secs/T5.tex
 Cap\'{\i }tulo 5.
 [41 <./figs/glusterfs.png>] [42]
-<figs/Arquitectura_Smart_Campus.jpg, id=830, 1292.83pt x 1216.545pt>
+<figs/Arquitectura_Smart_Campus.jpg, id=833, 1292.83pt x 1216.545pt>
 File: figs/Arquitectura_Smart_Campus.jpg Graphic file (type jpg)
 <use figs/Arquitectura_Smart_Campus.jpg>
 Package pdftex.def Info: figs/Arquitectura_Smart_Campus.jpg  used on input line
@@ -1324,50 +1324,57 @@ Overfull \hbox (17.03592pt too wide) in paragraph at lines 134--151
  [] 
  []
 
-[48] [49] [50] [51] [52]
-Underfull \hbox (badness 1087) in paragraph at lines 209--209
+[48]
+<figs/arquitectura_referencia.png, id=880, 973.6375pt x 687.56876pt>
+File: figs/arquitectura_referencia.png Graphic file (type png)
+<use figs/arquitectura_referencia.png>
+Package pdftex.def Info: figs/arquitectura_referencia.png  used on input line 1
+65.
+(pdftex.def)             Requested size: 469.75539pt x 331.72887pt.
+ [49] [50 <./figs/arquitectura_referencia.png>] [51] [52] [53] [54]
+Underfull \hbox (badness 1087) in paragraph at lines 219--219
 []\T1/ptm/m/n/12 Verifica las cre-den-cia-les de
  []
 
-[53] [54] [55] [56] [57] [58]
-<figs/Thesis-Architecture.png, id=952, 1366.10374pt x 658.46pt>
+[55] [56] [57] [58] [59]
+<figs/Thesis-Architecture.png, id=962, 1366.10374pt x 658.46pt>
 File: figs/Thesis-Architecture.png Graphic file (type png)
 <use figs/Thesis-Architecture.png>
-Package pdftex.def Info: figs/Thesis-Architecture.png  used on input line 271.
+Package pdftex.def Info: figs/Thesis-Architecture.png  used on input line 281.
 (pdftex.def)             Requested size: 704.63307pt x 339.63817pt.
 
-Overfull \hbox (107.1252pt too wide) in paragraph at lines 271--272
+Overfull \hbox (107.1252pt too wide) in paragraph at lines 281--282
  [][] 
  []
 
-[59
+[60
 
  <./figs/Thesis-Architecture.png>]
-<figs/arquitectura_infraestructura.png, id=962, 662.475pt x 431.6125pt>
+<figs/arquitectura_infraestructura.png, id=972, 662.475pt x 431.6125pt>
 File: figs/arquitectura_infraestructura.png Graphic file (type png)
 <use figs/arquitectura_infraestructura.png>
 Package pdftex.def Info: figs/arquitectura_infraestructura.png  used on input l
-ine 304.
+ine 314.
 (pdftex.def)             Requested size: 469.75539pt x 306.05185pt.
- [60
+ [61
 
 ]
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 309.
- [61 <./figs/arquitectura_infraestructura.png>] [62]
-Overfull \hbox (5.31148pt too wide) in paragraph at lines 382--383
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 319.
+ [62 <./figs/arquitectura_infraestructura.png>] [63]
+Overfull \hbox (5.31148pt too wide) in paragraph at lines 392--393
 []\T1/ptm/m/n/12 Finalmente se crea ca-da uno de los vo-lú-me-nes con bricks ta
 n-to en el ser-vi-dor dns.local.cluster
  []
 
-[63]
-<figs/openshift_console.PNG, id=990, 1028.34187pt x 545.78906pt>
+[64]
+<figs/openshift_console.PNG, id=1000, 1028.34187pt x 545.78906pt>
 File: figs/openshift_console.PNG Graphic file (type png)
 <use figs/openshift_console.PNG>
-Package pdftex.def Info: figs/openshift_console.PNG  used on input line 406.
+Package pdftex.def Info: figs/openshift_console.PNG  used on input line 416.
 (pdftex.def)             Requested size: 469.75539pt x 249.32544pt.
- [64]
-Underfull \hbox (badness 10000) in paragraph at lines 412--413
+ [65]
+Underfull \hbox (badness 10000) in paragraph at lines 422--423
 
  []
 
@@ -1377,50 +1384,50 @@ File: lstlang1.sty 2019/02/27 1.8b listings language file
 ("D:\App\MiKTeX 2.9\tex/latex/listings\lstlang1.sty"
 File: lstlang1.sty 2019/02/27 1.8b listings language file
 )
-Underfull \hbox (badness 10000) in paragraph at lines 423--424
+Underfull \hbox (badness 10000) in paragraph at lines 433--434
 
  []
 
-[65 <./figs/openshift_console.PNG>] [66]
-<figs/Proceso-de-despliegue-de-un-artefacto-2.png, id=1024, 2209.25375pt x 763.
+[66 <./figs/openshift_console.PNG>] [67]
+<figs/Proceso-de-despliegue-de-un-artefacto-2.png, id=1035, 2209.25375pt x 763.
 85374pt>
 File: figs/Proceso-de-despliegue-de-un-artefacto-2.png Graphic file (type png)
 <use figs/Proceso-de-despliegue-de-un-artefacto-2.png>
 Package pdftex.def Info: figs/Proceso-de-despliegue-de-un-artefacto-2.png  used
- on input line 443.
+ on input line 453.
 (pdftex.def)             Requested size: 610.68343pt x 211.1502pt.
 
-Overfull \hbox (13.17555pt too wide) in paragraph at lines 443--444
+Overfull \hbox (13.17555pt too wide) in paragraph at lines 453--454
  [][] 
  []
 
-[67
+[68
 
  <./figs/Proceso-de-despliegue-de-un-artefacto-2.png>]
-<figs/gitlab-error.png, id=1032, 392.21532pt x 411.03563pt>
+<figs/gitlab-error.png, id=1042, 392.21532pt x 411.03563pt>
 File: figs/gitlab-error.png Graphic file (type png)
 <use figs/gitlab-error.png>
-Package pdftex.def Info: figs/gitlab-error.png  used on input line 464.
+Package pdftex.def Info: figs/gitlab-error.png  used on input line 474.
 (pdftex.def)             Requested size: 164.41725pt x 172.30765pt.
- [68
+ [69
 
 ]
-<figs/Jmeter-test.png, id=1040, 185.94469pt x 251.43938pt>
+<figs/Jmeter-test.png, id=1050, 185.94469pt x 251.43938pt>
 File: figs/Jmeter-test.png Graphic file (type png)
 <use figs/Jmeter-test.png>
-Package pdftex.def Info: figs/Jmeter-test.png  used on input line 474.
+Package pdftex.def Info: figs/Jmeter-test.png  used on input line 484.
 (pdftex.def)             Requested size: 164.41725pt x 222.33391pt.
- [69 <./figs/gitlab-error.png> <./figs/Jmeter-test.png>] [70] [71] [72] [73]
-<figs/use_case.jpg, id=1074, 1187.43625pt x 848.16875pt>
+ [70 <./figs/gitlab-error.png> <./figs/Jmeter-test.png>] [71] [72] [73] [74]
+<figs/use_case.jpg, id=1084, 1187.43625pt x 848.16875pt>
 File: figs/use_case.jpg Graphic file (type jpg)
 <use figs/use_case.jpg>
-Package pdftex.def Info: figs/use_case.jpg  used on input line 590.
+Package pdftex.def Info: figs/use_case.jpg  used on input line 600.
 (pdftex.def)             Requested size: 469.75539pt x 335.54713pt.
- [74] [75 <./figs/use_case.jpg>]) (Secs/T6.tex
+ [75] [76 <./figs/use_case.jpg>]) (Secs/T6.tex
 Cap\'{\i }tulo 6.
-[76]) (Secs/T7.tex
+[77]) (Secs/T7.tex
 Cap\'{\i }tulo 7.
-) (Secs/T8.tex) [77] (Plantilla_UIS.bbl
+) (Secs/T8.tex) [78] (Plantilla_UIS.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 42--46
 []\T1/ptm/m/n/12 Cholewa, T. (2018).  10 most im-por-tant dif-fe-ren-ces bet-we
 en opens-hift
@@ -1432,7 +1439,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--46
  / / cloudowski . com / articles /
  []
 
-[78]
+[79]
 Underfull \hbox (badness 10000) in paragraph at lines 72--76
 []\T1/ptm/m/n/12 Fernandes, J. (2017).  Ku-ber-ne-tes and opens-hift: Com-mu-ni
 ty, stan-dards
@@ -1444,7 +1451,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 72--76
 tps : / / blog . openshift . com /
  []
 
-[79]
+[80]
 Underfull \hbox (badness 2837) in paragraph at lines 115--120
 []\T1/ptm/m/n/12 HUB, U. (2018).  Smart city 3.0: pre-gun-te a bar-ce-lo-na por
  la si-guien-te ge-ne-ra-ción
@@ -1468,7 +1475,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--140
  : / / kubernetes . io / blog / 2016 / 10 /
  []
 
-[80]
+[81]
 Underfull \hbox (badness 10000) in paragraph at lines 172--176
 []\T1/ptm/m/n/12 Machado, E. (2016).  Ins-ta-la-ción y con-fi-gu-ra-ción de kvm
  en cen-tos 7.
@@ -1486,7 +1493,7 @@ Underfull \hbox (badness 1292) in paragraph at lines 191--197
 oud com-pu-ting. re-com-men-da-
  []
 
-[81] [82]
+[82] [83]
 Underfull \hbox (badness 10000) in paragraph at lines 250--255
 []\T1/ptm/m/n/12 Villanueva, J. (2015).  Active-active vs active-passive high a
 vai-la-bi-
@@ -1510,13 +1517,13 @@ Underfull \hbox (badness 6204) in paragraph at lines 257--262
 o de []$\T1/cmtt/m/n/12 https : / / www . semiconductors . org /
  []
 
-) (Secs/anexoA.tex [83]
-<figs/moockaroo.png, id=1183, 727.21687pt x 398.99063pt>
+) (Secs/anexoA.tex [84]
+<figs/moockaroo.png, id=1193, 727.21687pt x 398.99063pt>
 File: figs/moockaroo.png Graphic file (type png)
 <use figs/moockaroo.png>
 Package pdftex.def Info: figs/moockaroo.png  used on input line 8.
 (pdftex.def)             Requested size: 469.75539pt x 257.73967pt.
-) (Secs/anexoB.tex [84 <./figs/moockaroo.png>]
+) (Secs/anexoB.tex [85 <./figs/moockaroo.png>]
 \openout3 = `Plantilla_UIS.pyg'.
 
 
@@ -1538,13 +1545,13 @@ LaTeX Font Warning: Font shape `TS1/cmtt/bx/n' undefined
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
-)) (Secs/anexoC.tex [85]
+)) (Secs/anexoC.tex [86]
 \openout3 = `Plantilla_UIS.pyg'.
 
 
 (_minted-Plantilla_UIS/5164DF3280DBB1E8FE5EB31209C26AD78BC3A4CADAFBA378DA8716E1
-B0D8E9C5.pygtex)) (Secs/anexoD.tex [86]) (Secs/anexoE.tex [87])
-(Secs/anexoF.tex [88]
+B0D8E9C5.pygtex)) (Secs/anexoD.tex [87]) (Secs/anexoE.tex [88])
+(Secs/anexoF.tex [89]
 Overfull \hbox (0.98976pt too wide) in paragraph at lines 4--5
 \T1/ptm/m/n/12 Archivo de des-plie-gue con-ti-nuo pa-ra el front: []thesis-file
 s/master/Configuración de CD/front/.gitlab-
@@ -1556,9 +1563,9 @@ Overfull \hbox (68.205pt too wide) in paragraph at lines 6--7
 -files/master/Configuración de CD/backend/.gitlab-
  []
 
-) (Secs/anexoG.tex [89])
+) (Secs/anexoG.tex [90])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
- [90]
+ [91]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
  (Plantilla_UIS.aux (Secs/P0.aux)
 LaTeX Info: Redefining \. on input line 25.
@@ -1569,7 +1576,7 @@ LaTeX Info: Redefining \% on input line 25.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
 Package rerunfilecheck Info: File `Plantilla_UIS.out' has not changed.
-(rerunfilecheck)             Checksum: 51CA583576CF4608C37538A210F71977;3473.
+(rerunfilecheck)             Checksum: 701678273ED472DC8F785EF42268B23A;3509.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1583,10 +1590,10 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
 ### semi simple group (level 1) entered at line 90 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 16840 strings out of 492945
- 261793 string characters out of 3139908
- 641786 words of memory out of 3000000
- 20022 multiletter control sequences out of 15000+200000
+ 16848 strings out of 492945
+ 262019 string characters out of 3139908
+ 642904 words of memory out of 3000000
+ 20027 multiletter control sequences out of 15000+200000
  66030 words of font info for 112 fonts, out of 3000000 for 9000
  1143 hyphenation exceptions out of 8191
  43i,21n,51p,929b,9122s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1660,9 +1667,9 @@ pp/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><D:/App/MiKTeX 2.9/fonts
 tmb8a.pfb><D:/App/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><D:/App/MiKTeX 2
 .9/fonts/type1/urw/times/utmr8a.pfb><D:/App/MiKTeX 2.9/fonts/type1/urw/times/ut
 mri8a.pfb>
-Output written on Plantilla_UIS.pdf (90 pages, 5149632 bytes).
+Output written on Plantilla_UIS.pdf (91 pages, 5208418 bytes).
 PDF statistics:
- 1414 PDF objects out of 1440 (max. 8388607)
- 281 named destinations out of 1000 (max. 500000)
- 518 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1426 PDF objects out of 1440 (max. 8388607)
+ 283 named destinations out of 1000 (max. 500000)
+ 523 words of extra memory for PDF output out of 10000 (max. 10000000)
 

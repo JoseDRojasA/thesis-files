@@ -27,25 +27,25 @@
 \contentsline {subsection}{\numberline {5.2.2}Estudio}{45}{subsection.5.2.2}% 
 \contentsline {subsection}{\numberline {5.2.3}Sondeo}{46}{subsection.5.2.3}% 
 \contentsline {section}{\numberline {5.3}Definici\'on de arquitectura de infraestructura cloud}{49}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}Definici\'on requisitos}{49}{subsection.5.3.1}% 
-\contentsline {subsection}{\numberline {5.3.2}Definici\'on de m\'etricas}{52}{subsection.5.3.2}% 
-\contentsline {subsection}{\numberline {5.3.3}Definici\'on de pruebas}{53}{subsection.5.3.3}% 
-\contentsline {subsection}{\numberline {5.3.4}Definici\'on arquitectura e infraestructura}{55}{subsection.5.3.4}% 
-\contentsline {section}{\numberline {5.4}Prototipado}{60}{section.5.4}% 
-\contentsline {subsection}{\numberline {5.4.1}Configuraci\'on b\'asica cluster}{60}{subsection.5.4.1}% 
-\contentsline {subsection}{\numberline {5.4.2}Configuraci\'on infraestructura cluster}{61}{subsection.5.4.2}% 
-\contentsline {subsubsection}{\numberline {5.4.2.1}Servidor DNS}{61}{subsubsection.5.4.2.1}% 
-\contentsline {subsubsection}{\numberline {5.4.2.2}Servidor Glusterfs}{62}{subsubsection.5.4.2.2}% 
-\contentsline {subsubsection}{\numberline {5.4.2.3}Nodos}{64}{subsubsection.5.4.2.3}% 
-\contentsline {subsection}{\numberline {5.4.3}Despliegue aplicaci\'on}{66}{subsection.5.4.3}% 
-\contentsline {subsection}{\numberline {5.4.4}Automatizaci\'on del proceso de despliegue}{68}{subsection.5.4.4}% 
-\contentsline {subsection}{\numberline {5.4.5}Implementaci\'on de pruebas}{69}{subsection.5.4.5}% 
-\contentsline {section}{\numberline {5.5}Validaci\'on de prototipo}{70}{section.5.5}% 
-\contentsline {subsection}{\numberline {5.5.1}Aplicaci\'on pruebas}{70}{subsection.5.5.1}% 
-\contentsline {subsection}{\numberline {5.5.2}An\'alisis resultados}{72}{subsection.5.5.2}% 
-\contentsline {section}{\numberline {5.6}Caso de uso}{74}{section.5.6}% 
-\contentsline {chapter}{\numberline {6}Conclusiones}{76}{chapter.6}% 
-\contentsline {chapter}{\numberline {7}Trabajo futuro}{77}{chapter.7}% 
-\contentsline {chapter}{Referencias Bibliogr\'aficas}{77}{chapter.7}% 
-\contentsline {chapter}{Ap\'endices}{84}{chapter*.46}% 
+\contentsline {subsection}{\numberline {5.3.1}Definici\'on de arquitectura de referencia y requerimientos}{49}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Definici\'on de m\'etricas}{53}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}Definici\'on de pruebas}{54}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.4}Definici\'on arquitectura e infraestructura}{57}{subsection.5.3.4}% 
+\contentsline {section}{\numberline {5.4}Prototipado}{61}{section.5.4}% 
+\contentsline {subsection}{\numberline {5.4.1}Configuraci\'on b\'asica cluster}{61}{subsection.5.4.1}% 
+\contentsline {subsection}{\numberline {5.4.2}Configuraci\'on infraestructura cluster}{62}{subsection.5.4.2}% 
+\contentsline {subsubsection}{\numberline {5.4.2.1}Servidor DNS}{62}{subsubsection.5.4.2.1}% 
+\contentsline {subsubsection}{\numberline {5.4.2.2}Servidor Glusterfs}{63}{subsubsection.5.4.2.2}% 
+\contentsline {subsubsection}{\numberline {5.4.2.3}Nodos}{65}{subsubsection.5.4.2.3}% 
+\contentsline {subsection}{\numberline {5.4.3}Despliegue aplicaci\'on}{67}{subsection.5.4.3}% 
+\contentsline {subsection}{\numberline {5.4.4}Automatizaci\'on del proceso de despliegue}{69}{subsection.5.4.4}% 
+\contentsline {subsection}{\numberline {5.4.5}Implementaci\'on de pruebas}{70}{subsection.5.4.5}% 
+\contentsline {section}{\numberline {5.5}Validaci\'on de prototipo}{71}{section.5.5}% 
+\contentsline {subsection}{\numberline {5.5.1}Aplicaci\'on pruebas}{71}{subsection.5.5.1}% 
+\contentsline {subsection}{\numberline {5.5.2}An\'alisis resultados}{73}{subsection.5.5.2}% 
+\contentsline {section}{\numberline {5.6}Caso de uso}{75}{section.5.6}% 
+\contentsline {chapter}{\numberline {6}Conclusiones}{77}{chapter.6}% 
+\contentsline {chapter}{\numberline {7}Trabajo futuro}{78}{chapter.7}% 
+\contentsline {chapter}{Referencias Bibliogr\'aficas}{78}{chapter.7}% 
+\contentsline {chapter}{Ap\'endices}{85}{chapter*.47}% 
 \contentsfinish 

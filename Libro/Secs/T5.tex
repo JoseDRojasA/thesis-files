@@ -157,7 +157,17 @@ Durante esta etapa se aplicaron los diferentes criterios entre cada una de las t
 
 \section{Definición de arquitectura de infraestructura cloud}
 
-\subsection{Definici\'on requisitos}
+\subsection{Definici\'on de arquitectura de referencia y requerimientos}
+
+A continuación se muestra en la figura \ref{Arquitectura de referencia} la arquitectura de referencia, creada con base en las arquitecturas estudiadas durante la etapa de Capacitación tecnológica y representa la plataforma Smart Campus desde el punto de vista del usuario, es decir, es una guía para los usuarios que deseen implementar una aplicación utilizando la plataforma desarrollada.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{figs/arquitectura_referencia.png}
+	\caption{Arquitectura de referencia.}
+	\label{Arquitectura de referencia}
+\end{figure}
+Esta se compone por tres capas, la capa Things que representa la capa sensorial, y está compuesta por sensores, actuadores y gateways; la segunda es la capa Cloud donde se encuentran las aplicaciones de transmisión de datos, almacenamiento de información y gestión de aplicaciones; finalmente la capa Business donde se encuentran las aplicaciones de terceros o externas y las aplicaciones de analítica de datos desarrolladas por los usuarios.
+Para el desarrollo de una aplicación o caso de uso, los usuarios deben construir software para extraer información de sensores y recibirla en actuadores; esta información es enviada utilizando el software Gateway que se provee en la plataforma Smart Campus, donde se procesa y envía la información al software Backend o Cloud, el cual a su vez la expone para que otras aplicaciones de usuarios transformen o procesen la información recibida y, finalmente la muestren y den uso mediante aplicaciones externas o sea enviada a aplicaciones de analítica de datos.
 Se identificaron las características que debe tener una infraestructura, haciendo uso de las características esenciales de un modelo de cloud computing \citep{CONTROLEG}. 
 
 \begin{itemize}

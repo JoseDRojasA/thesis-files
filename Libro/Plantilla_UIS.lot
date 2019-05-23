@@ -8,16 +8,16 @@
 \contentsline {table}{\numberline {2}{\ignorespaces Sondeo de selecci\'on: Sistema Operativo}}{47}{table.caption.25}% 
 \contentsline {table}{\numberline {3}{\ignorespaces Sondeo de selecci\'on: Container Runtime}}{48}{table.caption.26}% 
 \contentsline {table}{\numberline {4}{\ignorespaces Sondeo de selecci\'on: Orquestador de contenedores}}{49}{table.caption.27}% 
-\contentsline {table}{\numberline {5}{\ignorespaces M\'etodos usados en las pruebas sobre el prototipo}}{54}{table.caption.28}% 
-\contentsline {table}{\numberline {6}{\ignorespaces Caracter\IeC {\'\i }sticas de m\'aquinas en cluster}}{60}{table.caption.30}% 
-\contentsline {table}{\numberline {7}{\ignorespaces Resoluci\'on de nombres en cluster}}{62}{table.caption.32}% 
-\contentsline {table}{\numberline {8}{\ignorespaces Artefactos de la aplicaci\'on IoT seg\'un su persistencia}}{63}{table.caption.33}% 
-\contentsline {table}{\numberline {9}{\ignorespaces Configuraci\'on de bricks de vol\'umenes}}{63}{table.caption.34}% 
-\contentsline {table}{\numberline {10}{\ignorespaces Cantidad de solicitudes fallidas durante un despliegue en un entorno de 1000 solicitudes por minuto}}{70}{table.caption.39}% 
-\contentsline {table}{\numberline {11}{\ignorespaces Tiempo promedio de respuesta para 1000 solicitudes por minuto}}{71}{table.caption.40}% 
-\contentsline {table}{\numberline {12}{\ignorespaces N\'umero m\'aximo de solicitudes por minuto sin solicitudes fallidas.}}{71}{table.caption.41}% 
-\contentsline {table}{\numberline {13}{\ignorespaces Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto}}{72}{table.caption.42}% 
-\contentsline {table}{\numberline {14}{\ignorespaces Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}}{72}{table.caption.43}% 
+\contentsline {table}{\numberline {5}{\ignorespaces M\'etodos usados en las pruebas sobre el prototipo}}{55}{table.caption.29}% 
+\contentsline {table}{\numberline {6}{\ignorespaces Caracter\IeC {\'\i }sticas de m\'aquinas en cluster}}{61}{table.caption.31}% 
+\contentsline {table}{\numberline {7}{\ignorespaces Resoluci\'on de nombres en cluster}}{63}{table.caption.33}% 
+\contentsline {table}{\numberline {8}{\ignorespaces Artefactos de la aplicaci\'on IoT seg\'un su persistencia}}{64}{table.caption.34}% 
+\contentsline {table}{\numberline {9}{\ignorespaces Configuraci\'on de bricks de vol\'umenes}}{64}{table.caption.35}% 
+\contentsline {table}{\numberline {10}{\ignorespaces Cantidad de solicitudes fallidas durante un despliegue en un entorno de 1000 solicitudes por minuto}}{71}{table.caption.40}% 
+\contentsline {table}{\numberline {11}{\ignorespaces Tiempo promedio de respuesta para 1000 solicitudes por minuto}}{72}{table.caption.41}% 
+\contentsline {table}{\numberline {12}{\ignorespaces N\'umero m\'aximo de solicitudes por minuto sin solicitudes fallidas.}}{72}{table.caption.42}% 
+\contentsline {table}{\numberline {13}{\ignorespaces Porcentaje de solicitudes fallidas para 3500 solicitudes por minuto}}{73}{table.caption.43}% 
+\contentsline {table}{\numberline {14}{\ignorespaces Cantidad de solicitudes fallidas para 1000 solicitudes por minuto durante el fallo de un nodo}}{73}{table.caption.44}% 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsfinish 
